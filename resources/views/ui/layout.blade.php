@@ -10,7 +10,7 @@
 		<title>Freelancer</title>
 		<link rel="shortcut icon" href="/images/favicon.png">
 		<link href="/css/style.css" rel="stylesheet">
-
+		<link href="/valid/css/bootstrapValidator.min.css" rel="stylesheet">
 	</head>
 	<body id="home">
 
@@ -57,6 +57,7 @@
 		<script src="/js/settings.js"></script>
 		<script src="/js/angular.min.js"></script>
 		<script src="/js/val.js"></script>
+		<script src="/js/valRegis.js"></script>
 		<script src="/valid/js/bootstrapValidator.min.js"></script>
 
 	</body>

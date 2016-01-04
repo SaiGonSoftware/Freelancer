@@ -76,7 +76,7 @@
 					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
 					<h2>Đăng ký</h2>
 				</div>
-				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="regis">
+				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="regis_form">
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
