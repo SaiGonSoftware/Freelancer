@@ -20,9 +20,6 @@
             more: 'Vælg venligst højst %s valgmuligheder',
             between: 'Vælg venligst %s - %s valgmuligheder'
         },
-        color: {
-            'default': 'Udfyld venligst dette felt med en gyldig farve'
-        },
         creditCard: {
             'default': 'Udfyld venligst dette felt med et gyldigt kreditkort-nummer'
         },
@@ -33,10 +30,7 @@
             'default': 'Udfyld venligst dette felt med et gyldigt CVV-nummer'
         },
         date: {
-            'default': 'Udfyld venligst dette felt med en gyldig dato',
-            min: 'Angiv venligst en dato efter %s',
-            max: 'Angiv venligst en dato før %s',
-            range: 'Angiv venligst en dato mellem %s - %s'
+            'default': 'Udfyld venligst dette felt med en gyldig dato'
         },
         different: {
             'default': 'Udfyld venligst dette felt med en anden værdi'
@@ -94,7 +88,7 @@
                 CZ: 'Tjekkiet',
                 DE: 'Tyskland',
                 DK: 'Danmark',
-                DO: 'Den Dominikanske Republik',
+                DO: 'Dominica',
                 DZ: 'Algeriet',
                 EE: 'Estland',
                 ES: 'Spanien',
@@ -239,7 +233,6 @@
                 BR: 'Brasilien',
                 CN: 'Kina',
                 CZ: 'Tjekkiet',
-                DE: 'Tyskland',
                 DK: 'Danmark',
                 ES: 'Spanien',
                 FR: 'Frankrig',
@@ -344,20 +337,14 @@
             countryNotSupported: 'Landekoden %s understøttes desværre ikke',
             country: 'Udfyld venligst dette felt med et gyldigt postnummer i %s',
             countries: {
-                AT: 'Østrig',
                 BR: 'Brasilien',
                 CA: 'Canada',
-                CH: 'Schweiz',
                 CZ: 'Tjekkiet',
-                DE: 'Tyskland',
                 DK: 'Danmark',
-                FR: 'Frankrig',
                 GB: 'Storbritannien',
-                IE: 'Irland',
                 IT: 'Italien',
                 MA: 'Marokko',
                 NL: 'Holland',
-                PT: 'Portugal',
                 RO: 'Rumænien',
                 RU: 'Rusland',
                 SE: 'Sverige',

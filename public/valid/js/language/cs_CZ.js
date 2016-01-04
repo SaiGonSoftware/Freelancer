@@ -20,9 +20,6 @@
             more: 'Hodnota nesmí být více jak %s',
             between: 'Prosím vyberte mezi %s a %s'
         },
-        color: {
-            'default': 'Prosím zadejte správnou barvu'
-        },
         creditCard: {
             'default': 'Prosím zadejte správné číslo kreditní karty'
         },
@@ -33,10 +30,7 @@
             'default': 'Prosím zadejte správné CVV číslo'
         },
         date: {
-            'default': 'Prosím zadejte správné datum',
-            min: 'Prosím zadejte datum před %s',
-            max: 'Prosím zadejte datum po %s',
-            range: 'Prosím zadejte datum v rozmezí %s až %s'
+            'default': 'Prosím zadejte správný datum'
         },
         different: {
             'default': 'Prosím zadejte jinou hodnotu'
@@ -187,7 +181,7 @@
             }
         },
         identical: {
-            'default': 'Prosím zadejte stejnou hodnotu'
+            'default': 'Prosím zadejte stejné číslo'
         },
         imei: {
             'default': 'Prosím zadejte správné IMEI číslo'
@@ -239,7 +233,6 @@
                 BR: 'Brazílii',
                 CN: 'Čína',
                 CZ: 'Českou Republiku',
-                DE: 'Německo',
                 DK: 'Dánsko',
                 ES: 'Španělsko',
                 FR: 'Francie',
@@ -344,20 +337,14 @@
             countryNotSupported: '%s není podporované',
             country: 'Prosím zadejte správné PSČ pro %s',
             countries: {
-                AT: 'Rakousko',
                 BR: 'Brazílie',
                 CA: 'Kanada',
-                CH: 'Švýcarsko',
                 CZ: 'Českou Republiku',
-                DE: 'Německo',
                 DK: 'Dánsko',
-                FR: 'Francie',
                 GB: 'Velkou Británii',
-                IE: 'Irsko',
                 IT: 'Itálie',
                 MA: 'Maroko',
                 NL: 'Nizozemí',
-                PT: 'Portugalsko',
                 RO: 'Rumunsko',
                 RU: 'Rusko',
                 SE: 'Švédsko',

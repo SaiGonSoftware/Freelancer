@@ -20,9 +20,6 @@
             more: 'Molimo da odaberete maksimalno %s opciju(a)',
             between: 'Molimo odaberite %s - %s opcije(a)'
         },
-        color: {
-            'default': 'Molimo da unesete ispravnu boju'
-        },
         creditCard: {
             'default': 'Molimo da unesete ispravan broj kreditne kartice'
         },
@@ -33,10 +30,7 @@
             'default': 'Molimo da unesete ispravan CVV broj'
         },
         date: {
-            'default': 'Molimo da unesete ispravan datum',
-            min: 'Molimo da unesete datum posle %s',
-            max: 'Molimo da unesete datum pre %s',
-            range: 'Molimo da unesete datum od %s do %s'
+            'default': 'Molimo da unesete ispravan datum'
         },
         different: {
             'default': 'Molimo da unesete drugu vrednost'
@@ -239,7 +233,6 @@
                 BR: 'Brazila',
                 CN: 'Kine',
                 CZ: 'Češke',
-                DE: 'Nemačke',
                 DK: 'Danske',
                 ES: 'Španije',
                 FR: 'Francuske',
@@ -344,20 +337,14 @@
             countryNotSupported: 'Kod %s nije podržan',
             country: 'Molimo da unesete ispravan poštanski broj %s',
             countries: {
-                AT: 'Austrije',
                 BR: 'Brazila',
                 CA: 'Kanade',
-                CH: 'Švajcarske',
                 CZ: 'Češke',
-                DE: 'Nemačke',
                 DK: 'Danske',
-                FR: 'Francuske',
                 GB: 'Engleske',
-                IE: 'Irske',
                 IT: 'Italije',
                 MA: 'Maroka',
                 NL: 'Holandije',
-                PT: 'Portugala',
                 RO: 'Rumunije',
                 RU: 'Rusije',
                 SE: 'Švedske',

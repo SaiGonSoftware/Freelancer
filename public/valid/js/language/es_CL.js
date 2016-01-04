@@ -20,9 +20,6 @@
             more: 'Por favor elija %s optiones como máximo',
             between: 'Por favor elija de %s a %s opciones'
         },
-        color: {
-            'default': 'Por favor ingrese un color válido'
-        },
         creditCard: {
             'default': 'Por favor ingrese un número válido de tarjeta de crédito'
         },
@@ -33,10 +30,7 @@
             'default': 'Por favor ingrese un número CVV válido'
         },
         date: {
-            'default': 'Por favor ingrese una fecha válida',
-            min: 'Por favor ingrese una fecha posterior a %s',
-            max: 'Por favor ingrese una fecha anterior a %s',
-            range: 'Por favor ingrese una fecha en el rango %s - %s'
+            'default': 'Por favor ingrese una fecha válida'
         },
         different: {
             'default': 'Por favor ingrese un valor distinto'
@@ -239,7 +233,6 @@
                 BR: 'Brasil',
                 CN: 'China',
                 CZ: 'República Checa',
-                DE: 'Alemania',
                 DK: 'Dinamarca',
                 ES: 'España',
                 FR: 'Francia',
@@ -344,22 +337,16 @@
             countryNotSupported: 'El código del país %s no está soportado',
             country: 'Por favor ingrese un código postal válido en %s',
             countries: {
-                AT: 'Austria',
                 BR: 'Brasil',
                 CA: 'Canadá',
-                CH: 'Suiza',
                 CZ: 'República Checa',
-                DE: 'Alemania',
                 DK: 'Dinamarca',
-                FR: 'Francia',
                 GB: 'Reino Unido',
-                IE: 'Irlanda',
                 IT: 'Italia',
                 MA: 'Marruecos',
                 NL: 'Países Bajos',
-                PT: 'Portugal',
                 RO: 'Rumanía',
-                RU: 'Rusia',
+                RU: 'Rusa',
                 SE: 'Suecia',
                 SG: 'Singapur',
                 SK: 'Eslovaquia',

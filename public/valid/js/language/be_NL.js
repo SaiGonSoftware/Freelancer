@@ -20,9 +20,6 @@
             more: 'Kies maximum %s opties',
             between: 'Kies %s - %s opties'
         },
-        color: {
-            'default': 'Geef een geldige kleur'
-        },
         creditCard: {
             'default': 'Geef een geldig creditkaart nummer'
         },
@@ -33,10 +30,7 @@
             'default': 'Geef een geldig CVV nummer'
         },
         date: {
-            'default': 'Geef een geldige datum',
-            min: 'Geef een datum na %s',
-            max: 'Geef een datum voor %s',
-            range: 'Geef een datum tussen %s en %s'
+            'default': 'Geef een geldige datum'
         },
         different: {
             'default': 'Geef een andere waarde '
@@ -239,7 +233,6 @@
                 BR: 'Brazilië',
                 CN: 'China',
                 CZ: 'Tsjechische',
-                DE: 'Duitsland',
                 DK: 'Denemarken',
                 ES: 'Spanje',
                 FR: 'Frankrijk',
@@ -344,20 +337,14 @@
             countryNotSupported: 'De land code %s is niet ondersteund',
             country: 'Geef een geldige postcode van %s',
             countries: {
-                AT: 'Oostenrijk',
                 BR: 'Brazilië',
                 CA: 'Canada',
-                CH: 'Zwitserland',
                 CZ: 'Tsjechische',
-                DE: 'Duitsland',
                 DK: 'Denemarken',
-                FR: 'Frankrijk',
                 GB: 'Verenigd Koninkrijk',
-                IE: 'Ierland',
                 IT: 'Italië',
                 MA: 'Marokko',
                 NL: 'Nederland',
-                PT: 'Portugal',
                 RO: 'Roemenië',
                 RU: 'Rusland',
                 SE: 'Zweden',
