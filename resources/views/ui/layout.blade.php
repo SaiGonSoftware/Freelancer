@@ -55,7 +55,6 @@
 		<script src="/js/magic.js"></script>
 		<script src="/js/settings.js"></script>
 		<script src="/js/angular.min.js"></script>
-
 	</body>
 
 </html>

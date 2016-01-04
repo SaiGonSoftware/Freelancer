@@ -1,4 +1,4 @@
-		<footer>
+<footer>
 			<div id="prefooter">
 				<div class="container">
 					<div class="row">
@@ -45,7 +45,7 @@
 					<h2>Login</h2>
 				</div>
 
-				<form  action="{{ url('/authen/login') }}" method="POST" name="SignInForm">
+				<form  action="{{ url('/authen/login') }}" method="POST" name="SignInForm" id="login_form" >
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
@@ -76,7 +76,7 @@
 					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
 					<h2>Đăng ký</h2>
 				</div>
-				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm">
+				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="regis">
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
@@ -98,16 +98,19 @@
 					</div>
 					<hr>
 					<div class="form-group">
-						<label for="register-password1">Password</label>
+						<label for="register-password1">Mật khẩu</label>
 						<input type="password" class="form-control" id="register-password1" name="passwordRegis">
 					</div>
 					<div class="form-group">
-						<label for="register-password2">Repeat Password</label>
-						<input type="password" class="form-control" id="register-password2">
+						<label for="register-password2">Nhập lại mật khẩu</label>
+						<input type="password" class="form-control" id="register-password2" name="rePassword">
 					</div>
-					<button type="submit" class="btn btn-primary">Register</button>
+					<div class="form-group">
+				        <label class="control-label" id="captchaOperation">Captcha</label>
+				        <input type="text" class="form-control" name="captcha" />
+				    </div>
+					<button type="submit" class="btn btn-primary">Đăng ký</button>
 				</form>
 			</div>
 		</div>
-
 		<!-- ============ REGISTER END ============ -->
