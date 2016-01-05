@@ -71,16 +71,18 @@ class AuthController extends Controller {
 		$user-> total_post = 0;
 		$user->save();
 		$data=['username'=>$request -> fullnameRegis,'email'=>$request -> emailRegis,'token'=>$request -> _token];
-		Mail::send('ui.mail.register',$data,function($msg){
-			$msg->from('ngohungphuc95@gmail.com','Hỗ trợ Freelancer');
-			$msg->to($request -> emailRegis,$request -> fullnameRegis)->subject('Email xác nhận');
-		});
+		Mail::send('ui.mail.register',$data, function ($m) use ($user) {
+            $m->from('ngohungphuc95@gmail.com', 'Hỗ trợ Freelancer');
+			$m->to($user->email, $user->full_name)->subject('Email xác nhận');
+        });
+        echo "<script>alert('Đăng ký thành công vui lòng kiểm tra email')</script>";
 		return redirect()->intended('/');
 	}
 
 	public function reactive($token)
 	{
 		User::where('remember_token', '=' , $token)->update(['active'=>1]);
+		echo "<script>alert('Kích hoạt tài khoản thành công bạn có thể đăng nhập ')</script>";
 		return redirect()->intended('/');
 	}
 }

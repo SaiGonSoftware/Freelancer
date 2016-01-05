@@ -109,7 +109,7 @@
 				        <label class="control-label" id="captchaOperation">Captcha</label>
 				        <input type="text" class="form-control" name="captcha" />
 				    </div>
-					<button type="submit" class="btn btn-primary" id="regis_btn">Đăng ký</button>
+					<button type="submit" class="btn btn-primary" id="regis_btn">Register</button>
 				</form>
 			</div>
 		</div>

@@ -58,8 +58,8 @@
 		<script src="/js/angular.min.js"></script>
 		<script src="/js/valLog.js"></script>
 		<script src="/js/valRegis.js"></script>
-		<script src="/valid/js/bootstrapValidator.min.js"></script>
 		<script src="/js/user.js"></script>
+		<script src="/valid/js/bootstrapValidator.js"></script>
 	</body>
 
 </html>
