@@ -24,7 +24,6 @@ class DetailsController extends Controller
 	{
 		$job=Job::where('slug', '=', $slug)->first();
 		$related_job=Job::whereRaw('user_id = ? and id != ?',[$job->user->id,$job->id])->get();
-		//dd($related_job);
 		return view('ui.detail.detail', compact('job','related_job'));
 
 	}

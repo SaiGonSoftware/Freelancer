@@ -8,6 +8,7 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Http\Request;
 use App\User;
 use Hash;
+use Mail;
 class AuthController extends Controller {
 
 	/*
@@ -42,10 +43,14 @@ class AuthController extends Controller {
 	{
 		$auth = array(
 			'username' => $request -> usernameLogin,
-			'password' => $request -> passwordLogin
+			'password' => $request -> passwordLogin,
+			'active' => 1
 		);
 		if ($this-> auth -> attempt($auth)) {
 			return redirect()->intended('/trang-chu');
+		}
+		else{
+			echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu')</script>";
 		}
 	}
 
@@ -65,6 +70,17 @@ class AuthController extends Controller {
 		$user-> remember_token =$request -> _token;
 		$user-> total_post = 0;
 		$user->save();
+		$data=['username'=>$request -> fullnameRegis,'email'=>$request -> emailRegis,'token'=>$request -> _token];
+		Mail::send('ui.mail.register',$data,function($msg){
+			$msg->from('ngohungphuc95@gmail.com','Hỗ trợ Freelancer');
+			$msg->to($request -> emailRegis,$request -> fullnameRegis)->subject('Email xác nhận');
+		});
+		return redirect()->intended('/');
+	}
+
+	public function reactive($token)
+	{
+		User::where('remember_token', '=' , $token)->update(['active'=>1]);
 		return redirect()->intended('/');
 	}
 }

@@ -1,1 +1,27 @@
-$("#register-name").keyup(function(){var t=$(this).val();$("#username_status").text("...."),""!=t?$.post("/valid/client.php",{username:t},function(t){return $("#username_status").text(t),"Tên đăng nhập đã được sử dụng"==t?($("#regis_btn").attr("disabled",!0),!1):!1}):$("#username_status").text("")}),$("#register-email").keyup(function(){var t=$(this).val();$("#email_status").text("...."),""!=t?$.post("/valid/client.php",{email:t},function(t){return $("#email_status").text(t),"Email đã được sử dụng"==t?($("#regis_btn").attr("disabled",!0),!1):!1}):$("#email_status").text("")});
+$("#register-name").keyup(function() {
+    var username = $(this).val();
+    $("#username_status").text("....");
+    if (username  != ""){
+    	$.post("/valid/client.php",{username:username},function(data){
+			$("#username_status").text(data);
+			if(data=="Tên đăng nhập đã được sử dụng")
+				$("#regis_btn").attr("disabled", true);
+			if(data=="Tên đăng nhập đã được sử dụng")
+			    $("#regis_btn").attr("disabled", false);
+    	});
+    }
+});
+
+$("#register-email").keyup(function() {
+    var email = $(this).val();
+    $("#email_status").text("....");
+    if (email  != ""){
+    	$.post("/valid/client.php",{email:email},function(data){
+			$("#email_status").text(data);
+			if(data=="Email đã được sử dụng")
+				$("#regis_btn").attr("disabled", true);
+			if(data=="Email có thể sử dụng") 
+			   $("#regis_btn").attr("disabled", false);
+    	});
+    }
+});
