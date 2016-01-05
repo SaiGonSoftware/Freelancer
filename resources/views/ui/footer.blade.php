@@ -50,7 +50,6 @@
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
 						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Sign In with Google</a></li>
-						<li><a class="btn btn-linkedin"><i class="fa fa-linkedin"></i>Sign In with LinkedIn</a></li>
 					</ul>
 					<hr>
 					<div class="form-group">
@@ -81,12 +80,12 @@
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
 						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Register with Google</a></li>
-						<li><a class="btn btn-linkedin"><i class="fa fa-linkedin"></i>Register with LinkedIn</a></li>
 					</ul>
 					<hr>
 					<div class="form-group">
 						<label for="register-name">Tên Đăng Nhập</label>
 						<input type="text" class="form-control" id="register-name" name="usernameRegis">
+						<span id="username_status"></span>
 					</div>
 					<div class="form-group">
 						<label for="register-surname">Tên Hiển Thị</label>
@@ -95,6 +94,7 @@
 					<div class="form-group">
 						<label for="register-email">Email</label>
 						<input type="email" class="form-control" id="register-email" name="emailRegis">
+						<span id="email_status"></span>
 					</div>
 					<hr>
 					<div class="form-group">
@@ -109,7 +109,7 @@
 				        <label class="control-label" id="captchaOperation">Captcha</label>
 				        <input type="text" class="form-control" name="captcha" />
 				    </div>
-					<button type="submit" class="btn btn-primary">Đăng ký</button>
+					<button type="submit" class="btn btn-primary" id="regis_btn">Đăng ký</button>
 				</form>
 			</div>
 		</div>

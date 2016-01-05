@@ -14,7 +14,7 @@
 							<h2>Công việc mới nhất</h2>
 								<div class="jobs">
 									@foreach($content as $jobPost)
-										<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}.html">
+										<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}.html">
 											<div class="featured"></div>
 											<img src="/images/avatar.png" alt="" class="img-circle" style="width:100px;" />
 											<div class="title">
@@ -205,7 +205,7 @@
 		<!-- ============ BLOG END ============ -->
 
 		<!-- ============ PEOPLE START ============ -->
-					@include('ui.people')
+					    @include('ui.people')
 		<!-- ============ PEOPLE END ============ -->
 		<!-- ============ CLIENTS START ============ -->
 				        @include('ui.client')

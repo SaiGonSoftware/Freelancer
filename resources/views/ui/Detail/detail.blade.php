@@ -106,7 +106,7 @@
 							@foreach($related_job as $relatedJob)
 							
 								<li>
-									<a href="/chi-tiet-cong-viec/{{$relatedJob -> slug}}.html">
+									<a href="/chi-tiet-cong-viec/{{$relatedJob -> slug}}/{{date("d-m-Y", strtotime($relatedJob -> post_at))}}.html">
 										{{$num}}/{{$relatedJob -> title}}
 									</a>
 								</li>
