@@ -39,6 +39,10 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+	/**
+	 * Login validate approriate user. 
+	 * @return void
+	 */
 	public function login(Request $request)
 	{
 		$auth = array(
@@ -54,12 +58,20 @@ class AuthController extends Controller {
 		}
 	}
 
+	/**
+	 * Logout user. 
+	 * @return index page
+	 */
 	public function logout()
 	{
 		$this->auth->logout();
 		return redirect()->intended('/');
 	}
 
+	/**
+	 * Register new user and send confirm email still to fix href in view
+	 * @return index page
+	*/
 	public function register(Request $request)
 	{
 		$user= new User();
@@ -75,11 +87,15 @@ class AuthController extends Controller {
             $m->from('ngohungphuc95@gmail.com', 'Hỗ trợ Freelancer');
 			$m->to($user->email, $user->full_name)->subject('Email xác nhận');
         });
-        
+
         echo "<script>alert('Đăng ký thành công vui lòng kiểm tra email')</script>";
 		return redirect()->intended('/');
 	}
 
+
+	/**
+	 * Active account then user can login to website
+	*/
 	public function reactive($token)
 	{
 		User::where('remember_token', '=' , $token)->update(['active'=>1]);
