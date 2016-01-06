@@ -53,7 +53,7 @@ $(document).ready(function() {
                     },
                     regexp: {
                         regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: 'Tên đăng nhập chỉ gồm chữ,số,.,_ '
+                        message: 'Tên đăng nhập chỉ gồm chữ,số,dấu ., dấu _ '
                     }
                 }
             },
@@ -78,7 +78,12 @@ $(document).ready(function() {
                  validators: {
                     notEmpty: {
                         message: 'Vui lòng nhập mật khẩu'
-                    }
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
+                    },
                 }
             },
             rePassword: {

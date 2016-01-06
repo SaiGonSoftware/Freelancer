@@ -109,7 +109,7 @@
 						<label for="login-password">Password</label>
 						<input type="password" class="form-control" id="password" name="passwordLogin">
 					</div>
-					<button type="submit" class="btn btn-primary">Đăng nhập</button>
+					<button type="submit" class="btn btn-primary" id="login_btn">Đăng nhập</button>
 				</form>
 			</div>
 		</div>

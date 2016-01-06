@@ -53,8 +53,8 @@ class AuthController extends Controller {
 		if ($this-> auth -> attempt($auth)) {
 			return redirect()->intended('/trang-chu');
 		}
-		else{
-			echo "<script>alert('Sai tên đăng nhập hoặc mật khẩu')</script>";
+		else {
+			return redirect()->intended('/dang-nhap');
 		}
 	}
 
@@ -100,5 +100,10 @@ class AuthController extends Controller {
 		User::where('remember_token', '=' , $token)->update(['active'=>1]);
 		echo "<script>alert('Kích hoạt tài khoản thành công bạn có thể đăng nhập ')</script>";
 		return redirect()->intended('/');
+	}
+
+	public function relogin()
+	{
+		return view('auth.login');
 	}
 }

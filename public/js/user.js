@@ -29,3 +29,20 @@ $("#register-email").keyup(function() {
     	});
     }
 });
+
+
+/*    $('#login_btn').click(function() {
+        var username=document.getElementById("username").value;
+        var password=document.getElementById("password").value;
+            $.ajax({
+                url: '/authen/login/' + username + "/"+ password,
+                type: 'POST',
+                fail: function(data) {
+                    if(data==FALSE){
+                        alert("Sai tên đăng nhập hoặc mật khẩu");
+                    }
+                    else return true;
+                }
+         });
+    });*/
+
