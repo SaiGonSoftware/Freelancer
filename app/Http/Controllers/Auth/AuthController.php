@@ -88,8 +88,7 @@ class AuthController extends Controller {
 			$m->to($user->email, $user->full_name)->subject('Email xác nhận');
         });
 
-        echo "<script>alert('Đăng ký thành công vui lòng kiểm tra email')</script>";
-		return redirect()->intended('/');
+        return redirect()->intended('/');
 	}
 
 

@@ -37,36 +37,6 @@
 			</div>	
 		</footer>
 
-
-		<div class="popup" id="login">
-			<div class="popup-form">
-				<div class="popup-header">
-					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
-					<h2>Login</h2>
-				</div>
-
-				<form  action="{{ url('/authen/login') }}" method="POST" name="SignInForm" id="login_form" >
-				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
-					<ul class="social-login">
-						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
-						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Sign In with Google</a></li>
-					</ul>
-					<hr>
-					<div class="form-group">
-						<label for="login-username">Username</label>
-						<input type="text" class="form-control" id="username" name="usernameLogin">
-					</div>
-					<div class="form-group">
-						<label for="login-password">Password</label>
-						<input type="password" class="form-control" id="password" name="passwordLogin">
-					</div>
-					<button type="submit" class="btn btn-primary">Sign In</button>
-				</form>
-			</div>
-		</div>
-
-		<!-- ============ LOGIN END ============ -->
-
 		<!-- ============ REGISTER START ============ -->
 
 		<div class="popup" id="register">
@@ -75,7 +45,7 @@
 					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
 					<h2>Đăng ký</h2>
 				</div>
-				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="regis_form">
+				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="register_form_popup">
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
@@ -114,3 +84,36 @@
 			</div>
 		</div>
 		<!-- ============ REGISTER END ============ -->
+
+
+
+		<div class="popup" id="login">
+			<div class="popup-form">
+				<div class="popup-header">
+					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
+					<h2>Login</h2>
+				</div>
+
+				<form  action="{{ url('/authen/login') }}" method="POST" name="SignInForm" id="login_form" >
+				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
+					<ul class="social-login">
+						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
+						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Sign In with Google</a></li>
+					</ul>
+					<hr>
+					<div class="form-group">
+						<label for="login-username">Username</label>
+						<input type="text" class="form-control" id="username" name="usernameLogin">
+					</div>
+					<div class="form-group">
+						<label for="login-password">Password</label>
+						<input type="password" class="form-control" id="password" name="passwordLogin">
+					</div>
+					<button type="submit" class="btn btn-primary">Sign In</button>
+				</form>
+			</div>
+		</div>
+
+		<!-- ============ LOGIN END ============ -->
+
+		
