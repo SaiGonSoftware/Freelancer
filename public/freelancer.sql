@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 03, 2016 at 03:52 PM
+-- Generation Time: Jan 07, 2016 at 03:59 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -19,31 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `freelancer`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categories`
---
-
-CREATE TABLE `categories` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `tag` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `categories`
---
-
-INSERT INTO `categories` (`id`, `name`, `tag`, `created_at`, `updated_at`) VALUES
-(1, 'Lập Trình Ứng Dụng', 'App', '2015-11-23 17:00:00', '2015-11-23 17:00:00'),
-(2, 'Lập Trính Di Động', 'App For Android,IOS', '2015-11-23 17:00:00', '2015-11-23 17:00:00'),
-(3, 'Lập Trình Web', 'Web Developement', '2015-11-23 17:00:00', '2015-11-23 17:00:00'),
-(4, 'Dịch Thuật', 'Translate', '2015-11-23 17:00:00', '2015-11-23 17:00:00'),
-(5, 'Viết lách', 'Computer Office', '2015-11-23 17:00:00', '2015-11-23 17:00:00');
 
 -- --------------------------------------------------------
 
@@ -65,6 +40,17 @@ CREATE TABLE `comments` (
 
 INSERT INTO `comments` (`user_id`, `introduce`, `completed_day`, `allowance`, `job_id`) VALUES
 (1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `content_tag`
+--
+
+CREATE TABLE `content_tag` (
+  `job_id` int(11) NOT NULL,
+  `tag_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -119,6 +105,54 @@ CREATE TABLE `manage` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tag`
+--
+
+CREATE TABLE `tag` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tag`
+--
+
+INSERT INTO `tag` (`id`, `name`) VALUES
+(1, 'Lập Trình Ứng Dụng'),
+(2, 'Lập Trính Di Động'),
+(3, 'Dịch Thuật'),
+(4, 'Lập Trình Web'),
+(5, 'Viết lách'),
+(6, 'Php'),
+(7, 'Asp.net'),
+(8, 'Java'),
+(9, 'MVC'),
+(10, 'Angular js'),
+(11, 'CMS'),
+(12, 'Word press'),
+(13, 'Tiếng Anh'),
+(14, 'Tiếng Nhật'),
+(15, 'Tiếng Trung'),
+(16, 'C#'),
+(17, 'C#'),
+(18, 'Ios'),
+(19, 'HTML/CSS'),
+(20, 'C'),
+(21, 'C++'),
+(22, 'JavaScript'),
+(23, 'Objective-C'),
+(24, 'Perl'),
+(25, 'Python'),
+(26, 'SQL'),
+(27, 'CSS'),
+(28, 'Laravel'),
+(29, 'Zend'),
+(30, 'CI'),
+(31, 'Cake');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -139,19 +173,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
-(1, 'phucngo', 'Ngô Hùng Phúc', 'ngohungphuc7695@gmail.com', '$2y$10$64PRr9SMJeTDRzWnvumYaucd2pjfc5Qcej1SsbQavrQaWOwoAdjtq', 'SaCruEAfavWWdgMkYIJupy7672Ja0YPhPWUjYoglXkCPHmIF6iDgbQH5oD9K', 0, 0, 0),
-(2, 'hoangphucvu', 'Hoàng Phúc Vũ', 'ngohungphuc95@gmail.com', '$2y$10$ZZa84AMI4ucs4/N8L3K3/u073tCoJoQ5Ld3vHkMRUo28vUnaLMW4W', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 0, 0),
-(3, 'test1', 'test', 'test@gmail.com', '$2y$10$L0O1cWABdsgAa9QspJaZau7diJOSZg7K.p4xyyEogMP.zXUtUmFsK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 0, 0);
+(1, 'phucngo', 'Ngô Hùng Phúc', 'ngohungphuc1237695@gmail.com', '$2y$10$64PRr9SMJeTDRzWnvumYaucd2pjfc5Qcej1SsbQavrQaWOwoAdjtq', 'SaCruEAfavWWdgMkYIJupy7672Ja0YPhPWUjYoglXkCPHmIF6iDgbQH5oD9K', 0, 0, 0),
+(2, 'hoangphucvu', 'Hoàng Phúc Vũ', 'ngohungphuc9123125@gmail.com', '$2y$10$ZZa84AMI4ucs4/N8L3K3/u073tCoJoQ5Ld3vHkMRUo28vUnaLMW4W', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 0, 0),
+(3, 'test1', 'test', 'test@gmail.com', '$2y$10$L0O1cWABdsgAa9QspJaZau7diJOSZg7K.p4xyyEogMP.zXUtUmFsK', '6fOHVJY801oFfVDEvcIfmGsWWArqj8a3YWnppEwQHeFJXQsHEc0237GCMEzm', 0, 1, 0);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `comments`
@@ -172,6 +200,12 @@ ALTER TABLE `manage`
   ADD PRIMARY KEY (`id_manage`);
 
 --
+-- Indexes for table `tag`
+--
+ALTER TABLE `tag`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -183,11 +217,6 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `comments`
 --
@@ -204,10 +233,15 @@ ALTER TABLE `jobs`
 ALTER TABLE `manage`
   MODIFY `id_manage` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `tag`
+--
+ALTER TABLE `tag`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
