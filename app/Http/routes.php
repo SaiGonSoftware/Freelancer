@@ -23,7 +23,7 @@ Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/dang-nhap','Auth\AuthController@relogin');
 /*Route post.For user to login*/
-Route::post('authen/login',['as' => 'login','uses'=>'Auth\AuthController@login']);
+Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 
 Route::controllers([

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Hash;
 use Mail;
+use Input;
 class AuthController extends Controller {
 
 	/*
@@ -43,18 +44,17 @@ class AuthController extends Controller {
 	 * Login validate approriate user. 
 	 * @return void
 	 */
-	public function login(Request $request)
+	public function login()
 	{
 		$auth = array(
-			'username' => $request -> usernameLogin,
-			'password' => $request -> passwordLogin,
-			'active' => 1
+			'username' => Input::get('usernameLogin'),
+			'password' => Input::get('passwordLogin'),
 		);
 		if ($this-> auth -> attempt($auth)) {
-			return redirect()->intended('/trang-chu');
+			return "ok";
 		}
 		else {
-			return redirect()->intended('/dang-nhap');
+			return "fail";
 		}
 	}
 

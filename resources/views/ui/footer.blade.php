@@ -92,9 +92,10 @@
 				<div class="popup-header">
 					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
 					<h2>Login</h2>
+					<img style="width:20%;display:none" id="loading" src="/images/loading.gif">
 				</div>
-
-				<form  action="{{ url('/authen/login') }}" method="POST" name="SignInForm" id="login_form" >
+				<form  action="{{URL::to('authen/login')}}" method="POST" name="SignInForm" id="login_form" >
+				<div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
 						<li><a class="btn btn-facebook"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
@@ -109,7 +110,7 @@
 						<label for="login-password">Password</label>
 						<input type="password" class="form-control" id="password" name="passwordLogin">
 					</div>
-					<button type="submit" class="btn btn-primary" id="login_btn">Đăng nhập</button>
+					<button type="button" class="btn btn-primary" id="login_btn">Đăng nhập</button>
 				</form>
 			</div>
 		</div>

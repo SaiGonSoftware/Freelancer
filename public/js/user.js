@@ -30,19 +30,40 @@ $("#register-email").keyup(function() {
     }
 });
 
+function loader(status){
+    if(status=="on"){
+        $("#login_form").css({
+            opacity:0.2
+        });
+        $("#loading").show();
+    }
+    else{
+        $("#login_form").css({
+            opacity:1
+        });
+        $("#loading").hide();
+    }
+}
 
-/*    $('#login_btn').click(function() {
-        var username=document.getElementById("username").value;
-        var password=document.getElementById("password").value;
-            $.ajax({
-                url: '/authen/login/' + username + "/"+ password,
-                type: 'POST',
-                fail: function(data) {
-                    if(data==FALSE){
-                        alert("Sai tên đăng nhập hoặc mật khẩu");
-                    }
-                    else return true;
-                }
-         });
-    });*/
+function redirect(url){
+    window.location=url;
+}
+
+$('#login_btn').click(function() {
+    var login_form=$("#login_form").serializeArray();
+    var url=$("#login_form").attr('action');
+    loader('on');
+    $.post(url,login_form, function(data) {
+        loader('off');
+        if (data=='fail') {
+            $("#message").text('Username hoặc password sai');
+            $("#message").show();
+        }
+        else{
+            $("#message").text('Đăng nhập thành công vui lòng đợi .....');
+            $("#message").show();
+            redirect('/trang-chu');
+        }
+    });
+});
 
