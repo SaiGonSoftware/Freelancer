@@ -67,3 +67,6 @@ $('#login_btn').click(function() {
     });
 });
 
+$("#regis_btn").click(function() {
+    alert("Đăng ký thành công vui lòng kiểm tra email");
+});

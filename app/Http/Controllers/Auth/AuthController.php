@@ -10,6 +10,7 @@ use App\User;
 use Hash;
 use Mail;
 use Input;
+use Socialite;
 class AuthController extends Controller {
 
 	/*
@@ -39,6 +40,29 @@ class AuthController extends Controller {
 
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
+
+	/**
+     * Redirect the user to the facebook authentication page.
+     *
+     * @return Response
+     */
+    public function facebook()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from facebook.
+     *
+     * @return Response
+     */
+    public function FacebookInfo()
+    {
+        $user = Socialite::driver('facebook')->user();
+        return $user->getAvatar();
+        // $user->token;
+    }
+
 
 	/**
 	 * Login validate approriate user. 
@@ -102,8 +126,5 @@ class AuthController extends Controller {
 		return redirect()->intended('/');
 	}
 
-	public function relogin()
-	{
-		return view('auth.login');
-	}
+
 }

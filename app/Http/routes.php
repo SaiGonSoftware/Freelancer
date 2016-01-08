@@ -21,7 +21,9 @@ Route::get('chi-tiet-cong-viec/{slug}/{date}.html','DetailsController@Details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 /* For user to logout*/
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
-Route::get('/dang-nhap','Auth\AuthController@relogin');
+
+Route::get('/facebook','Auth\AuthController@facebook');
+Route::get('/account','Auth\AuthController@FacebookInfo');
 /*Route post.For user to login*/
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
