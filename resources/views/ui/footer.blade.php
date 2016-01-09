@@ -48,8 +48,7 @@
 				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="register_form_popup">
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
-						<li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
-						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Register with Google</a></li>
+						<li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Đăng ký với Facebook</a></li>
 					</ul>
 					<hr>
 					<div class="form-group">
@@ -91,15 +90,14 @@
 			<div class="popup-form">
 				<div class="popup-header">
 					<a class="close"><i class="fa fa-remove fa-lg"></i></a>
-					<h2>Login</h2>
+					<h2>Đăng nhập</h2>
 					<img style="width:20%;display:none" id="loading" src="/images/loading.gif">
 				</div>
 				<form  action="{{URL::to('authen/login')}}" method="POST" name="SignInForm" id="login_form" >
 				<div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
-						<li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
-						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Sign In with Google</a></li>
+						<li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Đăng nhập với Facebook</a></li>
 					</ul>
 					<hr>
 					<div class="form-group">

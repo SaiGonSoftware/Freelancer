@@ -20,20 +20,9 @@
 			<i class="fa fa-cog fa-4x fa-spin"></i>
 		</div>
 
-		<!-- ============ PAGE LOADER END ============ -->
-
-		<!-- ============ NAVBAR START ============ -->
 						@include('ui.menu')
-		<!-- ============ NAVBAR END ============ -->
-
-		<!-- ============ NAVBAR START ============ -->
-					    @yield('content')
-		<!-- ============ NAVBAR START ============ -->
-
-		<!-- ============ FOOTER START ============ -->
+						@yield('content')
 					    @include('ui.footer')
-		<!-- ============ FOOTER END ============ -->
-		
 	
 		<script src="/js/modernizr.custom.79639.js"></script>
 		<script src="/js/jquery-1.11.2.min.js"></script>
@@ -55,11 +44,11 @@
 		<script src="/js/fancybox.pack.js"></script>
 		<script src="/js/magic.js"></script>
 		<script src="/js/settings.js"></script>
-		<script src="/js/angular.min.js"></script>
 		<script src="/js/val.js"></script>
 		<script src="/js/user.js"></script>
 		<script src="/valid/js/formValidation.min.js"></script>
         <script src="/valid/js/bootstrap.min.js"></script>
+        <script src="/js/bootstrap-editable.min.js"></script>
 	</body>
 
 </html>
