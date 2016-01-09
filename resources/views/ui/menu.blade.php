@@ -17,10 +17,7 @@
 							<li><a href="">Thông tin</a></li>
 						</ul>
 					</li>
-					@if (Auth::guest())
-					<li><a class="link-register">Đăng ký</a></li>
-					<li><a class="link-login">Đăng nhập</a></li>
-					@else
+					@if(Auth::check())
 					<li><a class="">Xin chào {{ Auth::user()->username }} </a></li>
 					<li><a href="#">Quản lý tài khoản</a>
 						<ul>
@@ -28,6 +25,9 @@
 							<li><a href="">Thông tin cá nhân</a></li>
 						</ul>
 					</li>
+					@else
+					<li><a class="link-register">Đăng ký</a></li>
+					<li><a class="link-login">Đăng nhập</a></li>
 					@endif
 				</ul>		
 			</div>

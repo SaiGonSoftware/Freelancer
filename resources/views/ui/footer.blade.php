@@ -48,7 +48,7 @@
 				<form  action="{{ url('/user/register') }}" method="POST" name="RegisterForm" id="register_form_popup">
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
-						<li><a class="btn btn-facebook" href="{{url('/facebook')}}"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
+						<li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Register with Facebook</a></li>
 						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Register with Google</a></li>
 					</ul>
 					<hr>
@@ -98,7 +98,7 @@
 				<div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
 				<input type="hidden" name="_token" value="{!! csrf_token() !!}">
 					<ul class="social-login">
-						<li><a class="btn btn-facebook" href="{{url('/facebook')}}"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
+						<li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Sign In with Facebook</a></li>
 						<li><a class="btn btn-google"><i class="fa fa-google-plus"></i>Sign In with Google</a></li>
 					</ul>
 					<hr>

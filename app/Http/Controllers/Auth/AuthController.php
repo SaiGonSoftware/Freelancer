@@ -11,6 +11,7 @@ use Hash;
 use Mail;
 use Input;
 use Socialite;
+use Auth;
 class AuthController extends Controller {
 
 	/*
@@ -37,33 +38,65 @@ class AuthController extends Controller {
 	{
 		$this->auth = $auth;
 		$this->registrar = $registrar;
-
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
 	/**
-     * Redirect the user to the facebook authentication page.
+     * Call to facebook provider
      *
      * @return Response
      */
-    public function facebook()
+	public function redirectToProvider()
     {
         return Socialite::driver('facebook')->redirect();
     }
-
+ 
     /**
-     * Obtain the user information from facebook.
+     * Obtain the user information from Facebook.
      *
      * @return Response
      */
-    public function FacebookInfo()
+    public function handleProviderCallback()
     {
-        $user = Socialite::driver('facebook')->user();
-        return $user->getAvatar();
-        // $user->token;
+        try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('auth/facebook');
+        }
+
+        $authUser = $this->findOrCreateUser($user);
+ 	
+        Auth::login($authUser, true);
+ 
+        return redirect()->intended('/');
     }
-
-
+ 
+    /**
+     * Return user if exists; create and return if doesn't
+     *
+     * @param $facebookUser
+     * @return User
+     */
+    private function findOrCreateUser($facebookUser)
+    {
+        $authUser = User::where('social_id', $facebookUser->id)->first();
+ 		
+        if ($authUser){
+            return $authUser;
+        }
+ 
+        return User::create([
+            'username' => $facebookUser->name,
+            'full_name' => $facebookUser->name,
+            'email' => $facebookUser->email,
+            'social_id' => $facebookUser->id,
+            'avatar' => $facebookUser->avatar,
+            'remember_token' => $facebookUser->token,
+            'level'=>1,
+            'total_post'=>0
+        ]);
+    }
+   
 	/**
 	 * Login validate approriate user. 
 	 * @return void

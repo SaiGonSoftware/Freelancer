@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2016 at 03:59 PM
+-- Generation Time: Jan 09, 2016 at 04:31 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -158,9 +158,11 @@ INSERT INTO `tag` (`id`, `name`) VALUES
 
 CREATE TABLE `users` (
   `id` int(10) UNSIGNED NOT NULL,
+  `social_id` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `full_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `full_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `avatar` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `remember_token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `level` int(11) NOT NULL,
@@ -172,10 +174,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
-(1, 'phucngo', 'Ngô Hùng Phúc', 'ngohungphuc1237695@gmail.com', '$2y$10$64PRr9SMJeTDRzWnvumYaucd2pjfc5Qcej1SsbQavrQaWOwoAdjtq', 'SaCruEAfavWWdgMkYIJupy7672Ja0YPhPWUjYoglXkCPHmIF6iDgbQH5oD9K', 0, 0, 0),
-(2, 'hoangphucvu', 'Hoàng Phúc Vũ', 'ngohungphuc9123125@gmail.com', '$2y$10$ZZa84AMI4ucs4/N8L3K3/u073tCoJoQ5Ld3vHkMRUo28vUnaLMW4W', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 0, 0),
-(3, 'test1', 'test', 'test@gmail.com', '$2y$10$L0O1cWABdsgAa9QspJaZau7diJOSZg7K.p4xyyEogMP.zXUtUmFsK', '6fOHVJY801oFfVDEvcIfmGsWWArqj8a3YWnppEwQHeFJXQsHEc0237GCMEzm', 0, 1, 0);
+INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
+(1, '', 'phucngo', 'Ngô Hùng Phúc', '', 'ngohungphuc1237695@gmail.com', '$2y$10$64PRr9SMJeTDRzWnvumYaucd2pjfc5Qcej1SsbQavrQaWOwoAdjtq', 'SaCruEAfavWWdgMkYIJupy7672Ja0YPhPWUjYoglXkCPHmIF6iDgbQH5oD9K', 0, 0, 0),
+(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', '', 'ngohungphuc9123125@gmail.com', '$2y$10$ZZa84AMI4ucs4/N8L3K3/u073tCoJoQ5Ld3vHkMRUo28vUnaLMW4W', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 0, 0),
+(3, '', 'test1', 'test', '', 'test@gmail.com', '$2y$10$L0O1cWABdsgAa9QspJaZau7diJOSZg7K.p4xyyEogMP.zXUtUmFsK', 'DzmcIYieJZxtPpWcVAoEOTpYijGnXdUtgvam9v2nYgjbjN0Dg7pZ5gkWR1mf', 0, 1, 0),
+(8, '1718310388387487', 'Phúc Ngô', 'Phúc Ngô', 'https://graph.facebook.com/v2.2/1718310388387487/picture?type=normal', NULL, '', 'orLK5TyG1tuMk7fRciwAsGJRMWRkR6xOlScS8ccEUwl6F3Eu1banPbA97qgw', 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -241,7 +244,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

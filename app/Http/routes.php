@@ -22,8 +22,8 @@ Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 /* For user to logout*/
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 
-Route::get('/facebook','Auth\AuthController@facebook');
-Route::get('/account','Auth\AuthController@FacebookInfo');
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 /*Route post.For user to login*/
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
