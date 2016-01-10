@@ -22,7 +22,7 @@
 					<li><a href="#">Quản lý tài khoản</a>
 						<ul>
 							<li><a href="{{ url('/dang-xuat') }}">Đăng xuất</a></li>
-							<li><a href="">Thông tin cá nhân</a></li>
+							<li><a href="{{ url('/tai-khoan/thong-tin-ca-nhan') }}">Thông tin cá nhân</a></li>
 						</ul>
 					</li>
 					@else

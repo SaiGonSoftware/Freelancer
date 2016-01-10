@@ -56,7 +56,7 @@ $('#login_btn').click(function() {
     $.post(url,login_form, function(data) {
         loader('off');
         if (data=='fail') {
-            $("#message").text('Username hoặc password sai');
+            $("#message").text('Username hoặc password sai hoặc tài khoản chưa kích hoạt');
             $("#message").show();
         }
         else{

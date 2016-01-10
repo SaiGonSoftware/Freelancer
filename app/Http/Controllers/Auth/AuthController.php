@@ -106,6 +106,7 @@ class AuthController extends Controller {
 		$auth = array(
 			'username' => Input::get('usernameLogin'),
 			'password' => Input::get('passwordLogin'),
+			'active' =>1
 		);
 		if ($this-> auth -> attempt($auth)) {
 			return "ok";
