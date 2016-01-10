@@ -1,1 +1,0 @@
-function getJob(t){$.ajax({url:"/job/joblist?page="+t}).done(function(o){$("#ajax_pagi").html(o),location.hash=t})}$(document).on("click",".pagination a",function(t){event.preventDefault();var o=$(this).attr("href").split("page=")[1];getJob(o),$("html, body").animate({scrollTop:$(".container").position().top})});

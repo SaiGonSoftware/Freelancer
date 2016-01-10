@@ -84,9 +84,9 @@ class AuthController extends Controller {
         if ($authUser){
             return $authUser;
         }
- 
+ 		$username=str_replace(' ', '_', substr($facebookUser->name,0,10));
         return User::create([
-            'username' => $facebookUser->name,
+            'username' => $username,
             'full_name' => $facebookUser->name,
             'email' => $facebookUser->email,
             'social_id' => $facebookUser->id,
@@ -160,5 +160,10 @@ class AuthController extends Controller {
 		return redirect()->intended('/');
 	}
 
+	public function userDetail($name)
+	{
+		$userDetail=User::where('username', '=', $name)->get();
+		return view('ui.userinfo.uinfo',compact('userDetail'));
+	}
 
 }
