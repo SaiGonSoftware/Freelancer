@@ -11,7 +11,6 @@
     <link rel="shortcut icon" href="/images/favicon.png">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">
-    <link href="/css/dropzone.css" rel="stylesheet">
 </head>
 
 <body id="home">
@@ -47,7 +46,9 @@
     <script src="/valid/js/formValidation.min.js"></script>
     <script src="/valid/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap-editable.min.js"></script>
-    <script src="/js/dropzone.js"></script>
+    <script src="/js/jquery.form.js"></script>
+    <script src="/js/fileinput.min.js"></script>
+
 </body>
 
 </html>

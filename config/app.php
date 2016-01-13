@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -196,6 +197,7 @@ return [
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
+		'Image' => 'Intervention\Image\Facades\Image',
 	],
 
 ];

@@ -1,3 +1,35 @@
+$(document).ready(function() {
+    $("#formAvatar").ajaxForm({
+        beforeSend:function(){
+            $(".progress").show();
+        },
+        uploadProgress:function(event,postion,total,percentComplete){
+            $(".progress-bar").width(percentComplete+"%");
+            $(".sr-only").html(percentComplete+"%");
+        },
+        success:function(){
+            $(".progress").hide();
+            alert('Cập nhật ảnh đại diện thành công');
+        },
+        complete:function(response){
+            $("#userAvatar").html("<img src='"+response.responseText+"'/>");
+        }
+    });
+    $(".progress").hide();
+});
+
+
+$(document).on('ready', function() {
+    $("#avatar").fileinput({
+        browseClass: "btn btn-primary btn-block",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+        allowedFileExtensions: ["png", "jpg", "jpeg"],
+        elErrorContainer: "#errorBlock"
+    });
+});
+
 $("#register-name").keyup(function() {
     var username = $(this).val();
     $("#username_status").text("....");
@@ -15,6 +47,7 @@ $("#register-name").keyup(function() {
         });
     }
 });
+
 $("#register-email").keyup(function() {
     var email = $(this).val();
     $("#email_status").text("....");
@@ -66,6 +99,7 @@ $('#login_btn').click(function() {
         }
     });
 });
+
 $("#regis_btn").click(function() {
     alert("Đăng ký thành công vui lòng kiểm tra email");
 });
@@ -77,6 +111,7 @@ function getJob(t) {
         $("#ajax_pagi").html(o), location.hash = t
     })
 }
+
 $(document).on("click", ".pagination a", function(t) {
     event.preventDefault();
     var o = $(this).attr("href").split("page=")[1];
@@ -84,6 +119,7 @@ $(document).on("click", ".pagination a", function(t) {
         scrollTop: $(".container").position().top
     })
 });
+
 $(document).ready(function() {
     $("#login_form").formValidation({
         framework: 'bootstrap',
@@ -112,6 +148,7 @@ $(document).ready(function() {
         }
     })
 });
+
 $(document).ready(function() {
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -196,5 +233,3 @@ $(document).ready(function() {
         }
     });
 });
-
-$("div#myId").dropzone({ url: "/file/post" });

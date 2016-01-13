@@ -2,9 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\User;
+use Image;
 class UserController extends Controller {
 
 	/**
@@ -81,4 +81,45 @@ class UserController extends Controller {
 		//
 	}
 
+	/*
+	*	Get user info by their name
+	*	@param string $name to compare with the source
+	*	return manage page for user
+	*/
+	public function userDetail($name)
+	{
+		$userDetail=User::where('username', '=', $name)->get();
+		return view('ui.userinfo.uinfo',compact('userDetail'));
+	}
+
+
+	/*
+	*	Get user info by their name
+	*	@param string $name to compare with the source
+	*	@var newFileName create uniqe file name base on id
+	*  	if directory doesn't exist create directory
+	*	return manage page for user
+	*/
+	public function profileImage($name)
+	{
+		$userDetail=User::where('username', '=', $name)->first();
+		$temp=$_FILES['file']['tmp_name'];
+		$image=$_FILES['file']['name'];
+		$ext=pathinfo($image,PATHINFO_EXTENSION);
+
+		$newFileName=uniqid($userDetail->id);
+		if (!is_dir("images/$name/")) {
+			mkdir("images/$name",0777);
+		}
+		$img=Image::make($temp);
+		$img->fit(150, 150);
+		$src = "images/$name/$newFileName.$ext";
+
+	    $img->save($src);
+
+	    $userDetail->avatar = $src;
+	    $userDetail->save();
+	    echo "<script>alert('Cập nhật ảnh thành công')</script>";
+	    return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
+	}
 }

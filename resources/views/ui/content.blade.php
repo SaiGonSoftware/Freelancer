@@ -16,7 +16,7 @@
 									@foreach($content as $jobPost)
 										<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}.html">
 											<div class="featured"></div>
-											<img src="/images/avatar.png" alt="" class="img-circle" style="width:100px;" />
+											<img src="{{$jobPost->user->avatar}}" alt="{{$jobPost->title}}" class="img-circle" />
 											<div class="title">
 												<h5 style="width: 150px">
 												{{$jobPost -> title}}</h5>

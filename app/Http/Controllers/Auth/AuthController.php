@@ -199,10 +199,4 @@ class AuthController extends Controller {
 		return redirect()->intended('/');
 	}
 
-	public function userDetail($name)
-	{
-		$userDetail=User::where('username', '=', $name)->get();
-		return view('ui.userinfo.uinfo',compact('userDetail'));
-	}
-
 }

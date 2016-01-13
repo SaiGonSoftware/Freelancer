@@ -95,7 +95,7 @@
 						<div class="sidebar-widget" id="company">
 							<h2>Thông tin công việc</h2>
 							
-							<p>Người đăng: {{$job -> user -> full_name}}</p>
+							<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}</p>
 							
 						</div>
 						<hr>
