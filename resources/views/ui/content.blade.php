@@ -14,7 +14,7 @@
 							<h2>Công việc mới nhất</h2>
 								<div class="jobs">
 									@foreach($content as $jobPost)
-										<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}.html">
+										<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}">
 											<div class="featured"></div>
 											<img src="{{$jobPost->user->avatar}}" alt="{{$jobPost->title}}" class="img-circle" />
 											<div class="title">
@@ -40,7 +40,7 @@
 									@endforeach
 								</div>
 
-							<a class="btn btn-primary" id="more-jobs" href="tim-viec.html">
+							<a class="btn btn-primary" id="more-jobs" href="tim-viec">
 								<!-- <span class="more">Show More Jobs <i class="fa fa-arrow-down"></i></span>
 								<span class="less">Show Less Jobs <i class="fa fa-arrow-up"></i></span> -->
 								<span class="">Xem thêm <i class="fa fa-arrow-down"></i></span>
@@ -145,7 +145,7 @@
 									<span><i class="fa fa-comment"></i>8 Comments</span>
 								</h5>
 								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-								<p><a href="post.html" class="btn btn-primary">Read more</a></p>
+								<p><a href="post" class="btn btn-primary">Read more</a></p>
 							</div>
 
 							<!-- Blog post 2 -->
@@ -157,7 +157,7 @@
 									<span><i class="fa fa-comment"></i>8 Comments</span>
 								</h5>
 								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-								<p><a href="post.html" class="btn btn-primary">Read more</a></p>
+								<p><a href="post" class="btn btn-primary">Read more</a></p>
 							</div>
 
 							<!-- Blog post 3 -->
@@ -169,7 +169,7 @@
 									<span><i class="fa fa-comment"></i>8 Comments</span>
 								</h5>
 								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-								<p><a href="post.html" class="btn btn-primary">Read more</a></p>
+								<p><a href="post" class="btn btn-primary">Read more</a></p>
 							</div>
 
 							<!-- Blog post 4 -->
@@ -181,7 +181,7 @@
 									<span><i class="fa fa-comment"></i>8 Comments</span>
 								</h5>
 								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-								<p><a href="post.html" class="btn btn-primary">Read more</a></p>
+								<p><a href="post" class="btn btn-primary">Read more</a></p>
 							</div>
 
 							<!-- Blog post 5 -->
@@ -193,7 +193,7 @@
 									<span><i class="fa fa-comment"></i>8 Comments</span>
 								</h5>
 								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-								<p><a href="post.html" class="btn btn-primary">Read more</a></p>
+								<p><a href="post" class="btn btn-primary">Read more</a></p>
 							</div>
 
 						</div>

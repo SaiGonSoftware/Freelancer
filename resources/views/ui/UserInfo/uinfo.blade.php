@@ -9,7 +9,7 @@
       <a href="#settings" class="list-group-item" aria-controls="settings" role="tab" data-toggle="tab">Cài đặt</a>
     </ul>
   </div>
-
+  @if(Auth::Check())
   <div class="col-xs-12 col-sm-9 tab-content">
     <!-- <p class="small text-muted">Published May 19, 2015 by Mouse0270</p> -->
     <h2 id="intro" class="title" style="text-align:left;margin-bottom:5%">
@@ -19,7 +19,6 @@
       <div role="tabpanel" class="tab-pane active" id="home"></div>
       <div role="tabpanel" class="tab-pane" id="profile">
         @foreach($userDetail as $user)
-        @if(Auth::Check())
         <img src="/{{$user->avatar}}" style="width:100px;margin-left: 40%;" id="userAvatar">
         <form id="formAvatar" action="/tai-khoan/thong-tin-ca-nhan/{{$user->username}}/upload" method="post" enctype="multipart/form-data"> 
          {!! csrf_field() !!}
@@ -58,7 +57,7 @@
         </div>
 
       </div>
-      @endif
+
       @endforeach()
     </div>
     <div role="tabpanel" class="tab-pane" id="manage">
@@ -224,11 +223,10 @@
   </div>
   <div role="tabpanel" class="tab-pane" id="settings">
     @foreach($userDetail as $user)
-    @if(isset($user->social_id))
     <img src="{{$user->avatar}}" style="width:100px;margin-left: 40%;">
-    @endif
     @endforeach()
   </div>
+  @endif
 </div>
 </div>
 </div>

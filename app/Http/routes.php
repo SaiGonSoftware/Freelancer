@@ -16,7 +16,7 @@ Route::get('/', 'IndexController@home');
 Route::get('/trang-chu','IndexController@home');
 Route::get('tim-viec.html', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
-Route::get('chi-tiet-cong-viec/{slug}/{date}.html','DetailsController@Details');
+Route::get('chi-tiet-cong-viec/{slug}/{date}','DetailsController@Details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}', 'UserController@userDetail');
 
@@ -30,7 +30,7 @@ Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/updatePass',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
-
+/*Route::get('/comment/{slug}/','DetailsController@FindCommentAjax');*/
 
 Route::resource('User','UserController');
 Route::controllers([

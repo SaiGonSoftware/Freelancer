@@ -31,14 +31,14 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $("#formAvatar").ajaxForm({
-        beforeSend:function(){
+        beforeSend: function() {
             $(".progress").show();
         },
-        uploadProgress:function(event,postion,total,percentComplete){
-            $(".progress-bar").width(percentComplete+"%");
-            $(".sr-only").html(percentComplete+"%");
+        uploadProgress: function(event, postion, total, percentComplete) {
+            $(".progress-bar").width(percentComplete + "%");
+            $(".sr-only").html(percentComplete + "%");
         },
-        success:function(){
+        success: function() {
             $(".progress").hide();
             alert('Cập nhật ảnh đại diện thành công');
         }
@@ -132,6 +132,39 @@ $("#regis_btn").click(function() {
     alert("Đăng ký thành công vui lòng kiểm tra email");
 });
 
+/*function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('/') + 1).split('/');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+$(document).on("click", ".pagination a", function(page) {
+    event.preventDefault();
+    var slug = getUrlVars()[3];
+    var date_param = getUrlVars()[4];
+    var date=date_param.split("-").reverse().join("-");
+    $.ajax({
+        url: '/comment/'+ slug +'/?page=' +page,
+        data: {
+            slug: slug,
+        },
+    })
+    .done(function(data) {
+       $("#job_comment_post").html(data);
+    });
+    
+});
+
+*/
+
+
 function getJob(t) {
     $.ajax({
         url: "/job/joblist?page=" + t
@@ -140,7 +173,7 @@ function getJob(t) {
     })
 }
 
-$(document).on("click", ".pagination a", function(t) {
+$(document).on("click", ".paging_job .pagination a", function(t) {
     event.preventDefault();
     var o = $(this).attr("href").split("page=")[1];
     getJob(o), $("html, body").animate({
@@ -252,7 +285,7 @@ $(document).ready(function() {
                         message: 'Kết quả sai',
                         callback: function(value, validator, $field) {
                             var items = $('#captchaOperation').html().split(' '),
-                            sum = parseInt(items[0]) + parseInt(items[2]);
+                                sum = parseInt(items[0]) + parseInt(items[2]);
                             return value == sum;
                         }
                     }

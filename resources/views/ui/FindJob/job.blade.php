@@ -21,7 +21,7 @@
 							
 							<!-- Job offer -->
 							@foreach($job_pagi as $jobPost)
-							<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}.html">
+							<a href="chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}">
 								<div class="featured"></div>
 									<img src="{{$jobPost->user->avatar}}" alt="{{$jobPost->title}}" class="img-circle" />
 										<div class="title">
@@ -51,8 +51,10 @@
 
 						</div>
 
-											
-					{!! $job_pagi->render() !!}
+					<div class="paging_job">
+						{!! $job_pagi->render() !!}
+					</div>					
+					
 				
 						
 					</div>

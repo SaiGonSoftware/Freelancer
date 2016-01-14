@@ -184,7 +184,7 @@ class AuthController extends Controller {
             $m->from('ngohungphuc95@gmail.com', 'Hỗ trợ Freelancer');
 			$m->to($user->email, $user->full_name)->subject('Email xác nhận');
         });
-
+		echo "<script>alert('Vui lòng kiểm tra email để kích hoạt')</script>";
         return redirect()->intended('/');
 	}
 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2016 at 04:31 PM
+-- Generation Time: Jan 14, 2016 at 06:27 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -39,7 +39,9 @@ CREATE TABLE `comments` (
 --
 
 INSERT INTO `comments` (`user_id`, `introduce`, `completed_day`, `allowance`, `job_id`) VALUES
-(1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, 1);
+(1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, 1),
+(2, 'Tôi thích hợp cho công việc này', 7, 1500000, 1),
+(12, 'Tôi sẽ hoàn thành trong 5 ngày', 5, 1500000, 1);
 
 -- --------------------------------------------------------
 
@@ -175,10 +177,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
-(1, '', 'phucngo', 'Ngô Hùng Phúc', '', 'ngohungphuc1237695@gmail.com', '$2y$10$64PRr9SMJeTDRzWnvumYaucd2pjfc5Qcej1SsbQavrQaWOwoAdjtq', 'SaCruEAfavWWdgMkYIJupy7672Ja0YPhPWUjYoglXkCPHmIF6iDgbQH5oD9K', 0, 0, 0),
-(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', '', 'ngohungphuc9123125@gmail.com', '$2y$10$ZZa84AMI4ucs4/N8L3K3/u073tCoJoQ5Ld3vHkMRUo28vUnaLMW4W', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 0, 0),
-(3, '', 'test1', 'test', '', 'test@gmail.com', '$2y$10$L0O1cWABdsgAa9QspJaZau7diJOSZg7K.p4xyyEogMP.zXUtUmFsK', 'DzmcIYieJZxtPpWcVAoEOTpYijGnXdUtgvam9v2nYgjbjN0Dg7pZ5gkWR1mf', 0, 1, 0),
-(8, '1718310388387487', 'Phúc Ngô', 'Phúc Ngô', 'https://graph.facebook.com/v2.2/1718310388387487/picture?type=normal', NULL, '', 'orLK5TyG1tuMk7fRciwAsGJRMWRkR6xOlScS8ccEUwl6F3Eu1banPbA97qgw', 0, 0, 0);
+(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$wx45ylqL3SAZN8ElGbluteS7pKUdjV5sypqSBGC7oRWqwFAW4tWPK', 'XmE6MztuT9raPybQktkzZzJP1fwF8G2aLrEXNkrrlIDzdTywbabGhbCOsPfo', 0, 1, 0),
+(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$wx45ylqL3SAZN8ElGbluteS7pKUdjV5sypqSBGC7oRWqwFAW4tWPK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
+(12, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/12569796130bd18.jpg', NULL, '$2y$10$wx45ylqL3SAZN8ElGbluteS7pKUdjV5sypqSBGC7oRWqwFAW4tWPK', 'oTXZmo9rAPDqxZcgF9Se5aCDKdw52AGpOeIe76OcOK2nJGRtSqxJ860eOPHK', 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -224,7 +225,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `jobs`
 --
@@ -244,7 +245,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
