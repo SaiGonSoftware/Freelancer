@@ -19,7 +19,7 @@ Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('chi-tiet-cong-viec/{slug}/{date}.html','DetailsController@Details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}', 'UserController@userDetail');
-Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
+
 /* For user to logout*/
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 
@@ -28,6 +28,8 @@ Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback
 /*Route post.For user to login*/
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
+Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
+Route::post('tai-khoan/thong-tin-ca-nhan/{name}/updatePass',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
 
 
 Route::resource('User','UserController');

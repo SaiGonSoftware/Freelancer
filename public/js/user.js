@@ -1,4 +1,35 @@
 $(document).ready(function() {
+    $("#formPassword").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    }
+                }
+            },
+            repassword: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    },
+                    identical: {
+                        field: "password",
+                        message: "Mật khẩu bạn nhập không trùng"
+                    }
+                }
+            }
+        }
+    })
+});
+
+$(document).ready(function() {
     $("#formAvatar").ajaxForm({
         beforeSend:function(){
             $(".progress").show();
@@ -10,9 +41,6 @@ $(document).ready(function() {
         success:function(){
             $(".progress").hide();
             alert('Cập nhật ảnh đại diện thành công');
-        },
-        complete:function(response){
-            $("#userAvatar").html("<img src='"+response.responseText+"'/>");
         }
     });
     $(".progress").hide();
@@ -224,7 +252,7 @@ $(document).ready(function() {
                         message: 'Kết quả sai',
                         callback: function(value, validator, $field) {
                             var items = $('#captchaOperation').html().split(' '),
-                                sum = parseInt(items[0]) + parseInt(items[2]);
+                            sum = parseInt(items[0]) + parseInt(items[2]);
                             return value == sum;
                         }
                     }

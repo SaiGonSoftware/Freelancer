@@ -102,6 +102,7 @@ class UserController extends Controller {
 	*/
 	public function profileImage($name)
 	{
+		$user=new User();
 		$userDetail=User::where('username', '=', $name)->first();
 		$temp=$_FILES['file']['tmp_name'];
 		$image=$_FILES['file']['name'];
@@ -116,10 +117,9 @@ class UserController extends Controller {
 		$src = "images/$name/$newFileName.$ext";
 
 	    $img->save($src);
-
-	    $userDetail->avatar = $src;
-	    $userDetail->save();
-	    echo "<script>alert('Cập nhật ảnh thành công')</script>";
+	    $user=$userDetail;
+	    $user->avatar = $src;
+	    $user->save();
 	    return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
 	}
 }

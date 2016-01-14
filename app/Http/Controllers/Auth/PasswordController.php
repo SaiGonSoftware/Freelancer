@@ -4,7 +4,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-
+use App\User;
+use Hash;
+use Input;
 class PasswordController extends Controller {
 
 	/*
@@ -31,8 +33,16 @@ class PasswordController extends Controller {
 	{
 		$this->auth = $auth;
 		$this->passwords = $passwords;
-
 		$this->middleware('guest');
 	}
 
+	public function newPass($name)
+	{
+		$userDetail=new User();
+		$newPass=Input::get('password');
+		$userDetail->password=$newPass;
+		$userDetail->update(['password' => Hash::make($newPass)]);
+		echo "<script>alert('Cập nhật mật khẩu thành công')</script>";
+		return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
+	}
 }
