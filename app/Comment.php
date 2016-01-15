@@ -6,6 +6,7 @@ class Comment extends Model {
 
 	protected $table = "comments";
     protected $fillable = ["user_id", "introduce", "completed_day", "allowance", "job_id"];
+    public $timestamps= false;
 
     /**
      * Show user reply the job

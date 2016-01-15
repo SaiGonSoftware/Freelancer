@@ -11,7 +11,7 @@
             </li>
             <li><a href="">Đăng tin tuyển dụng</a>
             </li>
-            <li><a href="<?= url() ?>/tim-viec.html">Tìm Việc</a>
+            <li><a href="<?= url() ?>/tim-viec">Tìm Việc</a>
             </li>
             <li><a href="">Tìm freelancer</a>
             </li>

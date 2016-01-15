@@ -55,10 +55,10 @@
 									<table class="table table-hover" > 
 										<thead> 
 											<tr> 
-												<th>Freelancer đặt giá</th> 
-												<th>Giới thiệu bản thân</th> 
+												<th>Freelancer đang đặt giá</th> 
+												<th>Giới thiệu bản thânn</th> 
 												<th>Ngày hoàn thành</th> 
-												<th>Đặt giá (VNĐ)</th> 
+												<th>Đặt giá (VNĐ)</th> 
 											</tr> 
 										</thead> 
 										<tbody> 
@@ -81,52 +81,83 @@
 								
 							</div>
 							<p>
-								<div class="input-group">
-									@if(Auth::check())
-									<a href="#" class="btn btn-primary btn-lg" id="apply_job">Gửi báo giá</a>
-									&nbsp;
-									@else
-									<div class="alert alert-danger" role="alert">Vui lòng đăng nhập để gửi báo giá</div>
-									@endif
-								</div> 
-							</p>
-						</article>
-					</div>
-					<div class="col-sm-4" id="sidebar">
-						<div class="sidebar-widget" id="share">
-							<h2>Chia Sẻ Công Việc Này</h2>
-							<ul>
-								<li><a href=""><i class="fa fa-facebook"></i></a></li>
-								<li><a href=""><i class="fa fa-twitter"></i></a></li>
-								<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-						<hr>
-						<div class="sidebar-widget" id="company">
-							<h2>Thông tin công việc</h2>
-							
-							<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}</p>
-							
-						</div>
-						<hr>
-						<div class="sidebar-widget" id="company-jobs">
-							<h2>Các công việc liên quan khác</h2>
-							<ul>
-								<?php $num=1; ?>
-								@foreach($related_job as $relatedJob)
+								<div class="panel panel-primary">
+									<div class="panel-heading"> 
+										<h3 class="panel-title">BÁO GIÁ CHO DỰ ÁN NÀY</h3> 
+									</div>
 
-								<li>
-									<a href="/chi-tiet-cong-viec/{{$relatedJob -> slug}}/{{date("d-m-Y", strtotime($relatedJob -> post_at))}}.html">
-										{{$num}}/{{$relatedJob -> title}}
-									</a>
-								</li>
-								<?php $num++; ?>
-								@endforeach()
+									<div class="panel-body">
+										<form id="commentForm" action="/comment/userReply" method="post">
+											{!! csrf_field() !!}
+											<input type="hidden" name="date" id="date" value="{{$job -> post_at}}">
+											<input type="hidden" name="slug" id="slug" value="{{$job -> slug}}">
+											<input type="hidden" name="job_id" id="job_id" value="{{$job -> id}}">
+											<input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}">
+											<div class="form-group">
+												<label for="allowance">Chi phí trả cho bạn(VND):</label>
+												<input type="text" class="form-control" id="allowance" name="allowance">
+											</div>
+											<div class="form-group">
+												<label for="completed_day">Hoàn thành dự án trong(Ngày):</label>
+												<input type="text" class="form-control" id="completed_day" name="completed_day">
+											</div>
+											<div class="form-group">
+												<label for="introduce">Đề xuất:
+													Lý do gì khiến bạn là ứng viên tốt nhất cho dự án này</label>
+													<textarea id="introduce" name="introduce" cols="100%" rows="10" style="width=100%;height=100%"></textarea>
+												</div>
+												@if(Auth::check())
+												<input type="submit" class="btn btn-info" value="Gửi báo giá" id="btnInsertComment" style="margin-top:5px">
+												&nbsp;
+												@else
+												<div class="alert alert-danger" role="alert">Vui lòng đăng nhập để gửi báo giá</div>
+												@endif
+												
+											</form>										
 
-							</ul>
+
+										</div>
+
+									</div>
+								</p>
+							</article>
+						</div>
+						<div class="col-sm-4" id="sidebar">
+							<div class="sidebar-widget" id="share">
+								<h2>Chia Sẻ Công Việc Này</h2>
+								<ul>
+									<li><a href=""><i class="fa fa-facebook"></i></a></li>
+									<li><a href=""><i class="fa fa-twitter"></i></a></li>
+									<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+							</div>
+							<hr>
+							<div class="sidebar-widget" id="company">
+								<h2>Thông tin công việc</h2>
+
+								<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}</p>
+
+							</div>
+							<hr>
+							<div class="sidebar-widget" id="company-jobs">
+								<h2>Các công việc liên quan khác</h2>
+								<ul>
+									<?php $num=1; ?>
+									@foreach($related_job as $relatedJob)
+
+									<li>
+										<a href="/chi-tiet-cong-viec/{{$relatedJob -> slug}}/{{date("d-m-Y", strtotime($relatedJob -> post_at))}}.html">
+											{{$num}}/{{$relatedJob -> title}}
+										</a>
+									</li>
+									<?php $num++; ?>
+									@endforeach()
+
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		@stop
+			</section>
+			@stop
+

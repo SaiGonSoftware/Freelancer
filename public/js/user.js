@@ -1,4 +1,68 @@
 $(document).ready(function() {
+    $("#commentForm").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            allowance: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập kinh phí"
+                    },
+                    hex:{
+                        message: "Kinh phí phải là số"
+                    }
+                }
+            },
+            completed_day: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập ngày hoàn thành"
+                    },
+                    hex :{
+                        message: "Ngày hoàn thành phải là số"
+                    }
+                }
+            },
+            description: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập giới thiệu bản thân"
+                    }
+                }
+            }
+        }
+    })
+});
+
+$(document).ready(function() {
+    $("#btnInsertComment").click(function() {
+        var user_id=document.getElementById("user_id").value;
+        var introduce=$('textarea#introduce').val();
+        var completed_day=document.getElementById("completed_day").value;
+        var allowance=document.getElementById("allowance").value;
+        var job_id=document.getElementById("job_id").value;
+        $.ajax({
+            url: '/comment/userReply',
+            type: 'POST',
+            data: {
+                user_id: user_id,
+                introduce: introduce,
+                completed_day: completed_day,
+                allowance: allowance,
+                job_id: job_id
+            },
+        })
+        .success(function(data) {
+            alert("Thêm báo giá thành công");
+        });
+    });
+});
+
+$(document).ready(function() {
     $("#formPassword").formValidation({
         framework: 'bootstrap',
         icon: {
@@ -163,9 +227,6 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
     });
     
 });
-
-
-
 
 function getJob(t) {
     $.ajax({
