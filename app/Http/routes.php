@@ -30,7 +30,7 @@ Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/updatePass',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
-/*Route::get('/comment/{slug}/','DetailsController@FindCommentAjax');*/
+Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 
 Route::resource('User','UserController');
 Route::controllers([

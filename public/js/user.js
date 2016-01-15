@@ -132,7 +132,7 @@ $("#regis_btn").click(function() {
     alert("Đăng ký thành công vui lòng kiểm tra email");
 });
 
-/*function getUrlVars()
+function getUrlVars()
 {
     var vars = [], hash;
     var hashes = window.location.href.slice(window.location.href.indexOf('/') + 1).split('/');
@@ -145,15 +145,17 @@ $("#regis_btn").click(function() {
     return vars;
 }
 
-$(document).on("click", ".pagination a", function(page) {
+$(document).on("click", ".details_pagi .pagination a", function(page) {
     event.preventDefault();
     var slug = getUrlVars()[3];
     var date_param = getUrlVars()[4];
     var date=date_param.split("-").reverse().join("-");
+    var page = $(this).attr("href").split("page=")[1];
     $.ajax({
-        url: '/comment/'+ slug +'/?page=' +page,
+        url: '/comment/'+ slug +'/' +date + '?page='+page,
         data: {
             slug: slug,
+            date: date
         },
     })
     .done(function(data) {
@@ -162,7 +164,7 @@ $(document).on("click", ".pagination a", function(page) {
     
 });
 
-*/
+
 
 
 function getJob(t) {

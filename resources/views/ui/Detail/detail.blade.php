@@ -51,8 +51,8 @@
 									<h3 class="panel-title">Báo Giá</h3> 
 								</div>
 
-								<div class="panel-body">
-									<table class="table table-hover"> 
+								<div class="panel-body"  id="job_comment_post">
+									<table class="table table-hover" > 
 										<thead> 
 											<tr> 
 												<th>Freelancer đặt giá</th> 
@@ -61,7 +61,7 @@
 												<th>Đặt giá (VNĐ)</th> 
 											</tr> 
 										</thead> 
-										<tbody id="job_comment_post"> 
+										<tbody> 
 											@foreach($job_comment as $jobReply)
 											<tr> 
 												<td>{{$jobReply -> user -> full_name }}</td> 
@@ -72,9 +72,13 @@
 											@endforeach()
 										</tbody> 
 									</table>
+									<div class="details_pagi">
 										{!! $job_comment->render() !!}
+									</div>
+									
 									
 								</div>
+								
 							</div>
 							<p>
 								<div class="input-group">
