@@ -16,4 +16,8 @@ class Comment extends Model {
     public function user(){
         return $this->BelongsTo('App\User');
     }
+
+    public function post(){
+        return $this->BelongsTo('App\Job','job_id');
+    }
 }

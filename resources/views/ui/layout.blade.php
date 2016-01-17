@@ -45,7 +45,6 @@
     <script src="/js/user.js"></script>
     <script src="/valid/js/formValidation.min.js"></script>
     <script src="/valid/js/bootstrap.min.js"></script>
-    <script src="/js/bootstrap-editable.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
 

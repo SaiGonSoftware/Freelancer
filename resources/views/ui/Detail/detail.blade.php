@@ -51,7 +51,7 @@
 									<h3 class="panel-title">Báo Giá</h3> 
 								</div>
 
-								<div class="panel-body"  id="job_comment_post">
+								<div class="panel-body"  id="job_comment_post" style="text-align:left">
 									<table class="table table-hover" > 
 										<thead> 
 											<tr> 

@@ -1,9 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Comment;
 use Image;
 class UserController extends Controller {
 
@@ -89,7 +91,8 @@ class UserController extends Controller {
 	public function userDetail($name,$token)
 	{
 		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->get();
-		return view('ui.userinfo.uinfo',compact('userDetail'));
+		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->paginate(5);
+		return view('ui.userinfo.uinfo',compact('userDetail','job_comment_list'));
 	}
 
 
@@ -122,4 +125,6 @@ class UserController extends Controller {
 		$user->save();
 		return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
 	}
+
+
 }

@@ -111,7 +111,9 @@
                 <input type="password" class="form-control" id="password" name="passwordLogin">
             </div>
             <button type="button" class="btn btn-primary" id="login_btn">Đăng nhập</button>
+            <a href="/tai-khoan/quen-mat-khau">Quên mật khẩu ?</a>
         </form>
+        
     </div>
 </div>
 

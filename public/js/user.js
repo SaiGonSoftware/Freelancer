@@ -1,4 +1,29 @@
 $(document).ready(function() {
+    $("#newpassReset").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            passowrd: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    }
+                }
+            },
+            stringLength: {
+                min: 5,
+                max: 30,
+                message: 'Mật khẩu phải từ 5 - 30 kí tự'
+            },
+        }
+    })
+});
+
+$(document).ready(function() {
     $("#commentForm").formValidation({
         framework: 'bootstrap',
         icon: {
@@ -224,7 +249,7 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
     })
     .done(function(data) {
        $("#job_comment_post").html(data);
-    });
+   });
     
 });
 
@@ -348,7 +373,7 @@ $(document).ready(function() {
                         message: 'Kết quả sai',
                         callback: function(value, validator, $field) {
                             var items = $('#captchaOperation').html().split(' '),
-                                sum = parseInt(items[0]) + parseInt(items[2]);
+                            sum = parseInt(items[0]) + parseInt(items[2]);
                             return value == sum;
                         }
                     }
@@ -361,5 +386,14 @@ $(document).ready(function() {
 $(document).ready(function() {
     $("#btnInsertComment").click(function() {
        alert('Thêm báo giá thành công')
-    });
+   });
+});
+
+
+$('#username').editable({
+   type:  'text',
+   pk:    1,
+   name:  'username',
+   url:   'post.php',  
+   title: 'Enter username'
 });
