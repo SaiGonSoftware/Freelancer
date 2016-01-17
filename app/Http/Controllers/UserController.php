@@ -90,6 +90,9 @@ class UserController extends Controller {
 	*/
 	public function userDetail($name,$token)
 	{
+		if (Auth::guest()) {
+			return redirect()->intended('/');
+		}
 		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->get();
 		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->paginate(5);
 		return view('ui.userinfo.uinfo',compact('userDetail','job_comment_list'));
@@ -105,6 +108,9 @@ class UserController extends Controller {
 	*/
 	public function profileImage($name)
 	{
+		if (Auth::guest()) {
+			return redirect()->intended('/');
+		}
 		$user=new User();
 		$userDetail=User::where('username', '=', $name)->first();
 		$temp=$_FILES['file']['tmp_name'];

@@ -45,7 +45,7 @@
           </div>
           <div class="panel-body">  
             <form id="formPassword" action="/tai-khoan/thong-tin-ca-nhan/{{$user->username}}/updatePass" method="post">
-             <input type="hidden" name="_token" value="{{Auth::user()->remember_token}}">
+             {!! csrf_field() !!}
              <div class="form-group">
               <label for="password">Mật khẩu mới</label>
               <input type="password" class="form-control" id="password" placeholder="Mật khẩu mới từ 5-30 kí tự" name="password">
