@@ -86,9 +86,9 @@ class UserController extends Controller {
 	*	@param string $name to compare with the source
 	*	return manage page for user
 	*/
-	public function userDetail($name)
+	public function userDetail($name,$token)
 	{
-		$userDetail=User::where('username', '=', $name)->get();
+		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->get();
 		return view('ui.userinfo.uinfo',compact('userDetail'));
 	}
 
@@ -116,10 +116,10 @@ class UserController extends Controller {
 		$img->fit(150, 150);
 		$src = "images/$name/$newFileName.$ext";
 
-	    $img->save($src);
-	    $user=$userDetail;
-	    $user->avatar = $src;
-	    $user->save();
-	    return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
+		$img->save($src);
+		$user=$userDetail;
+		$user->avatar = $src;
+		$user->save();
+		return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
 	}
 }

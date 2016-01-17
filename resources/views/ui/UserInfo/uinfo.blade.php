@@ -7,6 +7,7 @@
       <a href="#profile" class="list-group-item" aria-controls="profile" role="tab" data-toggle="tab">Thông tin cá nhân</a>
       <a href="#manage" class="list-group-item" aria-controls="manage" role="tab" data-toggle="tab">Quản lý tài khoản</a>
       <a href="#settings" class="list-group-item" aria-controls="settings" role="tab" data-toggle="tab">Cài đặt</a>
+      <a href="#comment" class="list-group-item" aria-controls="comment" role="tab" data-toggle="tab">Báo giá đã đăng</a>
     </ul>
   </div>
   @if(Auth::Check())
@@ -225,6 +226,9 @@
     @foreach($userDetail as $user)
     <img src="{{$user->avatar}}" style="width:100px;margin-left: 40%;">
     @endforeach()
+  </div>
+  <div role="tabpanel" class="tab-pane active" id="comment">
+    
   </div>
   @endif
 </div>

@@ -31,7 +31,7 @@
             <li><a href="#">Quản lý tài khoản</a>
                 <ul>
                     <li>
-                        <a href="/tai-khoan/thong-tin-ca-nhan/{{Auth::user()->username}}">Thông tin cá nhân</a>
+                        <a href="/tai-khoan/thong-tin-ca-nhan/{{Auth::user()->username}}/{{Auth::user()->remember_token}}">Thông tin cá nhân</a>
                     </li>
                     <li><a href="{{ url('/dang-xuat') }}">Đăng xuất</a>
                     </li>

@@ -357,3 +357,9 @@ $(document).ready(function() {
         }
     });
 });
+
+$(document).ready(function() {
+    $("#btnInsertComment").click(function() {
+       alert('Thêm báo giá thành công')
+    });
+});

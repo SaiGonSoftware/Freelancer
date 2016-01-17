@@ -18,7 +18,7 @@ Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('chi-tiet-cong-viec/{slug}/{date}','DetailsController@Details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
-Route::get('/tai-khoan/thong-tin-ca-nhan/{name}', 'UserController@userDetail');
+Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 /* For user to logout*/
 Route::get('/dang-xuat', 'Auth\AuthController@logout');

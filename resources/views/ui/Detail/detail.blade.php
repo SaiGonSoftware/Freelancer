@@ -89,10 +89,9 @@
 									<div class="panel-body">
 										<form id="commentForm" action="/comment/userReply" method="post">
 											{!! csrf_field() !!}
+											<input type="hidden" name="job_id" id="job_id" value="{{$job -> id}}">
 											<input type="hidden" name="date" id="date" value="{{$job -> post_at}}">
 											<input type="hidden" name="slug" id="slug" value="{{$job -> slug}}">
-											<input type="hidden" name="job_id" id="job_id" value="{{$job -> id}}">
-											<input type="hidden" name="user_id" id="user_id" value="{{Auth::user()->id}}">
 											<div class="form-group">
 												<label for="allowance">Chi phí trả cho bạn(VND):</label>
 												<input type="text" class="form-control" id="allowance" name="allowance">
