@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2016 at 06:27 PM
+-- Generation Time: Jan 17, 2016 at 07:31 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -31,6 +31,7 @@ CREATE TABLE `comments` (
   `introduce` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `completed_day` int(11) NOT NULL,
   `allowance` double NOT NULL,
+  `post_at` date NOT NULL,
   `job_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -38,10 +39,11 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`user_id`, `introduce`, `completed_day`, `allowance`, `job_id`) VALUES
-(1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, 1),
-(2, 'Tôi thích hợp cho công việc này', 7, 1500000, 1),
-(12, 'Tôi sẽ hoàn thành trong 5 ngày', 5, 1500000, 1);
+INSERT INTO `comments` (`user_id`, `introduce`, `completed_day`, `allowance`, `post_at`, `job_id`) VALUES
+(1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, '2016-01-18', 1),
+(2, 'Tôi thích hợp cho công việc này', 7, 1500000, '2016-01-18', 1),
+(12, 'Tôi sẽ hoàn thành trong 5 ngày', 5, 1500000, '2016-01-18', 1),
+(14, 'Tôi thích hợp cho công việc này', 3, 1000000, '2016-01-18', 1);
 
 -- --------------------------------------------------------
 
@@ -103,6 +105,87 @@ CREATE TABLE `manage` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `province`
+--
+
+CREATE TABLE `province` (
+  `provinceid` varchar(5) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `type` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `province`
+--
+
+INSERT INTO `province` (`provinceid`, `name`, `type`) VALUES
+('01', 'Hà Nội', 'Thành Phố'),
+('02', 'Hà Giang', 'Tỉnh'),
+('04', 'Cao Bằng', 'Tỉnh'),
+('06', 'Bắc Kạn', 'Tỉnh'),
+('08', 'Tuyên Quang', 'Tỉnh'),
+('10', 'Lào Cai', 'Tỉnh'),
+('11', 'Điện Biên', 'Tỉnh'),
+('12', 'Lai Châu', 'Tỉnh'),
+('14', 'Sơn La', 'Tỉnh'),
+('15', 'Yên Bái', 'Tỉnh'),
+('17', 'Hòa Bình', 'Tỉnh'),
+('19', 'Thái Nguyên', 'Tỉnh'),
+('20', 'Lạng Sơn', 'Tỉnh'),
+('22', 'Quảng Ninh', 'Tỉnh'),
+('24', 'Bắc Giang', 'Tỉnh'),
+('25', 'Phú Thọ', 'Tỉnh'),
+('26', 'Vĩnh Phúc', 'Tỉnh'),
+('27', 'Bắc Ninh', 'Tỉnh'),
+('30', 'Hải Dương', 'Tỉnh'),
+('31', 'Hải Phòng', 'Thành Phố'),
+('33', 'Hưng Yên', 'Tỉnh'),
+('34', 'Thái Bình', 'Tỉnh'),
+('35', 'Hà Nam', 'Tỉnh'),
+('36', 'Nam Định', 'Tỉnh'),
+('37', 'Ninh Bình', 'Tỉnh'),
+('38', 'Thanh Hóa', 'Tỉnh'),
+('40', 'Nghệ An', 'Tỉnh'),
+('42', 'Hà Tĩnh', 'Tỉnh'),
+('44', 'Quảng Bình', 'Tỉnh'),
+('45', 'Quảng Trị', 'Tỉnh'),
+('46', 'Thừa Thiên Huế', 'Tỉnh'),
+('48', 'Đà Nẵng', 'Thành Phố'),
+('49', 'Quảng Nam', 'Tỉnh'),
+('51', 'Quảng Ngãi', 'Tỉnh'),
+('52', 'Bình Định', 'Tỉnh'),
+('54', 'Phú Yên', 'Tỉnh'),
+('56', 'Khánh Hòa', 'Tỉnh'),
+('58', 'Ninh Thuận', 'Tỉnh'),
+('60', 'Bình Thuận', 'Tỉnh'),
+('62', 'Kon Tum', 'Tỉnh'),
+('64', 'Gia Lai', 'Tỉnh'),
+('66', 'Đắk Lắk', 'Tỉnh'),
+('67', 'Đắk Nông', 'Tỉnh'),
+('68', 'Lâm Đồng', 'Tỉnh'),
+('70', 'Bình Phước', 'Tỉnh'),
+('72', 'Tây Ninh', 'Tỉnh'),
+('74', 'Bình Dương', 'Tỉnh'),
+('75', 'Đồng Nai', 'Tỉnh'),
+('77', 'Bà Rịa - Vũng Tàu', 'Tỉnh'),
+('79', 'Hồ Chí Minh', 'Thành Phố'),
+('80', 'Long An', 'Tỉnh'),
+('82', 'Tiền Giang', 'Tỉnh'),
+('83', 'Bến Tre', 'Tỉnh'),
+('84', 'Trà Vinh', 'Tỉnh'),
+('86', 'Vĩnh Long', 'Tỉnh'),
+('87', 'Đồng Tháp', 'Tỉnh'),
+('89', 'An Giang', 'Tỉnh'),
+('91', 'Kiên Giang', 'Tỉnh'),
+('92', 'Cần Thơ', 'Thành Phố'),
+('93', 'Hậu Giang', 'Tỉnh'),
+('94', 'Sóc Trăng', 'Tỉnh'),
+('95', 'Bạc Liêu', 'Tỉnh'),
+('96', 'Cà Mau', 'Tỉnh');
 
 -- --------------------------------------------------------
 
@@ -177,9 +260,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
-(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$wx45ylqL3SAZN8ElGbluteS7pKUdjV5sypqSBGC7oRWqwFAW4tWPK', 'XmE6MztuT9raPybQktkzZzJP1fwF8G2aLrEXNkrrlIDzdTywbabGhbCOsPfo', 0, 1, 0),
-(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$wx45ylqL3SAZN8ElGbluteS7pKUdjV5sypqSBGC7oRWqwFAW4tWPK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
-(12, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/12569796130bd18.jpg', NULL, '$2y$10$wx45ylqL3SAZN8ElGbluteS7pKUdjV5sypqSBGC7oRWqwFAW4tWPK', 'oTXZmo9rAPDqxZcgF9Se5aCDKdw52AGpOeIe76OcOK2nJGRtSqxJ860eOPHK', 0, 0, 0);
+(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'XmE6MztuT9raPybQktkzZzJP1fwF8G2aLrEXNkrrlIDzdTywbabGhbCOsPfo', 0, 1, 0),
+(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
+(12, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/12569796130bd18.jpg', NULL, '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'oTXZmo9rAPDqxZcgF9Se5aCDKdw52AGpOeIe76OcOK2nJGRtSqxJ860eOPHK', 0, 0, 0),
+(14, NULL, 'phuchung95', 'Phúc 95', NULL, 'ngohungphuc7695@gmail.com', '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'vZOFMp3pqYgIuA2UqOs1146oK4HSGHXTHuet5ZhoPXln5lUH4zmMCtDlbOPo', 0, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -204,6 +288,12 @@ ALTER TABLE `manage`
   ADD PRIMARY KEY (`id_manage`);
 
 --
+-- Indexes for table `province`
+--
+ALTER TABLE `province`
+  ADD PRIMARY KEY (`provinceid`);
+
+--
 -- Indexes for table `tag`
 --
 ALTER TABLE `tag`
@@ -221,11 +311,6 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
---
--- AUTO_INCREMENT for table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `jobs`
 --
@@ -245,7 +330,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
