@@ -46,9 +46,6 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: "Vui lòng nhập ngày hoàn thành"
-                    },
-                    hex :{
-                        message: "Ngày hoàn thành phải là số"
                     }
                 }
             },
@@ -225,6 +222,10 @@ $(document).ready(function() {
         success: function() {
             $(".progress").hide();
             alert('Cập nhật ảnh đại diện thành công');
+        },
+        complete:function(response){
+            $("#userAvatar").html("<img src='"+response.responseText+"'/>");
+            alert("<img src='"+response.responseText+"'/>");
         }
     });
     $(".progress").hide();
@@ -364,9 +365,53 @@ $(document).on("click", ".paging_job .pagination a", function(t) {
     })
 });
 
+function formatNumber(number)
+{
+    var number = number.toFixed(2) + '';
+    var x = number.split('.');
+    var x1 = x[0];
+    var x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
+    }
+    return x1 + x2;
+}
+
+$(document).ready(function() {
+    $("#allowance").blur(function() {
+        var allowance = $(this).val();
+        $("#allowance").val(addCommas(allowance));
+    });
+
+});
+
+function addCommas(nStr)
+{
+  nStr += '';
+  x = nStr.split('.');
+  x1 = x[0];
+  x2 = x.length > 1 ? '.' + x[1] : '';
+  var rgx = /(\d+)(\d{3})/;
+  while (rgx.test(x1)) {
+    x1 = x1.replace(rgx, '$1' + ',' + '$2');
+  }
+  return x1 + x2;
+}
+
 
 /*$(document).ready(function() {
-    $("#allowance").keyup(function(){
-        var allowance=document.getElementById("allowance").value;
-    }));
+    var allowance = $("#allowance").val();
+    $("#btnInsertComment").click(function(event) {
+        $.ajax({
+            url: '/comment/userReply',
+            type: 'post',
+            data: {
+                allowance: allowance,
+            },
+        })
+        .done(function(data) {
+            console.log("success");
+        });
+    });
 });*/

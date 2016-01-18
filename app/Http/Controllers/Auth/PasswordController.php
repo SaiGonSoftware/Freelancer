@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 use App\User;
 use Hash;
 use Input;
+use Flash;
 class PasswordController extends Controller {
 
 	/*
@@ -47,7 +48,8 @@ class PasswordController extends Controller {
 		$userDetail->password=$newPass;
 		$userDetail->update(['password' => Hash::make($newPass)]);
 		echo "<script>alert('Cập nhật mật khẩu thành công')</script>";
-		return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name.'/'.$token);
+		Flash::success('Cập nhật mật khẩu thành công');
+		return redirect()->back();
 	}
 
 	/**

@@ -1,7 +1,6 @@
 @extends('ui.layout')
 @section('content')
-<link href="/css/bootstrap-editable.css" rel="stylesheet">
-<script src="/js/bootstrap-editable.min.js"></script>
+<script src="/js/jquery.jeditable.js"></script>
 <div class="container" style="margin-top:5%;margin-bottom:10%">
   <div class="hidden-xs col-sm-3" >
     <ul class="nav nav-tabs list-group" role="tablist">
@@ -44,6 +43,7 @@
             <h3 class="panel-title">Cập nhật mật khẩu</h3> 
           </div>
           <div class="panel-body">  
+          @include('flash::message')
             <form id="formPassword" action="/tai-khoan/thong-tin-ca-nhan/{{$user->username}}/updatePass" method="post">
              {!! csrf_field() !!}
              <div class="form-group">

@@ -1,6 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
 use Auth;
+use Flash;
 use App\Job;
 use App\Comment;
 use Illuminate\Http\Request;
@@ -52,19 +53,20 @@ class DetailsController extends Controller
 
 	public function newComment(Request $request)
 	{
-		/*$slug=$request->slug;
-		$date_format = date('Y-m-d', strtotime($request->date));*/
+		$date_format = date('Y-m-d');
 		$comment=new Comment();
 		$comment->user_id=Auth::user()->id;
 		$comment->introduce=$request->introduce;
 		$comment->completed_day=$request->completed_day;
-		$comment->allowance=$request->allowance;
+		$comment->allowance=str_replace( ',', '', $request->allowance);
+		$comment->post_at=$date_format;
 		$comment->job_id=$request->job_id;
-		if($comment->save()){
-			return "true";
-		}
-		else return "false";
-		/*return redirect()->intended("/chi-tiet-cong-viec/".$slug."/".$date_format);*/
+		$comment->save();
+		echo "<script>alert('Báo giá thành công')</script>";
+		Flash::success('Báo giá thành công');
+		return redirect()->back();
 	}
+
+	
 }
 ?>

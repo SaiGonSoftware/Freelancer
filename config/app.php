@@ -138,6 +138,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
+		'Laracasts\Flash\FlashServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -198,6 +199,7 @@ return [
 		'Html'      => 'Illuminate\Html\HtmlFacade',
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Image' => 'Intervention\Image\Facades\Image',
+		'Flash' => 'Laracasts\Flash\Flash',
 	],
 
 ];
