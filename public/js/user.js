@@ -364,3 +364,9 @@ $(document).on("click", ".paging_job .pagination a", function(t) {
     })
 });
 
+
+/*$(document).ready(function() {
+    $("#allowance").keyup(function(){
+        var allowance=document.getElementById("allowance").value;
+    }));
+});*/

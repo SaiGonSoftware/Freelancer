@@ -132,5 +132,5 @@ class UserController extends Controller {
 		return "ok";
 	}
 
-
+	
 }
