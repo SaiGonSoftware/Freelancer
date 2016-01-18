@@ -64,30 +64,6 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    $("#btnInsertComment").click(function() {
-        var user_id=document.getElementById("user_id").value;
-        var introduce=$('textarea#introduce').val();
-        var completed_day=document.getElementById("completed_day").value;
-        var allowance=document.getElementById("allowance").value;
-        var job_id=document.getElementById("job_id").value;
-        $.ajax({
-            url: '/comment/userReply',
-            type: 'POST',
-            data: {
-                user_id: user_id,
-                introduce: introduce,
-                completed_day: completed_day,
-                allowance: allowance,
-                job_id: job_id
-            },
-        })
-        .success(function(data) {
-            alert("Thêm báo giá thành công");
-        });
-    });
-});
-
-$(document).ready(function() {
     $("#formPassword").formValidation({
         framework: 'bootstrap',
         icon: {
@@ -117,6 +93,125 @@ $(document).ready(function() {
         }
     })
 });
+
+$(document).ready(function() {
+    $("#login_form").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            usernameLogin: {
+                message: "The username is not valid",
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập tên đăng nhập"
+                    }
+                }
+            },
+            passwordLogin: {
+                message: "The password is not valid",
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập tên mật khẩu"
+                    }
+                }
+            }
+        }
+    })
+});
+
+$(document).ready(function() {
+    function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
+    $("#register_form_popup").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            usernameRegis: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập tên đăng nhập'
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Tên đăng nhập phải từ 5 - 30 kí tự'
+                    },
+                    regexp: {
+                        regexp: /^[a-zA-Z0-9_\.]+$/,
+                        message: 'Tên đăng nhập chỉ gồm chữ,số,dấu ., dấu _ '
+                    }
+                }
+            },
+            fullnameRegis: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập tên hiển thị'
+                    }
+                }
+            },
+            emailRegis: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập email'
+                    },
+                    emailAddress: {
+                        message: "Email không hợp lệ"
+                    }
+                }
+            },
+            passwordRegis: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập mật khẩu'
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
+                    },
+                }
+            },
+            rePassword: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập lại mật khẩu'
+                    },
+                    identical: {
+                        field: "passwordRegis",
+                        message: "Mật khẩu bạn nhập không trùng"
+                    }
+                }
+            },
+            captcha: {
+                validators: {
+                    callback: {
+                        message: 'Kết quả sai',
+                        callback: function(value, validator, $field) {
+                            var items = $('#captchaOperation').html().split(' '),
+                            sum = parseInt(items[0]) + parseInt(items[2]);
+                            return value == sum;
+                        }
+                    }
+                }
+            },
+        }
+    });
+});
+
+
+
+
+
 
 $(document).ready(function() {
     $("#formAvatar").ajaxForm({
@@ -269,131 +364,3 @@ $(document).on("click", ".paging_job .pagination a", function(t) {
     })
 });
 
-$(document).ready(function() {
-    $("#login_form").formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            usernameLogin: {
-                message: "The username is not valid",
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập tên đăng nhập"
-                    }
-                }
-            },
-            passwordLogin: {
-                message: "The password is not valid",
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập tên mật khẩu"
-                    }
-                }
-            }
-        }
-    })
-});
-
-$(document).ready(function() {
-    function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-    $("#register_form_popup").formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            usernameRegis: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập tên đăng nhập'
-                    },
-                    stringLength: {
-                        min: 5,
-                        max: 30,
-                        message: 'Tên đăng nhập phải từ 5 - 30 kí tự'
-                    },
-                    regexp: {
-                        regexp: /^[a-zA-Z0-9_\.]+$/,
-                        message: 'Tên đăng nhập chỉ gồm chữ,số,dấu ., dấu _ '
-                    }
-                }
-            },
-            fullnameRegis: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập tên hiển thị'
-                    }
-                }
-            },
-            emailRegis: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập email'
-                    },
-                    emailAddress: {
-                        message: "Email không hợp lệ"
-                    }
-                }
-            },
-            passwordRegis: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập mật khẩu'
-                    },
-                    stringLength: {
-                        min: 5,
-                        max: 30,
-                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
-                    },
-                }
-            },
-            rePassword: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập lại mật khẩu'
-                    },
-                    identical: {
-                        field: "passwordRegis",
-                        message: "Mật khẩu bạn nhập không trùng"
-                    }
-                }
-            },
-            captcha: {
-                validators: {
-                    callback: {
-                        message: 'Kết quả sai',
-                        callback: function(value, validator, $field) {
-                            var items = $('#captchaOperation').html().split(' '),
-                            sum = parseInt(items[0]) + parseInt(items[2]);
-                            return value == sum;
-                        }
-                    }
-                }
-            },
-        }
-    });
-});
-
-$(document).ready(function() {
-    $("#btnInsertComment").click(function() {
-       alert('Thêm báo giá thành công')
-   });
-});
-
-
-$('#username').editable({
-   type:  'text',
-   pk:    1,
-   name:  'username',
-   url:   'post.php',  
-   title: 'Enter username'
-});

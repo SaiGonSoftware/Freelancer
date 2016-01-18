@@ -129,7 +129,7 @@ class UserController extends Controller {
 		$user=$userDetail;
 		$user->avatar = $src;
 		$user->save();
-		return redirect()->intended('/tai-khoan/thong-tin-ca-nhan/'.$name);
+		return "ok";
 	}
 
 

@@ -52,16 +52,19 @@ class DetailsController extends Controller
 
 	public function newComment(Request $request)
 	{
-		$slug=$request->slug;
-		$date_format = date('Y-m-d', strtotime($request->date));
+		/*$slug=$request->slug;
+		$date_format = date('Y-m-d', strtotime($request->date));*/
 		$comment=new Comment();
 		$comment->user_id=Auth::user()->id;
 		$comment->introduce=$request->introduce;
 		$comment->completed_day=$request->completed_day;
 		$comment->allowance=$request->allowance;
 		$comment->job_id=$request->job_id;
-		$comment->save();
-		return redirect()->intended("/chi-tiet-cong-viec/".$slug."/".$date_format);
+		if($comment->save()){
+			return "true";
+		}
+		else return "false";
+		/*return redirect()->intended("/chi-tiet-cong-viec/".$slug."/".$date_format);*/
 	}
 }
 ?>

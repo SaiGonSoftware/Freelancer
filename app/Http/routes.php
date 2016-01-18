@@ -23,9 +23,11 @@ Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDe
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 Route::get('/tai-khoan/quen-mat-khau','Auth\PasswordController@lostPass');
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
+Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 
 
-
+Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/updatePass',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
@@ -40,7 +42,3 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-/*social*/
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
-Route::post('authen/login','Auth\AuthController@login');

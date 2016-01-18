@@ -10,8 +10,8 @@ use App\User;
 use Hash;
 use Mail;
 use Input;
-use Socialite;
 use Auth;
+use Socialite;
 class AuthController extends Controller {
 
 	/*
