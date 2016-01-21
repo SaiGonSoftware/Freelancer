@@ -395,8 +395,8 @@ function addCommas(nStr)
   var rgx = /(\d+)(\d{3})/;
   while (rgx.test(x1)) {
     x1 = x1.replace(rgx, '$1' + ',' + '$2');
-  }
-  return x1 + x2;
+}
+return x1 + x2;
 }
 
 
@@ -415,3 +415,32 @@ function addCommas(nStr)
         });
     });
 });*/
+
+$(function(){
+    var message_status=$("#status");
+    $("td[contenteditable=true]").blur(function() {
+        var field_id=$(this).attr('id');
+        var value=$(this).text();
+        $.post('/valid/comment.php', field_id + "=" + value, function(data) {
+            if (data!='') {
+                message_status.show();
+                message_status.text(data);
+                setTimeout(function(){message_status.hide()},3000);
+            }
+        });
+    });
+});
+
+
+$(document).ready(function() {
+    var message_status=$("#status");
+    $(".delComment").on('click', function() {
+     var id= $(this).attr('data-id');
+     console.log(id);
+    /* $.post('/valid/delcomment.php', {id: id}, function(data) {
+        message_status.show();
+        message_status.text(data);
+
+    });*/
+ });
+});

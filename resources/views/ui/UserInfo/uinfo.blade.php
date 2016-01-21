@@ -1,6 +1,5 @@
 @extends('ui.layout')
 @section('content')
-<script src="/js/jquery.jeditable.js"></script>
 <div class="container" style="margin-top:5%;margin-bottom:10%">
   <div class="hidden-xs col-sm-3" >
     <ul class="nav nav-tabs list-group" role="tablist">
@@ -242,15 +241,18 @@
           <th>Giới thiệu bản thân</th> 
           <th>Ngày hoàn thành</th> 
           <th>Đặt giá (VNĐ)</th> 
+          <th>Xóa báo giá</th> 
         </tr> 
       </thead> 
       <tbody> 
+      <div id="status"></div>
        @foreach($job_comment_list as $jobReply)
        <tr> 
         <td><a href="/chi-tiet-cong-viec/{{$jobReply -> post -> slug }}/{{date("d-m-Y", strtotime($jobReply -> post-> post_at))}}">{{$jobReply -> post -> title }}</a></td> 
-        <td><a href="#" id="introduce/{{$jobReply -> post -> id }}"> {{$jobReply -> introduce}}</a></td>
-        <td><a href="#" id="completed_day/{{$jobReply -> post -> id }}">{{$jobReply -> completed_day}}</a></td>
-        <td><a href="#" id="allowance/{{$jobReply -> post -> id }}">{{number_format($jobReply -> allowance)}}</a></td>
+        <td id="introduce:{{$jobReply -> id }}" contenteditable="true"><a href="#" > {{$jobReply -> introduce}}</a></td>
+        <td id="completed_day:{{$jobReply -> id }}" contenteditable="true"><a href="#">{{$jobReply -> completed_day}}</a></td>
+        <td id="allowance:{{$jobReply -> id }}" contenteditable="true"><a href="#" >{{number_format($jobReply -> allowance)}}</a></td>
+        <td><input type="button" class="btn btn-primary delComment" value="Xóa" onclick="return confirm('Bạn có chắc chắn muốn xóa không ?')" id="delComment" data-id="{{$jobReply -> id }}"></td>
       </tr> 
       @endforeach()
     </tbody> 

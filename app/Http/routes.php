@@ -42,3 +42,6 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::any('/{page?}',function(){
+  return View::make('errors.404');
+})->where('page','.*');

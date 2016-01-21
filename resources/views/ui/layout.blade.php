@@ -11,6 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.png">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">
+
 </head>
 
 <body id="home">
@@ -23,8 +24,8 @@
     @yield('content') 
     @include('ui.footer')
 
-    <script src="/js/modernizr.custom.79639.js"></script>
     <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="/js/modernizr.custom.79639.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/retina.min.js"></script>
     <script src="/js/scrollReveal.min.js"></script>
@@ -47,7 +48,6 @@
     <script src="/valid/js/bootstrap.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
-
 </body>
 
 </html>
