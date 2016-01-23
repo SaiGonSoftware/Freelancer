@@ -399,23 +399,6 @@ function addCommas(nStr)
 return x1 + x2;
 }
 
-
-/*$(document).ready(function() {
-    var allowance = $("#allowance").val();
-    $("#btnInsertComment").click(function(event) {
-        $.ajax({
-            url: '/comment/userReply',
-            type: 'post',
-            data: {
-                allowance: allowance,
-            },
-        })
-        .done(function(data) {
-            console.log("success");
-        });
-    });
-});*/
-
 $(function(){
     var message_status=$("#message");
     $("td[contenteditable=true]").blur(function() {
@@ -457,3 +440,17 @@ function ConfirmDelete()
   else
     return false;
 }
+
+
+
+$(document).on("click", ".user_info_comment .pagination a", function(page) {
+    event.preventDefault();
+    var page = $(this).attr("href").split("page=")[1];
+    $.ajax({
+        url: '/userinfo' + '?page='+page,
+    })
+    .done(function(data) {
+       $("#comment_content").html(data);
+   });
+    
+});

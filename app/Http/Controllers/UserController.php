@@ -20,10 +20,15 @@ class UserController extends Controller {
 			return redirect()->intended('/');
 		}
 		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->get();
-		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->paginate(5);
+		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->paginate(4);
 		return view('ui.userinfo.uinfo',compact('userDetail','job_comment_list'));
 	}
 
+	public function userDetailAjax()
+	{
+		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->paginate(4);
+		return view('ui.userinfo.ajax',compact('job_comment_list'));
+	}
 
 	/*
 	*	Get user info by their name
@@ -60,7 +65,7 @@ class UserController extends Controller {
 
 	/**
 	 * [DeleteComment using ajax]
-	 * @param Request $request [description]
+	 * @param $id comment to compare with source
 	 */
 	public function deleteComment($id)
 	{

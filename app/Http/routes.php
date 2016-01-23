@@ -16,6 +16,8 @@ Route::get('/', 'IndexController@home');
 Route::get('/trang-chu','IndexController@home');
 Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
+Route::get('/userinfo','UserController@userDetailAjax');
+
 Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@Details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 Route::get('/tai-khoan/cap-nhat-mat-khau/{{$token}}', 'Auth\PasswordController@activeLostPass');
