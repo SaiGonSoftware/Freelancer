@@ -87,8 +87,7 @@
 									</div>
 
 									<div class="panel-body">
-									@include('flash::message')
-										<form id="commentForm" action="/comment/userReply" method="post">
+										<form id="commentForm" action="" method="post">
 											{!! csrf_field() !!}
 											<input type="hidden" name="job_id" id="job_id" value="{{$job -> id}}">
 											<div class="form-group">

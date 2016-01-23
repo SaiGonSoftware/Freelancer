@@ -24,7 +24,7 @@ class DetailsController extends Controller
 	 * @return details job page
 	 */
 
-	public function Details($slug,$date)
+	public function details($slug,$date)
 	{
 		$date_format = date('Y-m-d', strtotime($date));
 		$job=Job::whereRaw('slug = ? and post_at = ? ', [$slug,$date_format])->first();
@@ -38,7 +38,7 @@ class DetailsController extends Controller
 	 * @return related comment using ajax
 	 */
 
-	public function FindCommentAjax($slug,$date)
+	public function findCommentAjax($slug,$date)
 	{
 		$date_format = date('Y-m-d', strtotime($date));
 		$job=Job::whereRaw('slug = ? and post_at = ? ', [$slug,$date_format])->first();
@@ -53,18 +53,22 @@ class DetailsController extends Controller
 
 	public function newComment(Request $request)
 	{
-		$date_format = date('Y-m-d');
-		$comment=new Comment();
-		$comment->user_id=Auth::user()->id;
-		$comment->introduce=$request->introduce;
-		$comment->completed_day=$request->completed_day;
-		$comment->allowance=str_replace( ',', '', $request->allowance);
-		$comment->post_at=$date_format;
-		$comment->job_id=$request->job_id;
-		$comment->save();
-		echo "<script>alert('Báo giá thành công')</script>";
-		Flash::success('Báo giá thành công');
-		return redirect()->back();
+		try{
+			$date_format = date('Y-m-d');
+			$comment=new Comment();
+			$comment->user_id=Auth::user()->id;
+			$comment->introduce=$request->introduce;
+			$comment->completed_day=$request->completed_day;
+			$comment->allowance=str_replace( ',', '', $request->allowance);
+			$comment->post_at=$date_format;
+			$comment->job_id=$request->job_id;
+			$comment->save();
+			return response()->json(array('mess'=>'Báo giá thành công'));
+		}
+		catch(Exception $ex){
+			return response()->json(array('err'=>'Có lỗi xảy ra vui lòng thử lại'));
+		}
+
 	}
 
 	

@@ -344,8 +344,8 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
         },
     })
     .done(function(data) {
-       $("#job_comment_post").html(data);
-   });
+     $("#job_comment_post").html(data);
+ });
     
 });
 
@@ -418,18 +418,22 @@ $(function(){
 $(document).ready(function() {
     var message_status=$("#message");
     $(".delComment").on('click', function() {
-    var id= $(this).attr('data-id');
-    $.ajax({
-        url: '/deleteComment/' + id,
-        type: 'GET',
-        async:false,
-        data: id,
-        success:function(data) {
-            alert(data.mess);
+        if(ConfirmDelete()){
+            var id= $(this).attr('data-id');
+            
+            $.ajax({
+                url: '/deleteComment/' + id,
+                type: 'GET',
+                async:false,
+                data: id,
+                success:function(data) {
+                    alert(data.mess);
+                }
+            })
+            $(this).parent().parent().remove();
         }
-    })
-    $(this).parent().parent().remove();
- });
+        
+    });
 });
 
 function ConfirmDelete()
@@ -442,7 +446,7 @@ function ConfirmDelete()
 }
 
 
-
+/*
 $(document).on("click", ".user_info_comment .pagination a", function(page) {
     event.preventDefault();
     var page = $(this).attr("href").split("page=")[1];
@@ -453,4 +457,43 @@ $(document).on("click", ".user_info_comment .pagination a", function(page) {
        $("#comment_content").html(data);
    });
     
+});*/
+
+$(document).ready(function() {
+    $('#btnInsertComment').click(function(event) {
+        event.preventDefault();
+        var data=$("#commentForm").serialize();
+        $.ajax({
+            url: '/postComment',
+            type: 'POST',
+            data: data,
+            success:function(data) {
+                alert(data.mess);
+            },
+            error:function(data) {
+                alert(data.err);
+            }
+        });
+        $("#commentForm")[0].reset();
+        $("#job_comment_post").load('ajaxcomment');
+    });
 });
+
+
+function displayComment(){
+    var slug = getUrlVars()[3];
+    var date_param = getUrlVars()[4];
+    var date=date_param.split("-").reverse().join("-");
+    $.ajax({
+        url: '/displaycomment',
+        type: 'POST',
+        async:false,
+        data: {
+            slug: slug,
+            date: date
+        },
+        success:function(data) {
+          $("#job_comment_post").html(data);
+      }
+  });
+}
