@@ -417,7 +417,7 @@ return x1 + x2;
 });*/
 
 $(function(){
-    var message_status=$("#status");
+    var message_status=$("#message");
     $("td[contenteditable=true]").blur(function() {
         var field_id=$(this).attr('id');
         var value=$(this).text();
@@ -433,14 +433,27 @@ $(function(){
 
 
 $(document).ready(function() {
-    var message_status=$("#status");
+    var message_status=$("#message");
     $(".delComment").on('click', function() {
-     var id= $(this).attr('data-id');
-     console.log(id);
-    /* $.post('/valid/delcomment.php', {id: id}, function(data) {
-        message_status.show();
-        message_status.text(data);
-
-    });*/
+    var id= $(this).attr('data-id');
+    $.ajax({
+        url: '/deleteComment/' + id,
+        type: 'GET',
+        async:false,
+        data: id,
+        success:function(data) {
+            alert(data.mess);
+        }
+    })
+    $(this).parent().parent().remove();
  });
 });
+
+function ConfirmDelete()
+{
+  var x = confirm("Bạn có chắc chắn muốn xóa");
+  if (x)
+      return true;
+  else
+    return false;
+}
