@@ -8,6 +8,7 @@ use App\User;
 use Hash;
 use Input;
 use Flash;
+use Request;
 class PasswordController extends Controller {
 
 	/*
@@ -38,18 +39,13 @@ class PasswordController extends Controller {
 	}
 	/**
 	 * Update new password
-	 * @param  [string] $name [compare with the source]
+	 * @param  
 	 */
-	public function newPass($name)
+	public function newPass(Request $request)
 	{
-		$userDetail=new User();
-		$newPass=Input::get('password');
-		$token=Input::get('_token');
-		$userDetail->password=$newPass;
-		$userDetail->update(['password' => Hash::make($newPass)]);
-		echo "<script>alert('Cập nhật mật khẩu thành công')</script>";
-		Flash::success('Cập nhật mật khẩu thành công');
-		return redirect()->back();
+		$password=Input::get('password');
+		User::where('id','=', \Auth::user()->id)->update(['password' => \Hash::make($password)]);
+		return response()->json(array('mess'=>'Cập nhật mật khẩu thành công'));
 	}
 
 	/**

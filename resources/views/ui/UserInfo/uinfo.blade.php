@@ -8,6 +8,7 @@
       <a href="#manage" class="list-group-item" aria-controls="manage" role="tab" data-toggle="tab">Quản lý tài khoản</a>
       <a href="#settings" class="list-group-item" aria-controls="settings" role="tab" data-toggle="tab">Cài đặt</a>
       <a href="#comment" class="list-group-item" aria-controls="comment" role="tab" data-toggle="tab">Báo giá đã đăng</a>
+      <a href="#job" class="list-group-item" aria-controls="job" role="tab" data-toggle="tab">Công việc đã đăng</a>
     </ul>
   </div>
   @if(Auth::Check())
@@ -39,7 +40,7 @@
       <div >
 
       </div>
-     @endforeach()
+      @endforeach()
     </div>
     <div role="tabpanel" class="tab-pane" id="manage">
      <form>
@@ -208,8 +209,7 @@
         <h3 class="panel-title">Cập nhật mật khẩu</h3> 
       </div>
       <div class="panel-body">  
-        @include('flash::message')
-        <form id="formPassword" action="/tai-khoan/thong-tin-ca-nhan/{{$user->username}}/updatePass" method="post">
+        <form id="formNewPassword" action="{{ url('/updatePassword') }}" method="post">
          {!! csrf_field() !!}
          <div class="form-group">
           <label for="password">Mật khẩu mới</label>
@@ -258,6 +258,10 @@
   </div> 
 </div>
 </div>
+<div role="tabpanel" class="tab-pane active" id="job">
+  
+</div>
+
 @endif
 </div>
 </div>

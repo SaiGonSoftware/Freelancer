@@ -73,6 +73,11 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: "Vui lòng nhập mật khẩu"
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
                     }
                 }
             },
@@ -84,6 +89,11 @@ $(document).ready(function() {
                     identical: {
                         field: "password",
                         message: "Mật khẩu bạn nhập không trùng"
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
                     }
                 }
             }
@@ -341,8 +351,8 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
         },
     })
     .done(function(data) {
-       $("#job_comment_post").html(data);
-   });
+     $("#job_comment_post").html(data);
+ });
     
 });
 
@@ -457,20 +467,19 @@ $(document).on("click", ".user_info_comment .pagination a", function(page) {
 });*/
 
 $(document).ready(function() {
-    $('#btnInsertComment').click(function(event) {
+    $('#btnNewPass').click(function() {
         event.preventDefault();
-        var data=$("#commentForm").serialize();
+        var data=$("#formNewPassword").serialize();
         $.ajax({
-            url: '/postComment',
+            url: '/updatePassword',
             type: 'POST',
             data: data,
             success:function(data) {
                 alert(data.mess);
-                window.location.reload();
-                $("#commentForm")[0].reset();
+                $("#formNewPassword")[0].reset();
             },
-            error:function(data) {
-                alert(data.err);
+            error:function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
             }
         });
 
@@ -478,21 +487,3 @@ $(document).ready(function() {
     });
 });
 
-
-/*function displayComment(){
-    var slug = getUrlVars()[3];
-    var date_param = getUrlVars()[4];
-    var date=date_param.split("-").reverse().join("-");
-    $.ajax({
-        url: '/displaycomment',
-        type: 'POST',
-        async:false,
-        data: {
-            slug: slug,
-            date: date
-        },
-        success:function(data) {
-          $("#job_comment_post").html(data);
-      }
-  });
-}*/

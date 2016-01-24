@@ -30,13 +30,12 @@ Route::get('/deleteComment/{id}',['as' => 'del','uses'=>'UserController@deleteCo
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 
 
-
+Route::post('/updatePassword',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
 Route::post('/displaycomment','DetailsController@findCommentAjax');
 Route::post('/postComment',['as' => 'post','uses'=>'DetailsController@newComment']);
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
-Route::post('tai-khoan/thong-tin-ca-nhan/{name}/updatePass',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
 Route::post('/password/email',['as' => 'resetPass','uses'=>'Auth\PasswordController@resetPass']);
 Route::post('/password/new',['as' => 'newPass','uses'=>'Auth\PasswordController@activeLostPass']);
 

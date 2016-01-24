@@ -1,12 +1,14 @@
 <?php namespace App\Http\Controllers;
 
+use Image;
 use Auth;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Comment;
-use Image;
+use App\Job;
+
 class UserController extends Controller {
 
 	/*
@@ -77,4 +79,10 @@ class UserController extends Controller {
 		return response()->json(array('mess'=>'Xóa thành công'));
 	}
 	
+
+	/*public function jobUserPost()
+	{
+		$jobpost=Job::where('user_id','=', Auth::user()->id)->paginate(4);
+		return view('ui.userinfo.uinfo',compact('jobpost'));
+	}*/
 }
