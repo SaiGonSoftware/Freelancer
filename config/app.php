@@ -139,6 +139,7 @@ return [
 		'Intervention\Image\ImageServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -147,7 +148,6 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
-
 	],
 
 	/*

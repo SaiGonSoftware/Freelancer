@@ -27,11 +27,11 @@ Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('/deleteComment/{id}',['as' => 'del','uses'=>'UserController@deleteComment']);
-Route::post('/displaycomment','DetailsController@findCommentAjax');
-Route::get('ajaxcomment',function(){
-	return view('ui.detail.detail');
-});
+Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 
+
+
+Route::post('/displaycomment','DetailsController@findCommentAjax');
 Route::post('/postComment',['as' => 'post','uses'=>'DetailsController@newComment']);
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);

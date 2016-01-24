@@ -63,14 +63,18 @@ class DetailsController extends Controller
 			$comment->post_at=$date_format;
 			$comment->job_id=$request->job_id;
 			$comment->save();
-			return response()->json(array('mess'=>'Báo giá thành công'));
-		}
-		catch(Exception $ex){
-			return response()->json(array('err'=>'Có lỗi xảy ra vui lòng thử lại'));
-		}
+			/*	$display=  '<tr>'+ 
+                    '<td>{{$jobReply -> user -> full_name }}</td>'+
+                    '<td>'+ $request->introduce +'</td>'+
+                    '<td>'+ $request->completed_day +'</td>'+
+                    '<td>'+ $request->introduce +'</td>'+
+                    '</tr>';*/
+                    return response()->json(array('mess'=>'Báo giá thành công','comment'=>$comment->toArray()));
+                }
+        catch(Exception $ex){
+                	return response()->json(array('err'=>'Có lỗi xảy ra vui lòng thử lại'));
+            }
 
-	}
-
-	
+        }
 }
 ?>

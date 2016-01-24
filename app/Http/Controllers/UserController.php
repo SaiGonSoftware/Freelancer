@@ -64,7 +64,7 @@ class UserController extends Controller {
 		$user=$userDetail;
 		$user->avatar = $src;
 		$user->save();
-		return "ok";
+		return $src;
 	}
 
 	/**

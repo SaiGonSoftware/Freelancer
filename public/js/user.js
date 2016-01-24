@@ -215,18 +215,15 @@ $(document).ready(function() {
         beforeSend: function() {
             $(".progress").show();
         },
-        uploadProgress: function(event, postion, total, percentComplete) {
+        uploadProgress: function(event, position, total, percentComplete) {
             $(".progress-bar").width(percentComplete + "%");
             $(".sr-only").html(percentComplete + "%");
         },
-        success: function() {
+        success: function(data) {
             $(".progress").hide();
             alert('Cập nhật ảnh đại diện thành công');
+            $('.userAvatarUpload').attr("src","/"+data);
         },
-        complete:function(response){
-            $("#userAvatar").html("<img src='"+response.responseText+"'/>");
-            alert("<img src='"+response.responseText+"'/>");
-        }
     });
     $(".progress").hide();
 });
@@ -344,8 +341,8 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
         },
     })
     .done(function(data) {
-     $("#job_comment_post").html(data);
- });
+       $("#job_comment_post").html(data);
+   });
     
 });
 
@@ -420,7 +417,7 @@ $(document).ready(function() {
     $(".delComment").on('click', function() {
         if(ConfirmDelete()){
             var id= $(this).attr('data-id');
-            
+
             $.ajax({
                 url: '/deleteComment/' + id,
                 type: 'GET',
@@ -432,7 +429,7 @@ $(document).ready(function() {
             })
             $(this).parent().parent().remove();
         }
-        
+
     });
 });
 
@@ -469,18 +466,20 @@ $(document).ready(function() {
             data: data,
             success:function(data) {
                 alert(data.mess);
+                window.location.reload();
+                $("#commentForm")[0].reset();
             },
             error:function(data) {
                 alert(data.err);
             }
         });
-        $("#commentForm")[0].reset();
-        $("#job_comment_post").load('ajaxcomment');
+
+        
     });
 });
 
 
-function displayComment(){
+/*function displayComment(){
     var slug = getUrlVars()[3];
     var date_param = getUrlVars()[4];
     var date=date_param.split("-").reverse().join("-");
@@ -496,4 +495,4 @@ function displayComment(){
           $("#job_comment_post").html(data);
       }
   });
-}
+}*/
