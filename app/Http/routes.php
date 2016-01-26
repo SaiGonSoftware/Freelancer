@@ -17,12 +17,16 @@ Route::get('/trang-chu','IndexController@home');
 Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('/userinfo','UserController@userDetailAjax');
+Route::get('/tai-khoan/cap-nhat-mat-khau/{token}',function(){
+	return view('ui.mail.newpass');
+});
 
 Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
+
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
-Route::get('/tai-khoan/cap-nhat-mat-khau/{{$token}}', 'Auth\PasswordController@activeLostPass');
+
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
-Route::get('/tai-khoan/quen-mat-khau','Auth\PasswordController@lostPass');
+
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
@@ -36,14 +40,19 @@ Route::post('/postComment',['as' => 'post','uses'=>'DetailsController@newComment
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
-Route::post('/password/email',['as' => 'resetPass','uses'=>'Auth\PasswordController@resetPass']);
-Route::post('/password/new',['as' => 'newPass','uses'=>'Auth\PasswordController@activeLostPass']);
+
+
+Route::post('/findPassword',['as' => 'findPass','uses'=>'Auth\PasswordController@resetPass']);
+Route::post('/password/new','Auth\PasswordController@newLostPass');
 
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+
 Route::any('/{page?}',function(){
   return View::make('errors.404');
 })->where('page','.*');

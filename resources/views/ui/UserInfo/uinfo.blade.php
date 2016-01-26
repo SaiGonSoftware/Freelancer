@@ -20,9 +20,8 @@
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="home"></div>
       <div role="tabpanel" class="tab-pane" id="profile">
-        @foreach($userDetail as $user)
-        <img src="/{{$user->avatar}}" style="width:100px;margin-left: 40%;" class="userAvatarUpload">
-        <form id="formAvatar" action="/tai-khoan/thong-tin-ca-nhan/{{$user->username}}/upload" method="post" enctype="multipart/form-data"> 
+        <img src="/{{$userDetail->avatar}}" style="width:100px;margin-left: 40%;" class="userAvatarUpload">
+        <form id="formAvatar" action="/tai-khoan/thong-tin-ca-nhan/{{$userDetail->username}}/upload" method="post" enctype="multipart/form-data"> 
          {!! csrf_field() !!}
          <label class="control-label">Cập nhật ảnh đại diện</label>
          <input id="avatar"  type="file" name="file" class="file-loading" id="avatarFile">
@@ -40,7 +39,7 @@
       <div >
 
       </div>
-      @endforeach()
+
     </div>
     <div role="tabpanel" class="tab-pane" id="manage">
      <form>

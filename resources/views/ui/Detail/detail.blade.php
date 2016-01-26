@@ -87,24 +87,24 @@
 									</div>
 
 									<div class="panel-body">
-										<form id="commentForm" action="" method="post">
+										<form id="commentForm" name="commentForm" action="{{URL::to('/postComment') }}" method="post">
 											{!! csrf_field() !!}
 											<input type="hidden" name="job_id" id="job_id" value="{{$job -> id}}">
 											<div class="form-group">
 												<label for="allowance">Chi phí trả cho bạn(VND):</label>
-												<input type="text" class="form-control" id="allowance" name="allowance">
+												<input type="text" class="form-control" id="allowance" name="allowance" >
 											</div>
 											<div class="form-group">
 												<label for="completed_day">Hoàn thành dự án trong(Ngày):</label>
-												<input type="text" class="form-control" id="completed_day" name="completed_day">
+												<input type="text" class="form-control" id="completed_day" name="completed_day" >
 											</div>
 											<div class="form-group">
 												<label for="introduce">Đề xuất:
 													Lý do gì khiến bạn là ứng viên tốt nhất cho dự án này</label>
-													<textarea id="introduce" name="introduce" cols="100%" rows="10" style="width=100%;height=100%"></textarea>
+													<textarea id="introduce" name="introduce" cols="100%" rows="10" style="width=100%;height=100%" ></textarea>
 												</div>
 												@if(Auth::check())
-												<input type="submit" class="btn btn-info" value="Gửi báo giá" id="btnInsertComment" style="margin-top:5px">
+												<button type="submit" class="btn btn-info" id="btnInsertComment">Gửi báo giá</button>
 												&nbsp;
 												@else
 												<div class="alert alert-danger" role="alert">Vui lòng đăng nhập để gửi báo giá</div>

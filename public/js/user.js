@@ -1,107 +1,4 @@
 $(document).ready(function() {
-    $("#newpassReset").formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            passowrd: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập mật khẩu"
-                    }
-                }
-            },
-            stringLength: {
-                min: 5,
-                max: 30,
-                message: 'Mật khẩu phải từ 5 - 30 kí tự'
-            },
-        }
-    })
-});
-
-$(document).ready(function() {
-    $("#commentForm").formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            allowance: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập kinh phí"
-                    },
-                    hex:{
-                        message: "Kinh phí phải là số"
-                    }
-                }
-            },
-            completed_day: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập ngày hoàn thành"
-                    }
-                }
-            },
-            description: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập giới thiệu bản thân"
-                    }
-                }
-            }
-        }
-    })
-});
-
-$(document).ready(function() {
-    $("#formPassword").formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập mật khẩu"
-                    },
-                    stringLength: {
-                        min: 5,
-                        max: 30,
-                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
-                    }
-                }
-            },
-            repassword: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập mật khẩu"
-                    },
-                    identical: {
-                        field: "password",
-                        message: "Mật khẩu bạn nhập không trùng"
-                    },
-                    stringLength: {
-                        min: 5,
-                        max: 30,
-                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
-                    }
-                }
-            }
-        }
-    })
-});
-
-$(document).ready(function() {
     $("#login_form").formValidation({
         framework: 'bootstrap',
         icon: {
@@ -111,25 +8,22 @@ $(document).ready(function() {
         },
         fields: {
             usernameLogin: {
-                message: "The username is not valid",
                 validators: {
                     notEmpty: {
-                        message: "Vui lòng nhập tên đăng nhập"
+                        message: 'Vui lòng nhập tên đăng nhập'
                     }
                 }
             },
             passwordLogin: {
-                message: "The password is not valid",
                 validators: {
                     notEmpty: {
-                        message: "Vui lòng nhập tên mật khẩu"
+                        message: 'Vui lòng nhập mật khẩu'
                     }
                 }
-            }
+            },
         }
-    })
+    });
 });
-
 $(document).ready(function() {
     function randomNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -214,9 +108,153 @@ $(document).ready(function() {
         }
     });
 });
+function commentForm(){
+    $("#commentForm").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            allowance: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập kinh phí"
+                    },
+                    hex:{
+                        message: "Kinh phí phải là số"
+                    }
+                }
+            },
+            completed_day: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập ngày hoàn thành'
+                    },
+                    hex:{
+                        message: "Ngày hoàn thành phải là số"
+                    }
+                }
+            },
+            introduce: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập giới thiệu bản thân'
+                    }
+                }
+            },
+        }
+    });
+}
 
+$(document).ready(function() {
+    if(commentForm()){
+    $('#btnInsertComment').click(function(event) {
+        event.preventDefault();
+        var data=$("#commentForm").serialize();
+        alert(data);
+        $.ajax({
+            url: '/postComment',
+            type: 'POST',
+            data: data,
+            success:function(data) {
+                alert(data.mess);
+                window.location.reload();
+                $("#commentForm")[0].reset();
+            },
+            error:function(data) {
+                alert(data.err);
+            }
+        });
+    })
+    }
+});
 
+$(document).ready(function() {
+    $("#formPassword").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
+                    }
+                }
+            },
+            repassword: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    },
+                    identical: {
+                        field: "password",
+                        message: "Mật khẩu bạn nhập không trùng"
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
+                    }
+                }
+            }
+        }
+    })
+});
+/*$(document).ready(function() {
+    $("#forgotpassForm").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            emailForgot: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập tên email'
+                    }
+                }
+            },
+        }
+    });
+});*/
 
+$(document).ready(function() {
+    $("#newpassReset").formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            newpassword: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
+                    }
+                }
+            }
+        }
+    })
+});
 
 
 
@@ -320,9 +358,7 @@ $('#login_btn').click(function() {
     });
 });
 
-$("#regis_btn").click(function() {
-    alert("Đăng ký thành công vui lòng kiểm tra email");
-});
+
 
 function getUrlVars()
 {
@@ -351,8 +387,8 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
         },
     })
     .done(function(data) {
-     $("#job_comment_post").html(data);
- });
+       $("#job_comment_post").html(data);
+   });
     
 });
 
@@ -453,18 +489,6 @@ function ConfirmDelete()
 }
 
 
-/*
-$(document).on("click", ".user_info_comment .pagination a", function(page) {
-    event.preventDefault();
-    var page = $(this).attr("href").split("page=")[1];
-    $.ajax({
-        url: '/userinfo' + '?page='+page,
-    })
-    .done(function(data) {
-       $("#comment_content").html(data);
-   });
-    
-});*/
 
 $(document).ready(function() {
     $('#btnNewPass').click(function() {
@@ -484,6 +508,60 @@ $(document).ready(function() {
         });
 
         
+    });
+});
+
+$('#forgot_pass').on('click', function() {
+    $("#login").css("display", "none");
+    $("#forgot_pass").css("margin-top", "10%");
+});
+
+
+$(document).ready(function() {
+    $('#forgotpassBtn').click(function() {
+        event.preventDefault();
+        var data=$("#forgotpassForm").serializeArray();
+        $.ajax({
+            url: '/findPassword',
+            type: 'POST',
+            data:data,
+            success:function(response) {
+                alert(response.mess);
+                $("#forgotpassForm")[0].reset();
+            },
+            error:function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
+            }
+        });
+
+        
+    });
+});
+
+$(document).ready(function() {
+    $('#resetPass').click(function() {
+        event.preventDefault();
+        var password=$("#newpassword").val();
+        var url=$("#url").val();
+        // for token 
+        var token=$("input[name='_token']").val();
+        $.ajax({
+            url: '/password/new',
+            type: 'POST',
+            data:{
+                password:password,
+                url:url,
+                _token : token  
+            },
+            success:function(data) {
+                alert(data.mess);
+                $("#newpassReset")[0].reset();
+            },
+            error:function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
+            }
+        });
+
     });
 });
 

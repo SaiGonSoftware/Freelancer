@@ -21,7 +21,12 @@ class UserController extends Controller {
 		if (Auth::guest()) {
 			return redirect()->intended('/');
 		}
-		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->get();
+
+		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->first();
+		if(!$userDetail){
+			return view('errors.404');
+		}
+
 		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->get();
 		return view('ui.userinfo.uinfo',compact('userDetail','job_comment_list'));
 	}
@@ -75,14 +80,23 @@ class UserController extends Controller {
 	 */
 	public function deleteComment($id)
 	{
+		if (Auth::guest()) {
+			return redirect()->intended('/');
+		}
 		Comment::where('id','=',$id)->delete();
 		return response()->json(array('mess'=>'Xóa thành công'));
 	}
-	
 
-	/*public function jobUserPost()
+	/**
+	 * [jobUserPost get the job that user post]
+	 * @return [type] [description]
+	 */
+	public function jobUserPost()
 	{
+		if (Auth::guest()) {
+			return redirect()->intended('/');
+		}
 		$jobpost=Job::where('user_id','=', Auth::user()->id)->paginate(4);
 		return view('ui.userinfo.uinfo',compact('jobpost'));
-	}*/
+	}
 }

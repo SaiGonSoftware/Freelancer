@@ -9,6 +9,7 @@ use Hash;
 use Input;
 use Flash;
 use Request;
+use Mail;
 class PasswordController extends Controller {
 
 	/*
@@ -49,35 +50,31 @@ class PasswordController extends Controller {
 	}
 
 	/**
-	 * Lost pass get view
-	 * return lostpass view
-	 */
-	public function lostPass()
-	{
-		return view('ui.mail.lostpass');
-	}
-
-	/**
 	 * Send confirm email to reset pass
 	 */
-	public function resetPass(Request $request)
+	public function resetPass()
 	{
-		$user= User::where('email', '=' , $request->email)->first();
+		$emailForgot=Input::get('emailForgot');
+		$user= User::where('email', '=' , $emailForgot)->first();
 		$data=['username'=>$user -> username,'email'=>$user -> email,'token'=>$user -> remember_token];
 		Mail::send('ui.mail.reset',$data, function ($m) use ($user) {
             $m->from('ngohungphuc95@gmail.com', 'Reset mật khẩu');
 			$m->to($user->email, $user->full_name)->subject('Email reset mật khẩu');
         });
-        echo "<script>alert('Vui lòng kiểm tra email để kích hoạt')</script>";
+        return response()->json(array('mess'=>'Vui lòng kiểm tra email để kích hoạt'));
 	}
 
-	public function activeLostPass($token)
+	/**
+	 * [newLostPass use to update password]
+	 * @param  [type] $token [compare token with the source and update pass]
+	 * @return response
+	 */
+	public function newLostPass()
 	{
-		$userDetail=new User();
-		$name=Auth::user()->username;
-		$newPass=Input::get('password');
-		$userDetail->password=$newPass;
-		$userDetail->where('remember_token',$token)->update(['password' => Hash::make($newPass)]);
-		echo "<script>alert('Cập nhật mật khẩu thành công')</script>";
+		$token=explode('/',Input::get('url'));
+		$newPass=Input::get('newpassword');
+		User::where('remember_token','=', $token[3])->update(['password' => \Hash::make($newPass)]);
+		return response()->json(array('mess'=>'Cập nhật mật khẩu thành công'));
 	}
+
 }

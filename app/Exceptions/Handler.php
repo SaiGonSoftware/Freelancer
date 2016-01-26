@@ -2,6 +2,7 @@
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+
 class Handler extends ExceptionHandler {
 
 	/**
@@ -35,32 +36,7 @@ class Handler extends ExceptionHandler {
 	 */
 	public function render($request, Exception $e)
 	{
-		if ($this->isHttpException($e))
-		{
-			return $this->renderHttpException($e);
-		}
-		else
-		{
-			return parent::render($request, $e);
-		}
-	}
-
-	/**
-     * Render the given HttpException.
-     *
-     * @param  \Symfony\Component\HttpKernel\Exception\HttpException  $e
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-	protected function renderHttpException(HttpException $e)
-	{
-		if (view()->exists('errors.'.$e->getStatusCode()))
-		{
-			return view('errors.'.$e->getStatusCode(), [], $e->getStatusCode());
-		}
-		else
-		{
-			return (new SymfonyDisplayer(config('app.debug')))->createResponse($e);
-		}
+		return parent::render($request, $e);
 	}
 
 }

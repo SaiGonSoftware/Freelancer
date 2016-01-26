@@ -110,11 +110,49 @@
                 <label for="login-password">Password</label>
                 <input type="password" class="form-control" id="password" name="passwordLogin">
             </div>
-            <button type="button" class="btn btn-primary" id="login_btn">Đăng nhập</button>
-            <a href="/tai-khoan/quen-mat-khau">Quên mật khẩu ?</a>
+            <button type="submit" class="btn btn-primary login_btn" id="login_btn">Đăng nhập</button>
+            <a href="#" data-target="#pwdModal" data-toggle="modal" id="forgot_pass">Quên mật khẩu ?</a>
         </form>
         
     </div>
 </div>
 
 <!-- ============ LOGIN END ============ -->
+<div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="    margin-top: 8%;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              <h1 class="text-center">Tìm lại mật khẩu</h1>
+          </div>
+          <div class="modal-body">
+              <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+
+                          <p>Bạn có thể tạo mới mật khẩu bằng cách gửi email kích hoạt cho chúng tôi</p>
+                          <div class="panel-body">
+                            <fieldset>
+                            <form action="{{ url('/findPassword')}}" method="post" id="forgotpassForm">
+                                    {!! csrf_field() !!}
+                                    <div class="form-group">
+                                       <input class="form-control input-lg" placeholder="Địa chỉ E-mail" name="emailForgot" type="email" id="emailForgot" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-lg btn-primary btn-block" id="forgotpassBtn" >Gửi email</button>
+                            </form>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+      </div>    
+  </div>
+</div>
+</div>
+</div>
