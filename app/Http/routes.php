@@ -17,7 +17,7 @@ Route::get('/trang-chu','IndexController@home');
 Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('/userinfo','UserController@userDetailAjax');
-Route::get('/tai-khoan/cap-nhat-mat-khau/{token}',function(){
+Route::get('/tai-khoan/{name}/cap-nhat-mat-khau/{token}',function(){
 	return view('ui.mail.newpass');
 });
 
@@ -43,7 +43,7 @@ Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profile
 
 
 Route::post('/findPassword',['as' => 'findPass','uses'=>'Auth\PasswordController@resetPass']);
-Route::post('/password/new','Auth\PasswordController@newLostPass');
+Route::post('/password/new',['as' => 'newLostPass','uses'=>'Auth\PasswordController@newLostPass']);
 
 
 Route::controllers([

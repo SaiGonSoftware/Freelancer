@@ -108,52 +108,50 @@ $(document).ready(function() {
         }
     });
 });
-function commentForm(){
-    $("#commentForm").formValidation({
-        framework: 'bootstrap',
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
+$(document).ready(function() {
+   $("#commentForm").formValidation({
+    framework: 'bootstrap',
+    icon: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+    },
+    fields: {
+        allowance: {
+            validators: {
+                notEmpty: {
+                    message: "Vui lòng nhập kinh phí"
+                },
+                hex:{
+                    message: "Kinh phí phải là số"
+                }
+            }
         },
-        fields: {
-            allowance: {
-                validators: {
-                    notEmpty: {
-                        message: "Vui lòng nhập kinh phí"
-                    },
-                    hex:{
-                        message: "Kinh phí phải là số"
-                    }
+        completed_day: {
+            validators: {
+                notEmpty: {
+                    message: 'Vui lòng nhập ngày hoàn thành'
+                },
+                hex:{
+                    message: "Ngày hoàn thành phải là số"
                 }
-            },
-            completed_day: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập ngày hoàn thành'
-                    },
-                    hex:{
-                        message: "Ngày hoàn thành phải là số"
-                    }
+            }
+        },
+        introduce: {
+            validators: {
+                notEmpty: {
+                    message: 'Vui lòng nhập giới thiệu bản thân'
                 }
-            },
-            introduce: {
-                validators: {
-                    notEmpty: {
-                        message: 'Vui lòng nhập giới thiệu bản thân'
-                    }
-                }
-            },
-        }
-    });
-}
+            }
+        },
+    }
+});
+});
 
 $(document).ready(function() {
-    if(commentForm()){
     $('#btnInsertComment').click(function(event) {
         event.preventDefault();
-        var data=$("#commentForm").serialize();
-        alert(data);
+        var data=$("#commentForm").serializeArray();
         $.ajax({
             url: '/postComment',
             type: 'POST',
@@ -168,7 +166,6 @@ $(document).ready(function() {
             }
         });
     })
-    }
 });
 
 $(document).ready(function() {
@@ -387,8 +384,8 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
         },
     })
     .done(function(data) {
-       $("#job_comment_post").html(data);
-   });
+     $("#job_comment_post").html(data);
+ });
     
 });
 
@@ -541,18 +538,11 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#resetPass').click(function() {
         event.preventDefault();
-        var password=$("#newpassword").val();
-        var url=$("#url").val();
-        // for token 
-        var token=$("input[name='_token']").val();
+        var data=$("#newpassReset").serializeArray();
         $.ajax({
             url: '/password/new',
             type: 'POST',
-            data:{
-                password:password,
-                url:url,
-                _token : token  
-            },
+            data:data,
             success:function(data) {
                 alert(data.mess);
                 $("#newpassReset")[0].reset();

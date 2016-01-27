@@ -56,6 +56,7 @@ class PasswordController extends Controller {
 	{
 		$emailForgot=Input::get('emailForgot');
 		$user= User::where('email', '=' , $emailForgot)->first();
+		$user->remember_token;
 		$data=['username'=>$user -> username,'email'=>$user -> email,'token'=>$user -> remember_token];
 		Mail::send('ui.mail.reset',$data, function ($m) use ($user) {
             $m->from('ngohungphuc95@gmail.com', 'Reset mật khẩu');
@@ -73,7 +74,7 @@ class PasswordController extends Controller {
 	{
 		$token=explode('/',Input::get('url'));
 		$newPass=Input::get('newpassword');
-		User::where('remember_token','=', $token[3])->update(['password' => \Hash::make($newPass)]);
+		User::where('username','=', $token[2])->update(['password' => \Hash::make($newPass)]);
 		return response()->json(array('mess'=>'Cập nhật mật khẩu thành công'));
 	}
 
