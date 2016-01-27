@@ -212,7 +212,7 @@
          {!! csrf_field() !!}
          <div class="form-group">
           <label for="password">Mật khẩu mới</label>
-          <input type="password" class="form-control" id="password" placeholder="Mật khẩu mới từ 5-30 kí tự" name="password">
+          <input type="password" class="form-control" id="newpassword" placeholder="Mật khẩu mới từ 5-30 kí tự" name="newpassword">
         </div>
         <div class="form-group">
           <label for="repassword">Nhập lại mật khẩu </label>

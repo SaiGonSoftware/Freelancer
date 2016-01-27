@@ -44,7 +44,7 @@ class PasswordController extends Controller {
 	 */
 	public function newPass(Request $request)
 	{
-		$password=Input::get('password');
+		$password=Input::get('newpassword');
 		User::where('id','=', \Auth::user()->id)->update(['password' => \Hash::make($password)]);
 		return response()->json(array('mess'=>'Cập nhật mật khẩu thành công'));
 	}

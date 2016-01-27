@@ -63,12 +63,14 @@ class DetailsController extends Controller
 			$comment->post_at=$date_format;
 			$comment->job_id=$request->job_id;
 			$comment->save();
-                return response()->json(array('mess'=>'Gửi báo giá thành công'));
-            }
-        catch(Exception $ex){
-                return response()->json(array('err'=>'Có lỗi vui lòng thử lại sau'));
-            }
+            return response()->json(array('mess'=>'Gửi báo giá thành công'));
+			/*Flash::message('Gửi báo giá thành công');
+			return redirect()->back();*/
+		}
+		catch(Exception $ex){
+			return response()->json(array('err'=>'Có lỗi vui lòng thử lại sau'));
+		}
 
-        }
+	}
 }
 ?>

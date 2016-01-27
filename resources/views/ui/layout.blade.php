@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/images/favicon.png">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">
-
+    
 </head>
 
 <body id="home">
@@ -48,6 +48,8 @@
     <script src="/valid/js/bootstrap.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
+
 </body>
 
 </html>
