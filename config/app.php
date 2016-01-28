@@ -139,7 +139,6 @@ return [
 		'Intervention\Image\ImageServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
-
 		/*
 		 * Application Service Providers...
 		 */

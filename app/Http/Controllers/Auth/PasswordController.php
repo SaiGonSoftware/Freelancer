@@ -78,4 +78,19 @@ class PasswordController extends Controller {
 		return response()->json(array('mess'=>'Cập nhật mật khẩu thành công'));
 	}
 
+	/**
+	 * [passwordView return password view so that user can set new password]
+	 * @return [type] [view]
+	 */
+	public function passwordView($name,$token)
+	{
+		$userDetail=User::whereRaw('username = ? and remember_token = ? ', [$name,$token])->first();
+		if(!$userDetail){
+			return view('errors.404');
+		}
+		return view('ui.mail.newpass');
+	}
+
+
+
 }

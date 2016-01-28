@@ -533,3 +533,7 @@ $('#forgot_pass').on('click', function() {
     $("#login").css("display", "none");
     $("#forgot_pass").css("margin-top", "10%");
 });
+
+$(document).ready(function() {
+  $(".js-example-basic-single").select2();
+});

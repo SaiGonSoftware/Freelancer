@@ -1,7 +1,7 @@
 <?php 
 namespace App\Http\Controllers;
 use App\Job;
-
+use App\Tags;
 class JobController extends Controller
 {
 
@@ -23,6 +23,8 @@ class JobController extends Controller
 
 	public function FindJob()
 	{
+		$data['title']="Tìm việc freelancer";
+		$data['description']="Cộng đồng freelancer Việt-Tìm việc freelancer";
 		$data['job_pagi']= Job::orderBy('post_at', 'desc')->paginate(4);
 		return view('ui.findjob.job',$data);
 	}
@@ -37,6 +39,12 @@ class JobController extends Controller
 	{
 		$job_pagi=Job::orderBy('post_at', 'desc')->paginate(4);
 		return view('ui.findjob.pagi',compact('job_pagi'));
+	}
+
+	public function postJob()
+	{
+		$tags=Tags::all();
+		return view('ui.postjob.postjob',compact('tags'));
 	}
 }
 

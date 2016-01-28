@@ -28,9 +28,11 @@ class DetailsController extends Controller
 	{
 		$date_format = date('Y-m-d', strtotime($date));
 		$job=Job::whereRaw('slug = ? and post_at = ? ', [$slug,$date_format])->first();
+		$title="Công việc-".$job -> title;
+		$description="Tìm việc freelancer-".$job ->title;
 		$related_job=Job::whereRaw('user_id = ? and id != ?',[$job->user->id,$job->id])->get();
 		$job_comment=Comment::where('job_id', '=', $job->id)->paginate(2);
-		return view('ui.detail.detail', compact('job','related_job','job_comment'));
+		return view('ui.detail.detail', compact('job','related_job','job_comment','title','description'));
 	}
 
 	/**
@@ -63,9 +65,8 @@ class DetailsController extends Controller
 			$comment->post_at=$date_format;
 			$comment->job_id=$request->job_id;
 			$comment->save();
-            return response()->json(array('mess'=>'Gửi báo giá thành công'));
-			/*Flash::message('Gửi báo giá thành công');
-			return redirect()->back();*/
+			return response()->json(array('mess'=>'Gửi báo giá thành công'));
+			
 		}
 		catch(Exception $ex){
 			return response()->json(array('err'=>'Có lỗi vui lòng thử lại sau'));

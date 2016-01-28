@@ -1,4 +1,8 @@
 @extends('ui.layout')
+@section('userInfo')
+<link href="/css/select.min.css" rel="stylesheet">
+<script src="/js/select.min.js"></script>
+@stop
 @section('content')
 <div class="container" style="margin-top:5%;margin-bottom:10%">
   <div class="hidden-xs col-sm-3" >
@@ -34,6 +38,7 @@
         </div>
       </div>
       <hr>
+      <textarea id="textarea" class="example" rows="1"></textarea>
       <br>
       <br>
       <div >
@@ -93,7 +98,6 @@
           </div>
           <div class="form-group wysiwyg" id="job-description-group">
             <label>Description</label>
-
             <div class="btn-toolbar" data-role="editor-toolbar" data-target="#job-description">
               <div class="btn-group">
                 <a class="btn" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>

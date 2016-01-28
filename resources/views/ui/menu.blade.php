@@ -9,9 +9,11 @@
             </li>
             <li><a href="">Việc làm</a>
             </li>
+            <li><a href="{{ url() }}/cong-viec-freelancer">Đăng tin freelancer</a>
+            </li>
             <li><a href="">Đăng tin tuyển dụng</a>
             </li>
-            <li><a href="<?= url() ?>/tim-viec">Tìm Việc</a>
+            <li><a href="{{ url() }}/tim-viec">Tìm Việc</a>
             </li>
             <li><a href="">Tìm freelancer</a>
             </li>

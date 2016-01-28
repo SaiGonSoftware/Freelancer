@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2016 at 07:31 PM
+-- Generation Time: Jan 28, 2016 at 05:07 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -27,7 +27,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comments` (
-  `user_id` int(10) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `introduce` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `completed_day` int(11) NOT NULL,
   `allowance` double NOT NULL,
@@ -39,11 +40,11 @@ CREATE TABLE `comments` (
 -- Dumping data for table `comments`
 --
 
-INSERT INTO `comments` (`user_id`, `introduce`, `completed_day`, `allowance`, `post_at`, `job_id`) VALUES
-(1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, '2016-01-18', 1),
-(2, 'Tôi thích hợp cho công việc này', 7, 1500000, '2016-01-18', 1),
-(12, 'Tôi sẽ hoàn thành trong 5 ngày', 5, 1500000, '2016-01-18', 1),
-(14, 'Tôi thích hợp cho công việc này', 3, 1000000, '2016-01-18', 1);
+INSERT INTO `comments` (`id`, `user_id`, `introduce`, `completed_day`, `allowance`, `post_at`, `job_id`) VALUES
+(1, 1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, '2016-01-18', 1),
+(2, 2, 'Tôi thích hợp cho công việc này', 7, 1500000, '2016-01-18', 1),
+(4, 15, 'Tôi thích công việc này', 2, 1500000, '2016-01-18', 1),
+(90, 14, 'Tôi thích hợp cho công việc này', 5, 2000000, '2016-01-27', 5);
 
 -- --------------------------------------------------------
 
@@ -219,7 +220,7 @@ INSERT INTO `tag` (`id`, `name`) VALUES
 (14, 'Tiếng Nhật'),
 (15, 'Tiếng Trung'),
 (16, 'C#'),
-(17, 'C#'),
+(17, 'R'),
 (18, 'Ios'),
 (19, 'HTML/CSS'),
 (20, 'C'),
@@ -233,7 +234,29 @@ INSERT INTO `tag` (`id`, `name`) VALUES
 (28, 'Laravel'),
 (29, 'Zend'),
 (30, 'CI'),
-(31, 'Cake');
+(31, 'Cake'),
+(32, 'Lập trình wordpress'),
+(33, 'Lập trình Joomla'),
+(34, 'Lập trình android'),
+(35, 'Lập trình PhoneGap'),
+(36, 'IT Support'),
+(37, 'Lập trình Joomla'),
+(38, 'Phân tích dữ liệu và báo cáo'),
+(39, 'QA/Testing'),
+(40, 'Hệ thống thương mại điện tử'),
+(41, 'Quản trị hệ thống'),
+(42, 'Quản lý website'),
+(43, 'Thiết kế logo'),
+(44, '\r\nThiết kế ứng dụng'),
+(45, 'Thiết kế thư mời,tờ rơi'),
+(46, 'Thiết kế brochure'),
+(47, 'Thiết kế 2D , 3D'),
+(48, 'Thiết kế đồ họa'),
+(49, 'Viết bài PR'),
+(50, 'Dich thuật'),
+(51, 'SEO'),
+(52, 'Trade Marketing (marketing tại điểm bán hàng)'),
+(53, 'Dựng video');
 
 -- --------------------------------------------------------
 
@@ -260,10 +283,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
-(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'XmE6MztuT9raPybQktkzZzJP1fwF8G2aLrEXNkrrlIDzdTywbabGhbCOsPfo', 0, 1, 0),
-(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
-(12, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/12569796130bd18.jpg', NULL, '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'oTXZmo9rAPDqxZcgF9Se5aCDKdw52AGpOeIe76OcOK2nJGRtSqxJ860eOPHK', 0, 0, 0),
-(14, NULL, 'phuchung95', 'Phúc 95', NULL, 'ngohungphuc7695@gmail.com', '$2y$10$ZAcwUvCwgVSwV0ZZDgF9j.WDFjFH5urRcfojWHYT6ncuuUVDnLvbi', 'vZOFMp3pqYgIuA2UqOs1146oK4HSGHXTHuet5ZhoPXln5lUH4zmMCtDlbOPo', 0, 1, 0);
+(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'UTwPUz6v3tRbRd2kksExHJa3nrM2o0wl0JFU3oP4BmNNXSANfQ7oqmH7DRRr', 0, 1, 0),
+(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
+(14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456a8cde3173de.jpg', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'wUQSXwmuEDGMZXQuFA7g4dNX3Z6J8PfZgf32gio6z1tz1l8LgrzfGo10sriF', 0, 1, 0),
+(15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/15569c836fcd7f9.jpg', NULL, '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', '7YREepF6eijfbTio48KCLAydZJOmXtKBjW1KhcXara2TA0frEVtkqbnXLilP', 0, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -273,7 +296,7 @@ INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `emai
 -- Indexes for table `comments`
 --
 ALTER TABLE `comments`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `jobs`
@@ -312,6 +335,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -325,12 +353,12 @@ ALTER TABLE `manage`
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

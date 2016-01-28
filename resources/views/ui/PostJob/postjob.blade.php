@@ -1,0 +1,86 @@
+@extends('ui.layout')
+@section('content')
+
+<link href="/css/select2.min.css" rel="stylesheet" />
+<script src="https://select2.github.io/vendor/js/jquery.min.js"></script>
+<script src="/js/placeholders.js"></script>
+<script src="/js/select2.min.js"></script>
+<section id="title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<h1>Thông tin chi tiết dự án của bạn</h1>
+				
+			</div>
+		</div>
+	</div>
+</section>
+<hr>
+<form>
+	<div class="row" style="margin-left:20%">
+	<div class="col-sm-8">
+			
+			<div class="form-group" id="job-title-group">
+				<label for="title">Tên dự án:</label>
+				<input type="text" class="form-control" id="title" placeholder="Tên dự án:">
+			</div>
+			<div class="form-group" id="job-title-group">
+				<label for="job-title">Địa điểm</label>
+				<select  class="form-control" id="location">
+					<option>Choose a region</option>
+					<option>New York</option>
+					<option>Los Angeles</option>
+					<option>Chicago</option>
+					<option>Boston</option>
+					<option>San Francisco</option>
+				</select>
+			</div>
+			<div class="form-group" id="job-region-group">
+				<label for="job-region">Các kỹ năng yêu cầu</label>
+				<select  class="form-control" id="job-cat" multiple="multiple">
+					<option>Choose a region</option>
+					<option>New York</option>
+					<option>Los Angeles</option>
+					<option>Chicago</option>
+					<option>Boston</option>
+					<option>San Francisco</option>
+				</select>
+			</div>
+			<div class="form-group wysiwyg" id="job-description-group">
+				<label>Mô tả chi tiết dự án của bạn:</label>
+				<div class="btn-toolbar" data-role="editor-toolbar" data-target="#job-description">
+					<div class="btn-group">
+						<a class="btn" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+						<a class="btn" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+					</div>
+					<div class="btn-group">
+						<a class="btn" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="fa fa-list-ul"></i></a>
+						<a class="btn" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="fa fa-list-ol"></i></a>
+					</div>
+					<div class="btn-group">
+						<a class="btn" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+						<a class="btn" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+						<a class="btn" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+					</div>
+					<div class="btn-group">
+						<a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="fa fa-link"></i></a>
+						<div class="dropdown-menu input-append">
+							<input class="form-control pull-left" placeholder="http://" type="text" data-edit="createLink">
+							<button class="btn btn-primary" type="button">Add</button>
+						</div>
+						<a class="btn" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="fa fa-unlink"></i></a>
+					</div>
+					<input type="text" data-edit="inserttext" id="voiceBtn" style="display: none;">
+				</div>
+
+				<div class="editor" id="job-description" contenteditable="true"></div>
+			</div>
+		</div>
+
+	</div>
+	<div class="row text-center">
+		<p>&nbsp;</p>
+		<a href="#" class="btn btn-primary btn-lg">Preview <i class="fa fa-arrow-right"></i></a>
+	</div>
+</form>
+@stop

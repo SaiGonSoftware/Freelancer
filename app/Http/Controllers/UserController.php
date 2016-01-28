@@ -26,9 +26,10 @@ class UserController extends Controller {
 		if(!$userDetail){
 			return view('errors.404');
 		}
-
+		$title="Quản lý tài khoản ".$userDetail->full_name;
+		$description="Quản lý tài khoản,cập nhật ảnh đại diện,xem sửa xóa báo giá,tạo cv....";
 		$job_comment_list=Comment::where('user_id', '=', Auth::user()->id)->get();
-		return view('ui.userinfo.uinfo',compact('userDetail','job_comment_list'));
+		return view('ui.userinfo.uinfo',compact('userDetail','job_comment_list','title','description'));
 	}
 
 	/**

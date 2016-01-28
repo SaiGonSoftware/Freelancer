@@ -17,16 +17,14 @@ Route::get('/trang-chu','IndexController@home');
 Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('/userinfo','UserController@userDetailAjax');
-Route::get('/tai-khoan/{name}/cap-nhat-mat-khau/{token}',function(){
-	return view('ui.mail.newpass');
-});
+Route::get('/tai-khoan/{name}/cap-nhat-mat-khau/{token}','Auth\PasswordController@passwordView');
 
 Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
 
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
-
+Route::get('/cong-viec-freelancer','JobController@postJob');
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
