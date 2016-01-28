@@ -1,6 +1,24 @@
-//for login
+function redirect(url) {
+    window.location = url;
+}
+function loader(status) {
+    if (status == "on") {
+        $("#login_form").css({
+            opacity: 0.2
+        });
+        $("#loading").show();
+    } else {
+        $("#login_form").css({
+            opacity: 1
+        });
+        $("#loading").hide();
+    }
+}
+
+//login ajax
 $(document).ready(function() {
-    $("#login_form").formValidation({
+    $('#login_form')
+    .formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
@@ -23,6 +41,23 @@ $(document).ready(function() {
                 }
             },
         }
+    })
+    .on('success.form.fv', function(e) {
+        e.preventDefault();
+        var login_form = $("#login_form").serializeArray();
+        var url = $("#login_form").attr('action');
+        loader('on');
+        $.post(url, login_form, function(data) {
+            loader('off');
+            if (data == 'fail') {
+                $("#message").text('Username hoặc password sai hoặc tài khoản chưa kích hoạt');
+                $("#message").show();
+            } else {
+                $("#message").text('Đăng nhập thành công vui lòng đợi .....');
+                $("#message").show();
+                redirect('/trang-chu');
+            }
+        });
     });
 });
 //for register
@@ -101,7 +136,7 @@ $(document).ready(function() {
                         message: 'Kết quả sai',
                         callback: function(value, validator, $field) {
                             var items = $('#captchaOperation').html().split(' '),
-                                sum = parseInt(items[0]) + parseInt(items[2]);
+                            sum = parseInt(items[0]) + parseInt(items[2]);
                             return value == sum;
                         }
                     }
@@ -113,44 +148,44 @@ $(document).ready(function() {
 //post comment
 $(document).ready(function() {
     $('#commentForm')
-        .formValidation({
-            framework: 'bootstrap',
-            icon: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
+    .formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            allowance: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập kinh phí"
+                    },
+                    hex: {
+                        message: "Kinh phí phải là số"
+                    }
+                }
             },
-            fields: {
-                allowance: {
-                    validators: {
-                        notEmpty: {
-                            message: "Vui lòng nhập kinh phí"
-                        },
-                        hex: {
-                            message: "Kinh phí phải là số"
-                        }
+            completed_day: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập ngày hoàn thành'
+                    },
+                    hex: {
+                        message: "Ngày hoàn thành phải là số"
                     }
-                },
-                completed_day: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Vui lòng nhập ngày hoàn thành'
-                        },
-                        hex: {
-                            message: "Ngày hoàn thành phải là số"
-                        }
+                }
+            },
+            introduce: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập giới thiệu bản thân'
                     }
-                },
-                introduce: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Vui lòng nhập giới thiệu bản thân'
-                        }
-                    }
-                },
-            }
-        })
-        .on('success.form.fv', function(e) {
+                }
+            },
+        }
+    })
+.on('success.form.fv', function(e) {
             // Prevent form submission
             e.preventDefault();
             var data = $("#commentForm").serializeArray();
@@ -172,8 +207,8 @@ $(document).ready(function() {
         });
 });
     //for user who login to update password 
-$(document).ready(function() {
-    $('#formNewPassword')
+    $(document).ready(function() {
+        $('#formNewPassword')
         .formValidation({
             framework: 'bootstrap',
             icon: {
@@ -213,105 +248,105 @@ $(document).ready(function() {
                 }
             }
         })
-        .on('success.form.fv', function(e) {
-            e.preventDefault();
-            var data = $("#formNewPassword").serialize();
-            var $form = $(e.target);
-            $form.ajaxSubmit({
-                url: '/updatePassword',
-                type: 'POST',
-                data: data,
-                success: function(data) {
-                    alert(data.mess);
-                    $("#formNewPassword")[0].reset();
-                },
-                error: function() {
-                    alert("Có lỗi xảy ra vui lòng thử lại");
-                }
-            });
-        });
+.on('success.form.fv', function(e) {
+    e.preventDefault();
+    var data = $("#formNewPassword").serialize();
+    var $form = $(e.target);
+    $form.ajaxSubmit({
+        url: '/updatePassword',
+        type: 'POST',
+        data: data,
+        success: function(data) {
+            alert(data.mess);
+            $("#formNewPassword")[0].reset();
+        },
+        error: function() {
+            alert("Có lỗi xảy ra vui lòng thử lại");
+        }
+    });
+});
 });
 
 //for user forgot pass send them email to get newpass
 $(document).ready(function() {
     $('#forgotpassForm')
-        .formValidation({
-            framework: 'bootstrap',
-            icon: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                emailForgot: {
-                    validators: {
-                        notEmpty: {
-                            message: 'Vui lòng nhập tên email'
-                        }
+    .formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            emailForgot: {
+                validators: {
+                    notEmpty: {
+                        message: 'Vui lòng nhập tên email'
                     }
-                },
-            }
-        })
-        .on('success.form.fv', function(e) {
-            e.preventDefault();
-            var data = $("#forgotpassForm").serializeArray();
-            var $form = $(e.target);
-            $form.ajaxSubmit({
-                url: '/findPassword',
-                type: 'POST',
-                data: data,
-                success: function(response) {
-                    alert(response.mess);
-                    $("#forgotpassForm")[0].reset();
-                },
-                error: function() {
-                    alert("Có lỗi xảy ra vui lòng thử lại");
                 }
-            });
+            },
+        }
+    })
+    .on('success.form.fv', function(e) {
+        e.preventDefault();
+        var data = $("#forgotpassForm").serializeArray();
+        var $form = $(e.target);
+        $form.ajaxSubmit({
+            url: '/findPassword',
+            type: 'POST',
+            data: data,
+            success: function(response) {
+                alert(response.mess);
+                $("#forgotpassForm")[0].reset();
+            },
+            error: function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
+            }
         });
+    });
 });
 //update new password for user forgot password
 $(document).ready(function() {
     $('#newpassReset')
-        .formValidation({
-            framework: 'bootstrap',
-            icon: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-                newpassword: {
-                    validators: {
-                        notEmpty: {
-                            message: "Vui lòng nhập mật khẩu"
-                        },
-                        stringLength: {
-                            min: 5,
-                            max: 30,
-                            message: 'Mật khẩu phải từ 5 - 30 kí tự'
-                        }
+    .formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            newpassword: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mật khẩu"
+                    },
+                    stringLength: {
+                        min: 5,
+                        max: 30,
+                        message: 'Mật khẩu phải từ 5 - 30 kí tự'
                     }
                 }
             }
-        })
-        .on('success.form.fv', function(e) {
-            e.preventDefault();
-            var data = $("#newpassReset").serializeArray();
-            var $form = $(e.target);
-            $form.ajaxSubmit({
-                url: '/password/new',
-                type: 'POST',
-                data: data,
-                success: function(data) {
-                    alert(data.mess);
-                    $("#newpassReset")[0].reset();
-                },
-                error: function() {
-                    alert("Có lỗi xảy ra vui lòng thử lại");
-                }
-            });
+        }
+    })
+    .on('success.form.fv', function(e) {
+        e.preventDefault();
+        var data = $("#newpassReset").serializeArray();
+        var $form = $(e.target);
+        $form.ajaxSubmit({
+            url: '/password/new',
+            type: 'POST',
+            data: data,
+            success: function(data) {
+                alert(data.mess);
+                $("#newpassReset")[0].reset();
+            },
+            error: function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
+            }
         });
+    });
 });
 //update user avatar
 $(document).ready(function() {
@@ -380,51 +415,17 @@ $("#register-email").keyup(function() {
     }
 });
 
-function loader(status) {
-    if (status == "on") {
-        $("#login_form").css({
-            opacity: 0.2
-        });
-        $("#loading").show();
-    } else {
-        $("#login_form").css({
-            opacity: 1
-        });
-        $("#loading").hide();
-    }
-}
-
-function redirect(url) {
-    window.location = url;
-}
-$('#login_btn').click(function() {
-    var login_form = $("#login_form").serializeArray();
-    var url = $("#login_form").attr('action');
-    loader('on');
-    $.post(url, login_form, function(data) {
-        loader('off');
-        if (data == 'fail') {
-            $("#message").text('Username hoặc password sai hoặc tài khoản chưa kích hoạt');
-            $("#message").show();
-        } else {
-            $("#message").text('Đăng nhập thành công vui lòng đợi .....');
-            $("#message").show();
-            redirect('/trang-chu');
-        }
-    });
-});
-
 function getUrlVars() {
-        var vars = [],
-            hash;
-        var hashes = window.location.href.slice(window.location.href.indexOf('/') + 1).split('/');
-        for (var i = 0; i < hashes.length; i++) {
-            hash = hashes[i].split('=');
-            vars.push(hash[0]);
-            vars[hash[0]] = hash[1];
-        }
-        return vars;
+    var vars = [],
+    hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('/') + 1).split('/');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
     }
+    return vars;
+}
 //ajax paging for comment
 $(document).on("click", ".details_pagi .pagination a", function(page) {
     event.preventDefault();
@@ -433,15 +434,15 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
     var date = date_param.split("-").reverse().join("-");
     var page = $(this).attr("href").split("page=")[1];
     $.ajax({
-            url: '/comment/' + slug + '/' + date + '?page=' + page,
-            data: {
-                slug: slug,
-                date: date
-            },
-        })
-        .done(function(data) {
-            $("#job_comment_post").html(data);
-        });
+        url: '/comment/' + slug + '/' + date + '?page=' + page,
+        data: {
+            slug: slug,
+            date: date
+        },
+    })
+    .done(function(data) {
+        $("#job_comment_post").html(data);
+    });
 
 });
 
@@ -471,16 +472,16 @@ $(document).ready(function() {
 });
 //split the string
 function addCommas(nStr) {
-        nStr += '';
-        x = nStr.split('.');
-        x1 = x[0];
-        x2 = x.length > 1 ? '.' + x[1] : '';
-        var rgx = /(\d+)(\d{3})/;
-        while (rgx.test(x1)) {
-            x1 = x1.replace(rgx, '$1' + ',' + '$2');
-        }
-        return x1 + x2;
+    nStr += '';
+    x = nStr.split('.');
+    x1 = x[0];
+    x2 = x.length > 1 ? '.' + x[1] : '';
+    var rgx = /(\d+)(\d{3})/;
+    while (rgx.test(x1)) {
+        x1 = x1.replace(rgx, '$1' + ',' + '$2');
     }
+    return x1 + x2;
+}
 //edit comment using ajax
 $(function() {
     var message_status = $("#message");
@@ -521,12 +522,12 @@ $(document).ready(function() {
 });
 
 function ConfirmDelete() {
-        var x = confirm("Bạn có chắc chắn muốn xóa");
-        if (x)
-            return true;
-        else
-            return false;
-    }
+    var x = confirm("Bạn có chắc chắn muốn xóa");
+    if (x)
+        return true;
+    else
+        return false;
+}
 
 $('#forgot_pass').on('click', function() {
     $("#login").css("display", "none");
