@@ -40,7 +40,7 @@ $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
 	'App\Exceptions\Handler'
 );
-
+$app->register('Artesaos\SEOTools\Providers\SEOToolsServiceProvider');
 /*
 |--------------------------------------------------------------------------
 | Return The Application

@@ -11,7 +11,8 @@
 		"guzzlehttp/guzzle": "~4.0",
 		"kartik-v/bootstrap-fileinput": "dev-master",
         "intervention/image": "^2.3",
-        "laracasts/flash": "~1.0"
+        "laracasts/flash": "~1.0",
+        "artesaos/seotools":"dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
