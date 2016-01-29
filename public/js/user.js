@@ -534,6 +534,11 @@ $('#forgot_pass').on('click', function() {
     $("#forgot_pass").css("margin-top", "10%");
 });
 
-$(document).ready(function() {
-  $(".js-example-basic-single").select2();
+$(function() {
+    $('#magicsuggest').magicSuggest({
+        placeholder: 'Các kỹ năng yêu cầu',
+        allowDuplicates :false,
+        maxSelection :2,
+        data:'/valid/tags.php'
+    });
 });

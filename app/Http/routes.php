@@ -24,13 +24,15 @@ Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
-Route::get('/cong-viec-freelancer','JobController@postJob');
+Route::get('/cong-viec-freelancer',function(){
+	return view('ui.postjob.postjob');
+});
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
 Route::get('/deleteComment/{id}',['as' => 'del','uses'=>'UserController@deleteComment']);
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
-
+Route::get('/getTags','JobController@getTags');
 
 Route::post('/updatePassword',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
 Route::post('/displaycomment','DetailsController@findCommentAjax');

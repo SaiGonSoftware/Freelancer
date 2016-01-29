@@ -41,10 +41,10 @@ class JobController extends Controller
 		return view('ui.findjob.pagi',compact('job_pagi'));
 	}
 
-	public function postJob()
+	public function getTags()
 	{
 		$tags=Tags::all();
-		return view('ui.postjob.postjob',compact('tags'));
+		echo json_encode($tags);
 	}
 }
 

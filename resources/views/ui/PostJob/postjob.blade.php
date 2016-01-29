@@ -1,10 +1,6 @@
 @extends('ui.layout')
 @section('content')
 
-<link href="/css/select2.min.css" rel="stylesheet" />
-<script src="https://select2.github.io/vendor/js/jquery.min.js"></script>
-<script src="/js/placeholders.js"></script>
-<script src="/js/select2.min.js"></script>
 <section id="title">
 	<div class="container">
 		<div class="row">
@@ -18,7 +14,7 @@
 <hr>
 <form>
 	<div class="row" style="margin-left:20%">
-	<div class="col-sm-8">
+		<div class="col-sm-8">
 			
 			<div class="form-group" id="job-title-group">
 				<label for="title">Tên dự án:</label>
@@ -36,15 +32,8 @@
 				</select>
 			</div>
 			<div class="form-group" id="job-region-group">
-				<label for="job-region">Các kỹ năng yêu cầu</label>
-				<select  class="form-control" id="job-cat" multiple="multiple">
-					<option>Choose a region</option>
-					<option>New York</option>
-					<option>Los Angeles</option>
-					<option>Chicago</option>
-					<option>Boston</option>
-					<option>San Francisco</option>
-				</select>
+				<label for="job-region">Các kỹ năng yêu cầu(Tối đa 7 kỹ năng)</label>
+				<div id="magicsuggest"></div>
 			</div>
 			<div class="form-group wysiwyg" id="job-description-group">
 				<label>Mô tả chi tiết dự án của bạn:</label>
@@ -80,7 +69,8 @@
 	</div>
 	<div class="row text-center">
 		<p>&nbsp;</p>
-		<a href="#" class="btn btn-primary btn-lg">Preview <i class="fa fa-arrow-right"></i></a>
+		<a href="#" class="btn btn-primary btn-lg">Đăng công việc <i class="fa fa-arrow-right"></i></a>
 	</div>
 </form>
+
 @stop

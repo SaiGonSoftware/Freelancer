@@ -1,32 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{{ isset($description) ? $description : 'Cộng đồng freelancer Việt' }}">
-    <meta name="author" content="Ngô Hùng Phúc">
-    <title>{{ isset($title) ? $title : 'Cộng đồng freelancer Việt' }}</title>
-    <link rel="shortcut icon" href="/images/favicon.png">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/valid/css/formValidation.min.css" rel="stylesheet">
-    <link href="css/magicsuggest-min.css" rel="stylesheet">
-
-</head>
-
-<body id="home">
-
-    <div id="loader">
-        <i class="fa fa-cog fa-4x fa-spin"></i>
-    </div>
-
-    @include('ui.menu') 
-    @yield('content')
-    @yield('userInfo')
-    @include('ui.footer')
-
-    <script src="/js/jquery.js"></script>
+ <script src="/js/jquery.js"></script>
+    <script src="/js/jquery-ui.js"></script>
     <script src="/js/modernizr.custom.79639.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/retina.min.js"></script>
@@ -50,8 +23,4 @@
     <script src="/valid/js/bootstrap.min.js"></script>
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
-    <script src="/js/magicsuggest-min.js"></script>
-
-</body>
-
-</html>
+    <script src="/js/bootstrap-tokenfield.min.js"></script>
