@@ -28,6 +28,26 @@
 				<label for="job-region">Các kỹ năng yêu cầu(Tối đa 5 kỹ năng)</label>
 				<div id="skill"></div>
 			</div>
+			<label for="allowance-region">Hãy xác định ngân sách tùy chỉnh của mình</label>
+			<div class="input-group input-group-sm col-md-6">
+				<input type="number" class="form-control" placeholder="Giá tối thiểu" aria-describedby="sizing-addon3" min="0" id="min-allowance" name="min-allowance">
+				<span class="input-group-addon" id="sizing-addon3">VND</span>
+			</div>
+			<div class="input-group input-group-sm col-md-6">
+				<input type="number" class="form-control" placeholder="Giá tối đa" aria-describedby="sizing-addon3" min="0" id="max-allowance" name="max-allowance">
+				<span class="input-group-addon" id="sizing-addon3">VND</span>
+			</div>
+			<div class="form-group" id="dayopen-region-group">
+				<label for="day_open_region">Thời gian nhận báo giá:</label>
+				<select name="day_open" class="form-control" style="width:100px">
+					<?php $num=1; ?>
+					@while ($num<=30)
+					<option value="{{$num}}">{{$num}}</option>
+					<?php $num++; ?>
+					@endwhile
+				</select>
+
+			</div>
 			<div class="form-group wysiwyg" id="job-description-group">
 				<label>Mô tả chi tiết dự án của bạn:</label>
 				<div class="btn-toolbar" data-role="editor-toolbar" data-target="#job-description">
@@ -52,15 +72,15 @@
 						</div>
 						<a class="btn" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="fa fa-unlink"></i></a>
 					</div>
-					<input type="text" data-edit="inserttext" id="voiceBtn" style="display: none;">
+					<input type="text" data-edit="inserttext" id="voiceBtn" style="display: none">
 				</div>
 
-				<div class="editor" id="job-description" contenteditable="true"></div>
+				<div class="editor" id="job-description" contenteditable="true" style="overflow:scroll"></div>
 			</div>
 		</div>
 
 	</div>
-	<div class="row text-center">
+	<div class="row text-center" style="margin-bottom:2%">
 		<p>&nbsp;</p>
 		<button class="btn btn-primary btn-lg post-job">Đăng công việc <i class="fa fa-arrow-right"></i></button>
 	</div>
