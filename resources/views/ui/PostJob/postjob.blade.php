@@ -22,18 +22,11 @@
 			</div>
 			<div class="form-group" id="job-title-group">
 				<label for="job-title">Địa điểm</label>
-				<select  class="form-control" id="location">
-					<option>Choose a region</option>
-					<option>New York</option>
-					<option>Los Angeles</option>
-					<option>Chicago</option>
-					<option>Boston</option>
-					<option>San Francisco</option>
-				</select>
+				<div id="location"></div>
 			</div>
 			<div class="form-group" id="job-region-group">
-				<label for="job-region">Các kỹ năng yêu cầu(Tối đa 7 kỹ năng)</label>
-				<div id="magicsuggest"></div>
+				<label for="job-region">Các kỹ năng yêu cầu(Tối đa 5 kỹ năng)</label>
+				<div id="skill"></div>
 			</div>
 			<div class="form-group wysiwyg" id="job-description-group">
 				<label>Mô tả chi tiết dự án của bạn:</label>
@@ -69,7 +62,7 @@
 	</div>
 	<div class="row text-center">
 		<p>&nbsp;</p>
-		<a href="#" class="btn btn-primary btn-lg">Đăng công việc <i class="fa fa-arrow-right"></i></a>
+		<button class="btn btn-primary btn-lg post-job">Đăng công việc <i class="fa fa-arrow-right"></i></button>
 	</div>
 </form>
 

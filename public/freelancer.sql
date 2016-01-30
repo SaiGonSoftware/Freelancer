@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2016 at 05:07 PM
+-- Generation Time: Jan 30, 2016 at 04:55 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -114,10 +114,10 @@ CREATE TABLE `manage` (
 --
 
 CREATE TABLE `province` (
-  `provinceid` varchar(5) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `type` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `provinceid` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `type` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `province`
@@ -196,8 +196,8 @@ INSERT INTO `province` (`provinceid`, `name`, `type`) VALUES
 
 CREATE TABLE `tag` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `tag`

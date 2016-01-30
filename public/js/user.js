@@ -535,10 +535,17 @@ $('#forgot_pass').on('click', function() {
 });
 
 $(function() {
-    $('#magicsuggest').magicSuggest({
+    $('#skill').magicSuggest({
         placeholder: 'Các kỹ năng yêu cầu',
         allowDuplicates :false,
-        maxSelection :2,
+        maxSelection :5,
         data:'/valid/tags.php'
     });
+    $('#location').magicSuggest({
+        placeholder: 'Khu vực',
+        allowDuplicates :false,
+        maxSelection :1,
+        data:'/valid/province.php'
+    });
 });
+
