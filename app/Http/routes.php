@@ -18,11 +18,8 @@ Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('/userinfo','UserController@userDetailAjax');
 Route::get('/tai-khoan/{name}/cap-nhat-mat-khau/{token}','Auth\PasswordController@passwordView');
-
 Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
-
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
-
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
 Route::get('/cong-viec-freelancer',function(){
 	return view('ui.postjob.postjob');
@@ -34,14 +31,15 @@ Route::get('/deleteComment/{id}',['as' => 'del','uses'=>'UserController@deleteCo
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 Route::get('/getTags','JobController@getTags');
 
+
+
+Route::post('/job/postNewJob',['as' => 'NewJob','uses'=>'JobController@postJob']);
 Route::post('/updatePassword',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
 Route::post('/displaycomment','DetailsController@findCommentAjax');
 Route::post('/postComment',['as' => 'post','uses'=>'DetailsController@newComment']);
 Route::post('authen/login','Auth\AuthController@login');
 Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
-
-
 Route::post('/findPassword',['as' => 'findPass','uses'=>'Auth\PasswordController@resetPass']);
 Route::post('/password/new',['as' => 'newLostPass','uses'=>'Auth\PasswordController@newLostPass']);
 

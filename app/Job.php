@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model {
 
 	protected $table = "jobs";
-    protected $fillable = ["id", "title", "slug", "description", "content", "post_at", "day_open", "active", "allowance_min", "allowance_max", "location", "user_id"];
-    
+    protected $fillable = ["id", "title", "slug", "content", "post_at", "day_open", "active", "allowance_min", "allowance_max", "location", "user_id"];
+    public $timestamps= false;
     /**
      * Count total job posted exisit in the system
      *
