@@ -17,6 +17,10 @@ class Comment extends Model {
         return $this->BelongsTo('App\User');
     }
 
+    /**
+     * [post Show user name post the comment in user info manage]
+     * @return [type] [description]
+     */
     public function post(){
         return $this->BelongsTo('App\Job','job_id');
     }

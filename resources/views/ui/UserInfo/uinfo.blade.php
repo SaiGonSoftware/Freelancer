@@ -1,8 +1,4 @@
 @extends('ui.layout')
-@section('userInfo')
-<link href="/css/select.min.css" rel="stylesheet">
-<script src="/js/select.min.js"></script>
-@stop
 @section('content')
 <div class="container" style="margin-top:5%;margin-bottom:10%">
   <div class="hidden-xs col-sm-3" >
@@ -24,7 +20,8 @@
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="home"></div>
       <div role="tabpanel" class="tab-pane" id="profile">
-        <img src="/{{$userDetail->avatar}}" style="width:100px;margin-left: 40%;" class="userAvatarUpload">
+        <img src="/{{$userDetail->avatar}} " style="width:100px;margin-left: 40%;" class="userAvatarUpload">
+
         <form id="formAvatar" action="/tai-khoan/thong-tin-ca-nhan/{{$userDetail->username}}/upload" method="post" enctype="multipart/form-data"> 
          {!! csrf_field() !!}
          <label class="control-label">Cập nhật ảnh đại diện</label>
@@ -38,7 +35,7 @@
         </div>
       </div>
       <hr>
-      <textarea id="textarea" class="example" rows="1"></textarea>
+
       <br>
       <br>
       <div >

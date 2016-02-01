@@ -21,9 +21,7 @@ Route::get('/tai-khoan/{name}/cap-nhat-mat-khau/{token}','Auth\PasswordControlle
 Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
-Route::get('/cong-viec-freelancer',function(){
-	return view('ui.postjob.postjob');
-});
+Route::get('/cong-viec-freelancer','JobController@postJobView');
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');

@@ -383,7 +383,16 @@ $(document).on('ready', function() {
         elErrorContainer: "#errorBlock"
     });
 });
-
+$(document).on('ready', function() {
+    $("#descriptionImg").fileinput({
+        browseClass: "btn btn-primary btn-block",
+        showCaption: false,
+        showRemove: false,
+        showUpload: false,
+        allowedFileExtensions: ["png", "jpg", "jpeg"],
+        elErrorContainer: "#errorBlock"
+    });
+});
 $("#register-name").keyup(function() {
     var username = $(this).val();
     $("#username_status").text("....");
@@ -551,6 +560,9 @@ $(function() {
 $(document).ready(function() {
 var value;
 var ms = $('#skill').magicSuggest({
+    placeholder: 'Các kỹ năng yêu cầu',
+    allowDuplicates: false,
+    maxSelection: 5,
     data: '/valid/tags.php',
 });
 
@@ -621,7 +633,7 @@ $('#postNewJobForm')
     }).on('success.form.fv', function(e) {
 e.preventDefault();
 var formValue = $("#postNewJobForm").serializeArray();
-var location = $("#location").text();
+var location = $("#location .ms-sel-item").text();
 var $form = $(e.target);
 $form.ajaxSubmit({
     url: '/job/postNewJob',
@@ -633,7 +645,7 @@ $form.ajaxSubmit({
     },
     success: function(data) {
         alert(data.mess);
-        $("#postNewJobForm")[0].reset();
+        redirect('/chi-tiet-cong-viec'+'/'+data.title+'/'+data.date);
     },
     error: function() {
         alert("Có lỗi xảy ra vui lòng thử lại");

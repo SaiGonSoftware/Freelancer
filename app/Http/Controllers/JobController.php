@@ -1,8 +1,10 @@
 <?php 
 namespace App\Http\Controllers;
-
+use SEO;
 use Auth;
+use Image;
 use App\Job;
+use App\User;
 use App\Tags;
 use App\TagContent;
 use Illuminate\Http\Request;
@@ -66,8 +68,9 @@ class JobController extends Controller
 
 	public function FindJob()
 	{
-		$data['title']="Tìm việc freelancer";
-		$data['description']="Cộng đồng freelancer Việt-Tìm việc freelancer";
+		SEO::setTitle('Tìm việc freelancer-Cộng đồng freelancer Việt');
+        SEO::setDescription('Cộng đồng freelancer Việt-Tìm việc freelancer');
+        SEO::opengraph()->setUrl('http://localhost:8000/tim-viec');
 		$data['job_pagi']= Job::orderBy('post_at', 'desc')->paginate(4);
 		return view('ui.findjob.job',$data);
 	}
@@ -84,6 +87,14 @@ class JobController extends Controller
 		return view('ui.findjob.pagi',compact('job_pagi'));
 	}
 
+	public function postJobView()
+	{
+		SEO::setTitle('Công việc freelancer-Cộng đồng freelancer Việt');
+        SEO::setDescription('Cộng đồng freelancer Việt-Công việc freelancer');
+        SEO::opengraph()->setUrl('http://localhost:8000/cong-viec-freelancer');
+		return view('ui.postjob.postjob');
+	}
+
 	/**
 	 * [postJob post the job]
 	 * insert into job and content_tag
@@ -93,6 +104,7 @@ class JobController extends Controller
 		$job=new Job();
 		$job->title=$request -> title;
 		$job->slug=$this->remove($request -> title);
+		$job->description="images/".Auth::user()-> username."/baiviet/".$_FILES['file']['name'];
 		$job->content=$request -> job_description;
 		$job->post_at=date('Y-m-d');
 		$job->day_open=$request -> day_open;
@@ -102,13 +114,36 @@ class JobController extends Controller
 		$job->location=$request -> location;
 		$job->user_id=Auth::user()-> id;
 		$job->save();
+		$this->deImage($_FILES['file']['name']);
 		$jobID=$job->id;
 		$content_tag=new TagContent();
 		$content_tag-> job_id=$jobID;
 		$content_tag-> tag_content= $request->value;
 		$content_tag-> save();
-		return response()->json(array('mess'=>'Đăng công việc thành công'));
+		return response()->json(array('mess'=>'Đăng công việc thành công','date'=>$date_format = date('d-m-Y', strtotime(date('Y-m-d'))),'title'=>$this->remove($request -> title)));
 	}
+
+
+	public function deImage($name)
+	{
+		$user=new User();
+		$userDetail=User::where('username', '=', Auth::user()-> username)->first();
+		$temp=$_FILES['file']['tmp_name'];
+		$image=$_FILES['file']['name'];
+		$ext=pathinfo($image,PATHINFO_EXTENSION);
+
+		if (!is_dir("images/".Auth::user()-> username."/baiviet")) {
+			mkdir("images/".Auth::user()-> username."/baiviet",0777);
+		}
+		$img=Image::make($temp);
+		$src = "images/".Auth::user()-> username."/baiviet/$name.$ext";
+
+		$img->save($src);
+		$job=new Job();
+		$job->description=$src;
+		return $src;
+	}
+
 }
 
 

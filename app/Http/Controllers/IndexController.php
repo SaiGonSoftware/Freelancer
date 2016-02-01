@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use App\Job;
 use App\User;
+use SEO;
 class IndexController extends Controller
 {
 
@@ -22,9 +23,10 @@ class IndexController extends Controller
 	*/
 	public function Home()
 	{
-		$data['title']="Cộng đồng freelancer Việt-Trang chủ";
-		$data['description']="Cộng đồng freelancer Việt";
-		$data['content'] = Job::where('id', '>', 0)->orderBy('post_at')->take(5)->get();
+		SEO::setTitle('Cộng đồng freelancer Việt-Trang chủ');
+        SEO::setDescription('Cộng đồng freelancer Việt-Nơi khẳng định khả năng của bạn');
+        SEO::opengraph()->setUrl('http://localhost:8000');
+		$data['content'] = Job::where('id', '>', 0)->orderBy('post_at','desc')->take(5)->get();
 		$data['totalJob']=Job::CountJobs();
 		$data['totalUser']=User::CountUser();
 		return view('ui.content',$data);

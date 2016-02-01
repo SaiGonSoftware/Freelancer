@@ -5,9 +5,8 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="{{ isset($description) ? $description : 'Cộng đồng freelancer Việt' }}">
+    {!! SEO::generate() !!}
     <meta name="author" content="Ngô Hùng Phúc">
-    <title>{{ isset($title) ? $title : 'Cộng đồng freelancer Việt' }}</title>
     <link rel="shortcut icon" href="/images/favicon.png">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">

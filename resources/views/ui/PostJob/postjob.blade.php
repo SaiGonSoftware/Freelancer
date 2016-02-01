@@ -47,10 +47,16 @@
 					<?php $num++; ?>
 					@endwhile
 				</select>
-
 			</div>
-			<textarea id="job_description" name="job_description" class="form-control" style="overflow:scroll;width:100%;height:100px" ></textarea>
-
+			<div class="form-group" id="descriptionImg-group">
+				<label for="job-title">Hình mô tả yêu cầu(Tùy chọn)</label>
+				<input id="descriptionImg"  type="file" name="file" class="file-loading">
+				<div id="errorBlock" class="help-block"></div>
+			</div>
+			<div class="form-group" id="descriptionImg-group">
+				<label for="job-title">Yêu cầu chi tiết công việc</label>
+				<textarea id="job_description" name="job_description" class="form-control" style="overflow:scroll;width:100%;height:200px" ></textarea>
+			</div>
 		</div>
 	</div>
 

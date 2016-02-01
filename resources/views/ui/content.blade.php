@@ -31,7 +31,7 @@
 													@if ($jobPost->active==0)
 														Công việc mở
 													@else
-													  	Đóng
+													  	Hết hạn
 													@endif
 												</span>
 												<span class="sallary">Chi Phí:<br>{{number_format ($jobPost -> allowance_min)."d"."-".number_format ($jobPost -> allowance_max)."d"}}</span>

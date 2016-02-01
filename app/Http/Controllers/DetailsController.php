@@ -1,9 +1,10 @@
 <?php 
 namespace App\Http\Controllers;
 use Auth;
-use Flash;
+use SEO;
 use App\Job;
 use App\Comment;
+use App\TagContent;
 use Illuminate\Http\Request;
 class DetailsController extends Controller
 {
@@ -28,11 +29,15 @@ class DetailsController extends Controller
 	{
 		$date_format = date('Y-m-d', strtotime($date));
 		$job=Job::whereRaw('slug = ? and post_at = ? ', [$slug,$date_format])->first();
-		$title="Công việc-".$job -> title;
-		$description="Tìm việc freelancer-".$job ->title;
+		$tag_content=TagContent::where('job_id','=', $job->id)->first();
+		$tag=explode(',', $tag_content->tag_content);
+		/*$tag_href=TagContent::remove($tag);*/
+		SEO::setTitle('Công việc: '.$job -> title);
+		SEO::setDescription('Cộng đồng freelancer Việt-Tìm việc freelancer '.$job ->title);
+		SEO::opengraph()->setUrl('http://localhost:8000/chi-tiet-cong-viec/'.$job -> title.'/'.$date);
 		$related_job=Job::whereRaw('user_id = ? and id != ?',[$job->user->id,$job->id])->get();
 		$job_comment=Comment::where('job_id', '=', $job->id)->paginate(2);
-		return view('ui.detail.detail', compact('job','related_job','job_comment','title','description'));
+		return view('ui.detail.detail', compact('job','related_job','job_comment','title','description','tag'));
 	}
 
 	/**
