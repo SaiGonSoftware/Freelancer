@@ -35,13 +35,13 @@
         </div>
       </div>
       <hr>
-
+      <a href="/cv/tao-cv" class="btn btn-info">Tạo CV</a>
       <br>
       <br>
       <div >
-
+  
       </div>
-
+    
     </div>
     <div role="tabpanel" class="tab-pane" id="manage">
      <form>

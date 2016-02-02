@@ -92,6 +92,7 @@ class JobController extends Controller
         return view('ui.findjob.pagi', compact('job_pagi'));
     }
 
+    
     public function postJobView()
     {
         SEO::setTitle('Công việc freelancer-Cộng đồng freelancer Việt');
@@ -134,7 +135,11 @@ class JobController extends Controller
             );
     }
 
-
+    /**
+     * [deImage upload img description for that post]
+     * @param  [type] $name [name of the imgae]
+     * @return [type]       [description]
+     */
     public function deImage($name)
     {
         $user = new User();

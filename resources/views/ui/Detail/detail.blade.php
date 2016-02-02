@@ -37,7 +37,7 @@
 					@if(isset($tag))
 					<div class="tags">
 						@foreach ($tag as $tags)
-						<a href="/cong-viec/{{$slug}}"  class="danger" id="tag_href">
+						<a href="#"  class="danger" id="tag_href">
 							{{$tags}}
 						</a>
 						@endforeach

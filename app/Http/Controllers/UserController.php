@@ -104,4 +104,9 @@ class UserController extends Controller
         $data['jobpost'] = Job::where('user_id', '=', Auth::user()->id)->paginate(4);
         return view('ui.userinfo.uinfo',$data);
     }
+
+    public function createCV()
+    {
+        return view('ui.userinfo.cv');
+    }
 }

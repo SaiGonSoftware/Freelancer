@@ -30,6 +30,7 @@ Route::get('/deleteComment/{id}',['as' => 'del','uses'=>'UserController@deleteCo
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 Route::get('/getTags','JobController@getTags');
 Route::get('/cong-viec/{tag}','JobController@findByTag');
+Route::get('/cv/tao-cv','UserController@createCV');
 
 
 Route::post('/job/postNewJob',['as' => 'NewJob','uses'=>'JobController@postJob']);
