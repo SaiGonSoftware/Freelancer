@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TagContent extends Model
 {
 	protected $table = "content_tag";
-	protected $fillable = ["id", "job_id","tag_content"];
+	protected $fillable = ["id","tag_content","job_id"];
 	public $timestamps= false;
 
 	/**
@@ -55,4 +55,8 @@ class TagContent extends Model
 		return $str;
 	}
 
+	public function tags()
+	{
+		  return $this->hasManyThrough('App\User','App\Job');
+	}
 }

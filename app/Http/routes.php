@@ -16,6 +16,7 @@ Route::get('/', 'IndexController@home');
 Route::get('/trang-chu','IndexController@home');
 Route::get('tim-viec', 'JobController@FindJob');
 Route::get('/job/joblist','JobController@FindJobAjax');
+Route::get('/congviec/{name}','JobController@findTagAjax');
 Route::get('/userinfo','UserController@userDetailAjax');
 Route::get('/tai-khoan/{name}/cap-nhat-mat-khau/{token}','Auth\PasswordController@passwordView');
 Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
@@ -28,7 +29,7 @@ Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallbac
 Route::get('/deleteComment/{id}',['as' => 'del','uses'=>'UserController@deleteComment']);
 Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 Route::get('/getTags','JobController@getTags');
-
+Route::get('/cong-viec/{tag}','JobController@findByTag');
 
 
 Route::post('/job/postNewJob',['as' => 'NewJob','uses'=>'JobController@postJob']);

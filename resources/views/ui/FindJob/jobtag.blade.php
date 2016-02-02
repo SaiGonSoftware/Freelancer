@@ -14,23 +14,23 @@
 <section id="jobs">
 	<div class="container">
 		<div class="row" >
-			<div class="col-sm-8" id="ajax_pagi">
+			<div class="col-sm-8" id="ajax_pagi_tag">
 				<h2>Công việc hiện có</h2>
 
+				
 				<div class="jobs">
-
-					<!-- Job offer -->
-					@foreach($job_pagi as $jobPost)
+				@if (isset($tag_cotent))
+					@foreach($tag_cotent as $jobPost)
 					<a href="/chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}">
 						<div class="featured"></div>
-						<img src="{{$jobPost->user->avatar}}" alt="{{$jobPost->title}}" class="img-circle" />
+						<img src="/{{$jobPost->avatar}}" alt="{{$jobPost->title}}" class="img-circle" />
 						<div class="title">
 							<h5 style="width: 150px">
 								{{$jobPost -> title}}
 							</h5>
 							<p>{{date("d-m-Y", strtotime($jobPost -> post_at))}}</p>
-							<p>Đăng bởi: {{$jobPost->user->full_name}}
-							</p> 
+							<p>Đăng bởi: {{$jobPost->full_name}}
+							</p>  
 
 						</div>
 						<div class="data">
@@ -49,12 +49,20 @@
 					@endforeach
 
 
+
+				</div>
+				@else
+				<div class="alert alert-info" role="alert"> 
+					<strong>Công việc hiện tại chưa có </strong>
+				</div>					
+				
+				
+				@endif
+				<div class="tag_job">
+					{!! $tag_cotent->render() !!}
 				</div>
 
-				<div class="paging_job">
-					{!! $job_pagi->render() !!}
-				</div>					
-
+				
 				
 
 			</div>
@@ -64,9 +72,9 @@
 				<div class="sidebar-widget">
 					<h2>Tin tuyển dụng</h2>
 					<a href="#">
-						<img src="images/featured-job.jpg" alt="Featured Job" class="img-responsive" />
+						<img src="/images/featured-job.jpg" alt="Featured Job" class="img-responsive" />
 						<div class="featured-job">
-							<img src="images/job1.jpg" alt="" class="img-circle pull-left" />
+							<img src="/images/job1.jpg" alt="" class="img-circle pull-left" />
 							<div class="title">
 								<h5>Web Designer</h5>
 								<p>Amazon</p>
@@ -96,7 +104,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-12">
-							<h3>Tags Cloud</h3>
+								<h3>Tags Cloud</h3>
 								<div class="tags" style="float:left">
 									@foreach ($tag as $tags)
 									<a href="/cong-viec/{{$tags->slug}}"  class="danger" id="tag_href">

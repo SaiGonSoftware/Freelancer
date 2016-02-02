@@ -14,5 +14,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Node.js Globals" level="application" />
   </component>
 </module>

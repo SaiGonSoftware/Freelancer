@@ -1,5 +1,5 @@
 @extends('ui.layout')
-@section('content')    
+@section('content') 
 <section id="title">
 	<div class="container">
 		<div class="row">
@@ -37,7 +37,7 @@
 					@if(isset($tag))
 					<div class="tags">
 						@foreach ($tag as $tags)
-						<a href=""  class="danger">
+						<a href="/cong-viec/{{$slug}}"  class="danger" id="tag_href">
 							{{$tags}}
 						</a>
 						@endforeach
@@ -85,7 +85,6 @@
 							</div>
 
 							<div class="panel-body">
-								@include('flash::message')
 								<form id="commentForm" name="commentForm" action="{{URL::to('/postComment') }}" method="post">
 									{!! csrf_field() !!}
 									<input type="hidden" name="job_id" id="job_id" value="{{$job -> id}}">
