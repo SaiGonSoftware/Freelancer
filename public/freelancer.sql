@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2016 at 03:32 PM
+-- Generation Time: Feb 02, 2016 at 06:11 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -72,6 +72,26 @@ INSERT INTO `content_tag` (`id`, `job_id`, `tag_content`) VALUES
 (7, 18, 'Lập Trình Ứng Dụng,Lập Trình Web,Php,MVC'),
 (8, 22, 'Lập Trình Ứng Dụng'),
 (11, 25, 'Lập Trình Web');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cv`
+--
+
+CREATE TABLE `cv` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `job_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `education` text COLLATE utf8_unicode_ci NOT NULL,
+  `experience` text COLLATE utf8_unicode_ci NOT NULL,
+  `activities` text COLLATE utf8_unicode_ci NOT NULL,
+  `capabilities` text COLLATE utf8_unicode_ci NOT NULL,
+  `skill` text COLLATE utf8_unicode_ci NOT NULL,
+  `interests` text COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -331,6 +351,12 @@ ALTER TABLE `content_tag`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `cv`
+--
+ALTER TABLE `cv`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -376,6 +402,11 @@ ALTER TABLE `comments`
 --
 ALTER TABLE `content_tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `cv`
+--
+ALTER TABLE `cv`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `jobs`
 --
