@@ -572,6 +572,22 @@ function getJob(t) {
         $("#ajax_pagi").html(o), location.hash = t
     })
 }
+//ajax paging for tag job
+$(document).on("click", ".tag_job .pagination a", function(page) {
+    event.preventDefault();
+    var name = getUrlVars()[3];
+    var page = $(this).attr("href").split("page=")[1];
+    $.ajax({
+        url: '/congviec/' + name + '?page=' + page,
+        data: {
+            name: name,
+        },
+    })
+    .done(function(data) {
+        $("#ajax_pagi_tag").html(data);
+    });
+
+});
 
 $(document).ready(function() {
     $("#allowance").blur(function() {
@@ -671,19 +687,3 @@ function removeUnicode(str) {
 }
 
 
-//ajax paging for comment
-$(document).on("click", ".tag_job .pagination a", function(page) {
-    event.preventDefault();
-    var name = getUrlVars()[3];
-    var page = $(this).attr("href").split("page=")[1];
-    $.ajax({
-        url: '/congviec/' + name + '?page=' + page,
-        data: {
-            name: name,
-        },
-    })
-    .done(function(data) {
-        $("#ajax_pagi_tag").html(data);
-    });
-
-});
