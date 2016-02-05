@@ -171,10 +171,13 @@ class JobController extends Controller
         SEO::setDescription('Cộng đồng freelancer Việt-Tìm việc php');
         SEO::opengraph()->setUrl('http://localhost:8000/cong-viec/'.$tag);
         $data['tag_cotent']=TagContent::where('tag_content','like',"%{$tag}%")
-            ->join('jobs', 'content_tag.job_id', '=', 'jobs.id')
-            ->join('users', 'jobs.user_id', '=', 'users.id')
-            ->select('users.*', 'jobs.*')
-            ->paginate(2);
+        ->join('jobs', 'content_tag.job_id', '=', 'jobs.id')
+        ->join('users', 'jobs.user_id', '=', 'users.id')
+        ->select('users.*', 'jobs.*')
+        ->paginate(2);
+        foreach ($data['tag_cotent'] as  $value) {
+            $data['check']=$value->title;
+        }    
         $data['tag']=Tags::all();
         return view('ui.findjob.jobtag',$data);
     }
@@ -187,10 +190,10 @@ class JobController extends Controller
     public function findTagAjax($name)
     {
         $data['tag_cotent']=TagContent::where('tag_content','like',"%{$name}%")
-            ->join('jobs', 'content_tag.job_id', '=', 'jobs.id')
-            ->join('users', 'jobs.user_id', '=', 'users.id')
-            ->select('users.*', 'jobs.*')
-            ->paginate(2);
+        ->join('jobs', 'content_tag.job_id', '=', 'jobs.id')
+        ->join('users', 'jobs.user_id', '=', 'users.id')
+        ->select('users.*', 'jobs.*')
+        ->paginate(2);
         return view('ui.findjob.tagajax',$data);
     }
 }

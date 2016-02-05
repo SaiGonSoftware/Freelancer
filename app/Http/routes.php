@@ -31,8 +31,10 @@ Route::get('/comment/{slug}/{date}','DetailsController@FindCommentAjax');
 Route::get('/getTags','JobController@getTags');
 Route::get('/cong-viec/{tag}','JobController@findByTag');
 Route::get('/cv/tao-cv','UserController@createCV');
+Route::get('/cv/xem-cv/{id}','UserController@loadCV');
 
 
+Route::post('/cv/saveCV',['as' => 'SaveCV','uses'=>'UserController@saveCV']);
 Route::post('/job/postNewJob',['as' => 'NewJob','uses'=>'JobController@postJob']);
 Route::post('/updatePassword',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);
 Route::post('/displaycomment','DetailsController@findCommentAjax');

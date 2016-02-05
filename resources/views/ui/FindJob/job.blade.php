@@ -84,19 +84,10 @@
 
 				<!-- Find a Job Start -->
 				<div class="sidebar-widget" id="jobsearch">
-					<h2>Tìm công việc</h2>
+					<h2>Tags Cloud</h2>
 					<form>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="form-group" id="job-search-group">
-									<label for="job-search" class="sr-only">Search</label>
-									<input type="text" class="form-control" id="job-search" placeholder="Type and press enter">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-							<h3>Tags Cloud</h3>
 								<div class="tags" style="float:left">
 									@foreach ($tag as $tags)
 									<a href="/cong-viec/{{$tags->slug}}"  class="danger" id="tag_href">

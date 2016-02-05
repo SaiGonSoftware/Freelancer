@@ -34,12 +34,9 @@ class DetailsController extends Controller
         $data['job'] = Job::whereRaw('slug = ? and post_at = ? ', [$slug, $date_format])->first();
         $tag_content = TagContent::where('job_id', '=', $data['job']->id)->first();
         $data['tag'] = explode(',', $tag_content->tag_content);
-/*        var_dump($tag);echo "<br>";echo "<br>";
-        foreach ($tag as $value) {
-            $href = str_slug($value, "-");
-            var_dump($href);
-        }
-        die;*/
+        /*foreach ($data['tag'] as $value) {
+            $data['href'] = str_slug($value, "-");
+        }*/
         $data['slug'] = implode('-',$data['tag']);
         SEO::setTitle('Công việc: ' . $data['job']->title);
         SEO::setDescription('Cộng đồng freelancer Việt-Tìm việc freelancer ' . $data['job']->title);

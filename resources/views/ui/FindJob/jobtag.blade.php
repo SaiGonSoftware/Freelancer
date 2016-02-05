@@ -10,16 +10,13 @@
 		</div>
 	</div>
 </section>
-
 <section id="jobs">
 	<div class="container">
 		<div class="row" >
 			<div class="col-sm-8" id="ajax_pagi_tag">
 				<h2>Công việc hiện có</h2>
-
-				
 				<div class="jobs">
-				@if (isset($tag_cotent))
+					@if (isset($check))
 					@foreach($tag_cotent as $jobPost)
 					<a href="/chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}">
 						<div class="featured"></div>
@@ -49,15 +46,15 @@
 					@endforeach
 
 
+					@else
+					<div class="alert alert-info" role="alert"> 
+						Công việc hiện tại chưa có
+					</div>					
 
+					@endif
 				</div>
-				@else
-				<div class="alert alert-info" role="alert"> 
-					<strong>Công việc hiện tại chưa có </strong>
-				</div>					
 				
 				
-				@endif
 				<div class="tag_job">
 					{!! $tag_cotent->render() !!}
 				</div>
@@ -92,19 +89,10 @@
 
 				<!-- Find a Job Start -->
 				<div class="sidebar-widget" id="jobsearch">
-					<h2>Tìm công việc</h2>
+					<h2>Tags Cloud</h2>
 					<form>
 						<div class="row">
 							<div class="col-xs-12">
-								<div class="form-group" id="job-search-group">
-									<label for="job-search" class="sr-only">Search</label>
-									<input type="text" class="form-control" id="job-search" placeholder="Type and press enter">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-xs-12">
-								<h3>Tags Cloud</h3>
 								<div class="tags" style="float:left">
 									@foreach ($tag as $tags)
 									<a href="/cong-viec/{{$tags->slug}}"  class="danger" id="tag_href">

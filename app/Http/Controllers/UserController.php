@@ -2,7 +2,9 @@
 
 use SEO;
 use Auth;
+use Input;
 use Image;
+use App\CV;
 use App\Job;
 use App\User;
 use App\Comment;
@@ -32,7 +34,9 @@ class UserController extends Controller
         SEO::setTitle('Quản lý tài khoản-' . $data['userDetail']->full_name);
         SEO::setDescription('Quản lý tài khoản,cập nhật ảnh đại diện,xem sửa xóa báo giá,tạo cv....');
         SEO::opengraph()->setUrl('http://localhost:8000/' . $name . '/' . $token);
+        $data['username']=Auth::user()->username;
         $data['job_comment_list'] = Comment::where('user_id', '=', Auth::user()->id)->get();
+        $data['list_cv']=CV::where('user_id','=',Auth::user()->id)->get();
         return view('ui.userinfo.uinfo', $data);
     }
 
@@ -105,8 +109,51 @@ class UserController extends Controller
         return view('ui.userinfo.uinfo',$data);
     }
 
+    /**
+     * [createCV return new create cv view]
+     * @return [type] [description]
+     */
     public function createCV()
     {
+        if (Auth::guest()) {
+            return redirect()->intended('/');
+        }
+        SEO::setTitle('Tạo mới CV');
         return view('ui.userinfo.cv');
+    }
+
+    /**
+     * [FunctionName save cv via ajax]
+     * 
+     */
+    public function saveCV()
+    {
+        $cv=new CV();
+        $cv->name=Input::get('name');
+        $cv->job_name=Input::get('job_name');
+        $cv->phone=Input::get('phone');
+        $cv->email=Input::get('email');
+        $cv->address=Input::get('address');
+        $cv->experience=Input::get('experience');
+        $cv->education=Input::get('education');
+        $cv->activities=Input::get('activities');
+        $cv->capabilities=Input::get('capabilities');
+        $cv->interests=Input::get('interests');
+        $cv->user_id= Auth::user()->id;
+        $cv->save();
+        return response()->json(array('mess' => 'Lưu thành công'));
+    }
+
+    /**
+     * [loadCV load cv]
+     * @param  [type] $name [name of user]
+     * @param  [type] $id   [id of cv]
+     * @return [type]       [description]
+     */
+    public function loadCV($id)
+    {
+        $data['cv_info']=CV::where('id','=',$id)->first();
+        SEO::setTitle('Xem CV của ' . Auth::user()->username);
+        return view('ui.userinfo.viewCV',$data);
     }
 }
