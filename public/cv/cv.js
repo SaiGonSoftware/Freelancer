@@ -1,15 +1,18 @@
-
+//save cv,get all the html elements using map function
 $(function() {
     $("#savecv").click(function(event) {
         event.preventDefault();
-        var name=$("#name").text();
+        var name=$("#username").text();
         var job_name=$("#job_name").text();
-        var capabilities=$("#capabilities").text();
         var phone=$("#phone").text();
         var email=$("#email").text();
         var address=$("#address").text();
-        var skill=$("#skill").text();
         var token=$("input[name='_token']").val();
+        /*var avatar=$('#image-upload').val();
+        if (avatar.substring(3,11) == 'fakepath' )    { 
+            avatar = avatar.substring(12); 
+            alert(avatar);
+        }*/
         var education = $('.education').map(function() {
             return $(this).html();
         }).get().join('\n');
@@ -23,6 +26,9 @@ $(function() {
             return $(this).html();
         }).get().join('\n');
         var activities = $('.activities').map(function() {
+            return $(this).html();
+        }).get().join('\n');
+        var skill = $('#skill').map(function() {
             return $(this).html();
         }).get().join('\n');
         $.ajax({
@@ -50,6 +56,11 @@ $(function() {
         .error(function() {
             alert("Errors");
         });
-
     });
 });
+
+$(".rating").rating({
+    starCaptions: {1: "Kém", 2: "Yếu", 3: "Trung Bình", 4: "Khá", 5: "Tốt"},
+    starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-primary", 5: "text-success"}
+});
+

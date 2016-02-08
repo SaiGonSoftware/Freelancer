@@ -1,0 +1,1435 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"g",
+				"gc	getElementsByClassName"
+			],
+			[
+				"con",
+				"console.log();"
+			],
+			[
+				"f",
+				"FreelancerJob"
+			],
+			[
+				"php",
+				"phpinfo"
+			],
+			[
+				"Auth",
+				"Auth::user	Get the currently authenticated user."
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"btn",
+				"bs3-input-group-btn	bs3-input-group-btn"
+			],
+			[
+				"fore",
+				"foreach	blade-foreach"
+			],
+			[
+				"In",
+				"Input::get	Retrieve an Input value"
+			],
+			[
+				"inp",
+				"inputs	input - submit"
+			],
+			[
+				"w",
+				"width	Attr"
+			],
+			[
+				"tag",
+				"tag_content"
+			],
+			[
+				"job",
+				"job_id"
+			],
+			[
+				"tag_",
+				"tag_hreft"
+			],
+			[
+				"fo",
+				"foreach	blade-foreach"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"Aut",
+				"Auth::user	Get the currently authenticated user."
+			],
+			[
+				"select",
+				"select	<select>"
+			],
+			[
+				"jso",
+				"json_encode"
+			],
+			[
+				"html",
+				"html5	Simple HTML5 Boilerplate"
+			],
+			[
+				"each",
+				"each	$.each()"
+			],
+			[
+				"in",
+				"inputh	input - hidden"
+			],
+			[
+				"va",
+				"value	Attr"
+			],
+			[
+				"actio",
+				"action	Attr"
+			],
+			[
+				"A",
+				"Auth::check	Determine if the current user is authenticated."
+			],
+			[
+				"Au",
+				"Auth::user	Get the currently authenticated user."
+			],
+			[
+				"Re",
+				"Request"
+			],
+			[
+				"inpu",
+				"inputh	input - hidden"
+			],
+			[
+				"onc",
+				"onclick	Attr"
+			],
+			[
+				"$fil",
+				"$field_name"
+			],
+			[
+				"strip",
+				"strip_tags"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"ready",
+				"ready	$(document).ready"
+			],
+			[
+				"k",
+				"keyup	.keyup()"
+			],
+			[
+				"key",
+				"keyup	.keyup()"
+			],
+			[
+				"I",
+				"Input::get	Retrieve an Input value"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"tex",
+				"textarea	Tag"
+			],
+			[
+				"use",
+				"user_id"
+			],
+			[
+				"reda",
+				"ready	$(document).ready"
+			],
+			[
+				"date",
+				"date_format"
+			],
+			[
+				"new",
+				"newPass"
+			],
+			[
+				"scr",
+				"script	Tag"
+			],
+			[
+				"s",
+				"src	Attr"
+			],
+			[
+				"Rout",
+				"Route"
+			],
+			[
+				"st",
+				"style	Attr"
+			],
+			[
+				"fac",
+				"facebookUser"
+			],
+			[
+				"pro",
+				"profile"
+			],
+			[
+				"var",
+				"var_dump"
+			],
+			[
+				"ou",
+				"oauth"
+			],
+			[
+				"Redirect",
+				"Redirect::to	Redirect to URL, Route or Controller"
+			],
+			[
+				"Redirec",
+				"Redirect::to	Redirect to URL, Route or Controller"
+			],
+			[
+				"fade",
+				"fadeIn	.fadeIn()"
+			],
+			[
+				"style",
+				"style	Attr"
+			],
+			[
+				"seri",
+				"serializeArray	.serializeArray()"
+			],
+			[
+				"int",
+				"integer"
+			],
+			[
+				"Sch",
+				"Schema::create	Create new table"
+			],
+			[
+				"Vi",
+				"View::composer	Define a View Composer"
+			],
+			[
+				"Vie",
+				"View::share	Share Data across all Views"
+			],
+			[
+				"Rou",
+				"Route"
+			],
+			[
+				"R",
+				"Route::get	Basic Route with Closure"
+			],
+			[
+				"z",
+				"zf2controller	Controller"
+			],
+			[
+				"mod",
+				"verbose_module	AngularJS"
+			],
+			[
+				"module",
+				"verbose_module	AngularJS"
+			],
+			[
+				"modu",
+				"module	QUnit module"
+			],
+			[
+				"angu",
+				"angular	Angular.js"
+			],
+			[
+				"ng-tr",
+				"ng-trim	AngularJS"
+			],
+			[
+				"a",
+				"ajax	$.ajax()"
+			],
+			[
+				"rea",
+				"ready	$(document).ready"
+			],
+			[
+				"j",
+				"jQuery.ajax	jQuery.ajax"
+			],
+			[
+				"jqe",
+				"jQuery.ajax	jQuery.ajax"
+			],
+			[
+				"pa",
+				"paging"
+			],
+			[
+				"resu",
+				"result"
+			],
+			[
+				"Db",
+				"DbSelect"
+			],
+			[
+				"Ti",
+				"TieuDe"
+			],
+			[
+				"angular",
+				"angular.bind"
+			],
+			[
+				"an",
+				"angular.module"
+			],
+			[
+				"au",
+				"angular	Angular.js"
+			],
+			[
+				"re",
+				"remark"
+			],
+			[
+				"fi",
+				"firstName"
+			],
+			[
+				"sr",
+				"script	Tag"
+			],
+			[
+				"t",
+				"type	Attr"
+			],
+			[
+				"Url",
+				"UrlHinh"
+			],
+			[
+				"sec",
+				"select"
+			],
+			[
+				"strp",
+				"strpos"
+			],
+			[
+				"set",
+				"set_menu"
+			],
+			[
+				"view",
+				"ViewModel"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"contr",
+				"controllers"
+			],
+			[
+				"setc",
+				"set_content"
+			],
+			[
+				"az",
+				"a-zA-Z0-9_"
+			],
+			[
+				"a-z",
+				"a-zA-Z"
+			],
+			[
+				"const",
+				"constraints"
+			],
+			[
+				"bai",
+				"bai-viet"
+			],
+			[
+				"exc",
+				"execute"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"data",
+				"data_en"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"da",
+				"data_en"
+			],
+			[
+				"content",
+				"contentTable"
+			],
+			[
+				"conte",
+				"contentTable"
+			],
+			[
+				"Resul",
+				"resultSet"
+			],
+			[
+				"noi",
+				"noidungtinTable"
+			],
+			[
+				"id",
+				"idTin"
+			],
+			[
+				"defau",
+				"default"
+			],
+			[
+				"View",
+				"ViewModel"
+			],
+			[
+				"base",
+				"basePath"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"disp",
+				"display_errors"
+			],
+			[
+				"max",
+				"max_size"
+			],
+			[
+				"al",
+				"allowed_types"
+			],
+			[
+				"on",
+				"onchange	Attr"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"ng",
+				"ng-app	AngularJS"
+			],
+			[
+				"load",
+				"load_library	CI - Load Library"
+			],
+			[
+				"libr",
+				"load_library	CI - Load Library"
+			],
+			[
+				"$sc",
+				"$scope	AngularJS"
+			],
+			[
+				"win",
+				"$window	AngularJS"
+			],
+			[
+				"has",
+				"hasClass	.hasClass()"
+			],
+			[
+				"th",
+				"this	$(this)"
+			],
+			[
+				"date_add",
+				"date_added"
+			],
+			[
+				"sou",
+				"source"
+			],
+			[
+				"cono",
+				"controller	AngularJS"
+			],
+			[
+				"ng-",
+				"ng-bind	AngularJS"
+			],
+			[
+				"scope",
+				"$scope	AngularJS"
+			],
+			[
+				"modul",
+				"verbose_module	AngularJS"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/Http/Controllers/UserController.php",
+			"settings":
+			{
+				"buffer_size": 4785,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/ui/UserInfo/cv.blade.php",
+			"settings":
+			{
+				"buffer_size": 5475,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/ui/UserInfo/cv_layout.blade.php",
+			"settings":
+			{
+				"buffer_size": 782,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/ui/UserInfo/viewCV.blade.php",
+			"settings":
+			{
+				"buffer_size": 3044,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "public/cv/cv.js",
+			"settings":
+			{
+				"buffer_size": 2263,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"mi",
+				"HTML Minfier: Minify File (modify existing)"
+			],
+			[
+				"min",
+				"HTML Minfier: Minify File (modify existing)"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"block",
+				"Toggle Block Comment"
+			],
+			[
+				"instal",
+				"Laravel Artisan: Session: Table"
+			],
+			[
+				"instack",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"fo",
+				"CoolFormat: Selected Format"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"format",
+				"CoolFormat: Selected Format"
+			],
+			[
+				"ag",
+				"AngularJS: Look Up Definition"
+			],
+			[
+				"",
+				"CoolFormat: Selected Format"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
+			[
+				" Laravel Blade ",
+				"Set Syntax: PHP - Laravel Blade"
+			],
+			[
+				"qu",
+				"Snippet: QUnit HTML"
+			],
+			[
+				"inst",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"color s",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"package control:in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 494.0
+	},
+	"console":
+	{
+		"height": 58.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/xampp/htdocs/FreelancerJob",
+		"/D/xampp/htdocs/FreelancerJob/app",
+		"/D/xampp/htdocs/FreelancerJob/app/Http",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/Auth",
+		"/D/xampp/htdocs/FreelancerJob/public",
+		"/D/xampp/htdocs/FreelancerJob/public/cv",
+		"/D/xampp/htdocs/FreelancerJob/resources",
+		"/D/xampp/htdocs/FreelancerJob/resources/views",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/Detail",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/UserInfo",
+		"/D/xampp/htdocs/FreelancerJob/vendor/kartik-v/bootstrap-star-rating"
+	],
+	"file_history":
+	[
+		"/D/xampp/htdocs/FreelancerJob/public/js/user.js",
+		"/D/new/CV-Template/style.css",
+		"/D/xampp/htdocs/FreelancerJob/public/cv/style.min.css",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/UserInfo/uinfo.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/UserInfo/cv_layout.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/routes.php",
+		"/D/xampp/htdocs/FreelancerJob/public/cv/style.css",
+		"/D/xampp/htdocs/FreelancerJob/public/js/cv.js",
+		"/D/new/CV-Template/index.html",
+		"/D/xampp/htdocs/FreelancerJob/composer.json",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/UserController.php",
+		"/D/xampp/htdocs/FreelancerJob/freelancer.sublime-project",
+		"/D/subline/Sublime Text Build 3083/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/D/subline/Sublime Text Build 3083/Data/Packages/User/Preferences.sublime-settings",
+		"/D/subline/Sublime Text Build 3083/Data/Packages/Default/Preferences.sublime-settings",
+		"/D/xampp/php/php.ini",
+		"/D/xampp/htdocs/test/index.php",
+		"/C/Users/ngohungphuc/Downloads/php_xdebug-2.4.0rc4-5.6-vc11-x86_64.dll",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/UserInfo/viewCV.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/layout.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/public/js/jquery.uploadPreview.min.js",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/menu.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/Auth/AuthController.php",
+		"/D/subline/Sublime Text Build 3083/Data/Packages/User/freelancer.sublime-build",
+		"/D/xampp/htdocs/FreelancerJob/app/CV.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/FindJob/jobtag.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/FindJob/job.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/Detail/detail.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/DetailsController.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/JobController.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/client.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/slider.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/companies.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/contact.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/people.blade.php",
+		"/C/Users/ngohungphuc/Desktop/cv/Al Rayhan.html",
+		"/E/Bai Hoc/Source Code/CI_NgoHungPhuc/application/config/routes.php",
+		"/E/Bai Hoc/Source Code/CI_NgoHungPhuc/application/core/MY_Controller.php",
+		"/E/Bai Hoc/Source Code/CI_NgoHungPhuc/application/controllers/Quan_tri.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/FindJob/tagajax.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Job.php",
+		"/D/xampp/htdocs/FreelancerJob/app/User.php",
+		"/D/xampp/htdocs/FreelancerJob/app/TagContent.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/PostJob/postjob.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Tags.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/IndexController.php",
+		"/D/xampp/htdocs/FreelancerJob/public/valid/tags.php",
+		"/E/Bai Hoc/Source Code/CI_NgoHungPhuc/application/views/quan_tri/index_quan_tri.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/content.blade.php",
+		"/C/Users/ngohungphuc/.WebIde100/config/colors/laravel.icls.xml",
+		"/C/Users/ngohungphuc/.WebIde100/config/colors/peacock.icls.xml",
+		"/C/Users/ngohungphuc/.WebIde100/config/colors/peacocks-in-space.icls.xml",
+		"/D/subline/Sublime Text Build 3083/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/D/subline/Sublime Text Build 3083/Data/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/E/Bai Hoc/Source Code/CI_NgoHungPhuc/application/views/index.php",
+		"/D/xampp/htdocs/FreelancerJob/public/css/style.css",
+		"/D/new/tagclouds/js/jquery.js",
+		"/D/xampp/htdocs/FreelancerJob/app/Comment.php",
+		"/D/xampp/htdocs/FreelancerJob/public/css/bootstrap-tag.css",
+		"/D/xampp/htdocs/FreelancerJob/public/js/fileinput.min.js",
+		"/C/Users/ngohungphuc/Downloads/cron_birthday_company.php",
+		"/D/xampp/htdocs/FreelancerJob/app/TagCotent.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Kernel.php",
+		"/D/xampp/htdocs/FreelancerJob/public/valid/province.php",
+		"/D/xampp/htdocs/FreelancerJob/public/js/magicsuggest-min.js",
+		"/D/xampp/htdocs/FreelancerJob/public/js/magic.js",
+		"/C/Users/ngohungphuc/Downloads/tag.sql",
+		"/E/Bai Hoc/Source Code/webbanhang/chitiet.php",
+		"/D/xampp/htdocs/FreelancerJob/config/app.php",
+		"/D/xampp/htdocs/FreelancerJob/bootstrap/app.php",
+		"/D/xampp/htdocs/FreelancerJob/vendor/artesaos/seotools/src/resources/config/seotools.php",
+		"/D/xampp/htdocs/FreelancerJob/vendor/artesaos/seotools/src/SEOTools/Contracts/SEOTools.php",
+		"/D/xampp/htdocs/FreelancerJob/public/valid/client.php",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/Auth/PasswordController.php",
+		"/D/new/aehlke-tag-it-v2.0-130-g6ccd2de/aehlke-tag-it-6ccd2de/examples.html",
+		"/D/new/nicolasbize-magicsuggest-2.1.4-0-g230b08b/nicolasbize-magicsuggest-230b08b/magicsuggest.css",
+		"/D/xampp/htdocs/FreelancerJob/public/js/jquery.js",
+		"/D/xampp/htdocs/FreelancerJob/public/js/bootstrap-wysiwyg.js",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/userlayout.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/userlayout.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/script.blade.php",
+		"/D/new/Desktop/test.html",
+		"/D/xampp/htdocs/FreelancerJob/public/js/placeholders.js",
+		"/D/xampp/htdocs/FreelancerJob/public/css/select.min.css",
+		"/D/xampp/htdocs/FreelancerJob/public/js/select.min.js",
+		"/D/xampp/htdocs/FreelancerJob/app/Http/Controllers/Controller.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/auth/password.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/vendor/laravel/framework/src/Illuminate/Foundation/Auth/ResetsPasswords.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/footer.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/Mail/newpass.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/Mail/reset.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/config/mail.php",
+		"/D/xampp/htdocs/FreelancerJob/.env",
+		"/D/xampp/htdocs/FreelancerJob/app/Exceptions/Handler.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/Mail/lostpass.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/Detail/pagi.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/UserInfo/ajax.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/public/valid/comment.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/UserInfo/infoajax.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/public/valid/delcomment.php",
+		"/E/Bai Hoc/Source Code/ShoeShop/ShoeShop/Views/AdminSite/ProductManage.cshtml",
+		"/E/Bai Hoc/Source Code/ShoeShop/ShoeShop/Views/Shared/_ShoeLayout.cshtml",
+		"/D/new/jsgrid-1.3.1/jsgrid-1.3.1/demos/basic.html",
+		"/D/new/jsgrid-1.3.1/jsgrid-1.3.1/demos/db.js",
+		"/C/Users/ngohungphuc/Desktop/test/index.html",
+		"/E/Bai Hoc/Source Code/ShoeShop/ShoeShop/Views/Cart/_SummaryPartial.cshtml",
+		"/D/new/shokai-jQuery.editable-v1.1.2-0-gd61bb49/shokai-jQuery.editable-d61bb49/sample/main.js",
+		"/D/new/shokai-jQuery.editable-v1.1.2-0-gd61bb49/shokai-jQuery.editable-d61bb49/sample/index.html",
+		"/E/Bai Hoc/Source Code/ShoeShop/ShoeShop/Views/Shared/_Layout.cshtml",
+		"/D/xampp/htdocs/FreelancerJob/public/js/jquery.editable.min.js",
+		"/D/Publish Web/Web.config",
+		"/D/new/glossy-404-web/web/index.html",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/errors/404.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/public/js/jquery.jeditable.js",
+		"/D/xampp/htdocs/FreelancerJob/vendor/laravel/socialite/src/Two/FacebookProvider.php",
+		"/E/Bai Hoc/Source Code/FreelancerJob/vendor/laravel/socialite/src/Two/FacebookProvider.php",
+		"/E/Bai Hoc/Source Code/FreelancerJob/app/Http/routes.php",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/auth/reset.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/public/css/bootstrap-editable.css",
+		"/D/new/SinhVienIT.Net---Dia-Gioi-Hanh-Chinh-VietNam-[SinhVienIT.Net]/Dia-Gioi-Hanh-Chinh-VietNam-[SinhVienIT.Net]/Dia-Gioi-Hanh-Chinh-VietNam.sql",
+		"/D/new/nghuuphuoc-bootstrapvalidator-v0.5.2-0-g16da0f5/nghuuphuoc-bootstrapvalidator-aae9288/dist/js/bootstrapValidator.js",
+		"/D/new/bootstrap-validator-master/bootstrap-validator-master/js/validator.js",
+		"/D/new/bootstrap-validator-master/bootstrap-validator-master/dist/validator.js",
+		"/D/xampp/htdocs/FreelancerJob/resources/views/ui/FindJob/pagi.blade.php",
+		"/D/xampp/htdocs/FreelancerJob/public/css/fileinput.min.css",
+		"/D/xampp/htdocs/FreelancerJob/public/js/jquery.form.js",
+		"/E/Bai Hoc/giao dien/jobseeker-baobinh.net/site/post-a-job.html",
+		"/C/Users/ngohungphuc/Desktop/upload/uploadify/index.php"
+	],
+	"find":
+	{
+		"height": 73.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<p",
+			"name",
+			"skill",
+			"xdebug",
+			"zend ",
+			"zend extenstion",
+			"contenteditable",
+			"}}",
+			"{{",
+			"}}\n",
+			"input",
+			"experience",
+			"name",
+			"$(document).ready(function() {",
+			"manage",
+			"reload",
+			"`",
+			"/cv/css",
+			"assets",
+			"UI/UX \n\n",
+			"UI/UX Designer @Academy\n\n",
+			"./Al Rayhan_files",
+			"attr",
+			"remove",
+			"post",
+			"}}\"/>\n",
+			"avatar",
+			"Invalid extension for file",
+			"redirect",
+			"redire",
+			"select",
+			"input",
+			"preventDefault",
+			"You cannot choose more than ",
+			"tag",
+			"manage",
+			"ResetsPasswords",
+			"/textext/",
+			"formNewPassword",
+			"btnNewPass",
+			"resetPass",
+			"forgotpassForm",
+			"forgotpassBtn",
+			"commentForm",
+			"regis_btn",
+			"forgotpassBtn",
+			"var",
+			"commentForm",
+			"username",
+			"regis_btn",
+			"forgotpass",
+			"forgotpassBtn",
+			"btn",
+			"vui l",
+			"login_form",
+			"login_btn",
+			"reset",
+			"forgot_pass",
+			"email",
+			"/password/new",
+			"tabindex",
+			"tai-khoan/quen-mat-khau",
+			"val",
+			"();",
+			"  \n",
+			"formPassword",
+			"profileImage",
+			"url",
+			"page",
+			"data",
+			"input",
+			"attr",
+			"valid",
+			" __web-inspector-hide-shortcut__",
+			"data",
+			"keyup",
+			"post",
+			"province",
+			">\";\n",
+			"number",
+			"introduce",
+			"job",
+			".html",
+			"5px",
+			"email",
+			"str",
+			"1750",
+			"filterPrices",
+			"TESTIMONIALS\n",
+			"recent",
+			"company.html",
+			"app",
+			"<a\n								href=\"<?= $this->basePath()?>/bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['idTin'] ?>.html\"><?= $item['TomTat']?></a>",
+			"img",
+			"$this->url() . ",
+			"$this->basePath()",
+			"<?= $this->basePath()?>/bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['idTin'] ?>.html",
+			"bai-viet/",
+			"/baiviet/",
+			"js/",
+			"css/",
+			"$this->basePath(",
+			"football/football/",
+			"$this->basePath('",
+			"AllowOverride None",
+			"`",
+			"bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['id'] ?>.html",
+			"bai-viet/<?= $item['TieuDe_KhongDau'] ?>",
+			"details",
+			"bai-viet",
+			"sanphamTable",
+			"$",
+			"`",
+			"home",
+			"upload_img",
+			"userId",
+			"gui_mail",
+			"$rows['",
+			"item",
+			"name_hinh",
+			"http://www.jquery2dotnet.com",
+			"textbox_user",
+			"path",
+			"session"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"@extends('ui.userinfo.cv_layout')\n@section('content')\n<style type=\"text/css\">\n    .acidjs-rating-stars,\n    .acidjs-rating-stars label::before\n    {\n        display: inline-block;\n    }\n\n    .acidjs-rating-stars label:hover,\n    .acidjs-rating-stars label:hover ~ label\n    {\n        color: #189800;\n    }\n\n    .acidjs-rating-stars *\n    {\n        margin: 0;\n        padding: 0;\n    }\n\n    .acidjs-rating-stars input\n    {\n        display: none;\n    }\n\n    .acidjs-rating-stars\n    {\n        unicode-bidi: bidi-override;\n        direction: rtl;\n    }\n\n    .acidjs-rating-stars label\n    {\n        color: #ccc;\n    }\n\n    .acidjs-rating-stars label::before\n    {\n        content: \"\\2605\";\n        width: 18px;\n        line-height: 18px;\n        text-align: center;\n        font-size: 18px;\n        cursor: pointer;\n    }\n\n    .acidjs-rating-stars input:checked ~ label\n    {\n        color: #f5b301;\n    }\n\n    .acidjs-rating-disabled\n    {\n        opacity: .50;\n\n        -webkit-pointer-events: none;\n        -moz-pointer-events: none;\n        pointer-events: none;\n    }\n</style>\n<form action=\"/cv/saveCV\" method=\"post\" id=\"cv_form\" name=\"cv_form\">\n    <button type=\"submit\" id=\"savecv\" class=\"btn btn-primary\" style=\"float:right;margin-bottom:5%\">Lưu CV</button>\n    {!! csrf_field() !!}\n    <div class=\"container\">\n        <div class=\"row\">\n           <aside class=\"col l4 m12 s12 sidebar z-depth-1\" id=\"sidebar\">\n            <div class=\"row\">                      \n\n                <div class=\"heading\">                            \n\n                  <div class=\"feature-img\">\n                      <!-- <a href=\"\"><img src=\"/images/avatar.png\" class=\"responsive-img\" alt=\"\" width=\"320px\" height=\"270px\" name=\"avatar\" ></a>  -->\n\n                      <div id=\"image-preview\">\n                          <label for=\"image-upload\" id=\"image-label\">Choose File</label>\n                          <input type=\"file\" name=\"image\" id=\"image-upload\" />\n                      </div>\n                  </div>                                         \n              </div>\n              <div class=\"col l12 m12 s12 sort-info sidebar-item\">\n                <div class=\"row\">                               \n                    <div class=\"col m12 s12 l3 icon\"> <!-- icon -->\n                        <i class=\"fa fa-user\"></i>\n                    </div>                                \n                    <div class=\"col m12 s12 l9 info wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\"> <!-- text -->\n                        <div class=\"section-item-details\">\n                         <h2 contenteditable id=\"name\" name=\"name\">Al Rayhan</h2> <!-- title name -->\n                         <h3 contenteditable id=\"job_name\" name=\"job_name\">UI &amp; UX Expert</h3>\n                     </div>             \n                 </div>\n             </div>         \n         </div>\n         <!-- sidebar info -->\n         <div class=\"col l12 m12 s12 sort-info sidebar-item\">\n            <div class=\"row\">                               \n                <div class=\"col m12 s12 l3 icon\"> <!-- icon -->\n                    <i class=\"fa fa-thumbs-up\"></i>\n                </div>                                \n                <div class=\"col m12 s12 l9 info wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\"> <!-- text -->\n                    <div class=\"section-item-details\">\n                        <h5>Giới thiệu bản thân</h5>\n                        <p contenteditable class=\"capabilities\" name=\"capabilities\">Giới thiệu bản thân \n                        </p>\n                    </div>             \n                </div>\n            </div>         \n        </div>\n        <!-- MOBILE NUMBER -->\n        <div class=\"col l12 m12 s12  mobile sidebar-item\">\n            <div class=\"row\">                                \n                <div class=\"col m12 s12 l3 icon\">\n                    <i class=\"fa fa-phone\"></i> <!-- icon -->\n                </div>                                \n                <div class=\"col m12 s12 l9 info wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                    <div class=\"section-item-details\">\n                        <div class=\"personal\">\n                            <h4 contenteditable id=\"phone\" name=\"phone\">(111)-333-4444</h4>\n                            <span>Điện Thoại</span> \n                        </div>\n                    </div>\n                </div>\n            </div>             \n        </div>\n        <!--  EMAIL -->\n        <div class=\"col l12 m12 s12  email sidebar-item \">\n            <div class=\"row\">                                \n                <div class=\"col m12 s12 l3 icon\">\n                    <i class=\"fa fa-envelope\"></i> <!-- icon -->\n                </div>                                \n                <div class=\"col m12 s12 l9 info wow fadeIn a3 animated\" data-wow-delay=\"0.3s\" style=\"visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;\">\n                    <div class=\"section-item-details\">\n                        <div class=\"personal\">                                    \n                            <h4 contenteditable id=\"email\" name=\"email\">mail@alrayhan.com</h4>\n                            <span>Email</span> \n                        </div>\n                    </div>\n                </div> \n            </div>          \n        </div>\n        <!-- ADDRESS  -->\n        <div class=\"col l12 m12 s12  address sidebar-item \">\n            <div class=\"row\">                                \n                <div class=\"col l3 m12  s12 icon\">\n                    <i class=\"fa fa-home\"></i> <!-- icon -->\n                </div>                                \n                <div class=\"col m12 s12 l9 info wow fadeIn a4 animated\" data-wow-delay=\"0.4s\" style=\"visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;\">\n                    <div class=\"section-item-details\">\n                        <div class=\"address-details\">\n                            <h4 contenteditable id=\"address\" name=\"address\">\n                                24 Golden Tower\n                            </h4> \n                        </div>                         \n                    </div>\n                </div>\n            </div>            \n        </div>\n        <div class=\"col l12 m12 s12  skills sidebar-item\">\n            <div class=\"row\">\n                <div class=\"col m12 l3 s12 icon\">\n                    <i class=\"fa fa-calendar-o\"></i>\n                </div>\n                <div class=\"col m12 l9 s12 skill-line a5 wow fadeIn animated\" data-wow-delay=\"0.5s\" style=\"visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;\">\n                    <h3>Kỹ năng </h3>\n\n                    <span contenteditable id=\"skill\" name=\"skill\">PHP</span>\n                    <div class=\"acidjs-rating-stars\">\n                        <form>\n                        <input type=\"radio\" name=\"group-1\" id=\"group-1-0\" value=\"5\" /><label for=\"group-1-0\"></label><!--\n                        --><input type=\"radio\" name=\"group-1\" id=\"group-1-1\" value=\"4\" /><label for=\"group-1-1\"></label><!--\n                        --><input type=\"radio\" name=\"group-1\" id=\"group-1-2\" value=\"3\" /><label for=\"group-1-2\"></label><!--\n                        --><input type=\"radio\" name=\"group-1\" id=\"group-1-3\" value=\"2\" /><label for=\"group-1-3\"></label><!--\n                    --><input type=\"radio\" name=\"group-1\" id=\"group-1-4\"  value=\"1\" /><label for=\"group-1-4\"></label>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>\n</div>\n</aside>\n\n<section class=\"col s12 m12 l8 section\">\n    <div class=\"row\">\n        <div class=\"section-wrapper z-depth-1\">                            \n            <div class=\"section-icon col s12 m12 l2\">\n                <i class=\"fa fa-suitcase\"></i>\n            </div>\n            <div class=\"custom-content col s12 m12 l10 wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">\n                <h2>Kinh Nghiệm Làm Việc</h2>\n\n                <div class=\"experience custom-content-wrapper wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                    <h3 contenteditable name=\"experience\">UI/UX Designer</h3>\n                    <span contenteditable name=\"experience\">JAN 2013 - DEC 2013 </span>\n                    <p contenteditable name=\"experience\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \n                        labore et dolore magna aliqua. \n                    </p>\n                </div>\n\n\n            </div>                            \n        </div>\n        <div class=\"section-wrapper z-depth-1\">\n            <div class=\"section-icon col s12 m12 l2\">\n                <i class=\"fa fa-graduation-cap\"></i>\n            </div>\n            <div class=\"custom-content col s12 m12 l10 wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">\n                <h2>Học Tập </h2>\n\n                <div class=\"education custom-content-wrapper wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                    <h3 contenteditable name=\"education\">Art Multimedia </h3>\n                    <span contenteditable name=\"education\">JAN 2013 - DEC 2013 </span>\n                    <p contenteditable name=\"education\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"section-wrapper z-depth-1\">\n            <div class=\"section-icon col s12 m12 l2\">\n                <i class=\"fa fa-thumbs-up\"></i>\n            </div>\n            <div class=\"custom-content col s12 m12 l10 wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">\n                <h2 contenteditable>Sở Thích</h2>\n\n                <div class=\"interests custom-content-wrapper wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                    <h3 contenteditable name=\"interests\">Art &amp; Multimedia </h3>\n                    <h3 contenteditable name=\"interests\">Art &amp; Multimedia </h3>\n                    <h3 contenteditable name=\"interests\">Art &amp; Multimedia </h3>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"section-wrapper z-depth-1\">\n            <div class=\"section-icon col s12 m12 l2\">\n                <i class=\"fa fa-headphones\"></i>\n            </div>\n            <div class=\"custom-content col s12 m12 l10 wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">\n                <h2>Hoạt Động Cá Nhân</h2>\n\n                <div class=\"activities custom-content-wrapper wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                    <h3 contenteditable name=\"activities\">Art &amp; Multimedia </h3>\n                    <h3 contenteditable name=\"activities\">Art &amp; Multimedia </h3>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>\n</div>\n</div>\n\n</form>\n@stop",
+			"!!} ",
+			"   {!!",
+			"\n$(function() {\n    $(\"#savecv\").click(function(event) {\n        event.preventDefault();\n/*        var name=$(\"#name\").text();\n        var job_name=$(\"#job_name\").text();\n        var capabilities=$(\"#capabilities\").text();\n        var phone=$(\"#phone\").text();\n        var email=$(\"#email\").text();\n        var address=$(\"#address\").text();\n        var experience=$(\".experience\").text();\n        var education=$(\".education\").text();\n        var interests=$(\".interests\").text();\n        var activities=$(\".activities\").text();\n        var skill=$(\"#skill\").text();\n        var token=$(\"input[name='_token']\").val();*/\n          var output = $('[name^=\"education[index]\"]').map(function() {\n            return $(this).text();\n        }).get().join('\\n');\n          alert(output);\n        /*$.ajax({\n            url: '/cv/saveCV',\n            type: 'POST',\n            data: {\n                name:name,\n                job_name:job_name,\n                capabilities:capabilities,\n                phone:phone,\n                email:email,\n                address:address,\n                experience:experience,\n                education:education,\n                interests:interests,\n                activities:activities,\n                skill:skill,\n                _token : token  \n            }\n        })\n        .success(function(response) {\n            alert(response.mess);\n            window.location.reload();\n        })\n        .error(function() {\n            alert(\"Errors\");\n        });*/\n\n});\n});\n",
+			"$(function() {\n",
+			"\"",
+			"/cv",
+			"<!DOCTYPE html>\n<!-- saved from url=(0030)http://demo.deviserweb.com/cv/ -->\n<html lang=\"en\">\n<head>\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n    <meta charset=\"utf-8\">\n    <title> Tạo cv </title>\n\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <link rel=\"icon\" href=\"/images/favicon.png\">\n\n    <link href=\"/cv/materialize.min.css\" rel=\"stylesheet\">\n\n    <link rel=\"stylesheet\" href=\"/cv/animate.css\">\n\n    <link href=\"/cv/css\" rel=\"stylesheet\" type=\"text/css\">\n\n    <link href=\"/cv/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\"> \n\n    <link href=\"/cv/style.css\" rel=\"stylesheet\">\n\n    <link href=\"/cv/responsive.css\" rel=\"stylesheet\">\n\n    <link rel=\"stylesheet\" href=\"/cv/lime.css\" title=\"lime\">\n\n    <link rel=\"stylesheet\" href=\"/cv/demo.css\">\n    <body>\n        <div class=\"container\">\n            <div class=\"row\">\n             <aside class=\"col l4 m12 s12 sidebar z-depth-1\" id=\"sidebar\">\n                <!--  Sidebar row -->\n                <div class=\"row\">                      \n                    <!--  top section   -->\n                    <div class=\"heading\">                            \n                            <!-- ====================\n                                      IMAGE   \n                                      ==========================-->\n                                      <div class=\"feature-img\">\n                                          <a href=\"\"><img src=\"/cv/profile-img.jpg\" class=\"responsive-img\" alt=\"\"></a> \n                                      </div>                            \n\n                            <!-- ========================================\n                                       NAME AND TAGLINE\n                                       ==========================================-->\n                                       <div class=\"title col s12 m12 l9 right  wow fadeIn animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">   \n                                        <h2 contenteditable>Al Rayhan</h2> <!-- title name -->\n                                        <span contenteditable>UI &amp; UX Expert</span>  <!-- tagline -->\n                                    </div>                         \n                                </div>\n                                <!-- sidebar info -->\n                                <div class=\"col l12 m12 s12 sort-info sidebar-item\">\n                                    <div class=\"row\">                               \n                                        <div class=\"col m12 s12 l3 icon\"> <!-- icon -->\n                                         <i class=\"fa fa-user\"></i>\n                                     </div>                                \n                                     <div class=\"col m12 s12 l9 info wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\"> <!-- text -->\n                                        <div class=\"section-item-details\">\n                                            <p contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et\n                                                dolore magna aliqua . Ld do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>\n                                            </div>             \n                                        </div>\n                                    </div>         \n                                </div>\n                                <!-- MOBILE NUMBER -->\n                                <div class=\"col l12 m12 s12  mobile sidebar-item\">\n                                    <div class=\"row\">                                \n                                        <div class=\"col m12 s12 l3 icon\">\n                                            <i class=\"fa fa-phone\"></i> <!-- icon -->\n                                        </div>                                \n                                        <div class=\"col m12 s12 l9 info wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                                            <div class=\"section-item-details\">\n                                                <div class=\"personal\">\n                                                    <h4 contenteditable><a href=\"tel:555-555-5555\">(111)-333-4444</a></h4> <!-- Number -->             \n                                                    <span contenteditable>mobile</span> \n                                                </div>\n                                                <div class=\"work\">\n                                                    <h4 contenteditable><a href=\"tel:555-555-5555\">(121)-323-3494</a></h4> <!-- Number -->\n                                                    <span contenteditable>work</span> \n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>             \n                                </div>\n                                <!--  EMAIL -->\n                                <div class=\"col l12 m12 s12  email sidebar-item \">\n                                    <div class=\"row\">                                \n                                        <div class=\"col m12 s12 l3 icon\">\n                                            <i class=\"fa fa-envelope\"></i> <!-- icon -->\n                                        </div>                                \n                                        <div class=\"col m12 s12 l9 info wow fadeIn a3 animated\" data-wow-delay=\"0.3s\" style=\"visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;\">\n                                            <div class=\"section-item-details\">\n                                                <div class=\"personal\">                                    \n                                                    <h4 contenteditable><a href=\"mailto:someone@example.com\">mail@alrayhan.com</a></h4> <!-- Email -->\n                                                    <span contenteditable>personal</span> \n                                                </div>\n                                                <div class=\"work\">                                 \n                                                    <h4 contenteditable><a href=\"mailto:someone@example.com\">ar@deviserweb.com</a></h4> <!-- Email -->\n                                                    <span contenteditable>work</span> <br>\n                                                </div>\n                                            </div>\n                                        </div> \n                                    </div>          \n                                </div>\n                                <!-- ADDRESS  -->\n                                <div class=\"col l12 m12 s12  address sidebar-item \">\n                                    <div class=\"row\">                                \n                                        <div class=\"col l3 m12  s12 icon\">\n                                            <i class=\"fa fa-home\"></i> <!-- icon -->\n                                        </div>                                \n                                        <div class=\"col m12 s12 l9 info wow fadeIn a4 animated\" data-wow-delay=\"0.4s\" style=\"visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;\">\n                                            <div class=\"section-item-details\">\n                                                <div class=\"address-details\"> <!-- address  -->\n                                                    <h4 contenteditable>24 Golden Tower <span>(2nd floor)</span><br>\n                                                        Amborkhana, Sylhet.<br>\n                                                        <span contenteditable>SYL-3RF87W</span></h4> \n                                                    </div>                         \n                                                </div>\n                                            </div>\n                                        </div>            \n                                    </div>\n                                    <!-- SKILLS -->\n                                    <div class=\"col l12 m12 s12  skills sidebar-item\">\n                                        <div class=\"row\">\n                                            <div class=\"col m12 l3 s12 icon\">\n                                                <i class=\"fa fa-calendar-o\"></i> <!-- icon -->\n                                            </div>\n                                            <!-- Skills -->\n                                            <div class=\"col m12 l9 s12 skill-line a5 wow fadeIn animated\" data-wow-delay=\"0.5s\" style=\"visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;\">\n                                                <h3>Professional Skills </h3>\n\n                                                <span>Adobe Photoshop</span>                                    \n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 70%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n\n                                                <span>HTML</span>\n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 95%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n\n                                                <span>CSS</span>\n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 90%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n\n                                                <span>Javascript</span>\n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 85%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n\n                                                <span>PHP</span>\n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 70%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n\n                                                <span>JAVA</span>\n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 55%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n\n                                                <span>SQL</span>\n                                                <div class=\"progress\">\n                                                    <div class=\"determinate\" style=\"width: 40%;\"><i class=\"fa fa-circle\"></i></div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </div>\n                                </div>   <!-- end row -->\n                            </aside><!-- end sidebar -->\n\n                <!-- =========================================\n                   Work experiences\n                   ==========================================-->\n\n                   <section class=\"col s12 m12 l8 section\">\n                    <div class=\"row\">\n                        <div class=\"section-wrapper z-depth-1\">                            \n                            <div class=\"section-icon col s12 m12 l2\">\n                                <i class=\"fa fa-suitcase\"></i>\n                            </div>\n                            <div class=\"custom-content col s12 m12 l10 wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">\n                                <h2 contenteditable>Kinh nghiệm làm việc</h2>\n\n                                <div class=\"custom-content-wrapper wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                                    <h3 contenteditable>UI/UX Designer <span>@Academy</span></h3>\n                                    <span contenteditable>JAN 2013 - DEC 2013 </span>\n                                    <p contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut \n                                        labore et dolore magna aliqua. \n                                    </p>\n                                </div>\n\n\n                            </div>                            \n                        </div>\n\n                        <!-- ========================================\n                         Education \n                         ==========================================-->\n\n                         <div class=\"section-wrapper z-depth-1\">\n                            <div class=\"section-icon col s12 m12 l2\">\n                                <i class=\"fa fa-graduation-cap\"></i>\n                            </div>\n                            <div class=\"custom-content col s12 m12 l10 wow fadeIn a1 animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\">\n                            <h2 contenteditable>Education </h2>\n                                \n                                <div class=\"custom-content-wrapper wow fadeIn a2 animated\" data-wow-delay=\"0.2s\" style=\"visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;\">\n                                    <h3 contenteditable>Art &amp; Multimedia <span>@Oxford University</span></h3>\n                                    <span contenteditable>JAN 2013 - DEC 2013 </span>\n                                    <p contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>\n                                </div>\n                            </div>\n                        </div>\n\n                        <!-- ========================================\n                              Intertests \n                              ==========================================-->\n\n                              <div class=\"section-wrapper z-depth-1\">                           \n                                <div class=\"section-icon col s12 m12 l2\">\n                                    <i class=\"fa fa-plane\"></i>\n                                </div>\n                                <div class=\"interests col s12 m12 l10 wow fadeIn animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\"> \n                                    <h2 contenteditable>Interestes </h2>\n                                    <ul> <!-- interetsr icon start -->\n                                        <li><i class=\"fa fa-camera-retro tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Photography\"></i></li>\n                                        <li><i class=\"fa fa-glass tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Drinking\"></i></li>\n                                        <li><i class=\"fa fa-headphones tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Music\"></i></li>\n                                        <li><i class=\"fa fa-comments tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Chatting\"></i></li>\n                                        <li><i class=\"fa fa-coffee tooltipped\" data-position=\"top\" data-delay=\"50\" data-tooltip=\"Coffee\"></i></li>\n                                    </ul> <!-- interetsr icon end -->\n                                </div>                          \n                            </div>\n                        <!-- =======================================\n                          portfolio Website\n                          ==========================================-->\n\n                          <div class=\"section-wrapper z-depth-1 wow fadeIn animated\" data-wow-delay=\"0.1s\" style=\"visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;\"> <div class=\"section-icon col s12 m12 l2\">\n                                    <i class=\"fa fa-plane\"></i>\n                                </div>\n                           <h2 contenteditable>Interestes </h2>                          \n                            <div class=\"col s12 m12 l10 website right\">\n                                <div class=\"row\">\n\n                                    <div class=\"col s12 m12 l6\">\n                                     <span contenteditable><a href=\"\">www.alrayhan.com</a></span>\n                                 </div>\n                                 <div class=\"col col s12 m12 l6\">\n                                    <span contenteditable><a href=\"\">www.dribble.com/rtralrayhan</a></span>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div><!-- end row -->\n            </section><!-- end section -->\n        </div> <!-- end row -->\n    </div>  <!-- end container -->\n\n <!--=====================\n                JavaScript\n                ===================== -->\n                <!-- Jquery core js-->\n                <script src=\"/cv/jquery.min.js\"></script>\n\n                <!-- materialize js-->\n                <script src=\"/cv/materialize.min.js\"></script>\n\n                <!-- wow js-->\n                <script src=\"/cv/wow.min.js\"></script>\n\n                <!-- Map api -->\n                <script src=\"/cv/js\"></script>\n\n                <!-- Masonry js-->\n                <script src=\"/cv/masonry.pkgd.js\"></script>\n\n                <script src=\"/cv/validator.min.js\"></script>\n\n                <!-- Customized js -->\n                <script src=\"/cv/init.js\"></script>\n\n\n\n\n\n                <div class=\"hiddendiv common\"></div><div class=\"drag-target\" style=\"left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\"></div><div class=\"material-tooltip\"><span>Photography</span><div class=\"backdrop\" style=\"top: 0px; left: 0px;\"></div></div><div class=\"material-tooltip\"><span>Drinking</span><div class=\"backdrop\" style=\"top: 0px; left: 0px;\"></div></div><div class=\"material-tooltip\"><span>Music</span><div class=\"backdrop\" style=\"top: 0px; left: 0px;\"></div></div><div class=\"material-tooltip\"><span>Chatting</span><div class=\"backdrop\" style=\"top: 0px; left: 0px;\"></div></div><div class=\"material-tooltip\"><span>Coffee</span><div class=\"backdrop\" style=\"top: 0px; left: 0px;\"></div></div></body></html>",
+			"/cv",
+			"@extends('ui.layout')\n@section('content')\n		<!-- ============ SLIDES START ============ -->\n					@include('ui.slider')\n		<!-- ============ SLIDES END ============ -->\n\n		<!-- ============ JOBS START ============ -->\n\n		<section id=\"jobs\">\n			<div class=\"container\">\n				<div class=\"row\">\n\n						<div class=\"col-sm-8\">\n							<h2>Công việc mới nhất</h2>\n								<div class=\"jobs\">\n									@foreach($content as $jobPost)\n										<a href=\"chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date(\"d-m-Y\", strtotime($jobPost -> post_at))}}\">\n											<div class=\"featured\"></div>\n											<img src=\"{{$jobPost->user->avatar}}\" alt=\"{{$jobPost->title}}\" class=\"img-circle\" />\n											<div class=\"title\">\n												<h5 style=\"width: 150px\">\n												{{$jobPost -> title}}</h5>\n												<p>{{date(\"d-m-Y\", strtotime($jobPost -> post_at))}}</p>\n												<p>Đăng bởi: {{$jobPost->user->full_name}}</p> \n												\n											</div>\n											<div class=\"data\">\n												<span class=\"city\"><i class=\"fa fa-map-marker\"></i>{{$jobPost -> location}}</span>\n												<span class=\"type full-time\">\n												<i class=\"fa fa-clock-o\"></i>\n													@if ($jobPost->active==0)\n														Công việc mở\n													@else\n													  	Đóng\n													@endif\n												</span>\n												<span class=\"sallary\">Chi Phí:<br>{{number_format ($jobPost -> allowance_min).\"d\".\"-\".number_format ($jobPost -> allowance_max).\"d\"}}</span>\n											</div>\n										</a>\n									@endforeach\n								</div>\n\n							<a class=\"btn btn-primary\" id=\"more-jobs\" href=\"tim-viec\">\n								<!-- <span class=\"more\">Show More Jobs <i class=\"fa fa-arrow-down\"></i></span>\n								<span class=\"less\">Show Less Jobs <i class=\"fa fa-arrow-up\"></i></span> -->\n								<span class=\"\">Xem thêm <i class=\"fa fa-arrow-down\"></i></span>\n							</a>\n\n						</div>\n\n					<div class=\"col-sm-4\">\n						<h2>Công việc hấp dẫn</h2>\n						<a href=\"#\">\n							<img src=\"/images/featured-job.jpg\" alt=\"Featured Job\" class=\"img-responsive\" />\n							<div class=\"featured-job\">\n								<img src=\"images/job1.jpg\" alt=\"\" class=\"img-circle\" />\n								<div class=\"title\">\n									<h5>Web Designer</h5>\n									<p>Amazon</p>\n								</div>\n								<div class=\"data\">\n									<span class=\"city\"><i class=\"fa fa-map-marker\"></i>New York City</span>\n									<span class=\"type full-time\"><i class=\"fa fa-clock-o\"></i>Full Time</span>\n									<span class=\"sallary\"><i class=\"fa fa-dollar\"></i>45,000</span>\n								</div>\n								<div class=\"description\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique euismod lorem, a consequat orci consequat a. Donec ullamcorper tincidunt nunc, ut aliquam est pellentesque porta. In neque erat, malesuada sit amet orci ac, laoreet laoreet mauris.</div>\n							</div>\n						</a>\n					</div>\n				</div>\n			</div>\n		</section>\n\n		<!-- ============ JOBS END ============ -->\n\n		<!-- ============ COMPANIES START ============ -->\n\n					@include('ui.companies')\n\n		<!-- ============ COMPANIES END ============ -->\n\n		<!-- ============ STATS START ============ -->\n\n		<section id=\"stats\" class=\"parallax text-center\">\n			<div class=\"tint\"></div>\n			<div class=\"container\">\n				<div class=\"row\">\n					<div class=\"col-sm-12\">\n						<h1>Cho đến nay chúng tôi đã có</h1>\n					</div>\n				</div>\n				<div class=\"row\" id=\"counter\">\n					\n					<div class=\"counter\">\n						<div class=\"number\">{{$totalUser}}</div>\n						<div class=\"description\">Members</div>\n					</div>\n				\n					<div class=\"counter\">\n						<div class=\"number\">{{$totalJob}}</div>\n						<div class=\"description\">Jobs</div>\n					</div>\n				\n					<div class=\"counter\">\n						<div class=\"number\">1,482</div>\n						<div class=\"description\">Resumes</div>\n					</div>\n				\n					<div class=\"counter\">\n						<div class=\"number\">83</div>\n						<div class=\"description\">Companies</div>\n					</div>\n\n				</div>\n				<div class=\"row\">\n					<div class=\"col-sm-12\">\n						<p><a class=\"link-register btn btn-primary\">Join Us</a></p>\n					</div>\n				</div>\n			</div>\n		</section>\n\n		<!-- ============ STATS END ============ -->\n\n		<!-- ============ BLOG START ============ -->\n\n		<section id=\"blog\" class=\"color3\">\n			<div class=\"container\">\n				<div class=\"row text-center\">\n					<div class=\"col-sm-12\">\n						<h1>Latest News</h1>\n						<h4>Specially crafted job posts everyday</h4>\n					</div>\n				</div>\n				<div class=\"row\">\n					<div class=\"col-sm-12\">\n						<div class=\"owl-carousel\">\n\n							<!-- Blog post 1 -->\n							<div>\n								<img src=\"images/blog1.jpg\" class=\"img-responsive\" alt=\"Blog Post\" />\n								<h4>Lorem ipsum dolor sit amet</h4>\n								<h5>\n									<span><i class=\"fa fa-calendar\"></i>28.08.2015</span>\n									<span><i class=\"fa fa-comment\"></i>8 Comments</span>\n								</h5>\n								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>\n								<p><a href=\"post\" class=\"btn btn-primary\">Read more</a></p>\n							</div>\n\n							<!-- Blog post 2 -->\n							<div>\n								<img src=\"images/blog2.jpg\" class=\"img-responsive\" alt=\"Blog Post\" />\n								<h4>Lorem ipsum dolor sit amet</h4>\n								<h5>\n									<span><i class=\"fa fa-calendar\"></i>28.08.2015</span>\n									<span><i class=\"fa fa-comment\"></i>8 Comments</span>\n								</h5>\n								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>\n								<p><a href=\"post\" class=\"btn btn-primary\">Read more</a></p>\n							</div>\n\n							<!-- Blog post 3 -->\n							<div>\n								<img src=\"images/blog3.jpg\" class=\"img-responsive\" alt=\"Blog Post\" />\n								<h4>Lorem ipsum dolor sit amet</h4>\n								<h5>\n									<span><i class=\"fa fa-calendar\"></i>28.08.2015</span>\n									<span><i class=\"fa fa-comment\"></i>8 Comments</span>\n								</h5>\n								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>\n								<p><a href=\"post\" class=\"btn btn-primary\">Read more</a></p>\n							</div>\n\n							<!-- Blog post 4 -->\n							<div>\n								<img src=\"images/blog4.jpg\" class=\"img-responsive\" alt=\"Blog Post\" />\n								<h4>Lorem ipsum dolor sit amet</h4>\n								<h5>\n									<span><i class=\"fa fa-calendar\"></i>28.08.2015</span>\n									<span><i class=\"fa fa-comment\"></i>8 Comments</span>\n								</h5>\n								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>\n								<p><a href=\"post\" class=\"btn btn-primary\">Read more</a></p>\n							</div>\n\n							<!-- Blog post 5 -->\n							<div>\n								<img src=\"images/blog5.jpg\" class=\"img-responsive\" alt=\"Blog Post\" />\n								<h4>Lorem ipsum dolor sit amet</h4>\n								<h5>\n									<span><i class=\"fa fa-calendar\"></i>28.08.2015</span>\n									<span><i class=\"fa fa-comment\"></i>8 Comments</span>\n								</h5>\n								<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>\n								<p><a href=\"post\" class=\"btn btn-primary\">Read more</a></p>\n							</div>\n\n						</div>\n					</div>\n				</div>\n			</div>\n		</section>\n\n		<!-- ============ BLOG END ============ -->\n\n		<!-- ============ PEOPLE START ============ -->\n					    @include('ui.people')\n		<!-- ============ PEOPLE END ============ -->\n		<!-- ============ CLIENTS START ============ -->\n				        @include('ui.client')\n		<!-- ============ CLIENTS END ============ -->\n    <script src=\"/js/jquery.js\"></script>\n    <script src=\"/js/modernizr.custom.79639.js\"></script>\n    <script src=\"/js/bootstrap.min.js\"></script>\n    <script src=\"/js/retina.min.js\"></script>\n    <script src=\"/js/scrollReveal.min.js\"></script>\n    <script src=\"/js/jquery.flexmenu.js\"></script>\n    <script src=\"/js/jquery.ba-cond.min.js\"></script>\n    <script src=\"/js/jquery.slitslider.js\"></script>\n    <script src=\"/js/owl.carousel.min.js\"></script>\n    <script src=\"/js/parallax.js\"></script>\n    <script src=\"/js/jquery.counterup.min.js\"></script>\n    <script src=\"/js/waypoints.min.js\"></script>\n    <script src=\"/js/jquery.nouislider.all.min.js\"></script>\n    <script src=\"/js/bootstrap-wysiwyg.js\"></script>\n    <script src=\"/js/jflickrfeed.min.js\"></script>\n    <script src=\"/js/fancybox.pack.js\"></script>\n    <script src=\"/js/magic.js\"></script>\n    <script src=\"/js/settings.js\"></script>\n    <script src=\"/js/user.js\"></script>\n    <script src=\"/valid/js/formValidation.min.js\"></script>\n    <script src=\"/valid/js/bootstrap.min.js\"></script>\n    <script src=\"/js/jquery.form.js\"></script>\n    <script src=\"/js/fileinput.min.js\"></script>\n    <script src=\"/js/select2.min.js\"></script>		\n@stop",
+			"/",
+			"$(document).ready(function() {\n    $(\"#newpassReset\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            passowrd: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập mật khẩu\"\n                    }\n                }\n            },\n            stringLength: {\n                min: 5,\n                max: 30,\n                message: 'Mật khẩu phải từ 5 - 30 kí tự'\n            },\n        }\n    })\n});\n\n$(document).ready(function() {\n    $(\"#commentForm\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            allowance: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập kinh phí\"\n                    },\n                    hex:{\n                        message: \"Kinh phí phải là số\"\n                    }\n                }\n            },\n            completed_day: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập ngày hoàn thành\"\n                    }\n                }\n            },\n            description: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập giới thiệu bản thân\"\n                    }\n                }\n            }\n        }\n    })\n});\n\n$(document).ready(function() {\n    $(\"#formPassword\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            password: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập mật khẩu\"\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Mật khẩu phải từ 5 - 30 kí tự'\n                    }\n                }\n            },\n            repassword: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập mật khẩu\"\n                    },\n                    identical: {\n                        field: \"password\",\n                        message: \"Mật khẩu bạn nhập không trùng\"\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Mật khẩu phải từ 5 - 30 kí tự'\n                    }\n                }\n            }\n        }\n    })\n});\n\n$(document).ready(function() {\n    $(\"#login_form\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            usernameLogin: {\n                message: \"The username is not valid\",\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập tên đăng nhập\"\n                    }\n                }\n            },\n            passwordLogin: {\n                message: \"The password is not valid\",\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập tên mật khẩu\"\n                    }\n                }\n            }\n        }\n    })\n});\n$(document).ready(function() {\n    $(\"#newpassReset\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            password: {\n                message: \"The username is not valid\",\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập mật khẩu\"\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Mật khẩu phải từ 5 - 30 kí tự'\n                    }\n                }\n            }\n            \n        }\n    })\n});\n$(document).ready(function() {\n    function randomNumber(min, max) {\n        return Math.floor(Math.random() * (max - min + 1) + min);\n    }\n    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));\n    $(\"#register_form_popup\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            usernameRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập tên đăng nhập'\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Tên đăng nhập phải từ 5 - 30 kí tự'\n                    },\n                    regexp: {\n                        regexp: /^[a-zA-Z0-9_\\.]+$/,\n                        message: 'Tên đăng nhập chỉ gồm chữ,số,dấu ., dấu _ '\n                    }\n                }\n            },\n            fullnameRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập tên hiển thị'\n                    }\n                }\n            },\n            emailRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập email'\n                    },\n                    emailAddress: {\n                        message: \"Email không hợp lệ\"\n                    }\n                }\n            },\n            passwordRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập mật khẩu'\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Mật khẩu phải từ 5 - 30 kí tự'\n                    },\n                }\n            },\n            rePassword: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập lại mật khẩu'\n                    },\n                    identical: {\n                        field: \"passwordRegis\",\n                        message: \"Mật khẩu bạn nhập không trùng\"\n                    }\n                }\n            },\n            captcha: {\n                validators: {\n                    callback: {\n                        message: 'Kết quả sai',\n                        callback: function(value, validator, $field) {\n                            var items = $('#captchaOperation').html().split(' '),\n                            sum = parseInt(items[0]) + parseInt(items[2]);\n                            return value == sum;\n                        }\n                    }\n                }\n            },\n        }\n    });\n});\n\n\n\n$(document).ready(function() {\n    $(\"#forgotpass\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            emailForgot: {\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập email\"\n                    },\n                    emailAddress: {\n                        message: \"Email không hợp lệ\"\n                    }\n                }\n            }\n        }\n    })\n});\n\n\n$(document).ready(function() {\n    $(\"#formAvatar\").ajaxForm({\n        beforeSend: function() {\n            $(\".progress\").show();\n        },\n        uploadProgress: function(event, position, total, percentComplete) {\n            $(\".progress-bar\").width(percentComplete + \"%\");\n            $(\".sr-only\").html(percentComplete + \"%\");\n        },\n        success: function(data) {\n            $(\".progress\").hide();\n            alert('Cập nhật ảnh đại diện thành công');\n            $('.userAvatarUpload').attr(\"src\",\"/\"+data);\n        },\n    });\n    $(\".progress\").hide();\n});\n\n\n$(document).on('ready', function() {\n    $(\"#avatar\").fileinput({\n        browseClass: \"btn btn-primary btn-block\",\n        showCaption: false,\n        showRemove: false,\n        showUpload: false,\n        allowedFileExtensions: [\"png\", \"jpg\", \"jpeg\"],\n        elErrorContainer: \"#errorBlock\"\n    });\n});\n\n$(\"#register-name\").keyup(function() {\n    var username = $(this).val();\n    $(\"#username_status\").text(\"....\");\n    if (username != \"\") {\n        $.post(\"/valid/client.php\", {\n            username: username\n        }, function(data) {\n            $(\"#username_status\").text(data);\n            if (data == \"Tên đăng nhập đã được sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", true);\n            }\n            if (data == \"Tên đăng nhập có thể sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", false);\n            }\n        });\n    }\n});\n\n$(\"#register-email\").keyup(function() {\n    var email = $(this).val();\n    $(\"#email_status\").text(\"....\");\n    if (email != \"\") {\n        $.post(\"/valid/client.php\", {\n            email: email\n        }, function(data) {\n            $(\"#email_status\").text(data);\n            if (data == \"Email đã được sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", true);\n            }\n            if (data == \"Email có thể sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", false);\n            }\n        });\n    }\n});\n\nfunction loader(status) {\n    if (status == \"on\") {\n        $(\"#login_form\").css({\n            opacity: 0.2\n        });\n        $(\"#loading\").show();\n    } else {\n        $(\"#login_form\").css({\n            opacity: 1\n        });\n        $(\"#loading\").hide();\n    }\n}\n\nfunction redirect(url) {\n    window.location = url;\n}\n$('#login_btn').click(function() {\n    var login_form = $(\"#login_form\").serializeArray();\n    var url = $(\"#login_form\").attr('action');\n    loader('on');\n    $.post(url, login_form, function(data) {\n        loader('off');\n        if (data == 'fail') {\n            $(\"#message\").text('Username hoặc password sai hoặc tài khoản chưa kích hoạt');\n            $(\"#message\").show();\n        } else {\n            $(\"#message\").text('Đăng nhập thành công vui lòng đợi .....');\n            $(\"#message\").show();\n            redirect('/trang-chu');\n        }\n    });\n});\n\n$(\"#regis_btn\").click(function() {\n    alert(\"Đăng ký thành công vui lòng kiểm tra email\");\n});\n\nfunction getUrlVars()\n{\n    var vars = [], hash;\n    var hashes = window.location.href.slice(window.location.href.indexOf('/') + 1).split('/');\n    for(var i = 0; i < hashes.length; i++)\n    {\n        hash = hashes[i].split('=');\n        vars.push(hash[0]);\n        vars[hash[0]] = hash[1];\n    }\n    return vars;\n}\n\n$(document).on(\"click\", \".details_pagi .pagination a\", function(page) {\n    event.preventDefault();\n    var slug = getUrlVars()[3];\n    var date_param = getUrlVars()[4];\n    var date=date_param.split(\"-\").reverse().join(\"-\");\n    var page = $(this).attr(\"href\").split(\"page=\")[1];\n    $.ajax({\n        url: '/comment/'+ slug +'/' +date + '?page='+page,\n        data: {\n            slug: slug,\n            date: date\n        },\n    })\n    .done(function(data) {\n       $(\"#job_comment_post\").html(data);\n   });\n    \n});\n\nfunction getJob(t) {\n    $.ajax({\n        url: \"/job/joblist?page=\" + t\n    }).done(function(o) {\n        $(\"#ajax_pagi\").html(o), location.hash = t\n    })\n}\n\n$(document).on(\"click\", \".paging_job .pagination a\", function(t) {\n    event.preventDefault();\n    var o = $(this).attr(\"href\").split(\"page=\")[1];\n    getJob(o), $(\"html, body\").animate({\n        scrollTop: $(\".container\").position().top\n    })\n});\n\nfunction formatNumber(number)\n{\n    var number = number.toFixed(2) + '';\n    var x = number.split('.');\n    var x1 = x[0];\n    var x2 = x.length > 1 ? '.' + x[1] : '';\n    var rgx = /(\\d+)(\\d{3})/;\n    while (rgx.test(x1)) {\n        x1 = x1.replace(rgx, '$1' + ',' + '$2');\n    }\n    return x1 + x2;\n}\n\n$(document).ready(function() {\n    $(\"#allowance\").blur(function() {\n        var allowance = $(this).val();\n        $(\"#allowance\").val(addCommas(allowance));\n    });\n\n});\n\nfunction addCommas(nStr)\n{\n  nStr += '';\n  x = nStr.split('.');\n  x1 = x[0];\n  x2 = x.length > 1 ? '.' + x[1] : '';\n  var rgx = /(\\d+)(\\d{3})/;\n  while (rgx.test(x1)) {\n    x1 = x1.replace(rgx, '$1' + ',' + '$2');\n}\nreturn x1 + x2;\n}\n\n$(function(){\n    var message_status=$(\"#message\");\n    $(\"td[contenteditable=true]\").blur(function() {\n        var field_id=$(this).attr('id');\n        var value=$(this).text();\n        $.post('/valid/comment.php', field_id + \"=\" + value, function(data) {\n            if (data!='') {\n                message_status.show();\n                message_status.text(data);\n                setTimeout(function(){message_status.hide()},3000);\n            }\n        });\n    });\n});\n\n\n$(document).ready(function() {\n    var message_status=$(\"#message\");\n    $(\".delComment\").on('click', function() {\n        if(ConfirmDelete()){\n            var id= $(this).attr('data-id');\n\n            $.ajax({\n                url: '/deleteComment/' + id,\n                type: 'GET',\n                async:false,\n                data: id,\n                success:function(data) {\n                    alert(data.mess);\n                }\n            })\n            $(this).parent().parent().remove();\n        }\n\n    });\n});\n\nfunction ConfirmDelete()\n{\n  var x = confirm(\"Bạn có chắc chắn muốn xóa\");\n  if (x)\n      return true;\n  else\n    return false;\n}\n\n\n/*\n$(document).on(\"click\", \".user_info_comment .pagination a\", function(page) {\n    event.preventDefault();\n    var page = $(this).attr(\"href\").split(\"page=\")[1];\n    $.ajax({\n        url: '/userinfo' + '?page='+page,\n    })\n    .done(function(data) {\n       $(\"#comment_content\").html(data);\n   });\n    \n});*/\n\n$(document).ready(function() {\n    $('#btnNewPass').click(function() {\n        event.preventDefault();\n        var data=$(\"#formNewPassword\").serialize();\n        $.ajax({\n            url: '/updatePassword',\n            type: 'POST',\n            data: data,\n            success:function(data) {\n                alert(data.mess);\n                $(\"#formNewPassword\")[0].reset();\n            },\n            error:function() {\n                alert(\"Có lỗi xảy ra vui lòng thử lại\");\n            }\n        });\n\n        \n    });\n});\n\n$('#forgot_pass').on('click', function() {\n    $(\"#login\").css(\"display\", \"none\");\n    $(\"#forgot_pass\").css(\"margin-top\", \"10%\");\n});\n\n\n$(document).ready(function() {\n    $('#forgotpassBtn').click(function() {\n        event.preventDefault();\n        var data=$(\"#forgotpass\").serialize();\n        $.ajax({\n            url: '/findpass',\n            type: 'POST',\n            data: data,\n            success:function(data) {\n                alert(data.mess);\n                $(\"#forgotpass\")[0].reset();\n            },\n            error:function() {\n                alert(\"Có lỗi xảy ra vui lòng thử lại\");\n            }\n        });\n\n        \n    });\n});\n\n$(document).ready(function() {\n    $('#btnNewPassword').click(function() {\n        event.preventDefault();\n        var data=$(\"#newpassReset\").serialize();\n        $.ajax({\n            url: '/password/new',\n            type: 'POST',\n            data: data,\n            success:function(data) {\n                alert(data.mess);\n                $(\"#newpassReset\")[0].reset();\n            },\n            error:function() {\n                alert(\"Có lỗi xảy ra vui lòng thử lại\");\n            }\n        });\n\n        \n    });\n});",
+			"",
+			"<?php namespace App\\Exceptions;\n\nuse Exception;\nuse Illuminate\\Foundation\\Exceptions\\Handler as ExceptionHandler;\nuse Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException;\nclass Handler extends ExceptionHandler {\n\n	/**\n	 * A list of the exception types that should not be reported.\n	 *\n	 * @var array\n	 */\n	protected $dontReport = [\n	'Symfony\\Component\\HttpKernel\\Exception\\HttpException'\n	];\n\n	/**\n	 * Report or log an exception.\n	 *\n	 * This is a great spot to send exceptions to Sentry, Bugsnag, etc.\n	 *\n	 * @param  \\Exception  $e\n	 * @return void\n	 */\n	public function report(Exception $e)\n	{\n		return parent::report($e);\n	}\n\n	/**\n	 * Render an exception into an HTTP response.\n	 *\n	 * @param  \\Illuminate\\Http\\Request  $request\n	 * @param  \\Exception  $e\n	 * @return \\Illuminate\\Http\\Response\n	 */\n	public function render($request, Exception $e)\n	{\n		 if ($this->isHttpException($e))\n        {\n            return $this->renderHttpException($e);\n        }\n        else\n        {\n            return parent::render($request, $e);\n        }\n	}\n\n}\n",
+			"",
+			"$(function(){\n    $(\"#btnAvatar\").click(function() {\n        var fileVal = $('#avatarFile').val(); \n        if(fileVal==''){\n            alert(\"Vui lòng chọn hình\");\n            \n        }\n        return false;\n    });\n});\n$(document).ready(function() {\n    $(\"#formAvatar\").ajaxForm({\n        beforeSend:function(){\n            $(\".progress\").show();\n        },\n        uploadProgress:function(event,postion,total,percentComplete){\n            $(\".progress-bar\").width(percentComplete+\"%\");\n            $(\".sr-only\").html(percentComplete+\"%\");\n        },\n        success:function(){\n            $(\".progress\").hide();\n            alert('Cập nhật ảnh đại diện thành công');\n        }\n    });\n    $(\".progress\").hide();\n});\n\n\n$(document).on('ready', function() {\n    $(\"#avatar\").fileinput({\n        browseClass: \"btn btn-primary btn-block\",\n        showCaption: false,\n        showRemove: false,\n        showUpload: false,\n        allowedFileExtensions: [\"png\", \"jpg\", \"jpeg\"],\n        elErrorContainer: \"#errorBlock\"\n    });\n});\n\n$(\"#register-name\").keyup(function() {\n    var username = $(this).val();\n    $(\"#username_status\").text(\"....\");\n    if (username != \"\") {\n        $.post(\"/valid/client.php\", {\n            username: username\n        }, function(data) {\n            $(\"#username_status\").text(data);\n            if (data == \"Tên đăng nhập đã được sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", true);\n            }\n            if (data == \"Tên đăng nhập có thể sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", false);\n            }\n        });\n    }\n});\n\n$(\"#register-email\").keyup(function() {\n    var email = $(this).val();\n    $(\"#email_status\").text(\"....\");\n    if (email != \"\") {\n        $.post(\"/valid/client.php\", {\n            email: email\n        }, function(data) {\n            $(\"#email_status\").text(data);\n            if (data == \"Email đã được sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", true);\n            }\n            if (data == \"Email có thể sử dụng\") {\n                $(\"#regis_btn\").attr(\"disabled\", false);\n            }\n        });\n    }\n});\n\nfunction loader(status) {\n    if (status == \"on\") {\n        $(\"#login_form\").css({\n            opacity: 0.2\n        });\n        $(\"#loading\").show();\n    } else {\n        $(\"#login_form\").css({\n            opacity: 1\n        });\n        $(\"#loading\").hide();\n    }\n}\n\nfunction redirect(url) {\n    window.location = url;\n}\n$('#login_btn').click(function() {\n    var login_form = $(\"#login_form\").serializeArray();\n    var url = $(\"#login_form\").attr('action');\n    loader('on');\n    $.post(url, login_form, function(data) {\n        loader('off');\n        if (data == 'fail') {\n            $(\"#message\").text('Username hoặc password sai hoặc tài khoản chưa kích hoạt');\n            $(\"#message\").show();\n        } else {\n            $(\"#message\").text('Đăng nhập thành công vui lòng đợi .....');\n            $(\"#message\").show();\n            redirect('/trang-chu');\n        }\n    });\n});\n\n$(\"#regis_btn\").click(function() {\n    alert(\"Đăng ký thành công vui lòng kiểm tra email\");\n});\n\nfunction getJob(t) {\n    $.ajax({\n        url: \"/job/joblist?page=\" + t\n    }).done(function(o) {\n        $(\"#ajax_pagi\").html(o), location.hash = t\n    })\n}\n\n$(document).on(\"click\", \".pagination a\", function(t) {\n    event.preventDefault();\n    var o = $(this).attr(\"href\").split(\"page=\")[1];\n    getJob(o), $(\"html, body\").animate({\n        scrollTop: $(\".container\").position().top\n    })\n});\n\n$(document).ready(function() {\n    $(\"#login_form\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            usernameLogin: {\n                message: \"The username is not valid\",\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập tên đăng nhập\"\n                    }\n                }\n            },\n            passwordLogin: {\n                message: \"The password is not valid\",\n                validators: {\n                    notEmpty: {\n                        message: \"Vui lòng nhập tên mật khẩu\"\n                    }\n                }\n            }\n        }\n    })\n});\n\n$(document).ready(function() {\n    function randomNumber(min, max) {\n        return Math.floor(Math.random() * (max - min + 1) + min);\n    }\n    $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));\n    $(\"#register_form_popup\").formValidation({\n        framework: 'bootstrap',\n        icon: {\n            valid: 'glyphicon glyphicon-ok',\n            invalid: 'glyphicon glyphicon-remove',\n            validating: 'glyphicon glyphicon-refresh'\n        },\n        fields: {\n            usernameRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập tên đăng nhập'\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Tên đăng nhập phải từ 5 - 30 kí tự'\n                    },\n                    regexp: {\n                        regexp: /^[a-zA-Z0-9_\\.]+$/,\n                        message: 'Tên đăng nhập chỉ gồm chữ,số,dấu ., dấu _ '\n                    }\n                }\n            },\n            fullnameRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập tên hiển thị'\n                    }\n                }\n            },\n            emailRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập email'\n                    },\n                    emailAddress: {\n                        message: \"Email không hợp lệ\"\n                    }\n                }\n            },\n            passwordRegis: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập mật khẩu'\n                    },\n                    stringLength: {\n                        min: 5,\n                        max: 30,\n                        message: 'Mật khẩu phải từ 5 - 30 kí tự'\n                    },\n                }\n            },\n            rePassword: {\n                validators: {\n                    notEmpty: {\n                        message: 'Vui lòng nhập lại mật khẩu'\n                    },\n                    identical: {\n                        field: \"passwordRegis\",\n                        message: \"Mật khẩu bạn nhập không trùng\"\n                    }\n                }\n            },\n            captcha: {\n                validators: {\n                    callback: {\n                        message: 'Kết quả sai',\n                        callback: function(value, validator, $field) {\n                            var items = $('#captchaOperation').html().split(' '),\n                            sum = parseInt(items[0]) + parseInt(items[2]);\n                            return value == sum;\n                        }\n                    }\n                }\n            },\n        }\n    });\n});\n",
+			"$str",
+			"",
+			"<a\n								href=\"<?= $this->basePath()?>/details/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['idTin'] ?>.html\"><?= $item['TomTat']?></a>",
+			"",
+			"$this->url()",
+			"<?= $this->url()?>bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['idTin'] ?>.html",
+			"<?= $this->url()?>/bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['idTin'] ?>.html",
+			"$this->basePath()?>/bai-viet/",
+			"/public/baiviet/",
+			"public/js/",
+			"public/css/",
+			"",
+			"football/public/",
+			"$this->basePath('football/football/",
+			"public ",
+			"bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['idTin'] ?>.html",
+			"bai-viet/<?= $item['TieuDe_KhongDau'] ?>-<?= $item['id'] ?>.html",
+			"bai-viet",
+			"details",
+			"public $",
+			"$",
+			"$rows[\"",
+			"rows",
+			"item_name",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/Http/Controllers/UserController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4785,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4213,
+								4213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3612.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "resources/views/ui/UserInfo/cv.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4600,
+								4602
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"open_with_edit": true,
+							"spell_check": true,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2945.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "resources/views/ui/UserInfo/cv_layout.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 782,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								538,
+								538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 84.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/views/ui/UserInfo/viewCV.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								3044
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/cv/cv.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2263,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1310,
+								1310
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1400.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 70.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 198.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/freelancer.sublime-build",
+	"project": "freelancer.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"user",
+				"public\\js\\user.js"
+			],
+			[
+				"user.js",
+				"public\\js\\user.js"
+			],
+			[
+				"user.j",
+				"public\\js\\user.js"
+			],
+			[
+				"lay",
+				"resources\\views\\ui\\layout.blade.php"
+			],
+			[
+				"user.",
+				"public\\js\\user.js"
+			],
+			[
+				"uinfo",
+				"resources\\views\\ui\\UserInfo\\uinfo.blade.php"
+			],
+			[
+				"auth",
+				"app\\Http\\Controllers\\Auth\\AuthController.php"
+			],
+			[
+				"cv",
+				"app\\CV.php"
+			],
+			[
+				"cv.",
+				"app\\CV.php"
+			],
+			[
+				"deta",
+				"app\\Http\\Controllers\\DetailsController.php"
+			],
+			[
+				"detail",
+				"app\\Http\\Controllers\\DetailsController.php"
+			],
+			[
+				"job",
+				"resources\\views\\ui\\FindJob\\job.blade.php"
+			],
+			[
+				"layou",
+				"resources\\views\\ui\\layout.blade.php"
+			],
+			[
+				"route",
+				"app\\Http\\routes.php"
+			],
+			[
+				"tag",
+				"app\\TagContent.php"
+			],
+			[
+				"jobpost",
+				"resources\\views\\ui\\PostJob\\postjob.blade.php"
+			],
+			[
+				"tags",
+				"app\\Tags.php"
+			],
+			[
+				"de",
+				"resources\\views\\ui\\Detail\\detail.blade.php"
+			],
+			[
+				"findjob",
+				"resources\\views\\ui\\FindJob\\job.blade.php"
+			],
+			[
+				"valid/",
+				"public\\valid\\tags.php"
+			],
+			[
+				"com",
+				"composer.json"
+			],
+			[
+				"content",
+				"resources\\views\\ui\\content.blade.php"
+			],
+			[
+				"tagc",
+				"app\\TagContent.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"17":
+				{
+					"group": 0,
+					"index": 2
+				},
+				"18":
+				{
+					"group": 0,
+					"index": 0
+				},
+				"19":
+				{
+					"group": 0,
+					"index": 1
+				},
+				"20":
+				{
+					"group": 0,
+					"index": 3
+				},
+				"21":
+				{
+					"group": 0,
+					"index": 4
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

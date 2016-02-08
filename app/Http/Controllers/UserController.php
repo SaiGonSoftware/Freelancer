@@ -139,6 +139,7 @@ class UserController extends Controller
         $cv->activities=Input::get('activities');
         $cv->capabilities=Input::get('capabilities');
         $cv->interests=Input::get('interests');
+        $cv->skill=Input::get('skill');
         $cv->user_id= Auth::user()->id;
         $cv->save();
         return response()->json(array('mess' => 'Lưu thành công'));
@@ -147,13 +148,14 @@ class UserController extends Controller
     /**
      * [loadCV load cv]
      * @param  [type] $name [name of user]
-     * @param  [type] $id   [id of cv]
+     * @param  [type] $id   [id of cv,decrypt using substr]
      * @return [type]       [description]
      */
-    public function loadCV($id)
+    public function loadCV($name,$id)
     {
-        $data['cv_info']=CV::where('id','=',$id)->first();
-        SEO::setTitle('Xem CV của ' . Auth::user()->username);
+        $cv_id = substr($id, 0, -13);
+        $data['cv_info']=CV::where('id','=',$cv_id)->first();
+        SEO::setTitle('Xem CV của ' . $name);
         return view('ui.userinfo.viewCV',$data);
     }
 }

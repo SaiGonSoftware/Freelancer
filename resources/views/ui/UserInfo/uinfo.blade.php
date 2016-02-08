@@ -37,7 +37,7 @@
       
     </div>
     <div role="tabpanel" class="tab-pane" id="manage">
-      <a href="/cv/tao-cv" class="btn btn-info" style="margin-bottom:10px">Tạo CV</a>
+      <a href="/cv/tao-cv"  target="_blank" class="btn btn-info" style="margin-bottom:10px">Tạo CV</a>
       
       <div class="panel panel-primary">
        <div class="panel-heading"> 
@@ -59,13 +59,13 @@
             <tr> 
               <th scope="row">{{$num}}</th>
               <td>
-                <a href="/cv/xem-cv/{{$cv_list->id}}" class="btn btn-info">Xem CV</a> 
+                <a href="/cv/xem-cv/{{$username}}/{{uniqid($cv_list->id)}}" target="_blank " class="btn btn-info">Xem CV</a> 
               </td> 
               <td>
                 <a href="" class="btn btn-primary">Sửa CV</a> 
               </td> 
               <td> 
-                <a href="" class="btn btn-danger">Xem CV</a>
+                <a href="" class="btn btn-danger">Xóa CV</a>
               </td> 
             </tr> 
             <?php $num++; ?>

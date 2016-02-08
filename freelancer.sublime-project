@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+    "settings":
+    {
+        "xdebug": {
+            "path_mapping": {
+                "/xampp/htdocs/FreelancerJob/" : "D:/xampp/htdocs/FreelancerJob/",
+            },
+            "url":"http://localhost:8000",
+            "super_globals": true,
+            "close_on_stop": true
+        }
+    }
+}
