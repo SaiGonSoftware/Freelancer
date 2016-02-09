@@ -123,12 +123,24 @@ class UserController extends Controller
     }
 
     /**
-     * [FunctionName save cv via ajax]
-     * 
+     * [saveCV save cv via ajax]
+     * Upload avatarimg with cropping
      */
     public function saveCV()
     {
+
+        $imgName=Input::get('avatar');
+        $ext = pathinfo($imgName, PATHINFO_EXTENSION);
+        $name=Auth::user()->username;
+        $newFileName = uniqid(Auth::user()->id);
+        if (!is_dir("images/$name/cv/")) {
+            mkdir("images/$name/cv/", 0777);
+        }
+        $img = Image::make($imgName);
+        $src = "images/$name/cv/$newFileName.jpg";
+        $img->save($src);
         $cv=new CV();
+        $cv->avatar=$src;
         $cv->name=Input::get('name');
         $cv->job_name=Input::get('job_name');
         $cv->phone=Input::get('phone');
@@ -142,6 +154,7 @@ class UserController extends Controller
         $cv->skill=Input::get('skill');
         $cv->user_id= Auth::user()->id;
         $cv->save();
+
         return response()->json(array('mess' => 'Lưu thành công'));
     }
 

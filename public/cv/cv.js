@@ -8,11 +8,7 @@ $(function() {
         var email=$("#email").text();
         var address=$("#address").text();
         var token=$("input[name='_token']").val();
-        /*var avatar=$('#image-upload').val();
-        if (avatar.substring(3,11) == 'fakepath' )    { 
-            avatar = avatar.substring(12); 
-            alert(avatar);
-        }*/
+        var avatar=document.getElementById("avatar").src;
         var education = $('.education').map(function() {
             return $(this).html();
         }).get().join('\n');
@@ -46,7 +42,8 @@ $(function() {
                 interests:interests,
                 activities:activities,
                 skill:skill,
-                _token : token  
+                _token : token,
+                avatar:avatar  
             }
         })
         .success(function(response) {
@@ -64,3 +61,14 @@ $(".rating").rating({
     starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-primary", 5: "text-success"}
 });
 
+$(function() {
+    $('.image-editor').cropit({
+        allowDragNDrop:true,
+        exportZoom: 2,
+        smallImage:"allow"
+    });
+});
+$('#uploadCVAvatar').click(function() {
+    var imgSrc = $('.image-editor').cropit('export');
+    $('#avatar').attr({ src: imgSrc });
+});

@@ -15,8 +15,10 @@
         @yield('content')
         
         <script src="/js/jquery.js"></script>
-        <script src="/js/jquery.uploadPreview.min.js"></script>
+        <script src="/cv/jquery.uploadPreview.min.js"></script>
         <script src="/cv/star-rating.min.js" type="text/javascript"></script>
         <script src="/cv/cv.js"></script>
-
+        <script src="/js/bootstrap.min.js"></script>
+        <script src="/cv/cropit.js"></script>
+    
     </body>

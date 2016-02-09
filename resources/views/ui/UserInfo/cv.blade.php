@@ -1,7 +1,20 @@
 @extends('ui.userinfo.cv_layout')
 @section('content')
-<style type="text/css" media="screen">
+<style type="text/css">
+    .image-upload > input
+    {
+        display: none;
+    }
 
+    .image-upload img
+    {
+        width: 80px;
+        cursor: pointer;
+    }
+    #avatar{
+        width: 100px;
+        height: 150px;
+    }
 </style>
 <form action="/cv/saveCV" method="post" id="cv_form" name="cv_form">
     <button type="submit" id="savecv" class="btn btn-primary" style="float:right;margin-bottom:5%">Lưu CV</button>
@@ -9,9 +22,13 @@
     <div id="cv" class="instaFade">
         <div class="mainDetails">
             <div id="headshot" class="quickFade">
-                <img src="/images/headshot.jpg"/>
+                <div class="image-upload">
+                    <label for="file-input" id="preview">
+                        <img src="/images/avatar.png" alt="" name="avatar" id="avatar" data-target="#uploadAvatar" data-toggle="modal">
+                    </label>
+                </div>
             </div>
-
+            
             <div id="name">
                 <h1 class="quickFade delayTwo" contenteditable id="username" name="name" style="margin-bottom:20px">Họ Tên</h1>
                 <h2 contenteditable id="job_name" name="job_name" class="quickFade delayThree">Công Việc
@@ -124,4 +141,48 @@
         </div>
     </div>
 </form>
+    <div id="uploadAvatar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="    margin-top: 8%;">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+              </div>
+              <div class="modal-body">
+                  <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
+
+                                <p>Click hoặc kéo thả ảnh để tải lên!</p>
+                                <div class="panel-body">
+                                    <fieldset>
+                                            {!! csrf_field() !!}
+                                            <div class="form-group">
+                                                <div class="image-editor">
+                                                    <div class="cropit-image-preview"></div>
+                                                    <div class="image-size-label">
+                                                        Kéo để chỉnh kích thước hình
+                                                    </div>
+                                                    <input type="range" class="cropit-image-zoom-input">
+                                                    <input type="hidden" name="image-data" class="hidden-image-data" />
+
+                                                </div>
+                                            </div>
+                                            <button type="button" class="btn btn-lg btn-primary btn-block" id="uploadCVAvatar" >Cập nhật ảnh đại diện</button>
+                                  </fieldset>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <div class="col-md-12">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+              </div>    
+          </div>
+      </div>
+  </div>
+</div>
+
 @stop

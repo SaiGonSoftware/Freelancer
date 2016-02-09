@@ -14,10 +14,13 @@ $(function(){
 <div id="cv" class="instaFade">
   <div class="mainDetails">
     <div id="headshot" class="quickFade">
-      <img src="/images/headshot.jpg"/>
+
+      <img src="/{{$cv_info->avatar}}" name="avatar" id="avatar" style="width: 150px;
+      ">
+
     </div>
 
-    <div id="name">
+    <div id="name" style="padding-left: 5%;">
       <h1 class="quickFade delayTwo" contenteditable id="name" name="name" style="margin-bottom:20px">{!!$cv_info->name!!} </h1>
       <h2 contenteditable id="job_name" name="job_name" class="quickFade delayThree">{!!$cv_info->  job_name!!}
       </h2>
