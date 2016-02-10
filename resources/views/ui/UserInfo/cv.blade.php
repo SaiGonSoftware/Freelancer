@@ -52,8 +52,8 @@
                         <h1>Giới thiệu bản thân</h1>
                     </div>
 
-                    <div class="sectionContent" contenteditable >
-                        <div class="capabilities" name="capabilities">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</div>
+                    <div class="sectionContent"  contenteditable>
+                    <div class="capabilities" name="capabilities" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</div>
                     </div>
                 </article>
                 <div class="clear"></div>
@@ -67,9 +67,9 @@
 
                 <div class="sectionContent">
                     <article class="experience">
-                        <h2 contenteditable>Job Title at Company</h2>
-                        <div class="subDetails" contenteditable>April 2011 - Present</div>
-                        <div contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</div>
+                        <h2 contenteditable style="margin-bottom:10px">Job Title at Company</h2>
+                        <div class="subDetails" contenteditable style="margin-bottom:10px">April 2011 - Present</div>
+                        <div contenteditable style="margin-bottom:10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</div>
                     </article>
                 </div>
                 <div class="clear"></div>
@@ -82,9 +82,9 @@
 
                 <div class="sectionContent">
                     <article class="education">
-                        <h2 contenteditable>College/University</h2>
-                        <div class="subDetails" contenteditable>JAN 2013 - DEC 2013</div>
-                        <div contenteditable>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</div>
+                        <h2 contenteditable style="margin-bottom:10px">College/University</h2>
+                        <div class="subDetails" contenteditable style="margin-bottom:10px">JAN 2013 - DEC 2013</div>
+                        <div contenteditable style="margin-bottom:10px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</div>
                     </article>
                 </div>
                 <div class="clear"></div>
@@ -111,9 +111,8 @@
 
                 <div class="sectionContent">
                     <article class="interests">
-                        <p contenteditable>-Art &amp; Multimedia</p>
-                        <p contenteditable>-Art &amp; Multimedia</p>
-                        <p contenteditable>-Art &amp; Multimedia</p>
+                        <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
+                        <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
                     </article>
 
                     
@@ -128,61 +127,61 @@
 
                 <div class="sectionContent">
                     <article class="activities">
-                        <p contenteditable>-Art &amp; Multimedia</p>
-                        <p contenteditable>-Art &amp; Multimedia</p>
-                    </article>
-
-                    
-                </div>
-                <div class="clear"></div>
-            </section>
+                       <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
+                       <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
+                   </article>
 
 
-        </div>
-    </div>
+               </div>
+               <div class="clear"></div>
+           </section>
+
+
+       </div>
+   </div>
 </form>
-    <div id="uploadAvatar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="    margin-top: 8%;">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              </div>
-              <div class="modal-body">
-                  <div class="col-md-12">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="text-center">
-
-                                <p>Click hoặc kéo thả ảnh để tải lên!</p>
-                                <div class="panel-body">
-                                    <fieldset>
-                                            {!! csrf_field() !!}
-                                            <div class="form-group">
-                                                <div class="image-editor">
-                                                    <div class="cropit-image-preview"></div>
-                                                    <div class="image-size-label">
-                                                        Kéo để chỉnh kích thước hình
-                                                    </div>
-                                                    <input type="range" class="cropit-image-zoom-input">
-                                                    <input type="hidden" name="image-data" class="hidden-image-data" />
-
-                                                </div>
-                                            </div>
-                                            <button type="button" class="btn btn-lg btn-primary btn-block" id="uploadCVAvatar" >Cập nhật ảnh đại diện</button>
-                                  </fieldset>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+<div id="uploadAvatar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="    margin-top: 8%;">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
           </div>
-          <div class="modal-footer">
+          <div class="modal-body">
               <div class="col-md-12">
-                  <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-              </div>    
-          </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-center">
+
+                            <p>Click hoặc kéo thả ảnh để tải lên!</p>
+                            <div class="panel-body">
+                                <fieldset>
+                                    {!! csrf_field() !!}
+                                    <div class="form-group">
+                                        <div class="image-editor">
+                                            <div class="cropit-image-preview"></div>
+                                            <div class="image-size-label">
+                                                Kéo để chỉnh kích thước hình
+                                            </div>
+                                            <input type="range" class="cropit-image-zoom-input">
+                                            <input type="hidden" name="image-data" class="hidden-image-data" />
+
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-lg btn-primary btn-block" id="uploadCVAvatar" >Cập nhật ảnh đại diện</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <div class="col-md-12">
+              <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+          </div>    
       </div>
   </div>
+</div>
 </div>
 
 @stop

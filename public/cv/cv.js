@@ -16,8 +16,8 @@ $(function() {
             return $(this).html();
         }).get().join('\n');
         var capabilities = $('.capabilities').map(function() {
-            return $(this).html();
-        }).get().join('\n');
+            return $(this).text();
+        }).get().join('<br>');
         var interests = $('.interests').map(function() {
             return $(this).html();
         }).get().join('\n');
@@ -27,6 +27,7 @@ $(function() {
         var skill = $('#skill').map(function() {
             return $(this).html();
         }).get().join('\n');
+        alert(capabilities);
         $.ajax({
             url: '/cv/saveCV',
             type: 'POST',
