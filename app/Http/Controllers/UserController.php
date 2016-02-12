@@ -171,4 +171,17 @@ class UserController extends Controller
         SEO::setTitle('Xem CV của ' . $name);
         return view('ui.userinfo.viewCV',$data);
     }
+
+    public function downloadPDF()
+    {
+        $url='/cv/xem-cv/phuchung95/156bc84ce60db9';
+        $url=explode('/', $url);
+        $cv_id = substr($url[4], 0, -13);
+        $name=Auth::user()->username;
+        $cv_info=CV::where('id','=',$cv_id)->first();
+/*        $html = view('ui.userinfo.viewCV',['cv_info'=> $cv_info])->render();
+        return $this->pdf
+        ->load($html)
+        ->show();*/
+    }
 }

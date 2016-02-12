@@ -427,6 +427,8 @@ $(document).ready(function() {
         e.preventDefault();
         var formValue = $("#postNewJobForm").serializeArray();
         var location = $("#location .ms-sel-item").text();
+        var job_description = $("#job_description").val();
+        job_description = job_description.replace(/\r?\n/g, '<br />');
         var $form = $(e.target);
         $form.ajaxSubmit({
             url: '/job/postNewJob',
@@ -434,7 +436,8 @@ $(document).ready(function() {
             data: {
                 formValue: formValue,
                 location: location,
-                value: value
+                value: value,
+                job_description:job_description
             },
             success: function(data) {
                 alert(data.mess);
@@ -444,7 +447,7 @@ $(document).ready(function() {
                 alert("Có lỗi xảy ra vui lòng thử lại");
             }
         });
-    });
+});
 });
 
 
@@ -593,6 +596,20 @@ $(document).ready(function() {
     $("#allowance").blur(function() {
         var allowance = $(this).val();
         $("#allowance").val(addCommas(allowance));
+    });
+
+});
+$(document).ready(function() {
+    $("#min-allowance").blur(function() {
+        var allowance = $(this).val();
+        $("#min-allowance").val(addCommas(allowance));
+    });
+
+});
+$(document).ready(function() {
+    $("#max-allowance").blur(function() {
+        var allowance = $(this).val();
+        $("#max-allowance").val(addCommas(allowance));
     });
 
 });

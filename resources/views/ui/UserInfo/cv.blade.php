@@ -17,7 +17,7 @@
     }
 </style>
 <form action="/cv/saveCV" method="post" id="cv_form" name="cv_form">
-    <button type="submit" id="savecv" class="btn btn-primary" style="float:right;margin-bottom:5%">Lưu CV</button>
+    <button type="submit" id="savecv" class="btn btn-primary btn-md" style="float:right;margin-bottom:5%">Lưu CV</button>
     {!! csrf_field() !!}
     <div id="cv" class="instaFade">
         <div class="mainDetails">
@@ -35,7 +35,7 @@
                 </h2>
             </div>
 
-            <div id="contactDetails" class="quickFade delayFour">
+            <div id="contactDetails" class="quickFade delayFour" style="margin-right:20px">
                 <ul>
                     <li>Email: <a href="#" contenteditable id="email" name="email">abc@yahoo.com</a></li>
                     <li>Địa Chỉ: <a href="#" contenteditable id="address" name="address">TP Hồ Chí Minh</a></li>
@@ -53,7 +53,7 @@
                     </div>
 
                     <div class="sectionContent"  contenteditable>
-                    <div class="capabilities" name="capabilities" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</div>
+                        <div class="capabilities" name="capabilities" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</div>
                     </div>
                 </article>
                 <div class="clear"></div>
@@ -63,9 +63,11 @@
             <section>
                 <div class="sectionTitle">
                     <h1>Kinh Nghiệm Làm Việc</h1>
+                    <input type="button" class="btn btn-primary btn-xs clone" value="Thêm" id="btnAddExp">
+                    <input type="button" class="btn btn-primary btn-xs delete" value="Xóa" id="btnDelExp">
                 </div>
 
-                <div class="sectionContent">
+                <div class="sectionContent" id="exContent">
                     <article class="experience">
                         <h2 contenteditable style="margin-bottom:10px">Job Title at Company</h2>
                         <div class="subDetails" contenteditable style="margin-bottom:10px">April 2011 - Present</div>
@@ -78,9 +80,11 @@
             <section>
                 <div class="sectionTitle">
                     <h1>Học Tập</h1>
+                    <input type="button" class="btn btn-primary btn-xs clone" value="Thêm" id="btnAddEdu">
+                    <input type="button" class="btn btn-primary btn-xs delete" value="Xóa" id="btnDelEdu">
                 </div>
 
-                <div class="sectionContent">
+                <div class="sectionContent" id="eduContent">
                     <article class="education">
                         <h2 contenteditable style="margin-bottom:10px">College/University</h2>
                         <div class="subDetails" contenteditable style="margin-bottom:10px">JAN 2013 - DEC 2013</div>
@@ -93,13 +97,15 @@
             <section>
                 <div class="sectionTitle">
                     <h1>Kỹ năng</h1>
+                    <input type="button" class="btn btn-primary btn-xs clone" value="Thêm" id="btnAddSkill">
+                    <input type="button" class="btn btn-primary btn-xs delete" value="Xóa" id="btnDelSkill">
                 </div>
 
                 <div class="sectionContent" id="skill">
-                    <span contenteditable>-PHP</span>
-                    <input class="rating" data-show-clear="false" data-show-caption="true" data-size="xs" data-show-caption="true" data-step="1">
-                    <span contenteditable>-PHP</span>
-                    <input class="rating" data-show-clear="false" data-show-caption="true" data-size="xs" data-show-caption="true" data-step="1">
+                    <article class="skill">
+                        <span contenteditable>-PHP</span>
+                        <input class="rating" data-show-clear="false" data-show-caption="true" data-size="xs" data-show-caption="true" data-step="1">
+                    </article>
                 </div>
                 <div class="clear"></div>
             </section>
@@ -107,15 +113,14 @@
             <section>
                 <div class="sectionTitle">
                     <h1>Sở Thích</h1>
+                    <input type="button" class="btn btn-primary btn-xs clone" value="Thêm" id="btnAddInt">
+                    <input type="button" class="btn btn-primary btn-xs delete" value="Xóa" id="btnDelInt">
                 </div>
 
-                <div class="sectionContent">
+                <div class="sectionContent" id="interContent">
                     <article class="interests">
                         <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
-                        <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
                     </article>
-
-                    
                 </div>
                 <div class="clear"></div>
             </section>
@@ -123,22 +128,23 @@
             <section>
                 <div class="sectionTitle">
                     <h1>Hoạt Động Cá Nhân</h1>
+                    <input type="button" class="btn btn-primary btn-xs clone" value="Thêm" id="btnAddAct">
+                    <input type="button" class="btn btn-primary btn-xs delete" value="Xóa" id="btnDelAct">
                 </div>
 
-                <div class="sectionContent">
+                <div class="sectionContent"  id="actiContent">
                     <article class="activities">
-                       <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
-                       <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
-                   </article>
+                     <div contenteditable style="margin-bottom:5px">-Art &amp; Multimedia</div>
+                 </article>
 
 
-               </div>
-               <div class="clear"></div>
-           </section>
+             </div>
+             <div class="clear"></div>
+         </section>
 
 
-       </div>
-   </div>
+     </div>
+ </div>
 </form>
 <div id="uploadAvatar" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="    margin-top: 8%;">
   <div class="modal-dialog">

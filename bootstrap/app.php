@@ -13,7 +13,7 @@
 
 $app = new Illuminate\Foundation\Application(
 	realpath(__DIR__.'/../')
-);
+	);
 
 /*
 |--------------------------------------------------------------------------
@@ -29,18 +29,20 @@ $app = new Illuminate\Foundation\Application(
 $app->singleton(
 	'Illuminate\Contracts\Http\Kernel',
 	'App\Http\Kernel'
-);
+	);
 
 $app->singleton(
 	'Illuminate\Contracts\Console\Kernel',
 	'App\Console\Kernel'
-);
+	);
 
 $app->singleton(
 	'Illuminate\Contracts\Debug\ExceptionHandler',
 	'App\Exceptions\Handler'
-);
+	);
 $app->register('Artesaos\SEOTools\Providers\SEOToolsServiceProvider');
+/*$app->register('Barryvdh\DomPDF\ServiceProvider');
+$app->configure('dompdf');*/
 /*
 |--------------------------------------------------------------------------
 | Return The Application

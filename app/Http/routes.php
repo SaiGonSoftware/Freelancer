@@ -34,6 +34,7 @@ Route::get('/cv/tao-cv','UserController@createCV');
 Route::get('/cv/xem-cv/{name}/{id}','UserController@loadCV');
 
 
+Route::post('/cv/download',['as' => 'downloadCV','uses'=>'UserController@downloadPDF']);
 Route::post('/cv/saveCV',['as' => 'SaveCV','uses'=>'UserController@saveCV']);
 Route::post('/job/postNewJob',['as' => 'NewJob','uses'=>'JobController@postJob']);
 Route::post('/updatePassword',['as' => 'updatePass','uses'=>'Auth\PasswordController@newPass']);

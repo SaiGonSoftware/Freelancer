@@ -140,6 +140,7 @@ return [
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
+		'Barryvdh\DomPDF\ServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -201,6 +202,7 @@ return [
 		'Image' => 'Intervention\Image\Facades\Image',
 		'Flash' => 'Laracasts\Flash\Flash',
 		'SEO' => 'Artesaos\SEOTools\Facades\SEOTools',
+		'PDF' => 'Barryvdh\DomPDF\Facade'
 	],
 
 ];

@@ -26,7 +26,7 @@
 				<article>
 					<h2>Chi tiết công việc</h2>
 					<p>
-						{{$job -> content}}<br>
+						{!!$job -> content!!}<br>
 					</p>
 					
 					@if($job -> description)

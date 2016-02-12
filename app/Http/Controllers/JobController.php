@@ -110,17 +110,21 @@ class JobController extends Controller
         $job = new Job();
         $job->title = $request->title;
         $job->slug = $this->remove($request->title);
-        $job->description = "images/" . Auth::user()->username . "/baiviet/" . $_FILES['file']['name'];
+        if(isset($_FILES['file']['name'])){
+            $job->description = "images/" . Auth::user()->username . "/baiviet/" . $_FILES['file']['name'];
+        }
         $job->content = $request->job_description;
         $job->post_at = date('Y-m-d');
         $job->day_open = $request->day_open;
         $job->active = 0;
-        $job->allowance_min = $request->min_allowance;
-        $job->allowance_max = $request->max_allowance;
+        $job->allowance_min = str_replace(',', '', $request->min_allowance);
+        $job->allowance_max = str_replace(',', '', $request->max_allowance);
         $job->location = $request->location;
         $job->user_id = Auth::user()->id;
         $job->save();
-        $this->deImage($_FILES['file']['name']);
+        if(isset($_FILES['file']['name'])){
+           $this->deImage($_FILES['file']['name']);
+        }
         $jobID = $job->id;
         $content_tag = new TagContent();
         $content_tag->job_id = $jobID;

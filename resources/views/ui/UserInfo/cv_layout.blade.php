@@ -20,5 +20,4 @@
         <script src="/cv/cv.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/cv/cropit.js"></script>
-    
     </body>

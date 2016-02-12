@@ -11,10 +11,12 @@ $(function(){
     editable_elements[i].setAttribute("contentEditable", false);
 });
 </script>
+<a href="/cv/download" type="submit" id="pdfDownload" class="btn btn-primary btn-md" style="">Tải CV PDF </a>
 <div id="cv" class="instaFade">
   <div class="mainDetails">
     <div id="headshot" class="quickFade">
-
+    <input type="hidden" name="url" value="{{$_SERVER['REQUEST_URI']}}" id="url">
+    {!! csrf_field() !!}
       <img src="/{{$cv_info->avatar}}" name="avatar" id="avatar" style="width: 150px;
       ">
 

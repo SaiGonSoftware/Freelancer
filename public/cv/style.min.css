@@ -342,7 +342,7 @@ section:last-child
 }
 @media print
 {
-    #cv
+    .cv
     {
         width: 100%;
     }
