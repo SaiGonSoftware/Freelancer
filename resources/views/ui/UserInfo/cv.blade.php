@@ -103,7 +103,7 @@
 
                 <div class="sectionContent" id="skill">
                     <article class="skill">
-                        <span contenteditable>-PHP</span>
+                        <span contenteditable class="skill_name">-PHP</span>
                         <input class="rating" data-show-clear="false" data-show-caption="true" data-size="xs" data-show-caption="true" data-step="1">
                     </article>
                 </div>

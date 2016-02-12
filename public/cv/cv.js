@@ -55,12 +55,12 @@ $(function() {
         });
     });
 });
-
+//ratung star
 $(".rating").rating({
     starCaptions: {1: "Kém", 2: "Yếu", 3: "Trung Bình", 4: "Khá", 5: "Tốt"},
     starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-primary", 5: "text-success"}
 });
-
+//crop image
 $(function() {
     $('.image-editor').cropit({
         allowDragNDrop:true,
@@ -68,6 +68,7 @@ $(function() {
         smallImage:"allow"
     });
 });
+//display image instant after user click update img
 $('#uploadCVAvatar').click(function() {
     var imgSrc = $('.image-editor').cropit('export');
     $('#avatar').attr({ src: imgSrc });
@@ -91,12 +92,15 @@ $('#btnDelEdu').click(function() {
     }
     
 });
+//clone the input rating, then wrap that the same as the original html, then call the .rating.
+//article will wrap rating rating:first
 $('#btnAddSkill').click(function() {
-    $('.skill:first').clone().appendTo("#skill");
+    var article = $('<article />', {class:"skill"}).append('<span contenteditable="">-PHP</span>');
+    $('.rating:first').clone().appendTo("#skill").wrap(article);
     $(".rating:last").rating({
         starCaptions: {1: "Kém", 2: "Yếu", 3: "Trung Bình", 4: "Khá", 5: "Tốt"},
         starCaptionClasses: {1: "text-danger", 2: "text-warning", 3: "text-info", 4: "text-primary", 5: "text-success"},
-        size:'xs',
+        size:'xs'
     });
 });
 $('#btnDelSkill').click(function() {
