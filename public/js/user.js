@@ -686,3 +686,26 @@ $(function() {
     });
 });
 
+
+//delete cv
+$(".deleteCV").click(function(e) {
+    if (ConfirmDelete()) {
+        var token=$("input[name='_token']").val();
+        var id = $(this).attr('data-id');
+
+        $.ajax({
+            url: '/cv/xoa-cv/'+id,
+            type: 'GET',
+            data: {
+                _token: token,
+                id:id
+            },
+            success: function(data) {
+                    alert(data.mess);
+            }
+        })
+        $(this).parent().parent().remove();
+    }
+    else
+        return false;
+});

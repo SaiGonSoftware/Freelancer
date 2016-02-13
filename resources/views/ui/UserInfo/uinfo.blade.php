@@ -54,18 +54,20 @@
             </tr> 
           </thead> 
           <tbody> 
+
             <?php $num=1;?>
             @foreach ($list_cv as $cv_list)
             <tr> 
+            {!! csrf_field() !!}
               <th scope="row">{{$num}}</th>
               <td>
-                <a href="/cv/xem-cv/{{$username}}/{{uniqid($cv_list->id)}}" target="_blank " class="btn btn-info">Xem CV</a> 
+                <a href="/cv/xem-cv/{{$username}}/{{uniqid($cv_list->id)}}" target="_blank" class="btn btn-info">Xem CV</a> 
               </td> 
               <td>
-                <a href="" class="btn btn-primary">Sửa CV</a> 
+                <a href="/cv/sua-cv/{{$username}}/{{uniqid($cv_list->id)}}" target="_blank" class="btn btn-primary">Sửa CV</a> 
               </td> 
               <td> 
-                <a href="" class="btn btn-danger">Xóa CV</a>
+                 <input type="button" class="btn btn-danger deleteCV" data-id="{{uniqid($cv_list->id)}}" value="Xóa CV">
               </td> 
             </tr> 
             <?php $num++; ?>

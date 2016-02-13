@@ -126,12 +126,12 @@ $('#btnAddAct').click(function() {
 $('#btnDelAct').click(function() {
     var ele_length=document.getElementsByClassName('activities').length;
     if(ele_length>1){
-       $('.activities:last').remove();
-   }
+     $('.activities:last').remove();
+ }
 
 
 });
-$("#pdfDownload").click(function(event) {
+/*$("#pdfDownload").click(function(event) {
     event.preventDefault();
     var url=$("#url").val();
     var token=$("input[name='_token']").val();
@@ -151,4 +151,61 @@ $("#pdfDownload").click(function(event) {
         alert("Có lỗi xảy ra vui lòng thử lại");
     });
     
+});*/
+
+$("#updateCV").click(function(event) {
+        event.preventDefault();
+        var id = $("input[name='cv_id']").val();
+        var name=$("#username").text();
+        var job_name=$("#job_name").text();
+        var phone=$("#phone").text();
+        var email=$("#email").text();
+        var address=$("#address").text();
+        var token=$("input[name='_token']").val();
+        var avatar=document.getElementById("avatar").src;
+        var education = $('.education').map(function() {
+            return $(this).html();
+        }).get().join('\n');
+        var experience = $('.experience').map(function() {
+            return $(this).html();
+        }).get().join('\n');
+        var capabilities = $('.capabilities').map(function() {
+            return $(this).html();
+        }).get().join('<br>');
+        var interests = $('.interests').map(function() {
+            return $(this).text();
+        }).get().join('\n');
+        var activities = $('.activities').map(function() {
+            return $(this).html();
+        }).get().join('\n');
+        var skill = $('#skill').map(function() {
+            return $(this).html();
+        }).get().join('\n');
+        alert(capabilities);
+        $.ajax({
+            url: '/cv/update/'+id,
+            type: 'POST',
+            data: {
+                name:name,
+                job_name:job_name,
+                capabilities:capabilities,
+                phone:phone,
+                email:email,
+                address:address,
+                experience:experience,
+                education:education,
+                interests:interests,
+                activities:activities,
+                skill:skill,
+                _token : token,
+                avatar:avatar,
+                id:id  
+            }
+        })
+        .success(function(response) {
+            alert(response.mess);
+        })
+        .error(function() {
+            alert("Errors");
+        });
 });

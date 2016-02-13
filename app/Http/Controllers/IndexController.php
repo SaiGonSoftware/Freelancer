@@ -34,6 +34,19 @@ class IndexController extends Controller
         $data['totalUser'] = User::CountUser();
         return view('ui.content', $data);
     }
+
+    public function test()
+    {
+        $date = "2015-11-24";
+        $newdate = strtotime ( '+10 day' , strtotime ( $date ) ) ;
+        $newdate = date ( 'Y-m-d' , $newdate );
+        $now= date ( 'Y-m-d');
+        echo "Ngay hien tai".$now."<br>";
+        if($newdate < $now)
+            echo "1<br>";
+        echo "Ket qua".$newdate;
+       
+    }
 }
 
 

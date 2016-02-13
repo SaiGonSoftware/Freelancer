@@ -172,16 +172,80 @@ class UserController extends Controller
         return view('ui.userinfo.viewCV',$data);
     }
 
-    public function downloadPDF()
+    /**
+     * [updateCV View Cv to update]
+     * @param  [type] $name [name of user]
+     * @param  [type] $id   [id of cv]
+     * @return [type]       [description]
+     */
+    public function viewUpdateCV($name,$id)
+    {
+        $cv_id = substr($id, 0, -13);
+        $data['cv_info']=CV::where('id','=',$cv_id)->first();
+        SEO::setTitle('Cập nhật CV của ' . $name);
+        return view('ui.userinfo.updateCV',$data);
+    }
+
+    /**
+     * [updateCV updateCV using ajax]
+     * @param  [type] $id [id of the cv]
+     * @return [type]     [description]
+     */
+    public function updateCV($id)
+    {
+        $img=Input::get('avatar');
+        if (isset($img)) {
+            $imgName=Input::get('avatar');
+            $ext = pathinfo($imgName, PATHINFO_EXTENSION);
+            $name=Auth::user()->username;
+            $newFileName = uniqid(Auth::user()->id);
+            if (!is_dir("images/$name/cv/")) {
+                mkdir("images/$name/cv/", 0777);
+            }
+            $img = Image::make($imgName);
+            $src = "images/$name/cv/$newFileName.jpg";
+            $img->save($src);
+        }
+        
+        $cv_id = substr($id, 0, -13);
+        $cv=CV::where('id','=',$cv_id)
+        ->update([
+            'avatar'=>$src,
+            'name' => Input::get('name'),
+            'job_name'=>Input::get('job_name'),
+            'phone'=>Input::get('phone'),
+            'email'=>Input::get('email'),
+            'address'=>Input::get('address'),
+            'education'=>Input::get('education'),
+            'activities'=>Input::get('activities'),
+            'capabilities'=>Input::get('capabilities'),
+            'interests'=>Input::get('interests'),
+            'skill'=>Input::get('skill')
+            ]);
+        return response()->json(array('mess' => 'Cập nhật thành công'));
+    }
+
+    /**
+     * [deleteCV DeleteCV using ajax]
+     * @param  [type] $id [using id to compare with the source]
+     * @return [type]     [description]
+     */
+    public function deleteCV($id)
+    {
+        $cv_id = substr($id, 0, -13);
+        CV::where('id','=',$cv_id)->delete();
+        return response()->json(array('mess' => 'Xóa thành công'));
+    }
+    /*public function downloadPDF()
     {
         $url='/cv/xem-cv/phuchung95/156bc84ce60db9';
         $url=explode('/', $url);
         $cv_id = substr($url[4], 0, -13);
         $name=Auth::user()->username;
         $cv_info=CV::where('id','=',$cv_id)->first();
-/*        $html = view('ui.userinfo.viewCV',['cv_info'=> $cv_info])->render();
+        $html = view('ui.userinfo.viewCV',['cv_info'=> $cv_info])->render();
         return $this->pdf
         ->load($html)
-        ->show();*/
-    }
+        ->show();
+    }*/
 }
