@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-
+use App\Job;
 class CheckJobDate extends Command
 {
     /**
@@ -37,6 +37,7 @@ class CheckJobDate extends Command
      */
     public function handle()
     {
-        Job::where();
+        $now= date ( 'Y-m-d');
+        Job::where('deadline','<',$now)->update(['active'=>1]);
     }
 }
