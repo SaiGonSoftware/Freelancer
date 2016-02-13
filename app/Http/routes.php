@@ -34,7 +34,7 @@ Route::get('/cv/tao-cv','UserController@createCV');
 Route::get('/cv/xem-cv/{name}/{id}','UserController@loadCV');
 Route::get('/cv/sua-cv/{name}/{id}','UserController@viewUpdateCV');
 Route::get('/cv/xoa-cv/{id}',['as' => 'delCV','uses'=>'UserController@deleteCV']);
-Route::get('/test','IndexController@test');
+
 
 Route::post('/cv/download',['as' => 'downloadCV','uses'=>'UserController@downloadPDF']);
 Route::post('/cv/saveCV',['as' => 'SaveCV','uses'=>'UserController@saveCV']);

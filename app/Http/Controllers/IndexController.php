@@ -35,18 +35,6 @@ class IndexController extends Controller
         return view('ui.content', $data);
     }
 
-    /*public function test()
-    {
-        $date = "2015-11-24";
-        $newdate = strtotime ( '+10 day' , strtotime ( $date ) ) ;
-        $newdate = date ( 'Y-m-d' , $newdate );
-        $now= date ( 'Y-m-d');
-        if($newdate < $now)
-            echo "1<br>";
-        echo "Ket qua".$newdate;
-        Job::where('deadline','<',$now)->update(['active'=>1]);
-       
-    }*/
 }
 
 
