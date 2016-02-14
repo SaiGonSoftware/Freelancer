@@ -14,7 +14,7 @@
         "laracasts/flash": "~1.0",
         "artesaos/seotools":"dev-master",
         "kartik-v/bootstrap-star-rating": "@dev",
-        "barryvdh/laravel-dompdf": "0.6.*"
+        "paypal/rest-api-sdk-php": "*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

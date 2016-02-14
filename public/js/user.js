@@ -67,14 +67,15 @@ $(document).ready(function() {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
     $('#captchaOperation').html([randomNumber(1, 100), '+', randomNumber(1, 200), '='].join(' '));
-    $("#register_form_popup").formValidation({
+    $('#register_form_popup')
+    .formValidation({
         framework: 'bootstrap',
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
-        fields: {
+                fields: {
             usernameRegis: {
                 validators: {
                     notEmpty: {
@@ -144,7 +145,26 @@ $(document).ready(function() {
                 }
             },
         }
-    });
+    })
+.on('success.form.fv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+            var data = $("#register_form_popup").serializeArray();
+            var $form = $(e.target);
+            $form.ajaxSubmit({
+                url: '/user/register',
+                type: 'POST',
+                data: data,
+                success: function(data) {
+                    alert(data.mess);
+                    window.location.reload();
+                },
+                error: function(data) {
+                    alert("Có lỗi xảy ra vui lòng thử lại");
+                }
+
+            });
+        });
 });
 //post comment
 $(document).ready(function() {

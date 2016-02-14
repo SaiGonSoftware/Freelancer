@@ -58,7 +58,7 @@
             <?php $num=1;?>
             @foreach ($list_cv as $cv_list)
             <tr> 
-            {!! csrf_field() !!}
+              {!! csrf_field() !!}
               <th scope="row">{{$num}}</th>
               <td>
                 <a href="/cv/xem-cv/{{$username}}/{{uniqid($cv_list->id)}}" target="_blank" class="btn btn-info">Xem CV</a> 
@@ -67,38 +67,38 @@
                 <a href="/cv/sua-cv/{{$username}}/{{uniqid($cv_list->id)}}" target="_blank" class="btn btn-primary">Sửa CV</a> 
               </td> 
               <td> 
-                 <input type="button" class="btn btn-danger deleteCV" data-id="{{uniqid($cv_list->id)}}" value="Xóa CV">
-              </td> 
-            </tr> 
-            <?php $num++; ?>
-            @endforeach
-            
-          </tbody> 
-        </table>
-      </div> 
-    </div>
+               <input type="button" class="btn btn-danger deleteCV" data-id="{{uniqid($cv_list->id)}}" value="Xóa CV">
+             </td> 
+           </tr> 
+           <?php $num++; ?>
+           @endforeach
 
-  </div>
-  <div role="tabpanel" class="tab-pane" id="settings">
-    <div class="panel panel-primary"> 
-      <div class="panel-heading"> 
-        <h3 class="panel-title">Cập nhật mật khẩu</h3> 
+         </tbody> 
+       </table>
+     </div> 
+   </div>
+
+ </div>
+ <div role="tabpanel" class="tab-pane" id="settings">
+  <div class="panel panel-primary"> 
+    <div class="panel-heading"> 
+      <h3 class="panel-title">Cập nhật mật khẩu</h3> 
+    </div>
+    <div class="panel-body">  
+      <form id="formNewPassword" action="{{ url('/updatePassword') }}" method="post">
+       {!! csrf_field() !!}
+       <div class="form-group">
+        <label for="password">Mật khẩu mới</label>
+        <input type="password" class="form-control" id="newpassword" placeholder="Mật khẩu mới từ 5-30 kí tự" name="newpassword">
       </div>
-      <div class="panel-body">  
-        <form id="formNewPassword" action="{{ url('/updatePassword') }}" method="post">
-         {!! csrf_field() !!}
-         <div class="form-group">
-          <label for="password">Mật khẩu mới</label>
-          <input type="password" class="form-control" id="newpassword" placeholder="Mật khẩu mới từ 5-30 kí tự" name="newpassword">
-        </div>
-        <div class="form-group">
-          <label for="repassword">Nhập lại mật khẩu </label>
-          <input type="password" class="form-control" id="repassword" name="repassword">
-        </div>
-        <input type="submit" class="btn btn-info" value="Cập nhật mật khẩu" id="btnNewPass" style="margin-top:5px">
-      </form>
-    </div> 
-  </div>
+      <div class="form-group">
+        <label for="repassword">Nhập lại mật khẩu </label>
+        <input type="password" class="form-control" id="repassword" name="repassword">
+      </div>
+      <input type="submit" class="btn btn-info" value="Cập nhật mật khẩu" id="btnNewPass" style="margin-top:5px">
+    </form>
+  </div> 
+</div>
 </div>
 <div role="tabpanel" class="tab-pane active" id="comment">
   <div class="panel panel-primary">
@@ -118,13 +118,13 @@
       </thead> 
       <tbody> 
         <div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
-        @foreach($job_comment_list as $jobReply)
+        @foreach($job_comment_list as $jobUserPost)
         <tr id="comment_list"> 
-          <td><a href="/chi-tiet-cong-viec/{{$jobReply -> post -> slug }}/{{date("d-m-Y", strtotime($jobReply -> post-> post_at))}}">{{$jobReply -> post -> title }}</a></td> 
-          <td id="introduce:{{$jobReply -> id }}" contenteditable="true"><a href="#" > {{$jobReply -> introduce}}</a></td>
-          <td id="completed_day:{{$jobReply -> id }}" contenteditable="true"><a href="#">{{$jobReply -> completed_day}}</a></td>
-          <td id="allowance:{{$jobReply -> id }}" contenteditable="true"><a href="#" >{{number_format($jobReply -> allowance)}}</a></td>
-          <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delComment" data-id="{{$jobReply -> id }}"></td>
+          <td><a href="/chi-tiet-cong-viec/{{$jobUserPost -> post -> slug }}/{{date("d-m-Y", strtotime($jobUserPost -> post-> post_at))}}" target="_blank" >{{$jobUserPost -> post -> title }}</a></td> 
+          <td id="introduce:{{$jobUserPost -> id }}" contenteditable="true"><a href="#" > {{$jobUserPost -> introduce}}</a></td>
+          <td id="completed_day:{{$jobUserPost -> id }}" contenteditable="true"><a href="#">{{$jobUserPost -> completed_day}}</a></td>
+          <td id="allowance:{{$jobUserPost -> id }}" contenteditable="true"><a href="#" >{{number_format($jobUserPost -> allowance)}}</a></td>
+          <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delComment" data-id="{{$jobUserPost -> id }}"></td>
         </tr> 
         @endforeach()
       </tbody> 
@@ -134,8 +134,33 @@
   </div> 
 </div>
 </div>
-<div role="tabpanel" class="tab-pane active" id="job">
+<div role="tabpanel" class="tab-pane" id="job">
+  <div class="panel panel-primary">
+    <div class="panel-heading"> 
+     <h3 class="panel-title">Tổng hợp các công việc đã đăng</h3> 
+   </div> 
+   <div class="panel-body" id="comment_content"> 
+     <table class="table table-hover" style="text-align:left"> 
+      <thead> 
+        <tr> 
+          <th>Của dự án - Ngày gửi</th> 
+          <th>Xóa công việc</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
+        @foreach($jobpost as $jobUserPost)
+        <tr id="comment_list"> 
+          <td><a href="/chi-tiet-cong-viec/{{$jobUserPost  -> slug }}/{{date("d-m-Y", strtotime($jobUserPost -> post_at))}}" target="_blank" >{{$jobUserPost -> title }}</a></td> 
+          <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delJob" data-id="{{$jobUserPost -> id }}"></td>
+        </tr> 
+        @endforeach()
+      </tbody> 
 
+    </table>
+
+  </div> 
+</div>
 </div>
 
 @endif

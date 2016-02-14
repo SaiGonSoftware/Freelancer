@@ -56,7 +56,10 @@
 										<th>Freelancer đang đặt giá</th> 
 										<th>Giới thiệu bản thânn</th> 
 										<th>Ngày hoàn thành</th> 
-										<th>Đặt giá (VNĐ)</th> 
+										<th>Đặt giá (VNĐ)</th>
+										@if($job -> user_id==Auth::user()->id)
+										<th>Giao Công Việc</th>  
+										@endif
 									</tr> 
 								</thead> 
 								<tbody> 
@@ -66,6 +69,11 @@
 										<td>{{$jobReply -> introduce}}</td>
 										<td>{{$jobReply -> completed_day}}</td>
 										<td>{{number_format($jobReply -> allowance)}}</td>
+										@if($job -> user_id==Auth::user()->id)
+										<td>
+											<button type="button" id="assignJob" class="btn btn-danger btn-xs">Giao Việc</button>
+										</td>
+										@endif
 									</tr> 
 									@endforeach()
 								</tbody> 
@@ -132,7 +140,9 @@
 					<div class="sidebar-widget" id="company">
 						<h2>Thông tin công việc</h2>
 
-						<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}</p>
+						<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}<br>
+						<button type="button" class="btn btn-info " id="sendMess">Gửi tin nhắn</button>
+						</p>
 
 					</div>
 					<hr>

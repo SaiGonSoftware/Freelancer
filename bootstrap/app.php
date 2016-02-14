@@ -41,8 +41,7 @@ $app->singleton(
 	'App\Exceptions\Handler'
 	);
 $app->register('Artesaos\SEOTools\Providers\SEOToolsServiceProvider');
-/*$app->register('Barryvdh\DomPDF\ServiceProvider');
-$app->configure('dompdf');*/
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

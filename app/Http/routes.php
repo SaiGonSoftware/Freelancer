@@ -44,7 +44,7 @@ Route::post('/updatePassword',['as' => 'updatePass','uses'=>'Auth\PasswordContro
 Route::post('/displaycomment','DetailsController@findCommentAjax');
 Route::post('/postComment',['as' => 'post','uses'=>'DetailsController@newComment']);
 Route::post('authen/login','Auth\AuthController@login');
-Route::post('user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
+Route::post('/user/register',['as' => 'register','uses'=>'Auth\AuthController@register']);
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
 Route::post('/findPassword',['as' => 'findPass','uses'=>'Auth\PasswordController@resetPass']);
 Route::post('/password/new',['as' => 'newLostPass','uses'=>'Auth\PasswordController@newLostPass']);
