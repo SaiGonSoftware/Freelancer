@@ -11,6 +11,7 @@ use App\CV;
 use App\Job;
 use App\User;
 use App\Comment;
+use App\JobApproved;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,9 +29,9 @@ class UserController extends Controller {
 		}
 		
 		$data ['userDetail'] = User::whereRaw ( 'username = ? and remember_token = ? ', [ 
-				$name,
-				$token 
-		] )->first ();
+            $name,
+            $token 
+            ] )->first ();
 		if (! $data ['userDetail']) {
 			return view ( 'errors.404' );
 		}
@@ -44,6 +45,20 @@ class UserController extends Controller {
 		return view ( 'ui.userinfo.uinfo', $data );
 	}
 	
+    /**
+     * [assignJob assignJob for user]
+     * @return [type] [description]
+     */
+    public function assignJob()
+    {
+        $jobs_approved=new JobApproved();
+        $jobs_approved->job_id=Input::get('job_id');
+        $jobs_approved->user_assign=Input::get('user_assign');
+        $jobs_approved->user_post=Input::get('user_post');
+        $jobs_approved->save();
+        return response ()->json (array ('mess' => 'Giao việc thành công'));
+    }
+
 	/**
 	 * [userDetailAjax load comment using ajax]
 	 * 
@@ -98,8 +113,8 @@ class UserController extends Controller {
 		}
 		Comment::where ( 'id', '=', $id )->delete ();
 		return response ()->json ( array (
-				'mess' => 'Xóa thành công' 
-		) );
+            'mess' => 'Xóa thành công' 
+            ) );
 	}
 	
 	/**
@@ -147,8 +162,8 @@ class UserController extends Controller {
 		$cv->save ();
 		
 		return response ()->json ( array (
-				'mess' => 'Lưu thành công' 
-		) );
+            'mess' => 'Lưu thành công' 
+            ) );
 	}
 	
 	/**
@@ -207,21 +222,21 @@ class UserController extends Controller {
 		
 		$cv_id = substr ( $id, 0, - 13 );
 		$cv = CV::where ( 'id', '=', $cv_id )->update ( [ 
-				'avatar' => $src,
-				'name' => Input::get ( 'name' ),
-				'job_name' => Input::get ( 'job_name' ),
-				'phone' => Input::get ( 'phone' ),
-				'email' => Input::get ( 'email' ),
-				'address' => Input::get ( 'address' ),
-				'education' => Input::get ( 'education' ),
-				'activities' => Input::get ( 'activities' ),
-				'capabilities' => Input::get ( 'capabilities' ),
-				'interests' => Input::get ( 'interests' ),
-				'skill' => Input::get ( 'skill' ) 
-		] );
+            'avatar' => $src,
+            'name' => Input::get ( 'name' ),
+            'job_name' => Input::get ( 'job_name' ),
+            'phone' => Input::get ( 'phone' ),
+            'email' => Input::get ( 'email' ),
+            'address' => Input::get ( 'address' ),
+            'education' => Input::get ( 'education' ),
+            'activities' => Input::get ( 'activities' ),
+            'capabilities' => Input::get ( 'capabilities' ),
+            'interests' => Input::get ( 'interests' ),
+            'skill' => Input::get ( 'skill' ) 
+            ] );
 		return response ()->json ( array (
-				'mess' => 'Cập nhật thành công' 
-		) );
+            'mess' => 'Cập nhật thành công' 
+            ) );
 	}
 	
 	/**
@@ -235,8 +250,8 @@ class UserController extends Controller {
 		$cv_id = substr ( $id, 0, - 13 );
 		CV::where ( 'id', '=', $cv_id )->delete ();
 		return response ()->json ( array (
-				'mess' => 'Xóa thành công' 
-		) );
+            'mess' => 'Xóa thành công' 
+            ) );
 	}
     /*public function downloadPDF()
     {

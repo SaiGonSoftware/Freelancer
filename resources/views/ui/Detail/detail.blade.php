@@ -71,7 +71,10 @@
 										<td>{{number_format($jobReply -> allowance)}}</td>
 										@if($job -> user_id==Auth::user()->id)
 										<td>
-											<button type="button" id="assignJob" class="btn btn-danger btn-xs">Giao Việc</button>
+										<form method="POST">
+										    {!! csrf_field() !!}
+											<button type="button" id="assignJob" class="btn btn-danger btn-xs" data-post="{{$job -> id }}" data-user="{{$job -> user_id }}" data-comment="{{$jobReply -> user_id }}">Giao Việc</button>
+										</form>
 										</td>
 										@endif
 									</tr> 

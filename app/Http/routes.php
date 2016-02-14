@@ -35,7 +35,7 @@ Route::get('/cv/xem-cv/{name}/{id}','UserController@loadCV');
 Route::get('/cv/sua-cv/{name}/{id}','UserController@viewUpdateCV');
 Route::get('/cv/xoa-cv/{id}',['as' => 'delCV','uses'=>'UserController@deleteCV']);
 
-
+Route::post('/assignCurJob',['as' => 'AssignJob','uses'=>'UserController@assignJob']);
 Route::post('/cv/download',['as' => 'downloadCV','uses'=>'UserController@downloadPDF']);
 Route::post('/cv/saveCV',['as' => 'SaveCV','uses'=>'UserController@saveCV']);
 Route::post('/cv/update/{id}',['as' => 'UpdateCV','uses'=>'UserController@updateCV']);

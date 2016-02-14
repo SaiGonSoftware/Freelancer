@@ -113,7 +113,8 @@
           <th>Giới thiệu bản thân</th> 
           <th>Ngày hoàn thành</th> 
           <th>Đặt giá (VNĐ)</th> 
-          <th>Xóa báo giá</th> 
+          <th>Xóa báo giá</th>
+          <th>Tình trạng</th> 
         </tr> 
       </thead> 
       <tbody> 
@@ -125,6 +126,13 @@
           <td id="completed_day:{{$jobUserPost -> id }}" contenteditable="true"><a href="#">{{$jobUserPost -> completed_day}}</a></td>
           <td id="allowance:{{$jobUserPost -> id }}" contenteditable="true"><a href="#" >{{number_format($jobUserPost -> allowance)}}</a></td>
           <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delComment" data-id="{{$jobUserPost -> id }}"></td>
+          <td>
+            @if($jobUserPost->approved->user_assign==Auth::user()->id)
+                <button type="button" class="btn btn-primary" disabled="disabled">Công việc được giao hoàn thành ngay</button>
+            @else
+            <button type="button" class="btn btn-primary" disabled="disabled">Đang đợi duyệt</button>
+            @endif
+          </td>
         </tr> 
         @endforeach()
       </tbody> 
@@ -152,7 +160,7 @@
         @foreach($jobpost as $jobUserPost)
         <tr id="comment_list"> 
           <td><a href="/chi-tiet-cong-viec/{{$jobUserPost  -> slug }}/{{date("d-m-Y", strtotime($jobUserPost -> post_at))}}" target="_blank" >{{$jobUserPost -> title }}</a></td> 
-          <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delJob" data-id="{{$jobUserPost -> id }}"></td>
+          <td><input type="button" class="btn btn-primary delJob" value="Xóa" data-id="{{$jobUserPost -> id }}"></td>
         </tr> 
         @endforeach()
       </tbody> 

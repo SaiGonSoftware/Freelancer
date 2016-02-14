@@ -729,3 +729,30 @@ $(".deleteCV").click(function(e) {
     else
         return false;
 });
+//assignJob
+$("#assignJob").click(function(event) {
+    event.preventDefault();
+    var conf=confirm("Bạn có chắc chắn muốn giao việc cho người này ?");
+    if(conf){
+        var job_id=$(this).attr('data-post');
+        var user_assign=$(this).attr('data-comment');
+        var user_post=$(this).attr('data-user');
+        var token=$("input[name='_token']").val();
+        $.ajax({
+            url: '/assignCurJob',
+            type: 'POST',
+            data: {
+                job_id:job_id,
+                user_assign:user_assign,
+                user_post:user_post,
+                _token:token
+            },
+            error:function() {
+                alert("Có lỗi vui lòng thử lại");
+            },
+            success:function(response) {
+                alert(response.mess);
+            }
+        })
+    }
+});

@@ -24,4 +24,13 @@ class Comment extends Model {
     public function post(){
         return $this->BelongsTo('App\Job','job_id');
     }
+
+    /**
+     * [approved description]
+     * @return [type] [description]
+     */
+    public function approved()
+    {
+        return $this->belongsTo('App\JobApproved','job_id','job_id');
+    }
 }
