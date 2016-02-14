@@ -7,7 +7,7 @@
 				<h1>{{$job -> title}}</h1>
 				<h4 style="margin-top:10px">
 					<span><i class="fa fa-map-marker"></i>{{$job -> location}}</span>
-					<span><i class="fa fa-clock-o"></i>{{date("d-m-Y", strtotime($job -> post_at))}} Mở trong {{$job -> day_open}} ngày</span>
+					<span><i class="fa fa-clock-o"></i>Hết hạn : {{date("d-m-Y", strtotime($job -> deadline))}}</span>
 					<span><i class="fa fa-dollar"></i>{{number_format ($job -> allowance_min)."d"."-".number_format ($job -> allowance_max)."d"}}</span>
 				</h4>
 			</div>
@@ -101,9 +101,11 @@
 											Lý do gì khiến bạn là ứng viên tốt nhất cho dự án này</label>
 											<textarea id="introduce" name="introduce" cols="100%" rows="10" style="width=100%;height=100%" ></textarea>
 										</div>
-										@if(Auth::check())
-										<button type="submit" class="btn btn-info" id="btnInsertComment">Gửi báo giá</button>
+										@if(Auth::check() && $job ->active ===1)
+										<button type="button" class="btn btn-info" disabled="disabled">Hết hạn báo giá</button>
 										&nbsp;
+										@elseif(Auth::check() && $job ->active ===0)
+										<button type="submit" class="btn btn-info" id="btnInsertComment">Gửi báo giá</button>
 										@else
 										<div class="alert alert-danger" role="alert">Vui lòng đăng nhập để gửi báo giá</div>
 										@endif

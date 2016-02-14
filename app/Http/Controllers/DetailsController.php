@@ -33,11 +33,14 @@ class DetailsController extends Controller
         $date_format = date('Y-m-d', strtotime($date));
         $data['job'] = Job::whereRaw('slug = ? and post_at = ? ', [$slug, $date_format])->first();
         $tag_content = TagContent::where('job_id', '=', $data['job']->id)->first();
-        $data['tag'] = explode(',', $tag_content->tag_content);
+        if(isset($tag_content->tag_content)){
+            $data['tag'] =explode(',', $tag_content->tag_content);
+            $data['slug'] = implode('-',$data['tag']);
+        }
         /*foreach ($data['tag'] as $value) {
             $data['href'] = str_slug($value, "-");
         }*/
-        $data['slug'] = implode('-',$data['tag']);
+        
         SEO::setTitle('Công việc: ' . $data['job']->title);
         SEO::setDescription('Cộng đồng freelancer Việt-Tìm việc freelancer ' . $data['job']->title);
         SEO::opengraph()->setUrl('http://localhost:8000/chi-tiet-cong-viec/' . $data['job']->title . '/' . $date);

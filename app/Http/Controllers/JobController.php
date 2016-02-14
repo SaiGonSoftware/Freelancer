@@ -108,14 +108,18 @@ class JobController extends Controller
     public function postJob(Request $request)
     {
         $job = new Job();
+        $currently=date('Y-m-d');
         $job->title = $request->title;
         $job->slug = $this->remove($request->title);
         if(isset($_FILES['file']['name'])){
             $job->description = "images/" . Auth::user()->username . "/baiviet/" . $_FILES['file']['name'];
         }
         $job->content = $request->job_description;
-        $job->post_at = date('Y-m-d');
+        $job->post_at = $currently;
         $job->day_open = $request->day_open;
+        $deadline = strtotime ( '+'.$request->day_open.' day' , strtotime ( $currently ) ) ;
+        $deadline = date ( 'Y-m-d' , $deadline );
+        $job->deadline=$deadline;
         $job->active = 0;
         $job->allowance_min = str_replace(',', '', $request->min_allowance);
         $job->allowance_max = str_replace(',', '', $request->max_allowance);

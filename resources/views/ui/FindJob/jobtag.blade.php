@@ -34,11 +34,7 @@
 							<span class="city"><i class="fa fa-map-marker"></i>{{$jobPost -> location}}</span>
 							<span class="type full-time">
 								<i class="fa fa-clock-o"></i>
-								@if ($jobPost->taken==0)
-								Công việc mở
-								@else
-								Đóng
-								@endif
+								Hết hạn :<br>{{date("d-m-Y", strtotime($jobPost -> deadline))}}
 							</span>
 							<span class="sallary">Chi Phí:<br>{{number_format ($jobPost -> allowance_min)."d"."-".number_format ($jobPost -> allowance_max)."d"}}</span>
 						</div>
