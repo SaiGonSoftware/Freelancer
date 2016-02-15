@@ -127,10 +127,11 @@
           <td id="allowance:{{$jobUserPost -> id }}" contenteditable="true"><a href="#" >{{number_format($jobUserPost -> allowance)}}</a></td>
           <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delComment" data-id="{{$jobUserPost -> id }}"></td>
           <td>
-            @if($jobUserPost->approved->user_assign==Auth::user()->id)
-                <button type="button" class="btn btn-primary" disabled="disabled">Công việc được giao hoàn thành ngay</button>
+            @if($jobUserPost->approved->user_assign==Auth::user()->id && 
+            $jobUserPost->approved->job_id==$jobUserPost -> post-> id)
+                <div class="alert alert-danger" role="alert">  Công việc được giao hoàn thành ngay </div>
             @else
-            <button type="button" class="btn btn-primary" disabled="disabled">Đang đợi duyệt</button>
+            <div class="alert alert-info" role="alert">Đang đợi duyệt</div>
             @endif
           </td>
         </tr> 
