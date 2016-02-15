@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2016 at 03:39 AM
+-- Generation Time: Feb 15, 2016 at 04:34 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -44,7 +44,9 @@ INSERT INTO `comments` (`id`, `user_id`, `introduce`, `completed_day`, `allowanc
 (1, 1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, '2016-01-18', 1),
 (2, 2, 'Tôi thích hợp cho công việc này', 7, 1500000, '2016-01-18', 1),
 (4, 15, 'Tôi thích công việc này', 2, 1500000, '2016-01-18', 1),
-(90, 14, 'Tôi thích hợp cho công việc này', 5, 2000000, '2016-01-27', 5);
+(5, 3, 'Tôi thích hợp cho công việc này', 5, 2000000, '2016-01-27', 12),
+(6, 3, 'Co kinh nghiem thiet ke logo', 5, 1000000, '2016-02-15', 26),
+(7, 3, 'Bao dam lam nhanh gon va dung y', 5, 1000000, '2016-02-15', 17);
 
 -- --------------------------------------------------------
 
@@ -157,6 +159,26 @@ INSERT INTO `jobs` (`id`, `title`, `slug`, `description`, `content`, `post_at`, 
 (22, 'web-app quản lý công ty nhỏ', 'web-app-quan-ly-cong-ty-nho', 'images/phuchung95/baiviet/download.png', 'Mình đang cần làm 1 web-app quản lý doanh nghiệp có thể chạy trên nền tảng web ( qua hosting ) cho quy mô công ty nhỏ dưới 10 nhân viên. \r\n\r\n\r\n\r\nApp cần có 3 module chính:\r\n1. Kế hoạch kinh doanh:\r\n- Hệ thống giá sản phẩm ( lưu theo mã code tên sản phẩm ) theo từng năm. Có thể xuất báo cáo tỷ lệ giá theo từng thời kỳ tăng giảm.\r\n- Module báo giá tự động theo số thứ tự hệ thống quy định ( vd: khi nhập các yêu cầu báo giá sản phẩm sẽ chọn sp rồi tự động xuất bảng báo giá format sẵn ). Có 2 người quyết định, người lập và người duyệt ( gửi thông báo hoặc link để người điều hành đồng ý trước khi xuất in báo giá )\r\n- Quản lý hợp đồng: Lập quản lý các hợp đồng theo số nhảy tự động của hệ thống ( cứ lập HĐ mới sẽ ra số thứ tự của hệ thống ). Theo dõi tiến độ thực hiện HĐ và quá trình thanh toán. Có thể truy xuất HĐ đang ở trong giai đoạn nào. To-do list..\r\n- Hồ sơ thầu: Các biểu mẫu thiết lập sẵn theo quy định hiện hành theo luật đấu thầu ( Các biểu mẫu, format của HST quốc tế, trong nước, chỉ định thầu rút gọn..). Mỗi lần làm 1 HST thầu mới sẽ nhập các dữ liệu vào các blank trống của biểu mẫu để xuất in ra theo format quy định.\r\n- Các module khác trong quá trình làm..\r\n\r\n2. Dịch vụ khách hàng :\r\n- Gồm hạng mục công việc, thời gian, người liên quan, tiến độ xử lý công việc ( to-do list ), thông báo qua email cho từng người-bộ phận liên quan. Giống như 1 dash-board chung để khi có việc yêu cầu từ khách hàng thì người quan lý sẽ nhập đầu mục công việc và phân công người phụ trách, tiến độ xử lý, trách nhiệm, và các ghi chú khác.\r\n\r\n3. Tài chính:\r\n- Theo dõi chi phí, lợi nhuận của từng dự án. Quyền truy cập chỉ dành cho giám đốc hoặc người chỉ định. Cập nhập từng chi phí liên quan dự án.\r\n- Công tác: nhập mẫu có sẵn công tác và các chi phí và hoàn ứng sau khi công tác xong. Người lập và người duyệt theo chỉ định.\r\n- Quỹ TM: thu chi quỹ TM ( nội bộ ).\r\n\r\n4. Yêu cầu chung:\r\n- Thiết lập theo tài khoản chỉ đinh. Vd: Chuyên viên kinh doanh thì vào làm các báo giá, hệ thống giá và được duyệt bởi người quản lý sau đó mới lưu vào hệ thống. Module dịch vụ thì tuỳ vào cấp độ quyền tạo ra hạng mục việc theo chế độ ưu tiên và giảm dần. \r\n-web-app: Giao diện sử dụng được trên PC, IPAD, Iphone qua web đơn giản, dễ nhìn.\r\n- Có back-up dữ liệu định kỳ và backup dữ liệu ổ cứng ngoài tại đơn vị.', '2015-11-24', 10, '2015-12-04', 1, 100000, 200000, 'Hà Nội', 14),
 (25, 'Cần tìm người làm web bán hàng', 'can-tim-nguoi-lam-web-ban-hang', 'images/phuchung95/baiviet/cover.jpg', 'Loại website cần làm: Bán hàng\r\nLĩnh vực hoạt động: Dịch vụ\r\nLayout của website: Chưa có\r\nSố lượng trang cần làm: 11 - 20\r\nNền tảng muốn làm: PHP\r\nHệ thống Back-end: Có\r\nCác tính năng cần có: Đầy đủ tính năng như website bán hàng, Hỗ trợ đăng nhập bằng tài khoản social, Live chat, Banner slideshow, Thân thiện với mobile, Hỗ trợ SEO\r\nYêu cầu khác của khách hàng\r\ntích hợp thanh toán qua ngân lượng, bảo kim', '2015-11-24', 10, '2015-12-04', 1, 400000, 600000, 'Hồ Chí Minh', 14),
 (26, 'Thiết kế logo', 'thiet-ke-logo', NULL, 'Mình muốn thiết kế logo cho dự án startup phù hợp với các yếu tố được đề ra.<br />Giá là 500k.<br />Chỉnh sửa cho đến khi vừa ý và phù hợp requirement.', '2016-02-14', 7, '2016-02-21', 0, 100000, 500000, 'Hà Nội', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs_approved`
+--
+
+CREATE TABLE `jobs_approved` (
+  `id` int(11) NOT NULL,
+  `job_id` int(11) NOT NULL,
+  `user_assign` int(11) NOT NULL,
+  `user_post` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `jobs_approved`
+--
+
+INSERT INTO `jobs_approved` (`id`, `job_id`, `user_assign`, `user_post`) VALUES
+(1, 12, 3, 14);
 
 -- --------------------------------------------------------
 
@@ -352,6 +374,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
 (1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'UTwPUz6v3tRbRd2kksExHJa3nrM2o0wl0JFU3oP4BmNNXSANfQ7oqmH7DRRr', 0, 1, 0),
 (2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
+(3, NULL, 'phucphuc', 'Nguyen van a', NULL, 'traitimnguyen113@yahoo.com', '$2y$10$PxPbQgyUkBmzzRcxfml7PeSDKHo9DdK7SHe88axEHYr5D14aaOtX6', 'XVmzmtLvQPDVQzTwxXCYGu33yhD5gotQYTpIwjjQ', 0, 1, 0),
 (14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456af6e236daae.png', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'TbdlTFCOdBy1B2JiT6xnVJCQgkba8dbCyflJBtZo4xigFKNNckaZ8okGuBBa', 0, 1, 0),
 (15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/1556af9aae44d83.png', NULL, '', 'wkZstgvkL8fqXV4aw9DUZk6mMhP280UBD4ZNkSraCvJlS3AH2C6vAySnirP3', 0, 0, 0);
 
@@ -381,6 +404,12 @@ ALTER TABLE `cv`
 -- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jobs_approved`
+--
+ALTER TABLE `jobs_approved`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -417,7 +446,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `content_tag`
 --
@@ -433,6 +462,11 @@ ALTER TABLE `cv`
 --
 ALTER TABLE `jobs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+--
+-- AUTO_INCREMENT for table `jobs_approved`
+--
+ALTER TABLE `jobs_approved`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `manage`
 --

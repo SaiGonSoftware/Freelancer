@@ -127,20 +127,21 @@
           <td id="allowance:{{$jobUserPost -> id }}" contenteditable="true"><a href="#" >{{number_format($jobUserPost -> allowance)}}</a></td>
           <td><input type="button" class="btn btn-primary delComment" value="Xóa" id="delComment" data-id="{{$jobUserPost -> id }}"></td>
           <td>
-            @if($jobUserPost->approved->user_assign==Auth::user()->id && 
-            $jobUserPost->approved->job_id==$jobUserPost -> post-> id)
-                <div class="alert alert-danger" role="alert">  Công việc được giao hoàn thành ngay </div>
-            @else
-            <div class="alert alert-info" role="alert">Đang đợi duyệt</div>
-            @endif
-          </td>
-        </tr> 
-        @endforeach()
-      </tbody> 
+           @if($jobUserPost->approved!=null)
+             @if($jobUserPost->approved->user_assign==Auth::user()->id && $jobUserPost->approved->job_id==$jobUserPost -> post-> id)
+             <div class="alert alert-danger" role="alert">  Công việc được giao hoàn thành ngay </div>
+             @endif
+           @else
+           <div class="alert alert-info" role="alert">Đang đợi duyệt</div>
+           @endif
+         </td>
+       </tr> 
+       @endforeach()
+     </tbody> 
 
-    </table>
+   </table>
 
-  </div> 
+ </div> 
 </div>
 </div>
 <div role="tabpanel" class="tab-pane" id="job">
