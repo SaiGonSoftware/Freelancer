@@ -11,7 +11,7 @@
             </li>
             <li><a href="{{ url() }}/cong-viec-freelancer">Đăng tin freelancer</a>
             </li>
-            <li><a href="">Đăng tin tuyển dụng</a>
+            <li><a href="{{ url() }}/tin-tuyen-dung">Đăng tin tuyển dụng</a>
             </li>
             <li><a href="{{ url() }}/tim-viec">Tìm Việc</a>
             </li>

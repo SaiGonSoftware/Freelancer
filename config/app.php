@@ -140,6 +140,7 @@ return [
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
+		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -200,7 +201,8 @@ return [
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Image' => 'Intervention\Image\Facades\Image',
 		'Flash' => 'Laracasts\Flash\Flash',
-		'SEO' => 'Artesaos\SEOTools\Facades\SEOTools'
+		'SEO' => 'Artesaos\SEOTools\Facades\SEOTools',
+		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment'
 	],
 
 ];

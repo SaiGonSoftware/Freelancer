@@ -14,6 +14,7 @@
         "laracasts/flash": "~1.0",
         "artesaos/seotools":"dev-master",
         "kartik-v/bootstrap-star-rating": "@dev",
+        "anouar/paypalpayment": "*",
         "paypal/rest-api-sdk-php": "*"
 	},
 	"require-dev": {

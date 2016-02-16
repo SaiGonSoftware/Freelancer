@@ -75,7 +75,7 @@ $(document).ready(function() {
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
         },
-                fields: {
+        fields: {
             usernameRegis: {
                 validators: {
                     notEmpty: {
@@ -397,7 +397,7 @@ $(document).ready(function() {
             title: {
                 validators: {
                     notEmpty: {
-                        message: "Vui lòng tên dự án"
+                        message: "Vui lòng nhập tên dự án"
                     }
                 }
             },
@@ -467,7 +467,7 @@ $(document).ready(function() {
                 alert("Có lỗi xảy ra vui lòng thử lại");
             }
         });
-});
+    });
 });
 
 
@@ -721,7 +721,7 @@ $(".deleteCV").click(function(e) {
                 id:id
             },
             success: function(data) {
-                    alert(data.mess);
+                alert(data.mess);
             }
         })
         $(this).parent().parent().remove();
@@ -755,4 +755,112 @@ $("#assignJob").click(function(event) {
             }
         })
     }
+});
+
+$(".delJobUserPost").click(function(event) {
+ var conf=confirm("Bạn có chắc chắn xóa công việc ?");
+ if(conf){
+    var job_id=$(this).attr('data-id');
+    $.ajax({
+        url: '/delJobUserPost',
+        type: 'GET',
+        async: false,
+        data: {
+            job_id:job_id,
+        },
+        error:function() {
+            alert("Có lỗi vui lòng thử lại");
+        },
+        success:function(response) {
+            alert(response.mess);
+        }
+    })
+    $(this).parent().parent().remove();
+}
+});
+//post comment
+$(document).ready(function() {
+    $('#postNewRecruit')
+    .formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            title: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập tên dự án"
+                    }
+                }
+            },
+            location: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng chọn địa điểm"
+                    }
+                }
+            },
+            salary_number: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập mức lương"
+                    }
+                }
+            },
+            experience_year: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập kinh nghiệm"
+                    },
+                    hex: {
+                        message: "Kinh nghiệm phải là số"
+                    }
+                }
+            },
+            quantity: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập phí số lượng"
+                    },
+                    hex: {
+                        message: "Vui lòng nhập số"
+                    }
+                }
+            },
+            content: {
+                validators: {
+                    notEmpty: {
+                        message: "Vui lòng nhập phí yêu cầu công việc"
+                    }
+                }
+            },
+        }
+    })
+.on('success.form.fv', function(e) {
+    e.preventDefault();
+    var formValue = $("#postNewRecruit").serializeArray();
+    var location = $("#location .ms-sel-item").text();
+    var job_description = $("#content").val();
+    job_description = job_description.replace(/\r?\n/g, '<br />');
+    var $form = $(e.target);
+    $form.ajaxSubmit({
+        url: '/job/postNewRecruit',
+        type: 'POST',
+        data: {
+            formValue: formValue,
+            location: location,
+            job_description:job_description
+        },
+        success: function(data) {
+            alert(data.mess);
+            redirect('/tin-tuyen-dung' + '/' + data.title + '/' + data.date);
+        },
+        error: function() {
+            alert("Có lỗi xảy ra vui lòng thử lại");
+        }
+    });
+});
 });

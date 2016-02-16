@@ -7,6 +7,7 @@ use Image;
 use App\Job;
 use App\User;
 use App\Tags;
+use App\Recruit;
 use App\TagContent;
 use Illuminate\Http\Request;
 
@@ -92,7 +93,10 @@ class JobController extends Controller
         return view('ui.findjob.pagi', compact('job_pagi'));
     }
 
-    
+    /**
+     * [postJobView return view to post job freelancer]
+     * @return [type] [description]
+     */
     public function postJobView()
     {
         SEO::setTitle('Công việc freelancer-Cộng đồng freelancer Việt');
@@ -100,6 +104,55 @@ class JobController extends Controller
         SEO::opengraph()->setUrl('http://localhost:8000/cong-viec-freelancer');
         return view('ui.postjob.postjob');
     }
+
+    /**
+     * [recruitView return view to post recruitment news]
+     * @return [type] [description]
+     */
+    public function recruitView()
+    {
+      SEO::setTitle('Tin tuyển dụng-Cộng đồng freelancer Việt');
+      SEO::setDescription('Cộng đồng freelancer Việt-Tin tuyển dụng');
+      SEO::opengraph()->setUrl('http://localhost:8000/tin-tuyen-dung');
+      return view('ui.postjob.post_recruit');
+    }
+
+    public function recruitJobView($title,$date)
+    {
+        $date_format = date('Y-m-d', strtotime($date));
+        $data['job'] = Recruit::whereRaw('slug = ? and post_at = ? ', [$title, $date_format])->first();
+        SEO::setTitle('Tin tuyển dụng: ' . $data['job']->title);
+        SEO::setDescription('Cộng đồng freelancer Việt-Tin tuyển dụng' . $data['job']->title);
+        SEO::opengraph()->setUrl('http://localhost:8000/tin-tuyen-dung/' . $data['job']->title . '/' . $date);
+        /*$data['related_job'] = Job::whereRaw('user_id = ? and id != ?', [$data['job']->user->id, $data['job']->id])->get();*/
+        return view('ui.detail.recruit_job',$data);
+    }
+
+    /**
+     * [recruitJob post recruit job via ajax]
+     * @return [json] [message]
+     */
+    public function recruitJob(Request $request)
+    {
+         $recruit_job=new Recruit();
+         $recruit_job->title=$request->title;
+         $recruit_job->slug=$this->remove($request->title);
+         $recruit_job->content=$request->job_description;
+         $recruit_job->experience_year=$request->experience_year;
+         $recruit_job->quantity=$request->quantity;
+         $recruit_job->salary=$request->salary_number;
+         $recruit_job->post_at= date ( 'Y-m-d');
+         $recruit_job->location=$request->location;
+         $recruit_job->user_id=Auth::user()->id;
+         $recruit_job->save();
+         return response()->json(
+            array(
+                'mess' => 'Đăng công việc thành công',
+                'date' => $date_format = date('d-m-Y', strtotime(date('Y-m-d'))),
+                'title' => $this->remove($request->title)
+                )
+            );
+     }
 
     /**
      * [postJob post the job]
@@ -128,20 +181,20 @@ class JobController extends Controller
         $job->save();
         if(isset($_FILES['file']['name'])){
            $this->deImage($_FILES['file']['name']);
-        }
-        $jobID = $job->id;
-        $content_tag = new TagContent();
-        $content_tag->job_id = $jobID;
-        $content_tag->tag_content = $request->value;
-        $content_tag->save();
-        return response()->json(
-            array(
-                'mess' => 'Đăng công việc thành công',
-                'date' => $date_format = date('d-m-Y', strtotime(date('Y-m-d'))),
-                'title' => $this->remove($request->title)
-                )
-            );
-    }
+       }
+       $jobID = $job->id;
+       $content_tag = new TagContent();
+       $content_tag->job_id = $jobID;
+       $content_tag->tag_content = $request->value;
+       $content_tag->save();
+       return response()->json(
+        array(
+            'mess' => 'Đăng công việc thành công',
+            'date' => $date_format = date('d-m-Y', strtotime(date('Y-m-d'))),
+            'title' => $this->remove($request->title)
+            )
+        );
+   }
 
     /**
      * [deImage upload img description for that post]

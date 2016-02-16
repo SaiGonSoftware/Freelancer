@@ -41,7 +41,7 @@ class UserController extends Controller {
 		$data ['username'] = Auth::user ()->username;
 		$data ['job_comment_list'] = Comment::where ( 'user_id', '=', Auth::user ()->id )->get ();
 		$data ['list_cv'] = CV::where ( 'user_id', '=', Auth::user ()->id )->get ();
-		$data ['jobpost'] = Job::where ( 'user_id', '=', Auth::user ()->id )->get ();
+		$data ['jobpost'] = Job::where ( 'user_id', '=', Auth::user ()->id )->orderBy('post_at', 'desc')->get ();
 		return view ( 'ui.userinfo.uinfo', $data );
 	}
 	
@@ -117,6 +117,19 @@ class UserController extends Controller {
             ) );
 	}
 	
+	/**
+	 * [deleteJob delete Job via ajax]
+	 * @return [json] [message]
+	 */
+	public function deleteJob()
+	{
+		$id=Input::get('job_id');
+		Job::where( 'id', '=', $id )->delete();
+		return response ()->json ( array (
+            'mess' => 'Xóa thành công' 
+        ) );
+	}
+
 	/**
 	 * [createCV return new create cv view]
 	 * 

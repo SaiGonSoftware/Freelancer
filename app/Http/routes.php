@@ -23,6 +23,8 @@ Route::get('/chi-tiet-cong-viec/{slug}/{date}','DetailsController@details');
 Route::get('/tai-khoan/{token}', 'Auth\AuthController@reactive');
 Route::get('/tai-khoan/thong-tin-ca-nhan/{name}/{token}', 'UserController@userDetail');
 Route::get('/cong-viec-freelancer','JobController@postJobView');
+Route::get('/tin-tuyen-dung','JobController@recruitView');
+Route::get('/tin-tuyen-dung/{title}/{date}','JobController@recruitJobView');
 Route::get('/dang-xuat', 'Auth\AuthController@logout');
 Route::get('/auth/facebook', 'Auth\AuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
@@ -35,6 +37,10 @@ Route::get('/cv/xem-cv/{name}/{id}','UserController@loadCV');
 Route::get('/cv/sua-cv/{name}/{id}','UserController@viewUpdateCV');
 Route::get('/cv/xoa-cv/{id}',['as' => 'delCV','uses'=>'UserController@deleteCV']);
 
+Route::get('/payment',['as' => 'PaymentPaypal','uses'=>'PaymentController@store']);
+Route::get('/delJobUserPost',['as' => 'DelJobUserPost','uses'=>'UserController@deleteJob']);
+
+Route::post('/job/postNewRecruit',['as' => 'RecruitJob','uses'=>'JobController@recruitJob']);
 Route::post('/assignCurJob',['as' => 'AssignJob','uses'=>'UserController@assignJob']);
 Route::post('/cv/download',['as' => 'downloadCV','uses'=>'UserController@downloadPDF']);
 Route::post('/cv/saveCV',['as' => 'SaveCV','uses'=>'UserController@saveCV']);
@@ -60,3 +66,4 @@ Route::controllers([
 Route::any('/{page?}',function(){
   return View::make('errors.404');
 })->where('page','.*');
+

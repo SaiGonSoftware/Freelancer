@@ -154,6 +154,7 @@
       <thead> 
         <tr> 
           <th>Của dự án - Ngày gửi</th> 
+          <th>Ngày đăng</th> 
           <th>Xóa công việc</th> 
         </tr> 
       </thead> 
@@ -162,7 +163,8 @@
         @foreach($jobpost as $jobUserPost)
         <tr id="comment_list"> 
           <td><a href="/chi-tiet-cong-viec/{{$jobUserPost  -> slug }}/{{date("d-m-Y", strtotime($jobUserPost -> post_at))}}" target="_blank" >{{$jobUserPost -> title }}</a></td> 
-          <td><input type="button" class="btn btn-primary delJob" value="Xóa" data-id="{{$jobUserPost -> id }}"></td>
+          <td>{{date("d-m-Y", strtotime($jobUserPost -> post_at))}}</td>
+          <td><input type="button" class="btn btn-primary delJobUserPost" value="Xóa" data-id="{{$jobUserPost -> id }}"></td>
         </tr> 
         @endforeach()
       </tbody> 

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2016 at 04:34 PM
+-- Generation Time: Feb 16, 2016 at 06:32 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -44,9 +44,8 @@ INSERT INTO `comments` (`id`, `user_id`, `introduce`, `completed_day`, `allowanc
 (1, 1, 'Tôi tự tin về khả năng code php đã từng có 5 dự án ', 7, 1500000, '2016-01-18', 1),
 (2, 2, 'Tôi thích hợp cho công việc này', 7, 1500000, '2016-01-18', 1),
 (4, 15, 'Tôi thích công việc này', 2, 1500000, '2016-01-18', 1),
-(5, 3, 'Tôi thích hợp cho công việc này', 5, 2000000, '2016-01-27', 12),
-(6, 3, 'Co kinh nghiem thiet ke logo', 5, 1000000, '2016-02-15', 26),
-(7, 3, 'Bao dam lam nhanh gon va dung y', 5, 1000000, '2016-02-15', 17);
+(5, 3, 'TÃ´i thÃ­ch há»£p cho cÃ´ng viá»‡c nÃ y.Nhanh', 5, 2000000, '2016-01-27', 12),
+(6, 3, 'Co kinh nghiem thiet ke logo', 5, 1000000, '2016-02-15', 26);
 
 -- --------------------------------------------------------
 
@@ -157,7 +156,6 @@ INSERT INTO `jobs` (`id`, `title`, `slug`, `description`, `content`, `post_at`, 
 (17, 'Cần người Clone App Android Đơn Giản', 'can-nguoi-clone-app-android-Don-gian', '', 'Mình cần người clone app Android (Dạng app download). Liên hệ email: ***@gmail.com hoặc skype: ***dai để lấy mẫu và nói chuyện cụ thể.', '2015-11-24', 10, '2015-12-04', 1, 100000, 500000, 'Hà Nội', 14),
 (18, 'Cần FIX Code Jquery Image PhP', 'can-fix-code-jquery-image-php', '', 'Hiện tại mình đang cần 1 bạn FIX Code Jquery Image PhP\nWebsite ****: http://www.thietbixe.com\nHình sản phẩm mờ : http://thietbixe.com/mua-ban-xe-ct-7.html --- Website bên mình\nHình sản phẩm nét : http://gianhangvn.com/oto-xe-may-xe-dap-1104a.html ( Gianhangvn.com )\nMenu Danh mục Sản Phẩm giống ++>> obdvietnam.vn\n\n1. Tinh chỉnh lại Sản Phẩm bằng javascript - Jquery Image\n2. Menu Danh Mục Sản Phẩm giống Obdvietnam.vn\nBáo giá sớm quan bên mình nha .\nSố Điện Thoại : Mr . Tín ****\nEmail: ****\n****', '2015-11-24', 10, '2015-12-04', 1, 100000, 50000, 'Hà Nội', 14),
 (22, 'web-app quản lý công ty nhỏ', 'web-app-quan-ly-cong-ty-nho', 'images/phuchung95/baiviet/download.png', 'Mình đang cần làm 1 web-app quản lý doanh nghiệp có thể chạy trên nền tảng web ( qua hosting ) cho quy mô công ty nhỏ dưới 10 nhân viên. \r\n\r\n\r\n\r\nApp cần có 3 module chính:\r\n1. Kế hoạch kinh doanh:\r\n- Hệ thống giá sản phẩm ( lưu theo mã code tên sản phẩm ) theo từng năm. Có thể xuất báo cáo tỷ lệ giá theo từng thời kỳ tăng giảm.\r\n- Module báo giá tự động theo số thứ tự hệ thống quy định ( vd: khi nhập các yêu cầu báo giá sản phẩm sẽ chọn sp rồi tự động xuất bảng báo giá format sẵn ). Có 2 người quyết định, người lập và người duyệt ( gửi thông báo hoặc link để người điều hành đồng ý trước khi xuất in báo giá )\r\n- Quản lý hợp đồng: Lập quản lý các hợp đồng theo số nhảy tự động của hệ thống ( cứ lập HĐ mới sẽ ra số thứ tự của hệ thống ). Theo dõi tiến độ thực hiện HĐ và quá trình thanh toán. Có thể truy xuất HĐ đang ở trong giai đoạn nào. To-do list..\r\n- Hồ sơ thầu: Các biểu mẫu thiết lập sẵn theo quy định hiện hành theo luật đấu thầu ( Các biểu mẫu, format của HST quốc tế, trong nước, chỉ định thầu rút gọn..). Mỗi lần làm 1 HST thầu mới sẽ nhập các dữ liệu vào các blank trống của biểu mẫu để xuất in ra theo format quy định.\r\n- Các module khác trong quá trình làm..\r\n\r\n2. Dịch vụ khách hàng :\r\n- Gồm hạng mục công việc, thời gian, người liên quan, tiến độ xử lý công việc ( to-do list ), thông báo qua email cho từng người-bộ phận liên quan. Giống như 1 dash-board chung để khi có việc yêu cầu từ khách hàng thì người quan lý sẽ nhập đầu mục công việc và phân công người phụ trách, tiến độ xử lý, trách nhiệm, và các ghi chú khác.\r\n\r\n3. Tài chính:\r\n- Theo dõi chi phí, lợi nhuận của từng dự án. Quyền truy cập chỉ dành cho giám đốc hoặc người chỉ định. Cập nhập từng chi phí liên quan dự án.\r\n- Công tác: nhập mẫu có sẵn công tác và các chi phí và hoàn ứng sau khi công tác xong. Người lập và người duyệt theo chỉ định.\r\n- Quỹ TM: thu chi quỹ TM ( nội bộ ).\r\n\r\n4. Yêu cầu chung:\r\n- Thiết lập theo tài khoản chỉ đinh. Vd: Chuyên viên kinh doanh thì vào làm các báo giá, hệ thống giá và được duyệt bởi người quản lý sau đó mới lưu vào hệ thống. Module dịch vụ thì tuỳ vào cấp độ quyền tạo ra hạng mục việc theo chế độ ưu tiên và giảm dần. \r\n-web-app: Giao diện sử dụng được trên PC, IPAD, Iphone qua web đơn giản, dễ nhìn.\r\n- Có back-up dữ liệu định kỳ và backup dữ liệu ổ cứng ngoài tại đơn vị.', '2015-11-24', 10, '2015-12-04', 1, 100000, 200000, 'Hà Nội', 14),
-(25, 'Cần tìm người làm web bán hàng', 'can-tim-nguoi-lam-web-ban-hang', 'images/phuchung95/baiviet/cover.jpg', 'Loại website cần làm: Bán hàng\r\nLĩnh vực hoạt động: Dịch vụ\r\nLayout của website: Chưa có\r\nSố lượng trang cần làm: 11 - 20\r\nNền tảng muốn làm: PHP\r\nHệ thống Back-end: Có\r\nCác tính năng cần có: Đầy đủ tính năng như website bán hàng, Hỗ trợ đăng nhập bằng tài khoản social, Live chat, Banner slideshow, Thân thiện với mobile, Hỗ trợ SEO\r\nYêu cầu khác của khách hàng\r\ntích hợp thanh toán qua ngân lượng, bảo kim', '2015-11-24', 10, '2015-12-04', 1, 400000, 600000, 'Hồ Chí Minh', 14),
 (26, 'Thiết kế logo', 'thiet-ke-logo', NULL, 'Mình muốn thiết kế logo cho dự án startup phù hợp với các yếu tố được đề ra.<br />Giá là 500k.<br />Chỉnh sửa cho đến khi vừa ý và phù hợp requirement.', '2016-02-14', 7, '2016-02-21', 0, 100000, 500000, 'Hà Nội', 14);
 
 -- --------------------------------------------------------
@@ -179,6 +177,32 @@ CREATE TABLE `jobs_approved` (
 
 INSERT INTO `jobs_approved` (`id`, `job_id`, `user_assign`, `user_post`) VALUES
 (1, 12, 3, 14);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `jobs_post`
+--
+
+CREATE TABLE `jobs_post` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `experience_year` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `salary` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `post_at` date NOT NULL,
+  `location` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `jobs_post`
+--
+
+INSERT INTO `jobs_post` (`id`, `title`, `slug`, `content`, `experience_year`, `quantity`, `salary`, `post_at`, `location`, `user_id`) VALUES
+(1, '[Salary up to $900] PHP Developer - DWORK', '[salary-up-to-$900]-php-developer---dwork', 'JOB DESCRIPTION<br /><br />Follow best practice conventions and project structure<br />Reading blogs and compelling ideas how to improve our skills.<br />Know how to handle the entire software development life cycle, end to end.<br />Have good DBA and strong DB schema design skills<br />Must be able to write complex queries in SQL and understand the EXPLAIN query.<br />Best practice conventions and project structure. We hate fat file<br /> <br /><br />YOUR SKILL AND EXPERIENCE<br /><br />Can master any server-side PHP framework and client-side HTML framework quickly<br />HTML and CSS must be strictly DRY (i.e. CSS classes and HTML component must be reusable)<br />Be aware of basic web optimization methods (concatenate and minify JavaScript and CSS assets, sprites)<br />Experience with using browser Web Inspector<br />Experience in Linux environment to do basic sysadmin tasks<br />Knowledge of PostgreSQL, MySQL<br />Good jQuery skills<br />OOP should be expected<br />Aware of CSS preprocessors<br />Responsive web with Bootstrap<br />Experience with some MVC PHP frameworks (CodeIgniter, YII , Phalcon, CakePHP, CodeIgniter, ...)<br />Aware of search framework like Elastic-search<br />Hybrid app experience is a huge plus<br /> <br /><br />BENEFITS<br /><br />Competitive salary (up to $900 gross)<br />Bao Viet Insurance, snacks, transportation will be negotiable.<br />Having good and fair reward and promotion system <br />Chances to travel oversea learning trip!!!<br /> <br /><br />WHY YOU''LL LOVE WORKING HERE<br /><br />Competitive salary<br />A workspace with great view to green Hoang Van Thu park (Yellow Flowers are there for fan boys too)<br />A bunch of funny and motivated people<br />Standing by window, sitting at desk, hugging the beanbag, lying on the floor. Free your style, bright your code<br />SNACKS!<br /> <br /><br />WHY YOU''LL HATE WORKING HERE<br /><br />Join foosball world''s champion<br />Fat boss<br />Cute Office/HR/Finance manager<br />Naughty dog<br />Get FATTTTT', 1, 3, '900$', '2016-02-16', 'Hồ Chí Minh', 14);
 
 -- --------------------------------------------------------
 
@@ -413,6 +437,12 @@ ALTER TABLE `jobs_approved`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `jobs_post`
+--
+ALTER TABLE `jobs_post`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `manage`
 --
 ALTER TABLE `manage`
@@ -466,6 +496,11 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `jobs_approved`
 --
 ALTER TABLE `jobs_approved`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `jobs_post`
+--
+ALTER TABLE `jobs_post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `manage`
