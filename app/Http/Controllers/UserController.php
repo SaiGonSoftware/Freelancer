@@ -10,6 +10,7 @@ use Image;
 use App\CV;
 use App\Job;
 use App\User;
+use App\Recruit;
 use App\Comment;
 use App\JobApproved;
 use App\Http\Requests;
@@ -42,6 +43,7 @@ class UserController extends Controller {
 		$data ['job_comment_list'] = Comment::where ( 'user_id', '=', Auth::user ()->id )->get ();
 		$data ['list_cv'] = CV::where ( 'user_id', '=', Auth::user ()->id )->get ();
 		$data ['jobpost'] = Job::where ( 'user_id', '=', Auth::user ()->id )->orderBy('post_at', 'desc')->get ();
+		$data['recruit_job']=Recruit::where ( 'user_id', '=', Auth::user ()->id )->orderBy('post_at', 'desc')->get ();
 		return view ( 'ui.userinfo.uinfo', $data );
 	}
 	
@@ -115,19 +117,6 @@ class UserController extends Controller {
 		return response ()->json ( array (
             'mess' => 'Xóa thành công' 
             ) );
-	}
-	
-	/**
-	 * [deleteJob delete Job via ajax]
-	 * @return [json] [message]
-	 */
-	public function deleteJob()
-	{
-		$id=Input::get('job_id');
-		Job::where( 'id', '=', $id )->delete();
-		return response ()->json ( array (
-            'mess' => 'Xóa thành công' 
-        ) );
 	}
 
 	/**

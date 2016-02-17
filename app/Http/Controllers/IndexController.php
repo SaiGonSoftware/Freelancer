@@ -1,9 +1,9 @@
 <?php
 namespace App\Http\Controllers;
-
+use SEO;
 use App\Job;
 use App\User;
-use SEO;
+use App\Recruit;
 
 class IndexController extends Controller
 {
@@ -32,6 +32,7 @@ class IndexController extends Controller
         $data['content'] = Job::where('id', '>', 0)->orderBy('post_at', 'desc')->take(5)->get();
         $data['totalJob'] = Job::CountJobs();
         $data['totalUser'] = User::CountUser();
+        $data['recruit_job']=Recruit::where ('id', '>', 0)->orderBy('post_at', 'desc')->take(1)->first();
         return view('ui.content', $data);
     }
 

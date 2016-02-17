@@ -30,37 +30,46 @@
 						{!!$job -> content!!}<br>
 					</p>
 
-					</article>
+				</article>
+			</div>
+			<div class="col-sm-4" id="sidebar">
+				<div class="sidebar-widget" id="share">
+					<h2>Chia Sẻ Công Việc Này</h2>
+					<ul>
+						<li><a href=""><i class="fa fa-facebook"></i></a></li>
+						<li><a href=""><i class="fa fa-twitter"></i></a></li>
+						<li><a href=""><i class="fa fa-google-plus"></i></a></li>
+					</ul>
 				</div>
-				<div class="col-sm-4" id="sidebar">
-					<div class="sidebar-widget" id="share">
-						<h2>Chia Sẻ Công Việc Này</h2>
-						<ul>
-							<li><a href=""><i class="fa fa-facebook"></i></a></li>
-							<li><a href=""><i class="fa fa-twitter"></i></a></li>
-							<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-						</ul>
-					</div>
-					<hr>
-					<div class="sidebar-widget" id="company">
-						<h2>Thông tin công việc</h2>
+				<hr>
+				<div class="sidebar-widget" id="company">
+					<h2>Thông tin công việc</h2>
 
-						{{-- <p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}<br> --}}
+					<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}<br>
 						<button type="button" class="btn btn-info " id="sendMess">Gửi tin nhắn</button>
-						</p>
+					</p>
 
-					</div>
-					<hr>
-					<div class="sidebar-widget" id="company-jobs">
-						<h2>Các công việc liên quan khác</h2>
-						<ul>
-							
+				</div>
+				<hr>
+				<div class="sidebar-widget" id="company-jobs">
+					<h2>Các công việc liên quan khác</h2>
+					<ul>
+						<?php $num=1; ?>
+						@foreach($related_job as $relatedJob)
 
-						</ul>
-					</div>
+						<li>
+							<a href="/tin-tuyen-dung/{{$relatedJob -> slug}}/{{date("d-m-Y", strtotime($relatedJob -> post_at))}}">
+								{{$num}}/{{$relatedJob -> title}}
+							</a>
+						</li>
+						<?php $num++; ?>
+						@endforeach()
+
+					</ul>
 				</div>
 			</div>
 		</div>
-	</section>
-	@stop
+	</div>
+</section>
+@stop
 

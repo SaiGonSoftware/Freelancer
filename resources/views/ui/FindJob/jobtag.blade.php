@@ -61,27 +61,28 @@
 			</div>
 			<div class="col-sm-4" id="sidebar">
 
-				<!-- Featured Jobs Start -->
-				<div class="sidebar-widget">
-					<h2>Tin tuyển dụng</h2>
-					<a href="#">
-						<img src="/images/featured-job.jpg" alt="Featured Job" class="img-responsive" />
-						<div class="featured-job">
-							<img src="/images/job1.jpg" alt="" class="img-circle pull-left" />
-							<div class="title">
-								<h5>Web Designer</h5>
-								<p>Amazon</p>
-							</div>
-							<div class="data">
-								<span class="city"><i class="fa fa-map-marker"></i>New York City</span>
-								<span class="type full-time"><i class="fa fa-clock-o"></i>Full Time</span>
-								<span class="sallary"><i class="fa fa-dollar"></i>45,000</span>
-							</div>
-							<div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque tristique euismod lorem, a consequat orci consequat a. Donec ullamcorper tincidunt nunc, ut aliquam est pellentesque porta. In neque erat, malesuada sit amet orci ac, laoreet laoreet mauris.</div>
+				<h2>Tin tuyển dụng mới nhất</h2>
+				<a href="/tin-tuyen-dung/{{$recruit_job  -> slug }}/{{date("d-m-Y", strtotime($recruit_job -> post_at))}}" target="_blank" >
+				<img src="/images/featured-job.jpg" alt="Featured Job" class="img-responsive" />
+					<div class="featured-job">
+						<div class="title">
+							<h5>{{$recruit_job->title}}</h5>
 						</div>
-					</a>
-				</div>
-				<!-- Featured Jobs End -->
+						<div class="data">
+							<span class="city"><i class="fa fa-map-marker"></i>{{$recruit_job->location}}</span>
+							<span class="type full-time"><i class="fa fa-clock-o"></i>Kinh nghiệm: {{ ($recruit_job ->	experience_year)}} năm</span>
+							<span class="sallary"><i class="fa fa-dollar"></i>{{$recruit_job->salary}}</span>
+						</div>
+						<div class="description" style="height:150px;
+						width: 100%;
+						display:inline-block;
+						white-space: nowrap;
+						overflow:hidden !important;
+						text-overflow: ellipsis;margin-bottom:50px">
+						{!!$recruit_job -> content!!}</div>
+					</div>
+				</a>
+
 
 				<!-- Find a Job Start -->
 				<div class="sidebar-widget" id="jobsearch">
@@ -99,24 +100,6 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="row">
-								<div class="col-xs-12">
-									<h5>Experience</h5>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-6">
-									<p>More than <b><span id="years-field"></span></b> years</p>
-								</div>
-								<div class="col-xs-6">
-									<div class="form-slider" id="years"></div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<hr>
-								</div>
-							</div>
 							<div class="row">
 								<div class="col-xs-12">
 									<h5>Kinh phí</h5>

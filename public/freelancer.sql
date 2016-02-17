@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2016 at 06:32 PM
+-- Generation Time: Feb 17, 2016 at 02:15 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -202,7 +202,8 @@ CREATE TABLE `jobs_post` (
 --
 
 INSERT INTO `jobs_post` (`id`, `title`, `slug`, `content`, `experience_year`, `quantity`, `salary`, `post_at`, `location`, `user_id`) VALUES
-(1, '[Salary up to $900] PHP Developer - DWORK', '[salary-up-to-$900]-php-developer---dwork', 'JOB DESCRIPTION<br /><br />Follow best practice conventions and project structure<br />Reading blogs and compelling ideas how to improve our skills.<br />Know how to handle the entire software development life cycle, end to end.<br />Have good DBA and strong DB schema design skills<br />Must be able to write complex queries in SQL and understand the EXPLAIN query.<br />Best practice conventions and project structure. We hate fat file<br /> <br /><br />YOUR SKILL AND EXPERIENCE<br /><br />Can master any server-side PHP framework and client-side HTML framework quickly<br />HTML and CSS must be strictly DRY (i.e. CSS classes and HTML component must be reusable)<br />Be aware of basic web optimization methods (concatenate and minify JavaScript and CSS assets, sprites)<br />Experience with using browser Web Inspector<br />Experience in Linux environment to do basic sysadmin tasks<br />Knowledge of PostgreSQL, MySQL<br />Good jQuery skills<br />OOP should be expected<br />Aware of CSS preprocessors<br />Responsive web with Bootstrap<br />Experience with some MVC PHP frameworks (CodeIgniter, YII , Phalcon, CakePHP, CodeIgniter, ...)<br />Aware of search framework like Elastic-search<br />Hybrid app experience is a huge plus<br /> <br /><br />BENEFITS<br /><br />Competitive salary (up to $900 gross)<br />Bao Viet Insurance, snacks, transportation will be negotiable.<br />Having good and fair reward and promotion system <br />Chances to travel oversea learning trip!!!<br /> <br /><br />WHY YOU''LL LOVE WORKING HERE<br /><br />Competitive salary<br />A workspace with great view to green Hoang Van Thu park (Yellow Flowers are there for fan boys too)<br />A bunch of funny and motivated people<br />Standing by window, sitting at desk, hugging the beanbag, lying on the floor. Free your style, bright your code<br />SNACKS!<br /> <br /><br />WHY YOU''LL HATE WORKING HERE<br /><br />Join foosball world''s champion<br />Fat boss<br />Cute Office/HR/Finance manager<br />Naughty dog<br />Get FATTTTT', 1, 3, '900$', '2016-02-16', 'Hồ Chí Minh', 14);
+(1, '[Salary up to $900] PHP Developer - DWORK', '[salary-up-to-$900]-php-developer---dwork', 'JOB DESCRIPTION<br /><br />Follow best practice conventions and project structure<br />Reading blogs and compelling ideas how to improve our skills.<br />Know how to handle the entire software development life cycle, end to end.<br />Have good DBA and strong DB schema design skills<br />Must be able to write complex queries in SQL and understand the EXPLAIN query.<br />Best practice conventions and project structure. We hate fat file<br /> <br /><br />YOUR SKILL AND EXPERIENCE<br /><br />Can master any server-side PHP framework and client-side HTML framework quickly<br />HTML and CSS must be strictly DRY (i.e. CSS classes and HTML component must be reusable)<br />Be aware of basic web optimization methods (concatenate and minify JavaScript and CSS assets, sprites)<br />Experience with using browser Web Inspector<br />Experience in Linux environment to do basic sysadmin tasks<br />Knowledge of PostgreSQL, MySQL<br />Good jQuery skills<br />OOP should be expected<br />Aware of CSS preprocessors<br />Responsive web with Bootstrap<br />Experience with some MVC PHP frameworks (CodeIgniter, YII , Phalcon, CakePHP, CodeIgniter, ...)<br />Aware of search framework like Elastic-search<br />Hybrid app experience is a huge plus<br /> <br /><br />BENEFITS<br /><br />Competitive salary (up to $900 gross)<br />Bao Viet Insurance, snacks, transportation will be negotiable.<br />Having good and fair reward and promotion system <br />Chances to travel oversea learning trip!!!<br /> <br /><br />WHY YOU''LL LOVE WORKING HERE<br /><br />Competitive salary<br />A workspace with great view to green Hoang Van Thu park (Yellow Flowers are there for fan boys too)<br />A bunch of funny and motivated people<br />Standing by window, sitting at desk, hugging the beanbag, lying on the floor. Free your style, bright your code<br />SNACKS!<br /> <br /><br />WHY YOU''LL HATE WORKING HERE<br /><br />Join foosball world''s champion<br />Fat boss<br />Cute Office/HR/Finance manager<br />Naughty dog<br />Get FATTTTT', 1, 3, '900$', '2016-02-16', 'Hồ Chí Minh', 14),
+(3, '[HN] Junior Software Engineer - Competitive Salary', '[hn]-junior-software-engineer---competitive-salary', 'Mô tả công việc<br /><br />Phát triển hệ thống phần mềm giúp vận hành bộ máy quản lý của JupViec.vn<br />Thực hiện hoá hệ thống cloud platform chuyên về các dịch vụ gia đình, mục tiêu như sau:<br />Kết nối giữa khách hàng và người giúp việc<br />Quản lý các hoạt động trong công ty<br />Viết ứng dụng mobile phục vụ cho nhân viên và khách hàng.<br />Cải tiến các chức năng cũ của hệ thống hiện tại<br />Yêu cầu<br /><br />Các ứng viên cần đạt tối thiểu các yêu cầu sau (>= 3 tháng kinh nghiệm)<br /><br />Java Core, Spring Framework, PHP, Ajax<br />Javascript, HTML, CSS<br />Chế độ đãi ngộ<br /><br />Lương thưởng hấp dẫn (từ $400 trở lên + bonus theo dự án)<br />Bảo hiểm, trợ cấp đầy đủ<br />Chính sách thưởng tết, các ngày lễ tết dương lịch, 2/9,…<br />Được mentor học hỏi thêm các kĩ năng mới; và thường xuyên training.<br />Được thử thách với nhiều dự án hấp dẫn khác nhau của công ty<br />Môi trường làm việc trẻ, năng động và thoải mái; nhiều hoạt động sôi nổi giúp bản thân không bị nhàm chán với công việc. ', 1, 2, '$400 - $700', '2016-02-17', 'Hà Nội', 14);
 
 -- --------------------------------------------------------
 
@@ -476,7 +477,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `content_tag`
 --
@@ -501,7 +502,7 @@ ALTER TABLE `jobs_approved`
 -- AUTO_INCREMENT for table `jobs_post`
 --
 ALTER TABLE `jobs_post`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `manage`
 --

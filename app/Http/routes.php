@@ -14,7 +14,9 @@
 /*Route get*/
 Route::get('/', 'IndexController@home');
 Route::get('/trang-chu','IndexController@home');
-Route::get('tim-viec', 'JobController@FindJob');
+Route::get('/tim-viec', 'JobController@FindJob');
+Route::get('/danh-sach-tin-tuyen-dung','JobController@recruitJobList');
+Route::get('/list_recruit','JobController@recruitJobListPagi');
 Route::get('/job/joblist','JobController@FindJobAjax');
 Route::get('/congviec/{name}','JobController@findTagAjax');
 Route::get('/userinfo','UserController@userDetailAjax');
@@ -36,9 +38,11 @@ Route::get('/cv/tao-cv','UserController@createCV');
 Route::get('/cv/xem-cv/{name}/{id}','UserController@loadCV');
 Route::get('/cv/sua-cv/{name}/{id}','UserController@viewUpdateCV');
 Route::get('/cv/xoa-cv/{id}',['as' => 'delCV','uses'=>'UserController@deleteCV']);
-
 Route::get('/payment',['as' => 'PaymentPaypal','uses'=>'PaymentController@store']);
-Route::get('/delJobUserPost',['as' => 'DelJobUserPost','uses'=>'UserController@deleteJob']);
+Route::get('/delJobUserPost',['as' => 'DelJobUserPost','uses'=>'JobController@deleteJob']);
+Route::get('/delJobRecruit',['as' => 'DelJobRecruit','uses'=>'JobController@deleteRecruitJob']);
+
+
 
 Route::post('/job/postNewRecruit',['as' => 'RecruitJob','uses'=>'JobController@recruitJob']);
 Route::post('/assignCurJob',['as' => 'AssignJob','uses'=>'UserController@assignJob']);

@@ -7,26 +7,26 @@
         <ul class="nav">
             <li class="active"><a href="{{url()}}">Trang chủ</a>
             </li>
-            <li><a href="">Việc làm</a>
-            </li>
-            <li><a href="{{ url() }}/cong-viec-freelancer">Đăng tin freelancer</a>
+            <li><a href="{{ url() }}/danh-sach-tin-tuyen-dung">Tin Tuyển Dụng</a>
             </li>
             <li><a href="{{ url() }}/tin-tuyen-dung">Đăng tin tuyển dụng</a>
             </li>
-            <li><a href="{{ url() }}/tim-viec">Tìm Việc</a>
+            <li><a href="{{ url() }}/cong-viec-freelancer">Đăng tin freelancer</a>
+            </li>
+            <li><a href="{{ url() }}/tim-viec">Tìm Việc Freelancer</a>
             </li>
             <li><a href="">Tìm freelancer</a>
             </li>
-            <li><a href="#">Pages</a>
-                <ul>
-                    <li><a href="">CV nổi bật</a>
-                    </li>
-                    <li><a href="">Blog </a>
-                    </li>
-                    <li><a href="">Thông tin</a>
-                    </li>
-                </ul>
-            </li>
+<!--             <li><a href="#">Pages</a>
+    <ul>
+        <li><a href="">CV nổi bật</a>
+        </li>
+        <li><a href="">Blog </a>
+        </li>
+        <li><a href="">Thông tin</a>
+        </li>
+    </ul>
+</li> -->
             @if(Auth::check())
             <li><a class="">Xin chào {{ Auth::user()->username }} </a>
             </li>

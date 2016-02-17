@@ -9,6 +9,7 @@
       <a href="#settings" class="list-group-item" aria-controls="settings" role="tab" data-toggle="tab">Cài đặt</a>
       <a href="#comment" class="list-group-item" aria-controls="comment" role="tab" data-toggle="tab">Báo giá đã đăng</a>
       <a href="#job" class="list-group-item" aria-controls="job" role="tab" data-toggle="tab">Công việc đã đăng</a>
+      <a href="#job_recruit" class="list-group-item" aria-controls="job" role="tab" data-toggle="tab">Tin tuyển dụng đã đăng</a>
     </ul>
   </div>
   @if(Auth::Check())
@@ -174,7 +175,36 @@
   </div> 
 </div>
 </div>
+<div role="tabpanel" class="tab-pane" id="job_recruit">
+  <div class="panel panel-primary">
+    <div class="panel-heading"> 
+     <h3 class="panel-title">Tổng hợp các tin tuyển dụng đã đăng</h3> 
+   </div> 
+   <div class="panel-body" id="comment_content"> 
+     <table class="table table-hover" style="text-align:left"> 
+      <thead> 
+        <tr> 
+          <th>Tiêu đề</th> 
+          <th>Ngày đăng</th> 
+          <th>Xóa tin</th> 
+        </tr> 
+      </thead> 
+      <tbody> 
+        <div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
+        @foreach($recruit_job as $jobUserPost)
+        <tr id="comment_list"> 
+          <td><a href="/tin-tuyen-dung/{{$jobUserPost  -> slug }}/{{date("d-m-Y", strtotime($jobUserPost -> post_at))}}" target="_blank" >{{$jobUserPost -> title }}</a></td> 
+          <td>{{date("d-m-Y", strtotime($jobUserPost -> post_at))}}</td>
+          <td><input type="button" class="btn btn-primary delJobRecruit" value="Xóa tin" data-id="{{$jobUserPost -> id }}"></td>
+        </tr> 
+        @endforeach()
+      </tbody> 
 
+    </table>
+
+  </div> 
+</div>
+</div>
 @endif
 </div>
 </div>

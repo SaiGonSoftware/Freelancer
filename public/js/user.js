@@ -579,6 +579,21 @@ $(document).on("click", ".details_pagi .pagination a", function(page) {
 
 });
 
+$(document).on("click", ".paging_recruit .pagination a", function(page) {
+    event.preventDefault();
+    var page = $(this).attr("href").split("page=")[1];
+    $.ajax({
+        url: '/list_recruit/' + '?page=' + page
+    })
+    .done(function(data) {
+        $("#recruit_pagi").html(data);
+        $("html, body").animate({
+            scrollTop: $(".container").position().top
+        })
+    });
+});
+
+
 //ajax paging for job list
 $(document).on("click", ".paging_job .pagination a", function(t) {
     event.preventDefault();
@@ -608,6 +623,9 @@ $(document).on("click", ".tag_job .pagination a", function(page) {
     })
     .done(function(data) {
         $("#ajax_pagi_tag").html(data);
+        $("html, body").animate({
+            scrollTop: $(".container").position().top
+        })
     });
 
 });
@@ -863,4 +881,26 @@ $(document).ready(function() {
         }
     });
 });
+});
+
+$(".delJobRecruit").click(function(event) {
+ var conf=confirm("Bạn có chắc chắn xóa công việc ?");
+ if(conf){
+    var job_id=$(this).attr('data-id');
+    $.ajax({
+        url: '/delJobRecruit',
+        type: 'GET',
+        async: false,
+        data: {
+            job_id:job_id,
+        },
+        error:function() {
+            alert("Có lỗi vui lòng thử lại");
+        },
+        success:function(response) {
+            alert(response.mess);
+        }
+    })
+    $(this).parent().parent().remove();
+}
 });

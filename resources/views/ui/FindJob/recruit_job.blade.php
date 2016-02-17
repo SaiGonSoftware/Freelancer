@@ -14,7 +14,7 @@
 <section id="jobs">
 	<div class="container">
 		<div class="row" >
-			<div class="col-sm-8" id="ajax_pagi">
+			<div class="col-sm-8" id="recruit_pagi">
 				<h2>Công việc hiện có</h2>
 
 				<div class="jobs">
@@ -36,10 +36,9 @@
 						<div class="data">
 							<span class="city"><i class="fa fa-map-marker"></i>{{$jobPost -> location}}</span>
 							<span class="type full-time">
-								<i class="fa fa-clock-o"></i>
-								Hết hạn :<br>{{date("d-m-Y", strtotime($jobPost -> deadline))}}
+								<i class="fa fa-user"></i>Số lượng: {{ ($jobPost -> 	quantity)}}
 							</span>
-							<span class="sallary">Chi Phí:<br>{{number_format ($jobPost -> allowance_min)."d"."-".number_format ($jobPost -> allowance_max)."d"}}</span>
+							<i class="fa fa-dollar"></i>{{ ($jobPost -> salary)}}
 						</div>
 					</a>
 					@endforeach
@@ -47,7 +46,7 @@
 
 				</div>
 
-				<div class="paging_job">
+				<div class="paging_recruit">
 					{!! $job_pagi->render() !!}
 				</div>					
 
@@ -66,7 +65,9 @@
 						</div>
 						<div class="data">
 							<span class="city"><i class="fa fa-map-marker"></i>{{$recruit_job->location}}</span>
-							<span class="type full-time"><i class="fa fa-clock-o"></i>Kinh nghiệm: {{ ($recruit_job ->	experience_year)}} năm</span>
+							<span class="type full-time"><i class="fa fa-clock-o"></i>Kinh nghiệm: {{ ($recruit_job ->	experience_year)}} năm&nbsp;
+							<i class="fa fa-user"></i>Số lượng: {{ ($recruit_job -> 	quantity)}}
+							</span>
 							<span class="sallary"><i class="fa fa-dollar"></i>{{$recruit_job->salary}}</span>
 						</div>
 						<div class="description" style="height:150px;
@@ -79,37 +80,8 @@
 					</div>
 				</a>
 
-				<!-- Find a Job Start -->
-				<div class="sidebar-widget" id="jobsearch">
-					<h2>Tags Cloud</h2>
-					<form>
-						<div class="row">
-							<div class="col-xs-12">
-								<div class="tags" style="float:left">
-									@foreach ($tag as $tags)
-									<a href="/cong-viec/{{$tags->slug}}"  class="danger" id="tag_href">
-										{{$tags->name}}
-									</a>
-									@endforeach	
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="row">
-								<div class="col-xs-12">
-									<hr>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<a class="btn btn-primary">Reset All Filters</a>
-								</div>
-							</div>
-						</form>
-					</div>
-
-				</div>
 			</div>
 		</div>
-	</section>
-	@stop
+	</div>
+</section>
+@stop
