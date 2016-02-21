@@ -41,7 +41,12 @@ Route::get('/cv/xoa-cv/{id}',['as' => 'delCV','uses'=>'UserController@deleteCV']
 Route::get('/payment',['as' => 'PaymentPaypal','uses'=>'PaymentController@store']);
 Route::get('/delJobUserPost',['as' => 'DelJobUserPost','uses'=>'JobController@deleteJob']);
 Route::get('/delJobRecruit',['as' => 'DelJobRecruit','uses'=>'JobController@deleteRecruitJob']);
+Route::get('/gui-tin-nhan','ChatController@index');
 
+/*Route::get('socket', 'SocketController@index');*/
+
+Route::post('sendmessage', 'SocketController@sendMessage');
+Route::get('writemessage', 'SocketController@writemessage');
 
 
 Route::post('/job/postNewRecruit',['as' => 'RecruitJob','uses'=>'JobController@recruitJob']);
@@ -58,7 +63,6 @@ Route::post('/user/register',['as' => 'register','uses'=>'Auth\AuthController@re
 Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profileImage');
 Route::post('/findPassword',['as' => 'findPass','uses'=>'Auth\PasswordController@resetPass']);
 Route::post('/password/new',['as' => 'newLostPass','uses'=>'Auth\PasswordController@newLostPass']);
-
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

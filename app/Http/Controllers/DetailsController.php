@@ -1,8 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
-use Auth;
 use SEO;
+use Auth;
 use App\Job;
 use App\Tags;
 use App\Comment;

@@ -4,52 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "08e067e880a3c35561de154685d8c2cd",
-    "content-hash": "34d07e0b8b2ca82d71360fdde2b16f15",
+    "hash": "73e866b284f1631c86798d9987e738a0",
+    "content-hash": "26816045760aa2361ae2c919a867eb53",
     "packages": [
-        {
-            "name": "anouar/paypalpayment",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/xroot/laravel-paypalpayment.git",
-                "reference": "2ae00b500f935be5a6602add3a1b00820b42a981"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xroot/laravel-paypalpayment/zipball/2ae00b500f935be5a6602add3a1b00820b42a981",
-                "reference": "2ae00b500f935be5a6602add3a1b00820b42a981",
-                "shasum": ""
-            },
-            "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "illuminate/support": "~5.0",
-                "paypal/rest-api-sdk-php": "1.3.0",
-                "php": ">=5.3.0"
-            },
-            "require-dev": {
-                "phpspec/phpspec": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Anouar\\Paypalpayment": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Anouar Abdessalam",
-                    "email": "dtekind@gmail.com"
-                }
-            ],
-            "description": "laravel-paypalpayment is simple package help you process direct credit card payments, stored credit card payments and PayPal account payments with your L4 projects using paypal REST API SDK.",
-            "time": "2015-07-05 13:05:00"
-        },
         {
             "name": "artesaos/seotools",
             "version": "dev-master",
@@ -473,16 +430,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb"
+                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5d04bdd2881ac89abde1fb78cc234bce24327bb",
-                "reference": "f5d04bdd2881ac89abde1fb78cc234bce24327bb",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
                 "shasum": ""
             },
             "require": {
@@ -527,7 +484,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-01-23 01:23:02"
+            "time": "2016-02-18 21:54:00"
         },
         {
             "name": "guzzlehttp/streams",
@@ -894,23 +851,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-star-rating.git",
-                "reference": "a28cb9186e17c5290e9f3f82382ed255e8f26d25"
+                "reference": "fbe4a597ba0cf584ed8dbb92ec6bc8d64d1cb2c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/a28cb9186e17c5290e9f3f82382ed255e8f26d25",
-                "reference": "a28cb9186e17c5290e9f3f82382ed255e8f26d25",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/fbe4a597ba0cf584ed8dbb92ec6bc8d64d1cb2c6",
+                "reference": "fbe4a597ba0cf584ed8dbb92ec6bc8d64d1cb2c6",
                 "shasum": ""
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.5.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "kartik\\plugins\\rating\\": ""
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -928,11 +880,14 @@
             "homepage": "https://github.com/kartik-v/bootstrap-star-rating",
             "keywords": [
                 "Rating",
+                "awesome",
                 "bootstrap",
-                "jquery",
-                "star"
+                "font",
+                "glyphicon",
+                "star",
+                "svg"
             ],
-            "time": "2016-02-05 18:18:55"
+            "time": "2016-02-20 11:05:03"
         },
         {
             "name": "laracasts/flash",
@@ -979,16 +934,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.29",
+            "version": "v5.1.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7e7ba568ffbc8f3f00778f2e8f41fb92127944fd"
+                "reference": "f00b80d4d33cf67815d1b4aaae8d4b47af2f2a2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7e7ba568ffbc8f3f00778f2e8f41fb92127944fd",
-                "reference": "7e7ba568ffbc8f3f00778f2e8f41fb92127944fd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/f00b80d4d33cf67815d1b4aaae8d4b47af2f2a2a",
+                "reference": "f00b80d4d33cf67815d1b4aaae8d4b47af2f2a2a",
                 "shasum": ""
             },
             "require": {
@@ -1103,7 +1058,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-02 14:56:40"
+            "time": "2016-02-17 18:00:25"
         },
         {
             "name": "laravel/socialite",
@@ -1161,16 +1116,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.16",
+            "version": "1.0.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031"
+                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/183e1a610664baf6dcd6fceda415baf43cbdc031",
-                "reference": "183e1a610664baf6dcd6fceda415baf43cbdc031",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
+                "reference": "02f5b6c9a8b9278c8381e3361e7bd9d641c740ca",
                 "shasum": ""
             },
             "require": {
@@ -1183,8 +1138,7 @@
                 "ext-fileinfo": "*",
                 "mockery/mockery": "~0.9",
                 "phpspec/phpspec": "^2.2",
-                "phpspec/prophecy-phpunit": "~1.0",
-                "phpunit/phpunit": "~4.8"
+                "phpunit/phpunit": "~4.8 || ~5.0"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -1241,7 +1195,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-12-19 20:16:43"
+            "time": "2016-02-19 15:35:38"
         },
         {
             "name": "league/oauth1-client",
@@ -1574,52 +1528,59 @@
             "time": "2016-02-06 03:52:05"
         },
         {
-            "name": "paypal/rest-api-sdk-php",
-            "version": "v1.3.0",
+            "name": "predis/predis",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/paypal/PayPal-PHP-SDK.git",
-                "reference": "7f51b58b69d8f0cbba5c79b64dd9bef5ef6fc753"
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "6bc1a38123f61efde92d8b4a73adabf168e09442"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paypal/PayPal-PHP-SDK/zipball/7f51b58b69d8f0cbba5c79b64dd9bef5ef6fc753",
-                "reference": "7f51b58b69d8f0cbba5c79b64dd9bef5ef6fc753",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/6bc1a38123f61efde92d8b4a73adabf168e09442",
+                "reference": "6bc1a38123f61efde92d8b4a73adabf168e09442",
                 "shasum": ""
             },
             "require": {
-                "ext-curl": "*",
-                "ext-json": "*",
-                "php": ">=5.3.0"
+                "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "3.7.*"
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
             "autoload": {
-                "psr-0": {
-                    "PayPal": "lib/"
+                "psr-4": {
+                    "Predis\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "Apache2"
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "PayPal",
-                    "homepage": "https://github.com/paypal/rest-api-sdk-php/contributors"
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
                 }
             ],
-            "description": "PayPal's PHP SDK for REST APIs",
-            "homepage": "https://github.com/paypal/rest-api-sdk-php",
+            "description": "Flexible and feature-complete PHP client library for Redis",
+            "homepage": "http://github.com/nrk/predis",
             "keywords": [
-                "payments",
-                "paypal",
-                "rest",
-                "sdk"
+                "nosql",
+                "predis",
+                "redis"
             ],
-            "time": "2015-02-27 22:45:52"
+            "time": "2015-07-30 18:51:15"
         },
         {
             "name": "psr/http-message",
@@ -3774,7 +3735,8 @@
     "stability-flags": {
         "kartik-v/bootstrap-fileinput": 20,
         "artesaos/seotools": 20,
-        "kartik-v/bootstrap-star-rating": 20
+        "kartik-v/bootstrap-star-rating": 20,
+        "predis/predis": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

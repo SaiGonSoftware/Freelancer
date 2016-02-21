@@ -140,7 +140,6 @@ return [
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
-		'Anouar\Paypalpayment\PaypalpaymentServiceProvider',
 		/*
 		 * Application Service Providers...
 		 */
@@ -186,8 +185,8 @@ return [
 		'Password'  => 'Illuminate\Support\Facades\Password',
 		'Queue'     => 'Illuminate\Support\Facades\Queue',
 		'Redirect'  => 'Illuminate\Support\Facades\Redirect',
-		'Redis'     => 'Illuminate\Support\Facades\Redis',
-		'Request'   => 'Illuminate\Support\Facades\Request',
+		'LRedis'    => 'Illuminate\Support\Facades\Redis',
+ 		'Request'   => 'Illuminate\Support\Facades\Request',
 		'Response'  => 'Illuminate\Support\Facades\Response',
 		'Route'     => 'Illuminate\Support\Facades\Route',
 		'Schema'    => 'Illuminate\Support\Facades\Schema',
@@ -201,8 +200,8 @@ return [
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Image' => 'Intervention\Image\Facades\Image',
 		'Flash' => 'Laracasts\Flash\Flash',
-		'SEO' => 'Artesaos\SEOTools\Facades\SEOTools',
-		'Paypalpayment'   => 'Anouar\Paypalpayment\Facades\PaypalPayment'
+		'SEO' => 'Artesaos\SEOTools\Facades\SEOTools'
+	
 	],
 
 ];

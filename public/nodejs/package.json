@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "express": "^4.13.4",
+    "redis": "^0.12.1",
+    "socket.io": "^1.4.5"
+  }
+}
