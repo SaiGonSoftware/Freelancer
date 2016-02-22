@@ -41,13 +41,7 @@ Route::get('/cv/xoa-cv/{id}',['as' => 'delCV','uses'=>'UserController@deleteCV']
 Route::get('/payment',['as' => 'PaymentPaypal','uses'=>'PaymentController@store']);
 Route::get('/delJobUserPost',['as' => 'DelJobUserPost','uses'=>'JobController@deleteJob']);
 Route::get('/delJobRecruit',['as' => 'DelJobRecruit','uses'=>'JobController@deleteRecruitJob']);
-Route::get('/gui-tin-nhan','ChatController@index');
-
-/*Route::get('socket', 'SocketController@index');*/
-
-Route::post('sendmessage', 'SocketController@sendMessage');
-Route::get('writemessage', 'SocketController@writemessage');
-
+Route::get('/tin-nhan','ChatController@index');
 
 Route::post('/job/postNewRecruit',['as' => 'RecruitJob','uses'=>'JobController@recruitJob']);
 Route::post('/assignCurJob',['as' => 'AssignJob','uses'=>'UserController@assignJob']);

@@ -27,27 +27,28 @@
         </li>
     </ul>
 </li> -->
-            @if(Auth::check())
-            <li><a class="">Xin chào {{ Auth::user()->username }} </a>
-            </li>
-            <li><a href="#">Quản lý tài khoản</a>
-                <ul>
-                    <li>
-                        <a href="/tai-khoan/thong-tin-ca-nhan/{{Auth::user()->username}}/{{Auth::user()->remember_token}}">Thông tin cá nhân</a>
-                    </li>
-                    <li><a href="{{ url('/dang-xuat') }}">Đăng xuất</a>
-                    </li>
-                </ul>
-            </li>
-            @else
-            <li><a class="link-register">Đăng ký</a>
-            </li>
-            <li><a class="link-login">Đăng nhập</a>
-            </li>
-            @endif
-        </ul>
-    </div>
-    <!-- end Menu -->
+@if(Auth::check())
+<li><a class="">Xin chào <img class="media-object" alt="64x64" style="width: 32px; height: 32px;float: left;
+margin-right: 10px;" src="/{{Auth::user()->avatar}}" id="user_avatar"><span id="welcome_user"> {{ Auth::user()->username }}</span> </a>
+</li>
+<li><a href="#">Quản lý tài khoản</a>
+    <ul>
+        <li>
+            <a href="/tai-khoan/thong-tin-ca-nhan/{{Auth::user()->username}}/{{Auth::user()->remember_token}}">Thông tin cá nhân</a>
+        </li>
+        <li><a href="{{ url('/dang-xuat') }}">Đăng xuất</a>
+        </li>
+    </ul>
+</li>
+@else
+<li><a class="link-register">Đăng ký</a>
+</li>
+<li><a class="link-login">Đăng nhập</a>
+</li>
+@endif
+</ul>
+</div>
+<!-- end Menu -->
 </div>
 <header>
     <div id="header-background"></div>

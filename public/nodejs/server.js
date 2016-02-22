@@ -14,9 +14,9 @@ io.sockets.on( 'connection', function( client ) {
     console.log( "New client !" );
     //when we receive message 
     client.on( 'message', function( data ) {
-        console.log( 'Message received ' + data.name + ":" + data.message );
+        console.log( 'Message received ' + data.name + ":" + data.message +' avatar' +data.avatar );
 
-        io.sockets.emit( 'message', { name: data.name, message: data.message } );
+        io.sockets.emit( 'message', { name: data.name, message: data.message,avatar:data.avatar } );
     });
 });
 
