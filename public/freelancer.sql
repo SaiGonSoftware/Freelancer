@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2016 at 02:15 PM
+-- Generation Time: Feb 23, 2016 at 05:19 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -19,6 +19,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `freelancer`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chat`
+--
+
+CREATE TABLE `chat` (
+  `id` int(11) NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `from_user_id` int(11) NOT NULL,
+  `to_user_id` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `view` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `chat`
+--
+
+INSERT INTO `chat` (`id`, `content`, `from_user_id`, `to_user_id`, `created_at`, `view`) VALUES
+(1, 'hi', 3, 14, '2016-02-23 22:35:06', 0),
+(2, 'hi', 14, 14, '2016-02-23 22:35:09', 0),
+(5, 'hi', 14, 14, '2016-02-23 22:52:24', 0),
+(6, 'hi', 14, 14, '2016-02-23 22:53:19', 0);
 
 -- --------------------------------------------------------
 
@@ -399,13 +424,19 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
 (1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'UTwPUz6v3tRbRd2kksExHJa3nrM2o0wl0JFU3oP4BmNNXSANfQ7oqmH7DRRr', 0, 1, 0),
 (2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
-(3, NULL, 'phucphuc', 'Nguyen van a', NULL, 'traitimnguyen113@yahoo.com', '$2y$10$PxPbQgyUkBmzzRcxfml7PeSDKHo9DdK7SHe88axEHYr5D14aaOtX6', 'XVmzmtLvQPDVQzTwxXCYGu33yhD5gotQYTpIwjjQ', 0, 1, 0),
-(14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456af6e236daae.png', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'TbdlTFCOdBy1B2JiT6xnVJCQgkba8dbCyflJBtZo4xigFKNNckaZ8okGuBBa', 0, 1, 0),
+(3, NULL, 'phucphuc', 'Nguyen van a', 'images/phucphuc/356cad7568e12b.jpg', 'traitimnguyen113@yahoo.com', '$2y$10$PxPbQgyUkBmzzRcxfml7PeSDKHo9DdK7SHe88axEHYr5D14aaOtX6', 'XVmzmtLvQPDVQzTwxXCYGu33yhD5gotQYTpIwjjQ', 0, 1, 0),
+(14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456af6e236daae.png', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'zFIWtfM48W9WUiQ2Gb3GXh1KXvW2gDRZ5u0HT3vG6QwIBQ9GIcio5JNpSAZY', 0, 1, 0),
 (15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/1556af9aae44d83.png', NULL, '', 'wkZstgvkL8fqXV4aw9DUZk6mMhP280UBD4ZNkSraCvJlS3AH2C6vAySnirP3', 0, 0, 0);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `chat`
+--
+ALTER TABLE `chat`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `comments`
@@ -473,6 +504,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `chat`
+--
+ALTER TABLE `chat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `comments`
 --
