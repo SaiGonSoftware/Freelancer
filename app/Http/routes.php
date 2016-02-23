@@ -43,6 +43,7 @@ Route::get('/delJobUserPost',['as' => 'DelJobUserPost','uses'=>'JobController@de
 Route::get('/delJobRecruit',['as' => 'DelJobRecruit','uses'=>'JobController@deleteRecruitJob']);
 Route::get('/tin-nhan','ChatController@index');
 
+Route::post('/saveMessage',['as' => 'SaveMessage','uses'=>'ChatController@insertMessage']);
 Route::post('/job/postNewRecruit',['as' => 'RecruitJob','uses'=>'JobController@recruitJob']);
 Route::post('/assignCurJob',['as' => 'AssignJob','uses'=>'UserController@assignJob']);
 Route::post('/cv/download',['as' => 'downloadCV','uses'=>'UserController@downloadPDF']);

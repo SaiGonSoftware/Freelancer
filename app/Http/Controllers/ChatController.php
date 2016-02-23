@@ -4,8 +4,8 @@ use SEO;
 use Auth;
 use Input;
 use App\User;
-use App\Chats;
-use App\ChatMessage;
+use App\Chat;
+
 class ChatController extends Controller
 {
 
@@ -34,6 +34,14 @@ class ChatController extends Controller
        return view('ui.chat.chat');
     }
 
+    public function insertMessage()
+    {
+      $chat_message=new Chat();
+      $chat_message->content=Input::get('message');
+      $chat_message->user1=Input::get('name');
+      $chat_message->save();
+      return response ()->json ( array ('mess' => 'Success' ) );
+    }
 
  }
 

@@ -47,7 +47,8 @@
 
             </div>
             <form class="form-inline" id="messageForm">
-                <div class="">
+             {!! csrf_field() !!}
+                <div>
                     <input type="submit" value="Gửi" id="sendMess" class="btn btn-primary btn-block" />
                 </div>
             </form>
@@ -60,16 +61,25 @@
     $("#messageForm").submit(function(){
         var username=$("#welcome_user").text();
         var msg=$("#messageInput").val();
-        var avatar=$("#user_avatar").attr('src')
+        var avatar=$("#user_avatar").attr('src');
+        var token=$("input[name='_token']").val();
         socket.emit('message',{name:username,message:msg,avatar:avatar});
+        $.ajax({
+            url: "/saveMessage",
+            type: "POST",
+            data: { name: username, message: msg,_token:token },
+            success: function(data) {
+                console.log(data.mess);
+            }
+        });
+
         return false;
     });
 
     socket.on('message' ,function(data){
         var actualContent=$("#messages").html();
-        var current=new Date().toTimeString().split(" ")[0];
-        var newContent='<span class="pull-left" href="#">'+'<img class="media-object" style="width: 32px; height: 32px;float: left;margin-right: 10px;" src='+data.avatar+'>'+'</span><div class="media-body"> <small class="pull-right time"><i class="fa fa-clock-o"></i>'+current+'</small><h5 class="media-heading username">'+data.name+'</h5><small class="col-lg-10 message_content">'+data.message+'</small></div>';
-        var content=newContent+actualContent;
+        var cur_time=new Date().toTimeString().split(" ")[0];
+        var newContent='<span class="pull-left" href="#">'+'<img class="media-object" style="width: 32px; height: 32px;float: left;margin-right: 10px;" src='+data.avatar+'>'+'</span><div class="media-body"><h5 class="media-heading username">'+data.name+'</h5><small class="col-lg-10 message_content">'+data.message+'</small></div>';
         $("#messages").append(newContent);
     });
 </script>

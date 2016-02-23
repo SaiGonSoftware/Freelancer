@@ -10,8 +10,8 @@
     <link rel="shortcut icon" href="/images/favicon.png">
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">
-    <link href="css/magicsuggest-min.css" rel="stylesheet">
-
+    <link href="/css/magicsuggest-min.css" rel="stylesheet">
+    <link href="/css/chat_popup.css" rel="stylesheet">
 </head>
 
 <body id="home">
@@ -50,7 +50,10 @@
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
     <script src="/js/magicsuggest-min.js"></script>
-
+    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/nodejs/node_modules/socket.io-client/socket.io.js"  type="text/javascript"></script>
+    <script src="/nodejs/server.js"></script>
+    <script src="/nodejs/client.js"></script>
 </body>
 
 </html>

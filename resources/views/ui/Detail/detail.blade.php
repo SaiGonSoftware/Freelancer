@@ -57,8 +57,10 @@
 										<th>Giới thiệu bản thânn</th> 
 										<th>Ngày hoàn thành</th> 
 										<th>Đặt giá (VNĐ)</th>
+										@if(!empty(Auth::user()->id))
 										@if($job -> user_id==Auth::user()->id)
 										<th>Giao Công Việc</th>  
+										@endif
 										@endif
 									</tr> 
 								</thead> 
@@ -69,13 +71,15 @@
 										<td>{{$jobReply -> introduce}}</td>
 										<td>{{$jobReply -> completed_day}}</td>
 										<td>{{number_format($jobReply -> allowance)}}</td>
+										@if(!empty(Auth::user()->id))
 										@if($job -> user_id==Auth::user()->id)
 										<td>
-										<form method="POST">
-										    {!! csrf_field() !!}
-											<button type="button" id="assignJob" class="btn btn-danger btn-xs" data-post="{{$job -> id }}" data-user="{{$job -> user_id }}" data-comment="{{$jobReply -> user_id }}">Giao Việc</button>
-										</form>
+											<form method="POST">
+												{!! csrf_field() !!}
+												<button type="button" id="assignJob" class="btn btn-danger btn-xs" data-post="{{$job -> id }}" data-user="{{$job -> user_id }}" data-comment="{{$jobReply -> user_id }}">Giao Việc</button>
+											</form>
 										</td>
+										@endif
 										@endif
 									</tr> 
 									@endforeach()
@@ -142,9 +146,13 @@
 					<hr>
 					<div class="sidebar-widget" id="company">
 						<h2>Thông tin công việc</h2>
-
 						<p><img src="/{{$job->user->avatar}}" style="width:100px" /><br>Người đăng: {{$job -> user -> full_name}}<br>
-						<button type="button" class="btn btn-info " id="sendMess">Gửi tin nhắn</button>
+							@if(!empty(Auth::user()->id))
+							<button type="button" class="btn btn-info " id="addClass">Gửi tin nhắn</button>
+							&nbsp;
+							@else
+							<div class="alert alert-danger" role="alert">Vui lòng đăng nhập để gửi tin nhắn</div>
+							@endif
 						</p>
 
 					</div>
@@ -169,5 +177,33 @@
 			</div>
 		</div>
 	</section>
+
+
+	@if(!empty(Auth::user()->id))
+	<div class="popup-box chat-popup" id="message_popup" data-userpost="{{$job -> user -> id}}" data-auth="{{Auth::user()->id}}">
+		<div class="popup-head">
+			<div class="popup-head-left pull-left"><img src="/{{$job -> user -> avatar}}">{{$job -> user -> full_name}}</div>
+			<div class="popup-head-right pull-right">
+				<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
+			</div>
+		</div>
+		<div class="popup-messages">
+			<div class="direct-chat-messages">
+				<div class="direct-chat-msg doted-border" id="messages">
+
+				</div>
+			</div>
+		</div>
+		<div class="popup-messages-footer">
+			<textarea placeholder="Type a message..." rows="10" cols="40" name="message" id="messageInput"></textarea>
+			<form class="form-inline" id="messageForm">
+				{!! csrf_field() !!}
+				<div>
+					<input type="submit" value="Gửi" id="sendMess" class="btn btn-primary btn-block" />
+				</div>
+			</form>
+		</div>
+	</div>
+	@endif
 	@stop
 
