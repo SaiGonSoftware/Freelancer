@@ -50,7 +50,7 @@
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
     <script src="/js/magicsuggest-min.js"></script>
-    <script src="/js/jquery-migrate-1.2.1.min.js"></script>
+    {{--<script src="/js/jquery-migrate-1.2.1.min.js"></script>--}}
     <script src="/nodejs/node_modules/socket.io-client/socket.io.js"  type="text/javascript"></script>
     <script src="/nodejs/server.js"></script>
     <script src="/nodejs/client.js"></script>

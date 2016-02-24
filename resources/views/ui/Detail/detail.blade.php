@@ -192,6 +192,7 @@
 				<div class="direct-chat-msg doted-border" id="messages">
 
 				</div>
+				<div><img src="/images/comment.gif" id="isTyping"  style="float:right;display:none"></div>
 			</div>
 		</div>
 		<div class="popup-messages-footer">

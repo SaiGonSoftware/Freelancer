@@ -45,15 +45,20 @@ io.sockets.on( 'connection', function( client ) {
     		cur_time:data.cur_time 
     	});
     });
-
-    client.on('list-message',function(data){
+    client.on('friend-typing',function(id){
+ 		io.to(id).emit('friend-typing',id);
+    });
+    client.on('friend-stop-typing',function(id){
+    	io.to(id).emit('friend-stop-typing',id);
+    });
+/*    client.on('list-message',function(data){
     	var query=connection.query('SELECT * FROM chat  WHERE (from_user_id = ? AND to_user_id = ?) OR (from_user_id = ? AND to_user_id = ?) ORDER BY id ASC',data.from_user_id,data.to_user_id,data.to_user_id,data.from_user_id, function (error, results) {
     		if(error) throw error;
     		else{
     			
     		}
     	});
-    });
+    });*/
 });
 
 
