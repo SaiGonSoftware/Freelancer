@@ -58,3 +58,13 @@ socket.on('typing',function(data){
         $("#isTyping").hide();
     }
 });
+
+socket.on('user_online',function(data){
+    if(data.isOnline==true){
+        $("#online").text(' online');
+    }
+
+    else if(data.isOnline==false){
+        $("#online").text(' offline');
+    }
+});

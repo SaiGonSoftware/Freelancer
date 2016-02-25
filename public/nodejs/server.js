@@ -21,7 +21,9 @@ connection.connect(function(err){
 
 //when client connect to server console.log
 io.sockets.on( 'connection', function( client ) {
+	var isOnline=false;
 	console.log( "New client id " + client.id );
+	io.sockets.emit('user_online',{isOnline:true});
     //when we receive message 
     client.on('message', function( data ) {
     	console.log( 'Message received from' + data.name + ":" + data.message +' avatar' +data.avatar +' id '+ data.form_user_id + ' ' + data.to_user_id);

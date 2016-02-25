@@ -182,7 +182,7 @@
 	@if(!empty(Auth::user()->id))
 	<div class="popup-box chat-popup" id="message_popup" data-userpost="{{$job -> user -> id}}" data-auth="{{Auth::user()->id}}">
 		<div class="popup-head">
-			<div class="popup-head-left pull-left"><img src="/{{$job -> user -> avatar}}">{{$job -> user -> full_name}}</div>
+			<div class="popup-head-left pull-left"><img src="/{{$job -> user -> avatar}}">{{$job -> user -> full_name}} <span id="online"></span></div>
 			<div class="popup-head-right pull-right">
 				<button data-widget="remove" id="removeClass" class="chat-header-button pull-right" type="button"><i class="glyphicon glyphicon-off"></i></button>
 			</div>
