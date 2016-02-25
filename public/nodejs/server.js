@@ -18,6 +18,7 @@ connection.connect(function(err){
 	if(err) console.log(err);
 });
 
+
 //when client connect to server console.log
 io.sockets.on( 'connection', function( client ) {
 	console.log( "New client id " + client.id );
@@ -45,11 +46,8 @@ io.sockets.on( 'connection', function( client ) {
     		cur_time:data.cur_time 
     	});
     });
-    client.on('friend-typing',function(id){
- 		io.to(id).emit('friend-typing',id);
-    });
-    client.on('friend-stop-typing',function(id){
-    	io.to(id).emit('friend-stop-typing',id);
+    client.on('typing',function(data){
+    	client.broadcast.emit('typing',data);
     });
 /*    client.on('list-message',function(data){
     	var query=connection.query('SELECT * FROM chat  WHERE (from_user_id = ? AND to_user_id = ?) OR (from_user_id = ? AND to_user_id = ?) ORDER BY id ASC',data.from_user_id,data.to_user_id,data.to_user_id,data.from_user_id, function (error, results) {
@@ -58,7 +56,7 @@ io.sockets.on( 'connection', function( client ) {
     			
     		}
     	});
-    });*/
+});*/
 });
 
 

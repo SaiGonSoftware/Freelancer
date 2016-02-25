@@ -28,16 +28,6 @@ $("#messageForm").submit(function(){
     return false;
 });
 
-$("#messageInput").on('keydown', function(event) {
-    var id=$("#message_popup").data('auth');
-    var timeOutTyping=null;
-    socket.emit('friend-typing', id);
-    clearTimeout();
-    timeOutTyping=setTimeout(function(){
-        socket.emit('friend-stop-typing',id);
-    },2000);
-
-});
 
 socket.on('message' ,function(data){
     var actualContent=$("#messages").html();
@@ -46,12 +36,25 @@ socket.on('message' ,function(data){
     $("#messages").append(newContent);
 });
 
-socket.on('friend-typing' ,function(data){
-    $("#message_popup").find('#isTyping').show();
-   /* $("#isTyping").show();
-*/  setTimeout(2000);
+var typing = false;
+var timeout = undefined;
+function timeoutFunction(){
+    typing=false;
+    socket.emit("typing",false);
+}
+$("#messageInput").keyup(function(event) {
+    console.log("yping");
+    typing=true;
+    socket.emit("typing",".....");
+    clearTimeout(timeout);
+    timeout=setTimeout(timeoutFunction,2000);
 });
-socket.on('friend-stop-typing' ,function(data){
-    $("#message_popup").find('#isTyping').hide();
-    /*$("#isTyping").hide();*/
+
+socket.on('typing',function(data){
+    if(data){
+        $("#isTyping").show();
+    }
+    else{
+        $("#isTyping").hide();
+    }
 });
