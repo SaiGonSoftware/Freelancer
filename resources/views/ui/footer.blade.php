@@ -104,16 +104,16 @@
             <hr>
             <div class="form-group">
                 <label for="login-username">Username</label>
-                <input type="text" class="form-control" id="username" name="usernameLogin">
+                <input type="text" class="form-control" id="username" name="usernameLogin" autocomplete="off">
             </div>
             <div class="form-group">
                 <label for="login-password">Password</label>
-                <input type="password" class="form-control" id="password" name="passwordLogin">
+                <input type="password" class="form-control" id="password" name="passwordLogin" autocomplete="off">
             </div>
             <button type="submit" class="btn btn-primary login_btn" id="login_btn">Đăng nhập</button>
             <a href="#" data-target="#pwdModal" data-toggle="modal" id="forgot_pass">Quên mật khẩu ?</a>
         </form>
-        
+
     </div>
 </div>
 
@@ -151,7 +151,7 @@
     <div class="modal-footer">
       <div class="col-md-12">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-      </div>    
+      </div>
   </div>
 </div>
 </div>

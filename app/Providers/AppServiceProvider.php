@@ -1,6 +1,9 @@
 <?php namespace App\Providers;
 
+use App\Chat;
+use Auth;
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -9,9 +12,18 @@ class AppServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function boot()
-	{
-		//
+	public function boot() {
+		view()->composer('*', function ($view) {
+			if (Auth::check()) {
+				$total_mess = Chat::whereRaw('view = ?  and  to_user = ?', [0, Auth::user()->username])->count();
+				$view->with('total_mess', $total_mess);
+			}
+
+			if (Auth::guest()) {
+				$view->with('total_mess', '');
+			}
+
+		});
 	}
 
 	/**
@@ -23,8 +35,7 @@ class AppServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function register()
-	{
+	public function register() {
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
 			'App\Services\Registrar'

@@ -56,7 +56,7 @@ $(document).ready(function() {
             } else {
                 $("#message").text('Đăng nhập thành công vui lòng đợi .....');
                 $("#message").show();
-                redirect('/trang-chu');
+                window.location.reload();
             }
         });
     });
@@ -146,7 +146,7 @@ $(document).ready(function() {
             },
         }
     })
-.on('success.form.fv', function(e) {
+    .on('success.form.fv', function(e) {
             // Prevent form submission
             e.preventDefault();
             var data = $("#register_form_popup").serializeArray();
@@ -206,7 +206,7 @@ $(document).ready(function() {
             },
         }
     })
-.on('success.form.fv', function(e) {
+    .on('success.form.fv', function(e) {
             // Prevent form submission
             e.preventDefault();
             var data = $("#commentForm").serializeArray();
@@ -269,23 +269,23 @@ $(document).ready(function() {
             }
         }
     })
-.on('success.form.fv', function(e) {
-    e.preventDefault();
-    var data = $("#formNewPassword").serialize();
-    var $form = $(e.target);
-    $form.ajaxSubmit({
-        url: '/updatePassword',
-        type: 'POST',
-        data: data,
-        success: function(data) {
-            alert(data.mess);
-            $("#formNewPassword")[0].reset();
-        },
-        error: function() {
-            alert("Có lỗi xảy ra vui lòng thử lại");
-        }
+    .on('success.form.fv', function(e) {
+        e.preventDefault();
+        var data = $("#formNewPassword").serialize();
+        var $form = $(e.target);
+        $form.ajaxSubmit({
+            url: '/updatePassword',
+            type: 'POST',
+            data: data,
+            success: function(data) {
+                alert(data.mess);
+                $("#formNewPassword")[0].reset();
+            },
+            error: function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
+            }
+        });
     });
-});
 });
 
 //for user forgot pass send them email to get newpass
@@ -776,8 +776,8 @@ $("#assignJob").click(function(event) {
 });
 
 $(".delJobUserPost").click(function(event) {
- var conf=confirm("Bạn có chắc chắn xóa công việc ?");
- if(conf){
+   var conf=confirm("Bạn có chắc chắn xóa công việc ?");
+   if(conf){
     var job_id=$(this).attr('data-id');
     $.ajax({
         url: '/delJobUserPost',
@@ -857,35 +857,35 @@ $(document).ready(function() {
             },
         }
     })
-.on('success.form.fv', function(e) {
-    e.preventDefault();
-    var formValue = $("#postNewRecruit").serializeArray();
-    var location = $("#location .ms-sel-item").text();
-    var job_description = $("#content").val();
-    job_description = job_description.replace(/\r?\n/g, '<br />');
-    var $form = $(e.target);
-    $form.ajaxSubmit({
-        url: '/job/postNewRecruit',
-        type: 'POST',
-        data: {
-            formValue: formValue,
-            location: location,
-            job_description:job_description
-        },
-        success: function(data) {
-            alert(data.mess);
-            redirect('/tin-tuyen-dung' + '/' + data.title + '/' + data.date);
-        },
-        error: function() {
-            alert("Có lỗi xảy ra vui lòng thử lại");
-        }
+    .on('success.form.fv', function(e) {
+        e.preventDefault();
+        var formValue = $("#postNewRecruit").serializeArray();
+        var location = $("#location .ms-sel-item").text();
+        var job_description = $("#content").val();
+        job_description = job_description.replace(/\r?\n/g, '<br />');
+        var $form = $(e.target);
+        $form.ajaxSubmit({
+            url: '/job/postNewRecruit',
+            type: 'POST',
+            data: {
+                formValue: formValue,
+                location: location,
+                job_description:job_description
+            },
+            success: function(data) {
+                alert(data.mess);
+                redirect('/tin-tuyen-dung' + '/' + data.title + '/' + data.date);
+            },
+            error: function() {
+                alert("Có lỗi xảy ra vui lòng thử lại");
+            }
+        });
     });
-});
 });
 
 $(".delJobRecruit").click(function(event) {
- var conf=confirm("Bạn có chắc chắn xóa công việc ?");
- if(conf){
+   var conf=confirm("Bạn có chắc chắn xóa công việc ?");
+   if(conf){
     var job_id=$(this).attr('data-id');
     $.ajax({
         url: '/delJobRecruit',

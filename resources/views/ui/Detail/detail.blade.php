@@ -1,5 +1,5 @@
 @extends('ui.layout')
-@section('content') 
+@section('content')
 <section id="title">
 	<div class="container">
 		<div class="row">
@@ -28,7 +28,7 @@
 					<p>
 						{!!$job -> content!!}<br>
 					</p>
-					
+
 					@if($job -> description)
 					<h3>Hình ảnh mô tả</h3>
 					<img src="/{{$job -> description}}">
@@ -41,33 +41,33 @@
 							{{$tags}}
 						</a>
 						@endforeach
-						
+
 					</div>
 					@endif
 					<div class="panel panel-primary">
-						<div class="panel-heading"> 
-							<h3 class="panel-title">Báo Giá</h3> 
+						<div class="panel-heading">
+							<h3 class="panel-title">Báo Giá</h3>
 						</div>
 
 						<div class="panel-body"  id="job_comment_post" style="text-align:left">
-							<table class="table table-hover" > 
-								<thead> 
-									<tr> 
-										<th>Freelancer đang đặt giá</th> 
-										<th>Giới thiệu bản thânn</th> 
-										<th>Ngày hoàn thành</th> 
+							<table class="table table-hover" >
+								<thead>
+									<tr>
+										<th>Freelancer đang đặt giá</th>
+										<th>Giới thiệu bản thânn</th>
+										<th>Ngày hoàn thành</th>
 										<th>Đặt giá (VNĐ)</th>
 										@if(!empty(Auth::user()->id))
 										@if($job -> user_id==Auth::user()->id)
-										<th>Giao Công Việc</th>  
+										<th>Giao Công Việc</th>
 										@endif
 										@endif
-									</tr> 
-								</thead> 
-								<tbody> 
+									</tr>
+								</thead>
+								<tbody>
 									@foreach($job_comment as $jobReply)
-									<tr> 
-										<td>{{$jobReply -> user -> full_name }}</td> 
+									<tr>
+										<td>{{$jobReply -> user -> full_name }}</td>
 										<td>{{$jobReply -> introduce}}</td>
 										<td>{{$jobReply -> completed_day}}</td>
 										<td>{{number_format($jobReply -> allowance)}}</td>
@@ -81,9 +81,9 @@
 										</td>
 										@endif
 										@endif
-									</tr> 
+									</tr>
 									@endforeach()
-								</tbody> 
+								</tbody>
 							</table>
 							<div class="details_pagi">
 								{!! $job_comment->render() !!}
@@ -95,8 +95,8 @@
 					</div>
 					<p>
 						<div class="panel panel-primary">
-							<div class="panel-heading"> 
-								<h3 class="panel-title">BÁO GIÁ CHO DỰ ÁN NÀY</h3> 
+							<div class="panel-heading">
+								<h3 class="panel-title">BÁO GIÁ CHO DỰ ÁN NÀY</h3>
 							</div>
 
 							<div class="panel-body">
@@ -125,7 +125,7 @@
 										<div class="alert alert-danger" role="alert">Vui lòng đăng nhập để gửi báo giá</div>
 										@endif
 
-									</form>										
+									</form>
 
 
 								</div>
@@ -160,7 +160,7 @@
 					<div class="sidebar-widget" id="company-jobs">
 						<h2>Các công việc liên quan khác</h2>
 						<ul>
-							<?php $num=1; ?>
+							<?php $num = 1;?>
 							@foreach($related_job as $relatedJob)
 
 							<li>
@@ -168,7 +168,7 @@
 									{{$num}}/{{$relatedJob -> title}}
 								</a>
 							</li>
-							<?php $num++; ?>
+							<?php $num++;?>
 							@endforeach()
 
 						</ul>
@@ -180,7 +180,7 @@
 
 
 	@if(!empty(Auth::user()->id))
-	<div class="popup-box chat-popup" id="message_popup" data-userpost="{{$job -> user -> id}}" data-auth="{{Auth::user()->id}}">
+	<div class="popup-box chat-popup" id="message_popup" data-userpost="{{$job -> user -> username}}" data-auth="{{Auth::user()->username}}">
 		<div class="popup-head">
 			<div class="popup-head-left pull-left"><img src="/{{$job -> user -> avatar}}">{{$job -> user -> full_name}} <span id="online"></span></div>
 			<div class="popup-head-right pull-right">
@@ -196,15 +196,11 @@
 			</div>
 		</div>
 		<div class="popup-messages-footer">
-			<textarea placeholder="Type a message..." rows="10" cols="40" name="message" id="messageInput"></textarea>
-			<form class="form-inline" id="messageForm">
-				{!! csrf_field() !!}
-				<div>
-					<input type="submit" value="Gửi" id="sendMess" class="btn btn-primary btn-block" />
-				</div>
-			</form>
+			<textarea placeholder="Nhập tin nhắn" rows="10" cols="40" name="message" id="messageInput"></textarea>
+			<div>
+				<input type="button" value="Gửi" id="sendMess" class="btn btn-primary btn-block" />
+			</div>
 		</div>
 	</div>
 	@endif
 	@stop
-

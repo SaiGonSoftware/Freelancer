@@ -21,7 +21,7 @@
 							<h5 style="width: 150px">
 								{{$jobPost -> title}}</h5>
 								<p>{{date("d-m-Y", strtotime($jobPost -> post_at))}}</p>
-								<p>Đăng bởi: {{$jobPost->user->full_name}}</p> 
+								<p>Đăng bởi: {{$jobPost->user->full_name}}</p>
 
 							</div>
 							<div class="data">
@@ -71,12 +71,6 @@
 
 	<!-- ============ JOBS END ============ -->
 
-	<!-- ============ COMPANIES START ============ -->
-
-	@include('ui.companies')
-
-	<!-- ============ COMPANIES END ============ -->
-
 	<!-- ============ STATS START ============ -->
 
 	<section id="stats" class="parallax text-center">
@@ -119,94 +113,10 @@
 	</section>
 
 	<!-- ============ STATS END ============ -->
+	<!-- ============ COMPANIES START ============ -->
 
-	<!-- ============ BLOG START ============ -->
+	@include('ui.companies')
 
-	<section id="blog" class="color3">
-		<div class="container">
-			<div class="row text-center">
-				<div class="col-sm-12">
-					<h1>Latest News</h1>
-					<h4>Specially crafted job posts everyday</h4>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-12">
-					<div class="owl-carousel">
-
-						<!-- Blog post 1 -->
-						<div>
-							<img src="images/blog1.jpg" class="img-responsive" alt="Blog Post" />
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>
-								<span><i class="fa fa-calendar"></i>28.08.2015</span>
-								<span><i class="fa fa-comment"></i>8 Comments</span>
-							</h5>
-							<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-							<p><a href="post" class="btn btn-primary">Read more</a></p>
-						</div>
-
-						<!-- Blog post 2 -->
-						<div>
-							<img src="images/blog2.jpg" class="img-responsive" alt="Blog Post" />
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>
-								<span><i class="fa fa-calendar"></i>28.08.2015</span>
-								<span><i class="fa fa-comment"></i>8 Comments</span>
-							</h5>
-							<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-							<p><a href="post" class="btn btn-primary">Read more</a></p>
-						</div>
-
-						<!-- Blog post 3 -->
-						<div>
-							<img src="images/blog3.jpg" class="img-responsive" alt="Blog Post" />
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>
-								<span><i class="fa fa-calendar"></i>28.08.2015</span>
-								<span><i class="fa fa-comment"></i>8 Comments</span>
-							</h5>
-							<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-							<p><a href="post" class="btn btn-primary">Read more</a></p>
-						</div>
-
-						<!-- Blog post 4 -->
-						<div>
-							<img src="images/blog4.jpg" class="img-responsive" alt="Blog Post" />
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>
-								<span><i class="fa fa-calendar"></i>28.08.2015</span>
-								<span><i class="fa fa-comment"></i>8 Comments</span>
-							</h5>
-							<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-							<p><a href="post" class="btn btn-primary">Read more</a></p>
-						</div>
-
-						<!-- Blog post 5 -->
-						<div>
-							<img src="images/blog5.jpg" class="img-responsive" alt="Blog Post" />
-							<h4>Lorem ipsum dolor sit amet</h4>
-							<h5>
-								<span><i class="fa fa-calendar"></i>28.08.2015</span>
-								<span><i class="fa fa-comment"></i>8 Comments</span>
-							</h5>
-							<p>Consectetur adipiscing elit. Duis lobortis tincidunt pretium. Suspendisse ullamcorper quis neque quis viverra. Cras ut leo in lectus gravida fringilla. In hac habitasse platea dictumst. Fusce facilisis sapien dolor, non fermentum magna tempus ac. Fusce quis eros sit amet magna aliquam euismod ac eget libero. Fusce accumsan in eros vitae posuere.</p>
-							<p><a href="post" class="btn btn-primary">Read more</a></p>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- ============ BLOG END ============ -->
-
-	<!-- ============ PEOPLE START ============ -->
-	@include('ui.people')
-	<!-- ============ PEOPLE END ============ -->
-	<!-- ============ CLIENTS START ============ -->
-	@include('ui.client')
-	<!-- ============ CLIENTS END ============ -->
+	<!-- ============ COMPANIES END ============ -->
 
 	@stop

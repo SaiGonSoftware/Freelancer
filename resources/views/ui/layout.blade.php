@@ -20,7 +20,7 @@
         <i class="fa fa-cog fa-4x fa-spin"></i>
     </div>
 
-    @include('ui.menu') 
+    @include('ui.menu')
     @yield('content')
     @yield('userInfo')
     @include('ui.footer')
@@ -30,7 +30,6 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/retina.min.js"></script>
     <script src="/js/scrollReveal.min.js"></script>
-    <script src="/js/jquery.flexmenu.js"></script>
     <script src="/js/jquery.ba-cond.min.js"></script>
     <script src="/js/jquery.slitslider.js"></script>
     <script src="/js/owl.carousel.min.js"></script>
@@ -50,9 +49,6 @@
     <script src="/js/jquery.form.js"></script>
     <script src="/js/fileinput.min.js"></script>
     <script src="/js/magicsuggest-min.js"></script>
-    {{--<script src="/js/jquery-migrate-1.2.1.min.js"></script>--}}
-    <script src="/nodejs/node_modules/socket.io-client/socket.io.js"  type="text/javascript"></script>
-    <script src="/nodejs/server.js"></script>
     <script src="/nodejs/client.js"></script>
 </body>
 
