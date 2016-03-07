@@ -1,5 +1,6 @@
 {
 	"name": "laravel/laravel",
+	"author":"Ngô Hùng Phúc",
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
