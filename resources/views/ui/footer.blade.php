@@ -48,7 +48,8 @@
         <form action="/user/register" method="POST" name="RegisterForm" id="register_form_popup">
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             <ul class="social-login">
-                <li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Đăng ký với Facebook</a>
+                <li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Đăng ký
+                        với Facebook</a>
                 </li>
             </ul>
             <hr>
@@ -77,14 +78,13 @@
             </div>
             <div class="form-group">
                 <label class="control-label" id="captchaOperation">Captcha</label>
-                <input type="text" class="form-control" name="captcha" />
+                <input type="text" class="form-control" name="captcha"/>
             </div>
             <button type="submit" class="btn btn-primary" id="regis_btn">Đăng ký</button>
         </form>
     </div>
 </div>
 <!-- ============ REGISTER END ============ -->
-
 
 
 <div class="popup" id="login">
@@ -98,7 +98,8 @@
             <div class="alert alert-danger" role="alert" id="message" style="display:none"></div>
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             <ul class="social-login">
-                <li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Đăng nhập với Facebook</a>
+                <li><a class="btn btn-facebook" href="{{url('auth/facebook')}}"><i class="fa fa-facebook"></i>Đăng nhập
+                        với Facebook</a>
                 </li>
             </ul>
             <hr>
@@ -119,40 +120,43 @@
 
 <!-- ============ LOGIN END ============ -->
 <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="    margin-top: 8%;">
-  <div class="modal-dialog">
-      <div class="modal-content">
-          <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-              <h1 class="text-center">Tìm lại mật khẩu</h1>
-          </div>
-          <div class="modal-body">
-              <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="text-center">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h1 class="text-center">Tìm lại mật khẩu</h1>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="text-center">
 
-                          <p>Bạn có thể tạo mới mật khẩu bằng cách gửi email kích hoạt cho chúng tôi</p>
-                          <div class="panel-body">
-                            <fieldset>
-                            <form action="{{ url('/findPassword')}}" method="post" id="forgotpassForm">
-                                    {!! csrf_field() !!}
-                                    <div class="form-group">
-                                       <input class="form-control input-lg" placeholder="Địa chỉ E-mail" name="emailForgot" type="email" id="emailForgot" required>
-                                    </div>
-                                    <button type="submit" class="btn btn-lg btn-primary btn-block" id="forgotpassBtn" >Gửi email</button>
-                            </form>
-                            </fieldset>
+                                <p>Bạn có thể tạo mới mật khẩu bằng cách gửi email kích hoạt cho chúng tôi</p>
+                                <div class="panel-body">
+                                    <fieldset>
+                                        <form action="{{ url('/findPassword')}}" method="post" id="forgotpassForm">
+                                            {!! csrf_field() !!}
+                                            <div class="form-group">
+                                                <input class="form-control input-lg" placeholder="Địa chỉ E-mail"
+                                                       name="emailForgot" type="email" id="emailForgot" required>
+                                            </div>
+                                            <button type="submit" class="btn btn-lg btn-primary btn-block"
+                                                    id="forgotpassBtn">Gửi email
+                                            </button>
+                                        </form>
+                                    </fieldset>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="modal-footer">
+                <div class="col-md-12">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="modal-footer">
-      <div class="col-md-12">
-          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-      </div>
-  </div>
-</div>
-</div>
 </div>

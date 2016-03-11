@@ -2,18 +2,20 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model {
+class Comment extends Model
+{
 
-	protected $table = "comments";
-    protected $fillable = ["id","user_id", "introduce", "completed_day", "allowance", "job_id"];
-    public $timestamps= false;
+    protected $table = "comments";
+    protected $fillable = ["id", "user_id", "introduce", "completed_day", "allowance", "job_id"];
+    public $timestamps = false;
 
     /**
      * Show user reply the job
      *
      * @return  user reply the job
-    */
-    public function user(){
+     */
+    public function user()
+    {
         return $this->BelongsTo('App\User');
     }
 
@@ -21,8 +23,9 @@ class Comment extends Model {
      * [post Show user name post the comment in user info manage]
      * @return [type] [description]
      */
-    public function post(){
-        return $this->BelongsTo('App\Job','job_id');
+    public function post()
+    {
+        return $this->BelongsTo('App\Job', 'job_id');
     }
 
     /**
@@ -31,6 +34,6 @@ class Comment extends Model {
      */
     public function approved()
     {
-        return $this->belongsTo('App\JobApproved','job_id','job_id');
+        return $this->belongsTo('App\JobApproved', 'job_id', 'job_id');
     }
 }

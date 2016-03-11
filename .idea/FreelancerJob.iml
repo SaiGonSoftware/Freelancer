@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="google-appengine-php" name="Google App Engine (Python)">
+      <configuration>
+        <option name="rootFolder" value="" />
+        <option name="sdkFolder" value="" />
+        <option name="pythonPath" value="" />
+        <option name="email" value="ngohungphuc95@gmail.com" />
+        <option name="gp" value="dfc4dfcddfc5dfdadfc2dfcbdfc7dfcedfc5dfcbdfc4dfdedfc2dfcbdfc5" />
+        <option name="oauth2" value="false" />
+        <option name="nocache" value="false" />
+      </configuration>
+    </facet>
+  </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
@@ -14,6 +27,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Node.js Globals" level="application" />
   </component>
 </module>
