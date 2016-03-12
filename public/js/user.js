@@ -914,8 +914,12 @@ $(function () {
         $('#message_popup').removeClass('popup-box-on');
     });
 })
+//send message in details page
 $('#sendMess').click(function (event) {
     var msg = $("#messageInput").val();
+    if (msg == '') {
+        return false;
+    }
     var avatar = $("#user_avatar").attr('src');
     var from_user = $("#message_popup").data('auth');
     var to_user = $("#message_popup").data('userpost');
@@ -929,7 +933,6 @@ $('#sendMess').click(function (event) {
             }
         })
         .success(function (data) {
-            var actualContent = $("#messages").html();
             var cur_time = new Date().toTimeString().split(" ")[0];
             var newContent = '<div class="direct-chat-info clearfix"><span class="direct-chat-name pull-left">' + from_user + '</span></div><img alt="message user image" src="' + avatar + '" class="direct-chat-img"><div class="direct-chat-text">' + msg + '</div><div class="direct-chat-info clearfix"><span class="direct-chat-timestamp pull-right">' + cur_time + '</span></div>';
             $("#messages").append(newContent);
@@ -937,8 +940,57 @@ $('#sendMess').click(function (event) {
         .error(function () {
             alert("Có lỗi xảy ra");
         });
-
 })
+//get message in message page
+$(".conversation").click(function () {
+    var name = $(this).attr('id');
+    var token = $("input[name='_token']").val();
+    $.ajax({
+            url: '/getMessage',
+            type: 'GET',
+            data: {
+                name: name,
+                _token: token
+            },
+        })
+        .error(function () {
+            alert("Có lỗi xảy ra vui lòng thử lại");
+        })
+        .success(function (data) {
+            $("#messages_details").html(data);
+            //send message in message page
+            $('#sendMessDetails').click(function (event) {
+                var msg = $("#messageContent").val();
+                if (msg == '') {
+                    return false;
+                }
+                var avatar = $("#user_avatar").attr('src');
+                var to_user = name;
+                var from_user = $("#welcome_user").text();
+                var token = $("input[name='_token']").val();
+                $.ajax({
+                        url: '/message/newMessageDetials',
+                        type: 'POST',
+                        data: {
+                            message: msg,
+                            to_user: to_user,
+                            _token: token
+                        }
+                    })
+                    .success(function (data) {
+                        var cur_time = new Date().toTimeString().split(" ")[0];
+                        var newContent = 
+                        '<a class="pull-left" href="#"><img class="media-object" style="width: 50px; height: 50px;" src="'+avatar+'"></a><div class="media-body"><h5 class="media-heading">'+from_user+'</h5><small>'+msg+'</small></div>';
+                        $("#messageContent").append(newContent);
+                        return false;
+                    })
+                    .error(function () {
+                        alert("Có lỗi xảy ra");
+                    });
+            })
+        });
+
+});
 
 
 

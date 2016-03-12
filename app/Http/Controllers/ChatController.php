@@ -35,6 +35,10 @@ class ChatController extends Controller
         return view('ui.chat.chat', compact('chat_message'));
     }
 
+    /**
+     * Insert message via ajax in details page
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function insertMessage()
     {
         $chat_message = new Chat();
@@ -46,6 +50,30 @@ class ChatController extends Controller
         return response()->json(array('mess' => 'Success'));
     }
 
+    /**
+     * Insert message via ajax in message page
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function insertMessageDetails()
+    {
+        $chat_message = new Chat();
+        $chat_message->content = Input::get('message');
+        $chat_message->from_user = Auth::user()->username;
+        $chat_message->to_user = Input::get('to_user');
+        $chat_message->created_at = date('Y-m-d H:i:s');
+        $chat_message->save();
+        return response()->json(array('mess' => 'Success'));
+    }
+
+    /**
+     * get message via specific user
+     */
+    public function getMessages()
+    {
+        $from_user = Input::get('name');
+        $chat_message = Chat::whereRaw('from_user= ? and to_user=?', [$from_user, Auth::user()->username])->get();
+        return view('ui.chat.chat_ajax', compact('chat_message'));
+    }
 }
 
 ?>

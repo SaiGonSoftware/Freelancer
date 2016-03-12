@@ -42,7 +42,9 @@ Route::get('/payment', ['as' => 'PaymentPaypal', 'uses' => 'PaymentController@st
 Route::get('/delJobUserPost', ['as' => 'DelJobUserPost', 'uses' => 'JobController@deleteJob']);
 Route::get('/delJobRecruit', ['as' => 'DelJobRecruit', 'uses' => 'JobController@deleteRecruitJob']);
 Route::get('/tin-nhan/{username}', 'ChatController@index');
+Route::get('/getMessage','ChatController@getMessages');
 
+Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
 Route::post('/message/new', ['as' => 'SaveMessage', 'uses' => 'ChatController@insertMessage']);
 Route::post('/job/postNewRecruit', ['as' => 'RecruitJob', 'uses' => 'JobController@recruitJob']);
 Route::post('/assignCurJob', ['as' => 'AssignJob', 'uses' => 'UserController@assignJob']);
