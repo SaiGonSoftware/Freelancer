@@ -71,7 +71,7 @@ class ChatController extends Controller
     public function getMessages()
     {
         $from_user = Input::get('name');
-        $chat_message = Chat::whereRaw('from_user= ? and to_user=?', [$from_user, Auth::user()->username])->get();
+        $chat_message = Chat::whereRaw('from_user= ? and to_user=? or from_user= ? and to_user= ?', [$from_user,Auth::user()->username,Auth::user()->username,$from_user])->get();
         return view('ui.chat.chat_ajax', compact('chat_message'));
     }
 }

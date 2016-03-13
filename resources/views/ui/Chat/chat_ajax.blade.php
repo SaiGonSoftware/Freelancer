@@ -7,5 +7,5 @@
         <h5 class="media-heading"> {{$message->from_user}}</h5>
         <small>{{$message->content}}</small>
     </div>
-
+    <br>
 @endforeach
