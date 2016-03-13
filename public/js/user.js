@@ -987,6 +987,7 @@ $(".conversation").click(function () {
                     .error(function () {
                         alert("Có lỗi xảy ra");
                     });
+                
             })
         });
 
