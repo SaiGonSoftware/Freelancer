@@ -21,10 +21,10 @@
 
 
             <div class="message-wrap col-lg-8">
-                <div class="msg-wrap">
-                    <div class="media msg " id="messages_details">
+                <div class="msg-wrap" id="messages_details">
 
-                    </div>
+
+
 
                 </div>
 

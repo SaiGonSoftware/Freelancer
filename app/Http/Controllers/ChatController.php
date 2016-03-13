@@ -31,7 +31,7 @@ class ChatController extends Controller
         SEO::setTitle('Tin nhắn ' . $username);
         SEO::setDescription('Cộng đồng freelancer Việt-Nơi khẳng định khả năng của bạn');
         SEO::opengraph()->setUrl('http://localhost:8000/tin-nhan');
-        $chat_message = Chat::where('to_user', Auth::user()->username)->get();
+        $chat_message = Chat::where('to_user', Auth::user()->username)->groupBy('from_user')->get();
         return view('ui.chat.chat', compact('chat_message'));
     }
 
@@ -72,6 +72,7 @@ class ChatController extends Controller
     {
         $from_user = Input::get('name');
         $chat_message = Chat::whereRaw('from_user= ? and to_user=? or from_user= ? and to_user= ?', [$from_user,Auth::user()->username,Auth::user()->username,$from_user])->get();
+        Chat::whereRaw('from_user= ? and to_user=? or from_user= ? and to_user= ?', [$from_user,Auth::user()->username,Auth::user()->username,$from_user])->update(['view'=>1]);
         return view('ui.chat.chat_ajax', compact('chat_message'));
     }
 }

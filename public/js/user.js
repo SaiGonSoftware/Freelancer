@@ -980,7 +980,7 @@ $(".conversation").click(function () {
                     .success(function (data) {
                         var cur_time = new Date().toTimeString().split(" ")[0];
                         var newContent =
-                            '<br><div class="pull-left" href="#"><img class="media-object" style="width: 50px; height: 50px;" src="' + avatar + '"></div><div class="media-body"> <small class="pull-right time"><i class="fa fa-clock-o"></i> ' + cur_time + '</small><h5 class="media-heading">' + from_user + '</h5><small>' + msg + '</small></div>';
+                            '<div class="media msg "><a class="pull-left" href="#"><img class="media-object" style="width: 50px; height: 50px;" src="' + avatar + '"></a><div class="media-body"> <small class="pull-right time"><i class="fa fa-clock-o"></i> ' + cur_time + '</small><h5 class="media-heading">' + from_user + '</h5><small>' + msg + '</small></div></div>';
                         $("#messages_details").append(newContent);
                         $("#messageContent").val('');
                     })
