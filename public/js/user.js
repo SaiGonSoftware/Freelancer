@@ -959,7 +959,7 @@ $(".conversation").click(function () {
         .success(function (data) {
             $("#messages_details").html(data);
             //send message in message page
-            $('#sendMessDetails').click(function (event) {
+            $('#sendMessDetails').click(function () {
                 var msg = $("#messageContent").val();
                 if (msg == '') {
                     return false;
@@ -979,19 +979,18 @@ $(".conversation").click(function () {
                     })
                     .success(function (data) {
                         var cur_time = new Date().toTimeString().split(" ")[0];
-                        var newContent = 
-                        '<a class="pull-left" href="#"><img class="media-object" style="width: 50px; height: 50px;" src="'+avatar+'"></a><div class="media-body"><h5 class="media-heading">'+from_user+'</h5><small>'+msg+'</small></div>';
-                        $("#messageContent").append(newContent);
-                        return false;
+                        var newContent =
+                            '<br><div class="pull-left" href="#"><img class="media-object" style="width: 50px; height: 50px;" src="' + avatar + '"></div><div class="media-body"> <small class="pull-right time"><i class="fa fa-clock-o"></i> ' + cur_time + '</small><h5 class="media-heading">' + from_user + '</h5><small>' + msg + '</small></div>';
+                        $("#messages_details").append(newContent);
+                        $("#messageContent").val('');
                     })
                     .error(function () {
                         alert("Có lỗi xảy ra");
                     });
-                
             })
         });
-
 });
+
 
 
 

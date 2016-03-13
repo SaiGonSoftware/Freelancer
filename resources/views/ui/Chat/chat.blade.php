@@ -7,7 +7,7 @@
                 @foreach ($chat_message as $message)
                     <div class="media conversation" id="{{$message->user->username}}">
                         <a class="pull-left" href="#">
-                            <img class="media-object" data-src="holder.js/64x64" alt="64x64"
+                            <img class="media-object"
                                  style="width: 50px; height: 50px;" src="/{{$message->user->avatar}}">
                         </a>
                         <div class="media-body">
@@ -37,7 +37,7 @@
                 <form class="form-inline" id="messageForm">
                     {!! csrf_field() !!}
                     <div>
-                        <input type="submit" value="Gửi" id="sendMessDetails" class="btn btn-primary btn-block"/>
+                        <input type="button" value="Gửi" id="sendMessDetails" class="btn btn-primary btn-block"/>
                     </div>
                 </form>
             </div>
