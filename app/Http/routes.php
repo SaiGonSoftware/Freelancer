@@ -44,6 +44,13 @@ Route::get('/delJobRecruit', ['as' => 'DelJobRecruit', 'uses' => 'JobController@
 Route::get('/tin-nhan/{username}', 'ChatController@index');
 Route::get('/getMessage','ChatController@getMessages');
 
+Route::group(['prefix'=>'/quan-ly'],function(){
+	Route::get('',function () {
+		return view('auth.login');
+	});
+
+});
+
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
 Route::post('/message/new', ['as' => 'SaveMessage', 'uses' => 'ChatController@insertMessage']);
 Route::post('/job/postNewRecruit', ['as' => 'RecruitJob', 'uses' => 'JobController@recruitJob']);
@@ -69,3 +76,5 @@ Route::controllers([
 Route::any('/{page?}', function () {
 	return View::make('errors.404');
 })->where('page', '.*');
+
+

@@ -140,6 +140,7 @@ return [
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Artesaos\SEOTools\Providers\SEOToolsServiceProvider',
+		'Mews\Captcha\CaptchaServiceProvider',
 		/*
 			 * Application Service Providers...
 		*/
@@ -201,7 +202,7 @@ return [
 		'Image' => 'Intervention\Image\Facades\Image',
 		'Flash' => 'Laracasts\Flash\Flash',
 		'SEO' => 'Artesaos\SEOTools\Facades\SEOTools',
-
+		'Captcha' => 'Mews\Captcha\Facades\Captcha'
 	],
 
 ];
