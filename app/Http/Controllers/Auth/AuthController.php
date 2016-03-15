@@ -3,10 +3,12 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Routing\Redirector;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Validator;
 use Hash;
 use Mail;
 use Input;
@@ -29,9 +31,8 @@ class AuthController extends Controller
     |
     */
 
-    use AuthenticatesAndRegistersUsers;
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
     protected $redirectPath = '/';
-
     /**
      * Create a new authentication controller instance.
      *
@@ -98,7 +99,7 @@ class AuthController extends Controller
                 'social_id' => $facebookUser->id,
                 'avatar' => $facebookUser->avatar,
                 'remember_token' => $facebookUser->token,
-                'level' => 1,
+                'level' => 2,
                 'total_post' => 0
             ]
         );
@@ -144,6 +145,7 @@ class AuthController extends Controller
         $user->email = $request->emailRegis;
         $user->password = Hash::make($request->passwordRegis);
         $user->remember_token = $request->_token;
+        $user->level = 2;
         $user->total_post = 0;
         $user->save();
         $data = ['username' => $request->fullnameRegis, 'email' => $request->emailRegis, 'token' => $request->_token];
@@ -155,9 +157,9 @@ class AuthController extends Controller
                 $m->to($user->email, $user->full_name)->subject('Email xác nhận');
             }
         );
-        return response ()->json ( array (
-                'mess' => 'Vui lòng kiểm tra email để kích hoạt' 
-        ) );
+        return response()->json(array(
+            'mess' => 'Vui lòng kiểm tra email để kích hoạt'
+        ));
     }
 
 
@@ -167,8 +169,33 @@ class AuthController extends Controller
     public function reactive($token)
     {
         User::where('remember_token', '=', $token)->update(['active' => 1]);
-        echo "<script>alert('Kích hoạt tài khoản thành công bạn có thể đăng nhập ')</script>";
         return redirect()->intended('/');
+    }
+
+
+    public function adminLogin()
+    {
+        $username=Input::get('username');
+        $password=Input::get('password');
+        $captcha=Input::get('captcha');
+        $rules=['captcha'=>'required|captcha'];
+        $validators=Validator::make(Input::all(),$rules);
+        if($validators->fails()){
+            return response(['mess'=>'Captcha vừa nhập không đúng'],500);
+        }
+        else{
+            $auth = array(
+                'username' => $username,
+                'password' => $password,
+                'level'=>1
+            );
+            if ($this->auth->attempt($auth)) {
+                return "ok";
+            } else {
+                return "fail";
+            }
+
+        }
     }
 
 

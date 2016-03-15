@@ -1,6 +1,5 @@
 @extends('ui.layout')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">
     <div class="container" style="margin-top:10%;margin-bottom:10%">
         <div class="row">
             <div class="conversation-wrap col-lg-3">

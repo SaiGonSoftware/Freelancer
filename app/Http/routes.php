@@ -44,11 +44,13 @@ Route::get('/delJobRecruit', ['as' => 'DelJobRecruit', 'uses' => 'JobController@
 Route::get('/tin-nhan/{username}', 'ChatController@index');
 Route::get('/getMessage','ChatController@getMessages');
 
-Route::group(['prefix'=>'/quan-ly'],function(){
-	Route::get('',function () {
+Route::group(['prefix'=>'/admin'],function(){
+	Route::get('/dang-nhap',function () {
 		return view('auth.login');
 	});
-
+	Route::get('/quan-ly',function () {
+		return view('auth.content');
+	});
 });
 
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
@@ -68,6 +70,8 @@ Route::post('tai-khoan/thong-tin-ca-nhan/{name}/upload', 'UserController@profile
 Route::post('/findPassword', ['as' => 'findPass', 'uses' => 'Auth\PasswordController@resetPass']);
 Route::post('/password/new', ['as' => 'newLostPass', 'uses' => 'Auth\PasswordController@newLostPass']);
 
+//for admin
+Route::post('/adminLogin',['as' => 'adminLoginAttempt', 'uses' => 'Auth\AuthController@adminLogin']);
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

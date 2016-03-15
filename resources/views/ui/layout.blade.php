@@ -11,7 +11,6 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">
     <link href="/css/magicsuggest-min.css" rel="stylesheet">
-    <link href="/css/chat_popup.css" rel="stylesheet">
 </head>
 
 <body id="home">
@@ -38,7 +37,6 @@
 <script src="/js/waypoints.min.js"></script>
 <script src="/js/jquery.nouislider.all.min.js"></script>
 <script src="/js/bootstrap-wysiwyg.js"></script>
-<script src="/js/jquery.hotkeys.js"></script>
 <script src="/js/jflickrfeed.min.js"></script>
 <script src="/js/fancybox.pack.js"></script>
 <script src="/js/magic.js"></script>

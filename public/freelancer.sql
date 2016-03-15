@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2016 at 04:51 AM
+-- Generation Time: Mar 15, 2016 at 03:01 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -40,10 +40,12 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`id`, `content`, `from_user`, `to_user`, `created_at`, `view`) VALUES
-(1, 'hi', 'phucphuc', 'phuchung95', '2016-03-05 14:38:54', 0),
-(4, 'hi', 'phuc-ngo', 'phuchung95', '2016-03-12 14:38:54', 0),
-(25, 'hi', 'phuchung95', 'phucphuc', '2016-03-13 02:50:13', 0),
-(26, 'test', 'phuchung95', 'phucphuc', '2016-03-13 03:50:48', 0);
+(1, 'hi', 'phucphuc', 'phuchung95', '2016-03-05 14:38:54', 1),
+(4, 'hi', 'phuc-ngo', 'phuchung95', '2016-03-12 14:38:54', 1),
+(25, 'hi', 'phuchung95', 'phucphuc', '2016-03-13 02:50:13', 1),
+(30, 'chao ban\n                    ', 'phuchung95', 'phucphuc', '2016-03-13 12:01:01', 1),
+(31, 'aaaaa', 'phuchung95', 'phucphuc', '2016-03-13 12:02:23', 1),
+(32, 'asdasd\n                    ', 'phucphuc', 'phuchung95', '2016-03-13 12:03:15', 1);
 
 -- --------------------------------------------------------
 
@@ -236,21 +238,6 @@ INSERT INTO `jobs_post` (`id`, `title`, `slug`, `content`, `experience_year`, `q
 -- --------------------------------------------------------
 
 --
--- Table structure for table `manage`
---
-
-CREATE TABLE `manage` (
-  `id_manage` int(10) UNSIGNED NOT NULL,
-  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `level` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `province`
 --
 
@@ -425,11 +412,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `email`, `password`, `remember_token`, `level`, `active`, `total_post`) VALUES
-(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'UTwPUz6v3tRbRd2kksExHJa3nrM2o0wl0JFU3oP4BmNNXSANfQ7oqmH7DRRr', 0, 1, 0),
-(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 0, 1, 0),
-(3, NULL, 'phucphuc', 'Nguyen van a', 'images/phucphuc/356cad7568e12b.jpg', 'traitimnguyen113@yahoo.com', '$2y$10$PxPbQgyUkBmzzRcxfml7PeSDKHo9DdK7SHe88axEHYr5D14aaOtX6', 'XVmzmtLvQPDVQzTwxXCYGu33yhD5gotQYTpIwjjQ', 0, 1, 0),
-(14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456af6e236daae.png', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'yjSG1I0Gz6JDsP137GR23pi1UVKgstzi2QMP4Hbc2GRjDlpK9GtcMHYqrWEN', 0, 1, 0),
-(15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/1556af9aae44d83.png', NULL, '', 'wkZstgvkL8fqXV4aw9DUZk6mMhP280UBD4ZNkSraCvJlS3AH2C6vAySnirP3', 0, 0, 0);
+(1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'UTwPUz6v3tRbRd2kksExHJa3nrM2o0wl0JFU3oP4BmNNXSANfQ7oqmH7DRRr', 1, 1, 0),
+(2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 2, 1, 0),
+(3, NULL, 'phucphuc', 'Nguyen van a', 'images/phucphuc/356cad7568e12b.jpg', 'traitimnguyen113@yahoo.com', '$2y$10$PxPbQgyUkBmzzRcxfml7PeSDKHo9DdK7SHe88axEHYr5D14aaOtX6', 'XVmzmtLvQPDVQzTwxXCYGu33yhD5gotQYTpIwjjQ', 2, 1, 0),
+(14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456af6e236daae.png', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'yjSG1I0Gz6JDsP137GR23pi1UVKgstzi2QMP4Hbc2GRjDlpK9GtcMHYqrWEN', 2, 1, 0),
+(15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/1556af9aae44d83.png', NULL, '', 'wkZstgvkL8fqXV4aw9DUZk6mMhP280UBD4ZNkSraCvJlS3AH2C6vAySnirP3', 2, 0, 0),
+(17, NULL, 'test1', 'test1', NULL, 'ngohungphuc71695@gmail.com', '$2y$10$p6ocLD.8BJEmQ1RbZfVMYOMyYXw4JWslSrbIBcSzY31MGsAjnPaNm', 'd6TInfqM2pqyQg4citNUXLLuI6C6RtSjW4v0pJPX', 1, 0, 0);
 
 --
 -- Indexes for dumped tables
@@ -478,12 +466,6 @@ ALTER TABLE `jobs_post`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `manage`
---
-ALTER TABLE `manage`
-  ADD PRIMARY KEY (`id_manage`);
-
---
 -- Indexes for table `province`
 --
 ALTER TABLE `province`
@@ -511,7 +493,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `comments`
 --
@@ -543,11 +525,6 @@ ALTER TABLE `jobs_approved`
 ALTER TABLE `jobs_post`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
--- AUTO_INCREMENT for table `manage`
---
-ALTER TABLE `manage`
-  MODIFY `id_manage` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `tag`
 --
 ALTER TABLE `tag`
@@ -556,7 +533,7 @@ ALTER TABLE `tag`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
