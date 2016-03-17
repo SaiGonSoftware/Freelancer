@@ -46,10 +46,10 @@ Route::get('/getMessage','ChatController@getMessages');
 
 Route::group(['prefix'=>'/admin'],function(){
 	Route::get('/dang-nhap',function () {
-		return view('auth.login');
+		return view('admin.login');
 	});
 	Route::get('/quan-ly',function () {
-		return view('auth.content');
+		return view('admin.content');
 	});
 });
 

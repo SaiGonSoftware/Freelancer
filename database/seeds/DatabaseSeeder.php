@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder {
 
 class user extends Seeder {
 	public function run() {
-		DB::table('manage')->insert([
-			'id' => 1, 'username' => 'admin', 'password' => Hash::make(123456), 'level' => 1,
+		DB::table('users')->insert([
+			'id' => 4, 'username' => 'admin', 'password' => Hash::make(123456), 'level' => 1,'active'=>1
 		]);
 	}
 

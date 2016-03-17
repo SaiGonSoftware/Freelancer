@@ -33,6 +33,7 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
     protected $redirectPath = '/';
+
     /**
      * Create a new authentication controller instance.
      *
@@ -100,7 +101,8 @@ class AuthController extends Controller
                 'avatar' => $facebookUser->avatar,
                 'remember_token' => $facebookUser->token,
                 'level' => 2,
-                'total_post' => 0
+                'total_post' => 0,
+                'active'=>1
             ]
         );
     }
@@ -175,19 +177,19 @@ class AuthController extends Controller
 
     public function adminLogin()
     {
-        $username=Input::get('username');
-        $password=Input::get('password');
-        $captcha=Input::get('captcha');
-        $rules=['captcha'=>'required|captcha'];
-        $validators=Validator::make(Input::all(),$rules);
-        if($validators->fails()){
-            return response(['mess'=>'Captcha vừa nhập không đúng'],500);
-        }
-        else{
+        $username = Input::get('username');
+        $password = Input::get('password');
+        $captcha = Input::get('captcha');
+        $rules = ['captcha' => 'required|captcha'];
+        $validators = Validator::make(Input::all(), $rules);
+        if ($validators->fails()) {
+            return response(['mess' => 'Captcha vừa nhập không đúng'], 500);
+        } else {
             $auth = array(
                 'username' => $username,
                 'password' => $password,
-                'level'=>1
+                'level' => 1,
+                'active'=>1
             );
             if ($this->auth->attempt($auth)) {
                 return "ok";

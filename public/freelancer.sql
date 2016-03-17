@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2016 at 03:01 PM
+-- Generation Time: Mar 17, 2016 at 05:33 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -415,9 +415,9 @@ INSERT INTO `users` (`id`, `social_id`, `username`, `full_name`, `avatar`, `emai
 (1, '', 'phucngo', 'Ngô Hùng Phúc', 'images/phucngo/156979699d5ad8.png', 'ngohungphuc1237695@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'UTwPUz6v3tRbRd2kksExHJa3nrM2o0wl0JFU3oP4BmNNXSANfQ7oqmH7DRRr', 1, 1, 0),
 (2, '', 'hoangphucvu', 'Hoàng Phúc Vũ', 'images/hpv/125695d660e429f.jpg', 'ngohungphuc9123125@gmail.com', '$2y$10$.xfmLvsDBGM.c10WdYWP7uzEY/yvLRNrfjGs7lteR54WR2tX/YklK', 'cRIczqYYY2SHAjnj43g4HVjlKwGDooBLohae2isI', 2, 1, 0),
 (3, NULL, 'phucphuc', 'Nguyen van a', 'images/phucphuc/356cad7568e12b.jpg', 'traitimnguyen113@yahoo.com', '$2y$10$PxPbQgyUkBmzzRcxfml7PeSDKHo9DdK7SHe88axEHYr5D14aaOtX6', 'XVmzmtLvQPDVQzTwxXCYGu33yhD5gotQYTpIwjjQ', 2, 1, 0),
+(4, NULL, 'admin', NULL, NULL, NULL, '$2y$10$g9kimPgChW74fi9/uR9kz.rA9gCEDi.aUksEm5A0dnmwf8RbllxrW', '', 1, 1, 0),
 (14, NULL, 'phuchung95', 'Phúc 95', 'images/phuchung95/1456af6e236daae.png', 'ngohungphuc7695@gmail.com', '$2y$10$wEtMyQEOWhi2wu1x90x9JuHw7.NYwu.K.doUTa8CHjp3696ADt/Gq', 'yjSG1I0Gz6JDsP137GR23pi1UVKgstzi2QMP4Hbc2GRjDlpK9GtcMHYqrWEN', 2, 1, 0),
-(15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/1556af9aae44d83.png', NULL, '', 'wkZstgvkL8fqXV4aw9DUZk6mMhP280UBD4ZNkSraCvJlS3AH2C6vAySnirP3', 2, 0, 0),
-(17, NULL, 'test1', 'test1', NULL, 'ngohungphuc71695@gmail.com', '$2y$10$p6ocLD.8BJEmQ1RbZfVMYOMyYXw4JWslSrbIBcSzY31MGsAjnPaNm', 'd6TInfqM2pqyQg4citNUXLLuI6C6RtSjW4v0pJPX', 1, 0, 0);
+(15, '1718310388387487', 'phuc-ngo', 'Phúc Ngô', 'images/phuc-ngo/1556af9aae44d83.png', NULL, '', 'wkZstgvkL8fqXV4aw9DUZk6mMhP280UBD4ZNkSraCvJlS3AH2C6vAySnirP3', 2, 0, 0);
 
 --
 -- Indexes for dumped tables

@@ -1,5 +1,6 @@
-@extends('auth.layout')
+@extends('admin.layout')
 @section('content')
+
     <div class="container" id="form_signin">
         <div class="row">
             <form class="form-signin mg-btm" action="/adminLogin" method="POST">
@@ -25,23 +26,25 @@
 
                 </div>
                 <div class="main">
-                    <?php $username=isset($_POST['username'])?$_POST['username'] :'';
-                    $password=isset($_POST['password'])?$_POST['password'] :'';?>
+                    <?php $username = isset($_POST['username']) ? $_POST['username'] : '';
+                    $password = isset($_POST['password']) ? $_POST['password'] : '';?>
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span><input type="text"
                                                                                             class="form-control"
                                                                                             placeholder="Tài khoản"
                                                                                             id="username"
-                                                                                            name="username" value="<?=$username?>">
+                                                                                            name="username"
+                                                                                            value="<?=$username?>">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><input type="password"
                                                                                                 class="form-control"
                                                                                                 placeholder="Mật khẩu"
                                                                                                 id="password"
-                                                                                                name="password" value="<?=$password?>">
+                                                                                                name="password"
+                                                                                                value="<?=$password?>">
                     <span class="glyphicon glyphicon-barcode" aria-hidden="true"></span><input type="text"
                                                                                                class="form-control"
                                                                                                placeholder="Captcha"
                                                                                                id="captcha"
-                                                                                               name="captcha" >
+                                                                                               name="captcha">
 
                 </div>
                 <div class="login-footer">
