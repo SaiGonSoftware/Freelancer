@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2016 at 05:33 PM
+-- Generation Time: Mar 20, 2016 at 06:00 PM
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -390,6 +390,27 @@ INSERT INTO `tag` (`id`, `name`, `slug`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tracker`
+--
+
+CREATE TABLE `tracker` (
+  `id` int(11) NOT NULL,
+  `visit_date` date NOT NULL,
+  `visit_time` time NOT NULL,
+  `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `hits` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tracker`
+--
+
+INSERT INTO `tracker` (`id`, `visit_date`, `visit_time`, `ip`, `hits`) VALUES
+(1, '2016-03-20', '16:33:15', '::1', 3);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -478,6 +499,12 @@ ALTER TABLE `tag`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tracker`
+--
+ALTER TABLE `tracker`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -530,10 +557,15 @@ ALTER TABLE `jobs_post`
 ALTER TABLE `tag`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 --
+-- AUTO_INCREMENT for table `tracker`
+--
+ALTER TABLE `tracker`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
