@@ -19,7 +19,7 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/admin/admin.js"></script>
 <script src="/admin/chart.min.js"></script>
-<script src="/admin/chart-data.js"></script>
+
 
 
 </body>

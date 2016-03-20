@@ -12,16 +12,16 @@ class DatabaseSeeder extends Seeder {
 	public function run() {
 		//Model::unguard();
 
-		$this->call('user');
+		//$this->call('user');
 	}
 
 }
 
-class user extends Seeder {
+/*class user extends Seeder {
 	public function run() {
 		DB::table('users')->insert([
 			'id' => 4, 'username' => 'admin', 'password' => Hash::make(123456), 'level' => 1,'active'=>1
 		]);
 	}
 
-}
+}*/
