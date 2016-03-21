@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Tracker;
 use Auth;
+use Illuminate\Support\Facades\DB;
 use Input;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+
 class AdminController extends Controller
 {
     /**
@@ -21,13 +23,13 @@ class AdminController extends Controller
     {
         return view('admin.login');
     }
-    
+
     /**
      * @return index view for admin
      */
     public function index()
     {
-        if(Auth::user()->level!=1){
+        if (Auth::user()->level != 1) {
             return redirect()->action('AdminController@loginPage');
         }
         return view('admin.content');
@@ -38,14 +40,13 @@ class AdminController extends Controller
      */
     public function getPageHitData()
     {
-        $chart_data=Tracker::groupBy('visit_date')->sum('hits');
-        $date=Tracker::groupBy('visit_date')->get();
-        foreach ($date as $date_hit){
-            $date_hit['visit_date'];
-        }
+        $results = DB::table('tracker')
+            ->select('visit_date', DB::raw('count(id) as count_hits'))
+            ->groupBy('visit_date')
+            ->lists('count_hits', 'visit_date');
         return response()->json(array(
-            'chart_data'=>$chart_data,
-            'date'=>$date_hit['visit_date']
+            'keys' => array_keys($results),
+            'values' => array_values($results)
         ));
     }
 }

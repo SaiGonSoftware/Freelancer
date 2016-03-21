@@ -69,7 +69,7 @@ window.onload=function(){
   })
   .success(function(data) {
       var data = {
-          labels: [data.date],
+          labels: data.keys,
           datasets: [
               {
                   label: "Truy cập trong ngày",
@@ -77,7 +77,7 @@ window.onload=function(){
                   strokeColor : "rgba(151,187,205,0.8)",
                   highlightFill : "rgba(151,187,205,0.75)",
                   highlightStroke : "rgba(151,187,205,1)",
-                  data: [data.chart_data]
+                  data: data.values
               }
           ]
       };
