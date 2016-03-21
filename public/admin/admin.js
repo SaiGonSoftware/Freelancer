@@ -61,3 +61,32 @@ $("#loginAdmin").click(function () {
         });
 
 });
+
+window.onload=function(){
+  var pageHitChart=document.getElementById("pagehitChart").getContext("2d");
+  $.ajax({
+      url: '/admin/getPageHitData'
+  })
+  .success(function(data) {
+      var data = {
+          labels: [data.date],
+          datasets: [
+              {
+                  label: "Truy cập trong ngày",
+                  fillColor : "rgba(151,187,205,0.5)",
+                  strokeColor : "rgba(151,187,205,0.8)",
+                  highlightFill : "rgba(151,187,205,0.75)",
+                  highlightStroke : "rgba(151,187,205,1)",
+                  data: [data.chart_data]
+              }
+          ]
+      };
+      window.myBar = new Chart(pageHitChart).Bar(data, {
+          responsive : true
+      });
+  })
+  .fail(function() {
+     alert("Có lỗi xảy ra vui lòng thử lại");
+  });
+  
+}

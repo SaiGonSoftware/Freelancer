@@ -79,7 +79,16 @@
                         </div>
                     </div>
                 </div><!--/.row-->
-
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Thống Kê Truy Cập </div>
+                        <div class="panel-body">
+                            <div class="canvas-wrapper">
+                                <canvas class="main-chart" id="pagehitChart" height="354" width="1064" style="width: 1064px; height: 354px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>    <!--/.main-->
         </div>
 @stop

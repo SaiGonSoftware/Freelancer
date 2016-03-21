@@ -16,7 +16,7 @@ use Auth;
 use Socialite;
 use App\User;
 use App\TagContent;
-
+use App\Tracker;
 class AuthController extends Controller
 {
 
@@ -74,7 +74,7 @@ class AuthController extends Controller
         $authUser = $this->findOrCreateUser($user);
 
         Auth::login($authUser, true);
-
+        Tracker::hit();
         return redirect()->intended('/');
     }
 
@@ -119,6 +119,7 @@ class AuthController extends Controller
             'active' => 1
         );
         if ($this->auth->attempt($auth)) {
+            Tracker::hit();
             return "ok";
         } else {
             return "fail";

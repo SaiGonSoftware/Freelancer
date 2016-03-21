@@ -11,7 +11,7 @@ class CheckJobDate extends Command
      *
      * @var string
      */
-    protected $signature = 'mess:block';
+    protected $signature = 'job:block';
 
     /**
      * The console command description.

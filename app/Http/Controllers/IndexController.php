@@ -2,10 +2,8 @@
 namespace App\Http\Controllers;
 use App\Job;
 use App\Recruit;
-use App\Tracker;
 use App\User;
 use SEO;
-use Request;
 class IndexController extends Controller
 {
 
@@ -27,7 +25,6 @@ class IndexController extends Controller
      */
     public function Home()
     {
-        Tracker::hit();
         SEO::setTitle('Cộng đồng freelancer Việt-Trang chủ');
         SEO::setDescription('Cộng đồng freelancer Việt-Nơi khẳng định khả năng của bạn');
         SEO::opengraph()->setUrl('http://localhost:8000');

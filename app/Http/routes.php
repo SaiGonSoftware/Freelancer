@@ -44,12 +44,9 @@ Route::get('/tin-nhan/{username}', 'ChatController@index');
 Route::get('/getMessage','ChatController@getMessages');
 
 Route::group(['prefix'=>'/admin'],function(){
-	Route::get('/dang-nhap',function () {
-		return view('admin.login');
-	});
-	Route::get('/quan-ly',function () {
-		return view('admin.content');
-	});
+	Route::get('/dang-nhap','AdminController@loginPage');
+	Route::get('/quan-ly','AdminController@index');
+	Route::get('/getPageHitData','AdminController@getPageHitData');
 });
 
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
