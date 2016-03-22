@@ -14,24 +14,17 @@ class Tracker extends Model
     {
         $now = date('Y-m-d');
         date_default_timezone_set('Asia/Ho_Chi_Minh');
-        if (self::where('visit_date', '<', $now)) {
-            $tracker = new Tracker;
-            $tracker->hits = 1;
-            $tracker->username = Auth::user()->username;
-            $tracker->visit_date = date('Y-m-d');
-            $tracker->visit_time = date('H:i:s');
-            return $tracker->save();
+        $record=self::whereRaw('username =? and visit_date =? ',[ Auth::user()->username,$now] )->first();
+        if (empty($record)) {
+            $record = new Tracker;
+            $record->hits = 1;
+            $record->username = Auth::user()->username;
+            $record->visit_date = date('Y-m-d');
+            $record->visit_time = date('H:i:s');
+            return $record->save();
         } else {
-            $tracker = self::where('username', '=', Auth::user()->username)->first();
-            if (!$tracker) {
-                $tracker = new Tracker;
-                $tracker->hits = 0;
-            }
-            $tracker->username = Auth::user()->username;
-            $tracker->visit_date = date('Y-m-d');
-            $tracker->visit_time = date('H:i:s');
-            $tracker->hits++;
-            return $tracker->save();
+            $record->hits++;
+            return $record->save();
         }
     }
 }
