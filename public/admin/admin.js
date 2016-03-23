@@ -32,7 +32,7 @@ $("#loginAdmin").click(function () {
     }
     loader("on");
     $.ajax({
-            url: '/adminLogin',
+            url: '/admin/adminLogin',
             type: 'POST',
             data: {
                 username: username,

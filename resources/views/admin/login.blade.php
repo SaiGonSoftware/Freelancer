@@ -3,7 +3,7 @@
 
     <div class="container" id="form_signin">
         <div class="row">
-            <form class="form-signin mg-btm" action="/adminLogin" method="POST">
+            <form class="form-signin mg-btm" method="POST">
                 <h3 class="heading-desc">
                     <button type="button" class="close pull-right" aria-hidden="true">×</button>
                     Đăng nhập quản trị

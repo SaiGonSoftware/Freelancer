@@ -48,6 +48,7 @@ Route::group(['prefix'=>'/admin'],function(){
 	Route::get('/quan-ly','AdminController@index');
 	Route::get('/getPageHitData','AdminController@getPageHitData');
 	Route::get('/logout','AdminController@logOut');
+	Route::post('/adminLogin',['as' => 'adminLoginAttempt', 'uses' => 'AdminController@adminLogin']);
 });
 
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
@@ -68,7 +69,7 @@ Route::post('/findPassword', ['as' => 'findPass', 'uses' => 'Auth\PasswordContro
 Route::post('/password/new', ['as' => 'newLostPass', 'uses' => 'Auth\PasswordController@newLostPass']);
 
 //for admin
-Route::post('/adminLogin',['as' => 'adminLoginAttempt', 'uses' => 'Auth\AuthController@adminLogin']);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

@@ -16,6 +16,7 @@ class AdminController extends Controller
         $this->auth = $auth;
         $this->middleware('guest', ['except' => 'getLogout']);
     }
+
     /**
      * Show login page
      *
@@ -23,7 +24,7 @@ class AdminController extends Controller
      */
     public function loginPage()
     {
-        if(Auth::check()){
+        if (Auth::check()) {
             if (Auth::user()->level == 1) {
                 return redirect()->action('AdminController@index');
             }
@@ -32,14 +33,40 @@ class AdminController extends Controller
     }
 
     /**
+     *For admin to login
+     * @return string
+     */
+    public function adminLogin()
+    {
+        $username = Input::get('username');
+        $password = Input::get('password');
+        $captcha = Input::get('captcha');
+        $rules = ['captcha' => 'required|captcha'];
+        $validators = \Validator::make(Input::all(), $rules);
+        if ($validators->fails()) {
+            return response(['mess' => 'Captcha vừa nhập không đúng'], 500);
+        } else {
+            $auth = array(
+                'username' => $username,
+                'password' => $password,
+                'level' => 1,
+                'active' => 1
+            );
+            if ($this->auth->attempt($auth)) {
+                return "ok";
+            } else {
+                return "fail";
+            }
+
+        }
+    }
+
+    /**
      * @return index view for admin
      */
     public function index()
     {
-        if(Auth::guest()){
-            return redirect()->action('AdminController@loginPage');
-        }
-        if (Auth::user()->level != 1) {
+        if (Auth::guest() || Auth::user()->level != 1) {
             return redirect()->action('AdminController@loginPage');
         }
         return view('admin.content');
@@ -63,7 +90,8 @@ class AdminController extends Controller
     /**
      * Logout for admin
      */
-    public function logOut(){
+    public function logOut()
+    {
         $this->auth->logout();
         return redirect()->action('AdminController@loginPage');
     }

@@ -174,33 +174,7 @@ class AuthController extends Controller
         User::where('remember_token', '=', $token)->update(['active' => 1]);
         return redirect()->intended('/');
     }
-
-
-    public function adminLogin()
-    {
-        $username = Input::get('username');
-        $password = Input::get('password');
-        $captcha = Input::get('captcha');
-        $rules = ['captcha' => 'required|captcha'];
-        $validators = Validator::make(Input::all(), $rules);
-        if ($validators->fails()) {
-            return response(['mess' => 'Captcha vừa nhập không đúng'], 500);
-        } else {
-            $auth = array(
-                'username' => $username,
-                'password' => $password,
-                'level' => 1,
-                'active'=>1
-            );
-            if ($this->auth->attempt($auth)) {
-                return "ok";
-            } else {
-                return "fail";
-            }
-
-        }
-    }
-
+    
 
 }	
 
