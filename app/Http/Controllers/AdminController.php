@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Tracker;
 use Auth;
-use Illuminate\Support\Facades\DB;
 use Input;
 use App\Http\Requests;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
 class AdminController extends Controller
 {
+    public function __construct(Guard $auth)
+    {
+        $this->auth = $auth;
+        $this->middleware('guest', ['except' => 'getLogout']);
+    }
     /**
      * Show login page
      *
@@ -21,6 +23,11 @@ class AdminController extends Controller
      */
     public function loginPage()
     {
+        if(Auth::check()){
+            if (Auth::user()->level == 1) {
+                return redirect()->action('AdminController@index');
+            }
+        }
         return view('admin.login');
     }
 
@@ -29,6 +36,9 @@ class AdminController extends Controller
      */
     public function index()
     {
+        if(Auth::guest()){
+            return redirect()->action('AdminController@loginPage');
+        }
         if (Auth::user()->level != 1) {
             return redirect()->action('AdminController@loginPage');
         }
@@ -48,5 +58,13 @@ class AdminController extends Controller
             'keys' => array_keys($results),
             'values' => array_values($results)
         ));
+    }
+
+    /**
+     * Logout for admin
+     */
+    public function logOut(){
+        $this->auth->logout();
+        return redirect()->action('AdminController@loginPage');
     }
 }

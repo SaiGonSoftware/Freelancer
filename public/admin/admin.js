@@ -51,11 +51,7 @@ $("#loginAdmin").click(function () {
             if (data == 'fail') {
                 $("#status_message").text('Vui lòng kiểm tra lại username hoặc password');
                 $("#status").show();
-                //$(".captcha-box").load();
-                //window.location.reload();
             } else {
-                $("#status_message").text('Đăng nhập thành công vui lòng đợi .....');
-                $("#status").show();
                 redirect('/admin/quan-ly');
             }
         });

@@ -8,7 +8,7 @@
                     <button type="button" class="close pull-right" aria-hidden="true">×</button>
                     Đăng nhập quản trị
                     <img style="width:20%;display:none" id="loading" src="/images/loading.gif">
-                    <div class="alert alert-danger" style="display: none" id="status">
+                    <div class="alert alert-danger"style="display: none;margin-top:5%" id="status">
 
                         <div id="status_message"></div>
 
@@ -26,25 +26,23 @@
 
                 </div>
                 <div class="main">
-                    <?php $username = isset($_POST['username']) ? $_POST['username'] : '';
-                    $password = isset($_POST['password']) ? $_POST['password'] : '';?>
                     <span class="glyphicon glyphicon-user" aria-hidden="true"></span><input type="text"
                                                                                             class="form-control"
                                                                                             placeholder="Tài khoản"
                                                                                             id="username"
                                                                                             name="username"
-                                                                                            value="<?=$username?>">
+                                                                                            autocomplete="off">
                     <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span><input type="password"
                                                                                                 class="form-control"
                                                                                                 placeholder="Mật khẩu"
                                                                                                 id="password"
                                                                                                 name="password"
-                                                                                                value="<?=$password?>">
+                                                                                                autocomplete="off">
                     <span class="glyphicon glyphicon-barcode" aria-hidden="true"></span><input type="text"
                                                                                                class="form-control"
                                                                                                placeholder="Captcha"
                                                                                                id="captcha"
-                                                                                               name="captcha">
+                                                                                               name="captcha" autocomplete="off">
 
                 </div>
                 <div class="login-footer">

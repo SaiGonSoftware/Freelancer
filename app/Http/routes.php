@@ -47,6 +47,7 @@ Route::group(['prefix'=>'/admin'],function(){
 	Route::get('/dang-nhap','AdminController@loginPage');
 	Route::get('/quan-ly','AdminController@index');
 	Route::get('/getPageHitData','AdminController@getPageHitData');
+	Route::get('/logout','AdminController@logOut');
 });
 
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);

@@ -14,7 +14,7 @@
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Profile</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span> Settings</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
+                        <li><a href="/admin/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Logout</a></li>
                     </ul>
                 </li>
             </ul>
