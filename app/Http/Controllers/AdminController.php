@@ -51,7 +51,7 @@ class AdminController extends Controller
     public function getPageHitData()
     {
         $results = DB::table('tracker')
-            ->select('visit_date', DB::raw('count(id) as count_hits'))
+            ->select('visit_date', DB::raw('sum(hits) as count_hits'))
             ->groupBy('visit_date')
             ->lists('count_hits', 'visit_date');
         return response()->json(array(
