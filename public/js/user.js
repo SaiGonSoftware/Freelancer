@@ -991,7 +991,32 @@ $(".conversation").click(function () {
         });
 });
 
+//allowance range slider
+$("#allowance_filter").slider({
+    min: 100000,
+    max: 10000000,
+    value: [100000, 10000000],
+    step: 100000,
+    focus: true
+});
+//change event send value to ajax to query
+$("#allowance_filter").on("slide", function (slideEvt) {
+    var rangeValue=slideEvt.value;
+    $.ajax({
+        url:'/get_job_by_filter',
+        data: {rangeValue: rangeValue}
+    })
+    .error(function() {
+       alert("Có lỗi xảy ra vui lòng thử lại");
+    })
+    .success(function(data) {
+        $("#jobs_content").html(data);
+    })
+    .always(function() {
+        console.log("complete");
+    });
 
+});
 
 
 

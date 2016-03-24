@@ -2,8 +2,8 @@
 @include('admin.menu')
 
 @section('content')
-    <div class="tab-content">
-            <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="tab-content" >
+            <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" id="content_div">
                 <div class="row">
                     <ol class="breadcrumb">
                         <li><span class="glyphicon glyphicon-home" aria-hidden="true"></span></li>

@@ -41,16 +41,19 @@ Route::get('/payment', ['as' => 'PaymentPaypal', 'uses' => 'PaymentController@st
 Route::get('/delJobUserPost', ['as' => 'DelJobUserPost', 'uses' => 'JobController@deleteJob']);
 Route::get('/delJobRecruit', ['as' => 'DelJobRecruit', 'uses' => 'JobController@deleteRecruitJob']);
 Route::get('/tin-nhan/{username}', 'ChatController@index');
-Route::get('/getMessage','ChatController@getMessages');
+Route::get('/getMessage', 'ChatController@getMessages');
+Route::get('/get_job_by_filter', 'JobController@getJobByFilter');
 
-Route::group(['prefix'=>'/admin'],function(){
-	Route::get('/dang-nhap','AdminController@loginPage');
-	Route::get('/quan-ly','AdminController@index');
-	Route::get('/getPageHitData','AdminController@getPageHitData');
-	Route::get('/logout','AdminController@logOut');
-	Route::post('/adminLogin',['as' => 'adminLoginAttempt', 'uses' => 'AdminController@adminLogin']);
+
+Route::get('/admin/dang-nhap', 'AdminController@loginPage');
+Route::group(['prefix' => '/admin', 'middleware' => 'App\Http\Middleware\AdminMiddleware'], function () {
+
+    Route::get('/quan-ly', 'AdminController@index');
+    Route::get('/getPageHitData', 'AdminController@getPageHitData');
+    Route::get('/logout', 'AdminController@logOut');
+    Route::get('/quan-ly/user', 'AdminController@getUserView');
 });
-
+Route::post('/admin/adminLogin', ['as' => 'adminLoginAttempt', 'uses' => 'AdminController@adminLogin']);
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
 Route::post('/message/new', ['as' => 'SaveMessage', 'uses' => 'ChatController@insertMessage']);
 Route::post('/job/postNewRecruit', ['as' => 'RecruitJob', 'uses' => 'JobController@recruitJob']);
@@ -71,12 +74,12 @@ Route::post('/password/new', ['as' => 'newLostPass', 'uses' => 'Auth\PasswordCon
 //for admin
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
 ]);
 
 Route::any('/{page?}', function () {
-	return View::make('errors.404');
+    return View::make('errors.404');
 })->where('page', '.*');
 
 

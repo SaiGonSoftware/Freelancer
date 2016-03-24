@@ -306,6 +306,17 @@ class JobController extends Controller
             ->paginate(2);
         return view('ui.findjob.tagajax', $data);
     }
+
+    /**
+     * get job base on allowance filter
+     * @param Request $request
+     * @return view
+     */
+    public function getJobByFilter(Request $request){
+        $range=$request->rangeValue;
+        $job_pagi=Job::whereRaw('allowance_min >= ? and allowance_max <= ?',[array_values($range)[0],array_values($range)[1]])->get();
+        return view('ui.findjob.filter',compact('job_pagi'));
+    }
 }
 
 

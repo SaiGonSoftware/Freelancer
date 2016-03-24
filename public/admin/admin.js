@@ -86,3 +86,32 @@ window.onload=function(){
   });
   
 }
+$(function(){
+    $("#jsGrid").jsGrid({
+        height: "70%",
+        width: "100%",
+        sorting: true,
+        paging: true,
+        fields: [
+            { name: "Account", width: 150, align: "center" },
+            { name: "Name", type: "text" },
+            { name: "RegisterDate", type: "myDateField", width: 100, align: "center" },
+            { type: "control", editButton: false, modeSwitchButton: false }
+        ],
+        data: db.users
+    });
+})
+
+$("#user").click(function(){
+    $.ajax({
+            url: '/admin/quan-ly/user',
+            type:"GET"
+        })
+        .success(function(data) {
+            $("#content_div").html(data);
+        })
+        .fail(function() {
+            alert("Có lỗi xảy ra vui lòng thử lại");
+        });
+});
+

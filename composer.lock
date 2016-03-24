@@ -851,12 +851,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kartik-v/bootstrap-star-rating.git",
-                "reference": "9a9c2befce0c76db975a6a8d28073efa7b4922b3"
+                "reference": "2443b49d33139a59e6e40aa60872bfb4fd76fa59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/9a9c2befce0c76db975a6a8d28073efa7b4922b3",
-                "reference": "9a9c2befce0c76db975a6a8d28073efa7b4922b3",
+                "url": "https://api.github.com/repos/kartik-v/bootstrap-star-rating/zipball/2443b49d33139a59e6e40aa60872bfb4fd76fa59",
+                "reference": "2443b49d33139a59e6e40aa60872bfb4fd76fa59",
                 "shasum": ""
             },
             "type": "library",
@@ -887,7 +887,7 @@
                 "star",
                 "svg"
             ],
-            "time": "2016-03-01 18:20:14"
+            "time": "2016-03-22 14:58:18"
         },
         {
             "name": "laracasts/flash",
@@ -2807,16 +2807,16 @@
         },
         {
             "name": "phpspec/phpspec",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/phpspec.git",
-                "reference": "5528ce1e93a1efa090c9404aba3395c329b4e6ed"
+                "reference": "385ecb015e97c13818074f1517928b24d4a26067"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/5528ce1e93a1efa090c9404aba3395c329b4e6ed",
-                "reference": "5528ce1e93a1efa090c9404aba3395c329b4e6ed",
+                "url": "https://api.github.com/repos/phpspec/phpspec/zipball/385ecb015e97c13818074f1517928b24d4a26067",
+                "reference": "385ecb015e97c13818074f1517928b24d4a26067",
                 "shasum": ""
             },
             "require": {
@@ -2881,7 +2881,7 @@
                 "testing",
                 "tests"
             ],
-            "time": "2016-01-01 10:17:54"
+            "time": "2016-03-20 20:34:32"
         },
         {
             "name": "phpspec/prophecy",

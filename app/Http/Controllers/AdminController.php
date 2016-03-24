@@ -88,6 +88,13 @@ class AdminController extends Controller
     }
 
     /**
+     * @return user managed view
+     */
+    public function getUserView(){
+        return view('admin.user');
+    }
+
+    /**
      * Logout for admin
      */
     public function logOut()

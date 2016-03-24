@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/admin/login.css">
     <link rel="stylesheet" href="/admin/admin.css">
+    <link rel="stylesheet" href="/admin/jsgrid.min.css">
+    <link rel="stylesheet" href="/admin/jsgrid-theme.min.css">
 
 </head>
 <body>
-
-@yield('content')
-
-
-<script src="/js/jquery.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/admin/admin.js"></script>
-<script src="/admin/chart.min.js"></script>
-
-
+    @yield('content')
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/admin/admin.js"></script>
+    <script src="/admin/chart.min.js"></script>
+    <script src="/admin/db.js"></script>
+    <script src="/admin/jsgrid.min.js"></script>
 
 </body>
 </html>

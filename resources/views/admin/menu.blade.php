@@ -29,10 +29,10 @@
         </div>
     </form>
     <ul class="nav menu">
-        <li class="active"><a href="#dashboard"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Dashboard</a></li>
-        <li><a href="#user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Quản lý user</a></li>
-        <li><a href="#post"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Duyệt bài viết</a></li>
-        <li><a href="#task"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Công việc cần làm</a></li>
+        <li class="active"><a href="#dashboard" id="dashboard"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Dashboard</a></li>
+        <li><a href="#" id="user"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Quản lý user</a></li>
+        <li><a href="#post" id="post"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Duyệt bài viết</a></li>
+        <li><a href="#task" id="task"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Công việc cần làm</a></li>
         <li role="presentation" class="divider"></li>
     </ul>
 

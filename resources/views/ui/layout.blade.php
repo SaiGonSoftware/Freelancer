@@ -11,6 +11,7 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/valid/css/formValidation.min.css" rel="stylesheet">
     <link href="/css/magicsuggest-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap-slider.min.css">
 </head>
 
 <body id="home">
@@ -25,6 +26,7 @@
 @include('ui.footer')
 
 <script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-slider.min.js"></script>
 <script src="/js/modernizr.custom.79639.js"></script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/retina.min.js"></script>
@@ -47,6 +49,7 @@
 <script src="/js/jquery.form.js"></script>
 <script src="/js/fileinput.min.js"></script>
 <script src="/js/magicsuggest-min.js"></script>
+
 </body>
 
 </html>

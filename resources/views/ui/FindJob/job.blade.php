@@ -17,7 +17,7 @@
 			<div class="col-sm-8" id="ajax_pagi">
 				<h2>Công việc hiện có</h2>
 
-				<div class="jobs">
+				<div class="jobs" id="jobs_content">
 
 					<!-- Job offer -->
 					@foreach($job_pagi as $jobPost)
@@ -97,9 +97,13 @@
 						<div class="row">
 							<div class="row">
 								<div class="col-xs-12">
-									<hr>
+									<h5>Kinh phí cho dự án</h5>
+									<input id="allowance_filter" type="text" />
+									<br>
+									<span id="value_test"></span>
 								</div>
 							</div>
+							<br>
 							<div class="row">
 								<div class="col-xs-12">
 									<a class="btn btn-primary">Reset All Filters</a>
