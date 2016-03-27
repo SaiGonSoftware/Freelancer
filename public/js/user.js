@@ -1000,7 +1000,7 @@ $("#allowance_filter").slider({
     focus: true
 });
 //change event send value to ajax to query
-$("#allowance_filter").on("slide", function (slideEvt) {
+$("#allowance_filter").on("slideStop", function (slideEvt) {
     var rangeValue=slideEvt.value;
     $.ajax({
         url:'/get_job_by_filter',
@@ -1011,6 +1011,7 @@ $("#allowance_filter").on("slide", function (slideEvt) {
     })
     .success(function(data) {
         $("#jobs_content").html(data);
+        $(".paging_job").hide();
     })
     .always(function() {
         console.log("complete");

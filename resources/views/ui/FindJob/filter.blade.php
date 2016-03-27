@@ -1,8 +1,8 @@
-<!-- Job offer -->
+
 @foreach($job_pagi as $jobPost)
     <a href="/chi-tiet-cong-viec/{{$jobPost -> slug}}/{{date("d-m-Y", strtotime($jobPost -> post_at))}}">
         <div class="featured"></div>
-        <img src="{{$jobPost->user->avatar}}" alt="{{$jobPost->title}}" class="img-circle" />
+        <img src="{{$jobPost->user->avatar}}" alt="{{$jobPost->title}}" class="img-circle"/>
         <div class="title">
             <h5 style="width: 150px">
                 {{$jobPost -> title}}
@@ -21,8 +21,6 @@
             <span class="sallary">Chi Phí:<br>{{number_format ($jobPost -> allowance_min)."d"."-".number_format ($jobPost -> allowance_max)."d"}}</span>
         </div>
     </a>
-    @endforeach
+@endforeach
 
-
-    </div>
 
