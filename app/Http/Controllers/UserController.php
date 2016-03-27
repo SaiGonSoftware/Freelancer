@@ -12,6 +12,7 @@ use App\Job;
 use App\User;
 use App\Recruit;
 use App\Comment;
+use App\Skill;
 use App\JobApproved;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -169,8 +170,17 @@ class UserController extends Controller
         $cv->skill = Input::get('skill');
         $cv->user_id = Auth::user()->id;
         $cv->save();
+        $skill_name=explode(',', Input::get('skill_name'));
 
-        return response()->json(array(
+        foreach ($skill_name as $skill_insert){
+            $skill = new Skill();
+            $skill->cv_id = $cv->id;
+            $skill->skill_name = $skill_insert;
+            $skill->save();
+        }
+
+
+       return response()->json(array(
             'mess' => 'Lưu thành công'
         ));
     }

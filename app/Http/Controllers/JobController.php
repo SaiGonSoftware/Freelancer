@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use DB;
 use SEO;
 use Auth;
 use Image;
@@ -79,6 +80,12 @@ class JobController extends Controller
         $data['job_pagi'] = Job::orderBy('post_at', 'desc')->paginate(4);
         $data['tag'] = Tags::all();
         $data['recruit_job'] = Recruit::where('id', '>', 0)->orderBy('post_at', 'desc')->take(1)->first();
+        $data['job_skill']=DB::table('skill')
+            ->where('user_id','=',Auth::user()->id)
+            ->join('content_tag','job_id','=','jobs','id')
+            ->where('content_tag.tag_content','like','%skill.skillname%')->get();
+        var_dump($data['job_skill']);
+        die;
         return view('ui.findjob.job', $data);
     }
 
@@ -312,11 +319,13 @@ class JobController extends Controller
      * @param Request $request
      * @return view
      */
-    public function getJobByFilter(Request $request){
-        $range=$request->rangeValue;
-        $job_pagi=Job::whereRaw('allowance_min >= ? and allowance_max <= ?',[array_values($range)[0],array_values($range)[1]])->get();
-        return view('ui.findjob.filter',compact('job_pagi'));
+    public function getJobByFilter(Request $request)
+    {
+        $range = $request->rangeValue;
+        $job_pagi = Job::whereRaw('allowance_min >= ? and allowance_max <= ?', [array_values($range)[0], array_values($range)[1]])->get();
+        return view('ui.findjob.filter', compact('job_pagi'));
     }
+
 }
 
 
