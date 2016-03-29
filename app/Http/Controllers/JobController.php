@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Skill;
 use DB;
 use SEO;
 use Auth;
@@ -80,12 +81,16 @@ class JobController extends Controller
         $data['job_pagi'] = Job::orderBy('post_at', 'desc')->paginate(4);
         $data['tag'] = Tags::all();
         $data['recruit_job'] = Recruit::where('id', '>', 0)->orderBy('post_at', 'desc')->take(1)->first();
-        $data['job_skill']=DB::table('skill')
-            ->where('user_id','=',Auth::user()->id)
-            ->join('content_tag','job_id','=','jobs','id')
-            ->where('content_tag.tag_content','like','%skill.skillname%')->get();
-        var_dump($data['job_skill']);
-        die;
+        if (Auth::check()) {
+            $job_skill = Skill::where('user_id', '=', Auth::user()->id)
+                ->take(1)->orderByRaw('RAND()')->get();
+            foreach ($job_skill as $item) {
+                $data['job_skill'] = TagContent::
+                    join('jobs', 'content_tag.job_id', '=', 'jobs.id')
+                    ->join('users', 'jobs.user_id', '=', 'users.id')
+                    ->where('content_tag.tag_content', 'like', "%$item->skill_name%")->orderBy('post_at', 'desc')->get();
+            }
+        }
         return view('ui.findjob.job', $data);
     }
 

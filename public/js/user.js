@@ -740,7 +740,9 @@ $(".deleteCV").click(function (e) {
             },
             success: function (data) {
                 alert(data.mess);
+
             }
+
         })
         $(this).parent().parent().remove();
     }

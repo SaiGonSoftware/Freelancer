@@ -14,6 +14,42 @@
     <section id="jobs">
         <div class="container">
             <div class="row">
+                @if(Auth::check())
+                <div class="col-sm-8">
+                    <h2>Công việc theo khả năng</h2>
+                    <div class="jobs">
+                        @foreach($job_skill as $job_skills)
+                            <a href="/chi-tiet-cong-viec/{{$job_skills -> slug}}/{{date("d-m-Y", strtotime($job_skills -> post_at))}}"
+                               style="margin-bottom:5%">
+                                <div class="featured"></div>
+                                <img src="{{$job_skills->avatar}}" alt="{{$job_skills->title}}"
+                                     class="img-circle"/>
+                                <div class="title">
+                                    <h5 style="width: 150px">
+                                        {{$job_skills -> title}}
+                                    </h5>
+                                    <p>{{date("d-m-Y", strtotime($job_skills -> post_at))}}</p>
+                                    <p>Đăng bởi: {{$job_skills->full_name}}
+                                    </p>
+
+                                </div>
+                                <div class="data">
+                                    <span class="city"><i
+                                                class="fa fa-map-marker"></i>{{$job_skills -> location}}</span>
+							<span class="type full-time">
+								<i class="fa fa-clock-o"></i>
+								Hết hạn :<br>{{date("d-m-Y", strtotime($job_skills -> deadline))}}
+							</span>
+                                    <span class="sallary">Chi Phí:<br>{{number_format ($job_skills -> allowance_min)."d"."-".number_format ($job_skills -> allowance_max)."d"}}</span>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="col-sm-4" id="sidebar">
+                    <h2>Liên Hệ Quảng Cáo</h2>
+                </div>
+                @endif
                 <div class="col-sm-8" id="ajax_pagi">
                     <h2>Công việc hiện có</h2>
 
