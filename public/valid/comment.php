@@ -14,7 +14,7 @@ if (!empty($_POST)) {
 		$field_name=$split_data[0];
 
 		if(!empty($comment_id) && !empty($field_name) && !empty($val)){
-			mysql_query("UPDATE comments SET $field_name = '$val' WHERE id = $comment_id") 
+			mysql_query("UPDATE comments SET $field_name = '$val'WHERE id = $comment_id") 
 			or mysql_error();
 			echo "Cập nhật thành công";
 		}

@@ -25,9 +25,7 @@ class AdminController extends Controller
     public function loginPage()
     {
         if (Auth::check()) {
-            if (Auth::user()->level == 1) {
-                return redirect()->action('AdminController@index');
-            }
+            return redirect()->action('AdminController@index');
         }
         return view('admin.login');
     }
@@ -51,7 +49,7 @@ class AdminController extends Controller
                 'password' => $password,
                 'level' => 1,
                 'active' => 1
-            );
+                );
             if ($this->auth->attempt($auth)) {
                 return "ok";
             } else {
@@ -66,9 +64,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if (Auth::guest() || Auth::user()->level != 1) {
-            return redirect()->action('AdminController@loginPage');
-        }
         return view('admin.content');
     }
 
@@ -78,13 +73,13 @@ class AdminController extends Controller
     public function getPageHitData()
     {
         $results = DB::table('tracker')
-            ->select('visit_date', DB::raw('sum(hits) as count_hits'))
-            ->groupBy('visit_date')
-            ->lists('count_hits', 'visit_date');
+        ->select('visit_date', DB::raw('sum(hits) as count_hits'))
+        ->groupBy('visit_date')
+        ->lists('count_hits', 'visit_date');
         return response()->json(array(
             'keys' => array_keys($results),
             'values' => array_values($results)
-        ));
+            ));
     }
 
     /**

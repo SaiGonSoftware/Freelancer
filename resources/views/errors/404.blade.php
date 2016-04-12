@@ -1,32 +1,73 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>404</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="/css/404.css" rel="stylesheet" type="text/css" media="all"/>
-<link href='//fonts.googleapis.com/css?family=Fenix' rel='stylesheet' type='text/css'>
+	<title>404</title>
+	<link rel="icon" href="{{asset('/public/images/ico/favicon-32x32.png')}}">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href='//fonts.googleapis.com/css?family=Courgette' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+		body{
+			font-family: 'Courgette', cursive;
+		}
+		body{
+			background:#f3f3e1;
+		}	
+		.wrap{
+			margin:0 auto;
+			width:1000px;
+		}
+		.logo{
+			margin-top:50px;
+		}	
+		.logo h1{
+			font-size:200px;
+			color:#8F8E8C;
+			text-align:center;
+			margin-bottom:1px;
+			text-shadow:1px 1px 6px #fff;
+		}	
+		.logo p{
+			color:rgb(228, 146, 162);
+			font-size:20px;
+			margin-top:1px;
+			text-align:center;
+		}	
+		.logo p span{
+			color:lightgreen;
+		}	
+		.sub a{
+			color:white;
+			background:#8F8E8C;
+			text-decoration:none;
+			padding:7px 120px;
+			font-size:13px;
+			font-family: arial, serif;
+			font-weight:bold;
+			-webkit-border-radius:3em;
+			-moz-border-radius:.1em;
+			-border-radius:.1em;
+		}	
+		.footer{
+			color:#8F8E8C;
+			position:absolute;
+			right:10px;
+			bottom:10px;
+		}	
+		.footer a{
+			color:rgb(228, 146, 162);
+		}	
+	</style>
 </head>
-<body>
-  <div class="wrap">
-	 <div class="main">
-		<h3>Freelancer</h3>
-		<h1>Không tìm thấy trang bạn vừa yêu cầu</h1>
-		<p><span class="error">Vui lòng kiểm tra lại link trang web</span>.<br>
-		<div class="icons">
-		<p>Giữ liên lạc với chung tôi qua:</p>
-		  <ul>
-		  	 <li><a href="#"><img src="/images/img1.png"></a></li>
-		     <li><a href="#"><img src="/images/img2.png"></a></li>
-		     <li><a href="#"><img src="/images/img3.png"></a></li>
-		     <li><a href="#"><img src="/images/img4.png"></a></li>
-		     <li><a href="#"><img src="/images/img5.png"></a></li>
-		  </ul>	
-	   </div>
-   </div>
-	<div class="footer">
-		<p>&copy; Cộng đồng freelancer Việt Nam</p>
-    </div>
-  </div>
-</body>
-</html>
 
+
+<body>
+
+
+</script>
+<div class="wrap">
+	<div class="logo">
+		<h1>404</h1>
+		<p>Không tìm thấy trang bạn vừa yêu cầu</p>
+	</div>
+</div>
+</body>
