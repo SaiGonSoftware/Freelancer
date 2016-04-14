@@ -50,6 +50,9 @@ Route::group(['prefix' => '/admin', 'middleware' => 'App\Http\Middleware\AdminMi
 	Route::get('/quan-ly', 'AdminController@index');
 	Route::get('/getUserList', 'AdminController@getUserView');
 	Route::get('/getUserAjax', 'AdminController@getUserAjax');
+	Route::get('/getPostList', 'AdminController@getPostView');
+	Route::get('/deleteJob', 'AdminController@deletePost');
+	Route::get('/getPostAjax', 'AdminController@getPostAjax');
 	Route::get('/getPageHitData', 'AdminController@getPageHitData');
 	Route::get('/logout', 'AdminController@logOut');
 	Route::get('/quan-ly/user', 'AdminController@getUserView');

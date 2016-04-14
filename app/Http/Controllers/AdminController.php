@@ -67,12 +67,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-       $data['totalJob'] = Job::CountJobs();
-       $data['totalUser'] = User::CountUser();
-       $data['totalRecruitJob']= Recruit::CountRecruitment();
-       $data['totalVisted']= Tracker::TotalVisted ();
-       return view('admin.content',$data);
-   }
+     $data['totalJob'] = Job::CountJobs();
+     $data['totalUser'] = User::CountUser();
+     $data['totalRecruitJob']= Recruit::CountRecruitment();
+     $data['totalVisted']= Tracker::TotalVisted ();
+     return view('admin.content',$data);
+ }
 
     /**
      * get page hit data to display chart
@@ -86,7 +86,7 @@ class AdminController extends Controller
         return response()->json(array(
             'keys' => array_keys($results),
             'values' => array_values($results)
-        ));
+            ));
     }
 
     /**
@@ -105,15 +105,44 @@ class AdminController extends Controller
         return view('admin.user_ajax',compact('user'));
     }
 
+    /**
+     * Deactive user account via ajax
+     */
     public function deactiveAccount()
     {
         $id=Input::get('id');
         User::where('id','=',$id)->update(['active'=>0]);
         return response()->json(array(
-           'mess'=>'Deactive tài khoản thành công'
-        ));   
+         'mess'=>'Deactive tài khoản thành công'
+         ));   
     }
 
+    public function getPostView()
+    {
+        $post=Job::paginate(8);
+        return view('admin.post',compact('post'));
+    }  
+
+    /**
+     * Get job via ajax
+     */
+    public function getPostAjax()
+    {
+        $post=Job::paginate(8);
+        return view('admin.post_ajax',compact('post'));
+    }
+
+    /**
+     * Delete post via ajax
+     */
+    public function deletePost()
+    {
+        $id=Input::get('id');
+        Job::where('id','=',$id)->delete();
+        return response()->json(array(
+         'mess'=>'Xóa bài thành công'
+         )); 
+    }
     /**
      * Logout for admin
      */

@@ -70,6 +70,17 @@ $(document).on("click", ".paging_user .pagination a", function (page) {
   });
 });
 
+$(document).on("click", ".paging_job .pagination a", function (page) {
+  event.preventDefault();
+  var page = $(this).attr("href").split("page=")[1];
+  $.ajax({
+    url: '/admin/getPostAjax/' + '?page=' + page
+  })
+  .done(function (data) {
+    $("#job_content_ajax").html(data);
+  });
+});
+
 $(".btn-deactive").click(function(event) {
   var confirm_mess=confirm("Bạn có muốn deactive tài khoản này không");
   if (confirm_mess) {
@@ -86,6 +97,25 @@ $(".btn-deactive").click(function(event) {
       alert(data.mess);
     });
     
+  }
+  
+});
+$(".btn-delete").click(function(event) {
+  var confirm_mess=confirm("Bạn có muốn xóa bài viết này không");
+  if (confirm_mess) {
+    var id=$(this).data('id');
+    $.ajax({
+      url: '/admin/deleteJob',
+      type: 'GET',
+      data: {id: id},
+    })
+    .error(function(xhr, status, error) {
+      alert(xhr.responseText);
+    })
+    .success(function(data) {
+      alert(data.mess);
+    });
+    $(this).parent().parent().remove();
   }
   
 });
