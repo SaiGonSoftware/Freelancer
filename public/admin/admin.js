@@ -1,117 +1,91 @@
 /**
  * Created by ngohungphuc on 3/14/2016.
  */
-function redirect(url) {
-    window.location = url;
+ function redirect(url) {
+  window.location = url;
 }
 
 function loader(status) {
-    if (status == "on") {
-        $("#loading").show();
-    } else {
-        $("#loading").hide();
-    }
+  if (status == "on") {
+    $("#loading").show();
+  } else {
+    $("#loading").hide();
+  }
 }
 
 $("#loginAdmin").click(function () {
-    var username = $("#username").val();
-    var password = $("#password").val();
-    var captcha = $("#captcha").val();
-    var token = $("input[name='_token']").val();
-    if (username == '') {
-        alert("Vui lòng nhập đầy đủ thông tin");
-        return false;
-    }
-    if (password == '') {
-        alert("Vui lòng nhập đầy đủ thông tin");
-        return false;
-    }
-    if (captcha == '') {
-        alert("Vui lòng nhập đầy đủ thông tin");
-        return false;
-    }
-    loader("on");
-    $.ajax({
-            url: '/admin/adminLogin',
-            type: 'POST',
-            data: {
-                username: username,
-                password: password,
-                captcha: captcha,
-                _token: token
-            },
-        })
-        .error(function () {
-            alert('Captcha vừa nhập không đúng');
-            loader("off");
-            window.location.reload();
-        })
-        .success(function (data) {
-            loader("off");
-            if (data == 'fail') {
-                $("#status_message").text('Vui lòng kiểm tra lại username hoặc password');
-                $("#status").show();
-            } else {
-                redirect('/admin/quan-ly');
-            }
-        });
-
-});
-
-window.onload=function(){
-  var pageHitChart=document.getElementById("pagehitChart").getContext("2d");
+  var username = $("#username").val();
+  var password = $("#password").val();
+  var captcha = $("#captcha").val();
+  var token = $("input[name='_token']").val();
+  if (username == '') {
+    alert("Vui lòng nhập đầy đủ thông tin");
+    return false;
+  }
+  if (password == '') {
+    alert("Vui lòng nhập đầy đủ thông tin");
+    return false;
+  }
+  if (captcha == '') {
+    alert("Vui lòng nhập đầy đủ thông tin");
+    return false;
+  }
+  loader("on");
   $.ajax({
-      url: '/admin/getPageHitData'
+    url: '/admin/adminLogin',
+    type: 'POST',
+    data: {
+      username: username,
+      password: password,
+      captcha: captcha,
+      _token: token
+    },
   })
-  .success(function(data) {
-      var data = {
-          labels: data.keys,
-          datasets: [
-              {
-                  label: "Truy cập trong ngày",
-                  fillColor : "rgba(151,187,205,0.5)",
-                  strokeColor : "rgba(151,187,205,0.8)",
-                  highlightFill : "rgba(151,187,205,0.75)",
-                  highlightStroke : "rgba(151,187,205,1)",
-                  data: data.values
-              }
-          ]
-      };
-      window.myBar = new Chart(pageHitChart).Bar(data, {
-          responsive : true
-      });
+  .error(function () {
+    alert('Captcha vừa nhập không đúng');
+    loader("off");
+    window.location.reload();
   })
-  .fail(function() {
-     alert("Có lỗi xảy ra vui lòng thử lại");
+  .success(function (data) {
+    loader("off");
+    if (data == 'fail') {
+      $("#status_message").text('Vui lòng kiểm tra lại username hoặc password');
+      $("#status").show();
+    } else {
+      redirect('/admin/quan-ly');
+    }
   });
-  
-}
-$(function(){
-    $("#jsGrid").jsGrid({
-        height: "70%",
-        width: "100%",
-        sorting: true,
-        paging: true,
-        fields: [
-            { name: "Account", width: 150, align: "center" },
-            { name: "Name", type: "text" },
-            { name: "RegisterDate", type: "myDateField", width: 100, align: "center" },
-            { type: "control", editButton: false, modeSwitchButton: false }
-        ],
-        data: db.users
-    });
-})
 
-$("#user").click(function(){
-    $.ajax({
-            url: '/admin/quan-ly/user',
-            type:"GET"
-        })
-        .success(function(data) {
-            $("#content_div").html(data);
-        })
-        .fail(function() {
-            alert("Có lỗi xảy ra vui lòng thử lại");
-        });
 });
 
+
+$(document).on("click", ".paging_user .pagination a", function (page) {
+  event.preventDefault();
+  var page = $(this).attr("href").split("page=")[1];
+  $.ajax({
+    url: '/admin/getUserAjax/' + '?page=' + page
+  })
+  .done(function (data) {
+    $("#user_content_ajax").html(data);
+  });
+});
+
+$(".btn-deactive").click(function(event) {
+  var confirm_mess=confirm("Bạn có muốn deactive tài khoản này không");
+  if (confirm_mess) {
+    var id=$(this).data('id');
+    $.ajax({
+      url: '/admin/deactiveAccount',
+      type: 'GET',
+      data: {id: id},
+    })
+    .error(function(xhr, status, error) {
+      alert(xhr.responseText);
+    })
+    .success(function(data) {
+      alert(data.mess);
+    });
+    
+  }
+  
+});

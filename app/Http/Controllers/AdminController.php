@@ -8,7 +8,10 @@ use App\Http\Requests;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-
+use App\Job;
+use App\User;
+use App\Recruit;
+use App\Tracker;
 class AdminController extends Controller
 {
     public function __construct(Guard $auth)
@@ -64,8 +67,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.content');
-    }
+       $data['totalJob'] = Job::CountJobs();
+       $data['totalUser'] = User::CountUser();
+       $data['totalRecruitJob']= Recruit::CountRecruitment();
+       $data['totalVisted']= Tracker::TotalVisted ();
+       return view('admin.content',$data);
+   }
 
     /**
      * get page hit data to display chart
@@ -79,14 +86,32 @@ class AdminController extends Controller
         return response()->json(array(
             'keys' => array_keys($results),
             'values' => array_values($results)
-            ));
+        ));
     }
 
     /**
      * @return user managed view
      */
     public function getUserView(){
-        return view('admin.user');
+        $user=User::where('level','!=',1)->paginate(4);
+        return view('admin.user',compact('user'));
+    }
+
+    /**
+     * @return user managed view
+     */
+    public function getUserAjax(){
+        $user=User::where('level','!=',1)->paginate(4);
+        return view('admin.user_ajax',compact('user'));
+    }
+
+    public function deactiveAccount()
+    {
+        $id=Input::get('id');
+        User::where('id','=',$id)->update(['active'=>0]);
+        return response()->json(array(
+           'mess'=>'Deactive tài khoản thành công'
+        ));   
     }
 
     /**

@@ -27,4 +27,9 @@ class Tracker extends Model
             return $record->save();
         }
     }
+
+    public static function TotalVisted()
+    {
+        return Tracker::sum('hits');
+    }
 }

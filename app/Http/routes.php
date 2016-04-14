@@ -47,12 +47,15 @@ Route::get('/get_job_by_filter', 'JobController@getJobByFilter');
 
 Route::get('/admin/dang-nhap', 'AdminController@loginPage');
 Route::group(['prefix' => '/admin', 'middleware' => 'App\Http\Middleware\AdminMiddleware'], function () {
-
-    Route::get('/quan-ly', 'AdminController@index');
-    Route::get('/getPageHitData', 'AdminController@getPageHitData');
-    Route::get('/logout', 'AdminController@logOut');
-    Route::get('/quan-ly/user', 'AdminController@getUserView');
+	Route::get('/quan-ly', 'AdminController@index');
+	Route::get('/getUserList', 'AdminController@getUserView');
+	Route::get('/getUserAjax', 'AdminController@getUserAjax');
+	Route::get('/getPageHitData', 'AdminController@getPageHitData');
+	Route::get('/logout', 'AdminController@logOut');
+	Route::get('/quan-ly/user', 'AdminController@getUserView');
+	Route::get('/deactiveAccount', 'AdminController@deactiveAccount');
 });
+
 Route::post('/admin/adminLogin', ['as' => 'adminLoginAttempt', 'uses' => 'AdminController@adminLogin']);
 Route::post('/message/newMessageDetials', ['as' => 'SaveMessageDetails', 'uses' => 'ChatController@insertMessageDetails']);
 Route::post('/message/new', ['as' => 'SaveMessage', 'uses' => 'ChatController@insertMessage']);
@@ -74,12 +77,12 @@ Route::post('/password/new', ['as' => 'newLostPass', 'uses' => 'Auth\PasswordCon
 //for admin
 
 Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+	]);
 
 Route::any('/{page?}', function () {
-    return View::make('errors.404');
+	return View::make('errors.404');
 })->where('page', '.*');
 
 

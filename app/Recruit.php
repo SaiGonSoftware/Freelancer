@@ -14,4 +14,9 @@ class Recruit extends Model
     {
         return $this->belongsTo('App\User', 'user_id');
     }
+
+    public static function CountRecruitment()
+    {
+    	return Recruit::count('id');
+    }
 }
