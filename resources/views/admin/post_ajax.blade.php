@@ -16,7 +16,7 @@
 
   <tr> 
     <th scope="row">{{$i}}</th>
-    <td>{{$post_list->title}}</td>
+    <td class="job_title"><a href="/admin/viewJobContent/{{$post_list->id}}">{{$post_list->title}}</a></td>
     <td>{{date("d-m-Y", strtotime($post_list -> post_at))}}</td> 
     <th>
       @if ($post_list->active==1)

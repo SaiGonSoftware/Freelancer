@@ -67,12 +67,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-     $data['totalJob'] = Job::CountJobs();
-     $data['totalUser'] = User::CountUser();
-     $data['totalRecruitJob']= Recruit::CountRecruitment();
-     $data['totalVisted']= Tracker::TotalVisted ();
-     return view('admin.content',$data);
- }
+       $data['totalJob'] = Job::CountJobs();
+       $data['totalUser'] = User::CountUser();
+       $data['totalRecruitJob']= Recruit::CountRecruitment();
+       $data['totalVisted']= Tracker::TotalVisted ();
+       return view('admin.content',$data);
+   }
 
     /**
      * get page hit data to display chart
@@ -113,8 +113,8 @@ class AdminController extends Controller
         $id=Input::get('id');
         User::where('id','=',$id)->update(['active'=>0]);
         return response()->json(array(
-         'mess'=>'Deactive tài khoản thành công'
-         ));   
+           'mess'=>'Deactive tài khoản thành công'
+           ));   
     }
 
     public function getPostView()
@@ -133,6 +133,15 @@ class AdminController extends Controller
     }
 
     /**
+     * Get job content for admin
+     */
+    public function getJobContent($id)
+    {
+        $jobContent=Job::where('id','=',$id)->get();
+        return view('admin.view_post',compact('jobContent'));
+    }
+
+    /**
      * Delete post via ajax
      */
     public function deletePost()
@@ -140,8 +149,8 @@ class AdminController extends Controller
         $id=Input::get('id');
         Job::where('id','=',$id)->delete();
         return response()->json(array(
-         'mess'=>'Xóa bài thành công'
-         )); 
+           'mess'=>'Xóa bài thành công'
+           )); 
     }
     /**
      * Logout for admin

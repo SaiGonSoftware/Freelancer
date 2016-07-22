@@ -1,6 +1,6 @@
 @extends('ui.layout')
 @section('content')
-<div class="container" style="margin-top:5%;margin-bottom:10%">
+<div class="container" style="margin-top:10%;margin-bottom:10%">
     <div class="hidden-xs col-sm-3">
         <ul class="nav nav-tabs list-group" role="tablist">
             <a href="#" aria-controls="home" role="tab" class="list-group-item active" data-toggle="tab">Xin

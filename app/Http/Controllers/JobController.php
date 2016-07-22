@@ -128,14 +128,14 @@ class JobController extends Controller
         SEO::setTitle('Tin tuyển dụng-Cộng đồng freelancer Việt');
         SEO::setDescription('Cộng đồng freelancer Việt-Tuyển dụng');
         SEO::opengraph()->setUrl('http://localhost:8000/danh-sach-tin-tuyen-dung');
-        $data['job_pagi'] = Recruit::orderBy('post_at', 'desc')->paginate(1);
+        $data['job_pagi'] = Recruit::orderBy('post_at', 'desc')->paginate(4);
         $data['recruit_job'] = Recruit::where('id', '>', 0)->orderBy('post_at', 'desc')->take(1)->first();
         return view('ui.findjob.recruit_job', $data);
     }
 
     public function recruitJobListPagi()
     {
-        $data['job_pagi'] = Recruit::orderBy('post_at', 'desc')->paginate(1);
+        $data['job_pagi'] = Recruit::orderBy('post_at', 'desc')->paginate(4);
         return view('ui.findjob.recruit_job_pagi', $data);
     }
 
